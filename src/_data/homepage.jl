@@ -1,3 +1,5 @@
+using YAML
+
 Dict(
     # Highlights the key features of your class to make it more engaging. Remove it if you dont want to include it.
     "highlights" => [
