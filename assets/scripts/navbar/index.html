@@ -1,0 +1,35 @@
+<!DOCTYPE html><pre class="language-julia"><code># Navbar component for rendering the top navigation bar
+
+@htl(&quot;&quot;&quot;
+&lt;!-- TOP NAVBAR -->
+&lt;header id=&quot;pages-navbar&quot;>
+    &lt;div class=&quot;navbar-container&quot;>
+        &lt;!-- Navbar Left: Logo/Title -->
+        &lt;div class=&quot;navbar-left&quot;>
+            &lt;a href=&quot;$(root_url)&quot; class=&quot;navbar-logo&quot; title=&quot;Home&quot;>
+                &lt;span class=&quot;logo-text&quot;>Q&lt;/span>
+            &lt;/a>
+            &lt;a href=&quot;$(root_url)&quot; class=&quot;navbar-title&quot; title=&quot;Home&quot;>
+                &lt;span>$(metadata[&quot;course_info&quot;][&quot;course_name&quot;])&lt;/span>
+            &lt;/a>
+        &lt;/div>
+        
+        &lt;!-- Navbar Center: Search -->
+        &lt;div class=&quot;navbar-center&quot;>
+            &lt;form action=&quot;$(root_url)/search&quot; method=&quot;GET&quot; class=&quot;navbar-search&quot;>
+                &lt;input type=&quot;search&quot; name=&quot;q&quot; placeholder=&quot;Search lessons...&quot; aria-label=&quot;Search&quot;>
+                &lt;button type=&quot;submit&quot; aria-label=&quot;Search&quot; title=&quot;Search&quot;>
+                    &lt;span>🔎&lt;/span>
+                &lt;/button>
+            &lt;/form>
+        &lt;/div>
+        
+        &lt;!-- Navbar Right: Theme + Menu -->
+        &lt;div class=&quot;navbar-right&quot;>
+            &lt;button id=&quot;theme-toggle&quot; title=&quot;Switch theme&quot; aria-label=&quot;Switch theme&quot; class=&quot;navbar-icon&quot;>&lt;/button>
+            &lt;button id=&quot;toggle-nav&quot; class=&quot;navbar-menu-toggle&quot; title=&quot;Open navigation&quot; aria-label=&quot;Open navigation&quot;>&lt;/button>
+        &lt;/div>
+    &lt;/div>
+&lt;/header>
+&quot;&quot;&quot;)
+</code></pre>
