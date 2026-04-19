@@ -1,0 +1,33 @@
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[build]
+command = "julia --project -e 'using PlutoPages; PlutoPages.build()'"
+publish = "__site"
+functions = "functions"
+environment = { JULIA_NUM_THREADS = "4" }
+
+[build.environment]
+JULIA_VERSION = "1.10"
+JULIA_DEPOT_PATH = "/opt/build/cache/julia"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
+
+[context.production]
+command = "julia --project -e 'using PlutoPages; PlutoPages.build(; minify=true)'"
+environment = { JULIA_NUM_THREADS = "4" }
+
+[context.deploy-preview]
+command = "julia --project -e 'using PlutoPages; PlutoPages.build()'"
+environment = { JULIA_NUM_THREADS = "4" }
+
+[context.branch-deploy]
+command = "julia --project -e 'using PlutoPages; PlutoPages.build()'"
+environment = { JULIA_NUM_THREADS = "4" }
+
