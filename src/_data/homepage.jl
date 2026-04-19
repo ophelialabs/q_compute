@@ -1,4 +1,8 @@
 Dict(
+    # Page title and optional disclaimer for the homepage
+    "title" => "Quantum Computing: From Foundations to Research Frontiers",
+    "disclaimer" => "",
+    
     # Jumbotron Carousel - Featured highlights displayed separately
     "carousel" => [
         Dict("name" => "Easy to customise", 
