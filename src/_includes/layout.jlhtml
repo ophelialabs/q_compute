@@ -62,8 +62,11 @@ $(pluto_head)
 
 </head>
 <body>
+    <!-- TOP NAVBAR -->
+    $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "navbar.jl")))
+
+    <!-- MAIN LAYOUT -->
     <div id="pages-layout">
-        <button id="toggle-nav" title="Open navigation"></button>
         <nav id="pages-sidebar">
         <div>
         <ul>
@@ -84,14 +87,6 @@ $(pluto_head)
                 </div>
             </li>
             <li>
-                <div class="search-bar">
-                    <form action="$(root_url)/search" method="GET">
-                        <input type="search" name="q" placeholder="Search...">
-                        <input type=submit value="🔎">
-                    </form>
-                </div>
-            </li>
-            <li>
                 <div class="track-chooser">
                     <label>
                     <h2>Choose your track:</h2>
@@ -103,11 +98,6 @@ $(pluto_head)
                         ])
                     </select>
                     </label>
-                </div>
-            </li>
-            <li>
-                <div class="theme-switcher">
-                    <button id="theme-toggle" title="Switch theme" aria-label="Switch theme"></button>
                 </div>
             </li>
         $(let

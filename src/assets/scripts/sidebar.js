@@ -1,8 +1,8 @@
 const sidebar = document.querySelector("#pages-sidebar")
 const layout = document.querySelector("#pages-layout")
-const navtoggle = document.querySelector("#toggle-nav")
+const navtoggle = document.querySelector(".navbar-menu-toggle")
 
-document.querySelector("#toggle-nav").addEventListener("click", function (e) {
+document.querySelector(".navbar-menu-toggle").addEventListener("click", function (e) {
     console.log(e)
     layout.classList.toggle("pages_show_sidebar")
     e.stopPropagation()
