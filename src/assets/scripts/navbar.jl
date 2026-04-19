@@ -1,5 +1,3 @@
-# Navbar component for rendering the top navigation bar
-
 @htl("""
 <!-- TOP NAVBAR -->
 <header id="pages-navbar">
