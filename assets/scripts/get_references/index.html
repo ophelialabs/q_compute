@@ -1,0 +1,27 @@
+<!DOCTYPE html><pre class="language-julia"><code>if isempty(get(metadata[&quot;homepage&quot;], &quot;references&quot;, []))
+    nothing
+else
+    references = [
+      let
+          image = get(x, &quot;img&quot;, nothing)
+          class = &quot;no-decoration&quot;
+          desc = get(x, &quot;description&quot;, get(x, &quot;text&quot;, &quot;&quot;))
+          title = desc |> string
+          
+          image === nothing || isempty(image) ? nothing : @htl(&quot;&quot;&quot;&lt;a title=$(title) class=$(class) href=$(x[&quot;url&quot;]) target=&quot;_blank&quot;>
+              &lt;h3>$(x[&quot;name&quot;])&lt;/h3>
+              &lt;img src=$(image)>
+          &lt;/a>&quot;&quot;&quot;)
+      end for x in metadata[&quot;homepage&quot;][&quot;references&quot;]
+    ]
+
+    @htl(&quot;&quot;&quot;
+    &lt;div class=&quot;wide subjectscontainer&quot;>
+      &lt;h1>References&lt;/h1>
+      &lt;div class=&quot;subjects&quot;>
+      $(references)      
+      &lt;/div>
+    &lt;/div>
+    &quot;&quot;&quot;)
+end
+</code></pre>

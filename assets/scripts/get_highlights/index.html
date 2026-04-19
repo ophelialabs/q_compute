@@ -1,0 +1,39 @@
+<!DOCTYPE html><pre class="language-julia"><code>if isempty(get(metadata[&quot;homepage&quot;], &quot;carousel&quot;, []))
+    nothing
+else
+    carousel_data = metadata[&quot;homepage&quot;][&quot;carousel&quot;]
+    
+    @htl(&quot;&quot;&quot;
+    &lt;div class=&quot;jumbotron-carousel&quot;>
+      &lt;div class=&quot;carousel-container&quot;>
+        &lt;div class=&quot;carousel-wrapper&quot;>
+          &lt;div class=&quot;carousel-track&quot;>
+            $([
+              @htl(&quot;&quot;&quot;
+              &lt;section class=&quot;carousel-slide&quot;>
+              &lt;div class=&quot;content&quot;>
+                  &lt;h2>$(x[&quot;name&quot;])&lt;/h2>
+                  &lt;p>$(x[&quot;text&quot;])&lt;/p>
+              &lt;/div>
+              &lt;div class=&quot;preview&quot;>
+                  &lt;img src=&quot;$(x[&quot;img&quot;])&quot;>
+              &lt;/div>
+              &lt;/section>
+              &quot;&quot;&quot;) for x in carousel_data
+            ])
+          &lt;/div>
+        &lt;/div>
+        
+        &lt;button class=&quot;carousel-btn prev&quot; aria-label=&quot;Previous slide&quot;>&amp;#10094;&lt;/button>
+        &lt;button class=&quot;carousel-btn next&quot; aria-label=&quot;Next slide&quot;>&amp;#10095;&lt;/button>
+        
+        &lt;div class=&quot;carousel-dots&quot;>
+          $([
+            @htl(&quot;&quot;&quot;&lt;button class=&quot;dot $(i == 1 ? &quot;active&quot; : &quot;&quot;)&quot; data-slide=&quot;$(i-1)&quot; aria-label=&quot;Go to slide $(i)&quot;>&lt;/button>&quot;&quot;&quot;)
+            for i in 1:length(carousel_data)
+          ])
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &quot;&quot;&quot;)
+end</code></pre>

@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>sample homework — Quantum Computing Learning Course </title>
+<meta name="description" content='sample howework' />
+
+<link rel="root" href="../.." />
+
+<link rel="icon" href="../../assets/favicon.ico" />
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/layout.css" type="text/css" />
+<script src="../../assets/scripts/sidebar.js" type="module"></script>
+<script src="../../assets/scripts/carousel.js" defer></script>
+
+<link rel="pp-search-data" href="../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js" integrity="sha256-sDRYYtDc+jNi2rrJPUS5kGxXXMlmnOSCq5ek5tYAk/M=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.css" integrity="sha256-lv6SEl7Dhri7d86yiHCTuSWFb9CYROQFewxZ7Je0n5k=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<script type="importmap">{"imports":{"9IVCm":"./firebase-firestore.97b3e0f3.js","g8zEq":"./firebase-app.513de744.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.f27d730b.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.4403bf6d.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/frontend.16ec773c.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.ed1b15a7.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.2ba45c45.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.409716be.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.20.24";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.7ab89870.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/tex-svg-full.6762fe7d.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="../.."><span>Quantum Computing Learning Course</span></a></h1>
+                    <h2><span>From Foundations to Research Frontiers</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://github.com/jlabclouds">Quantum Learning Team</a>, <a href="https://github.com/jlabclouds/q_compute">Contributors</a>
+                </div>
+            </li>
+            <li>
+                <div class="search-bar">
+                    <form action="../../search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="track-chooser">
+                    <label>
+                    <h2>Choose your track:</h2>
+                    <select>
+                        <option value="">Choose...</option>
+                        <option value="julia">💻 Julia programming</option> <option value="material">Material development</option> <option value="setup">Website maintenance</option> 
+                    </select>
+                    </label>
+                </div>
+            </li>
+        <li>
+<h3>Welcome</h3>
+<ul>
+<li class=' lecture tag_welcome'><a href='../../logistics/'><span class="entry-number"></span> Class logistics</a></li><li class=' lecture tag_welcome'><a href='../../installation/'><span class="entry-number"></span> Software installation</a></li><li class=' lecture tag_welcome'><a href='../../cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent1</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Adding course material</h4>
+<ul>
+<li class=' lecture tag_parent1_mod1 tag_track_material tag_markdown tag_frontmatter'><a href='../../parent1/mod1_add_material/add_markdown/'><span class="entry-number">1.1</span> Add markdown files</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../parent1/mod1_add_material/add_pluto/'><span class="entry-number">1.2</span> Add Pluto notebooks</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../parent1/mod1_add_material/plutoui_showcase/'><span class="entry-number">1.3</span> PlutoUI showcase</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Quantum Gates</h4>
+<ul>
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../parent1/mod2_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../parent1/mod2_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../parent1/mod2_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../parent1/mod2_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../parent1/mod2_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../parent1/mod2_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent2</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Placeholder</h4>
+<ul>
+<li class=' lecture tag_parent2_mod1 tag_placeholder tag_coming_soon'><a href='../../parent2/mod1_placeholder/' title='Placeholder for future content'><span class="entry-number">1.0</span> Module 2: Placeholder</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Coming Soon</h4>
+<ul>
+<li class=' lecture tag_parent2_mod2 tag_placeholder tag_coming_soon'><a href='../../parent2/mod2_coming_soon/' title='Placeholder for future content'><span class="entry-number">2.0</span> Module 2: Coming Soon</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="../../semesters/">Self-paced, 2024-2025</a>
+                    <div class="course-numbers"><span>QUANTCOMP-101</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Quantum Learning Initiative">
+                        <img src="../../assets/quantum_logo.svg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="../../assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="../../assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           <div class="lecture-header" >
+    <p class="number">Homework 1</p>
+    <h1>sample homework</h1>
+    
+    
+</div>
+        <pluto-editor 
+ statefile='../../generated_assets/hw1_70c64ddb.plutostate' 
+ notebookfile='../../generated_assets/hw1_05791c9b.jl' 
+
+
+	disable_ui
+></pluto-editor>
+
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="https://github.com/jlabclouds/q_compute"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
