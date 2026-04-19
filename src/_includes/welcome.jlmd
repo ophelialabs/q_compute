@@ -10,8 +10,13 @@ layout: "layout.jlhtml"
 
 $(isempty(get(metadata["homepage"], "disclaimer", "")) ? nothing : @htl("""<blockquote class="banner"><p>$(metadata["homepage"]["disclaimer"])</p></blockquote>"""))
 
-<main class="homepage">
+<!-- JUMBOTRON CAROUSEL SECTION - FEATURED HIGHLIGHTS -->
+<section class="carousel-section">
 $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_highlights.jl")))
+</section>
+
+<!-- REFERENCES AND SUBJECTS SECTIONS -->
+<main class="homepage">
 $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_references.jl")))
 $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_subjects.jl")))
 </main>

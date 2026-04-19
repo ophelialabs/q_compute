@@ -301,9 +301,16 @@ section > div.preview > img {
     color: #3c3c3c;
 }
 
-/* HIGHLIGHTS JUMBOTRON & CAROUSEL */
+/* JUMBOTRON CAROUSEL - SEPARATE SECTION */
 
-.highlights-jumbotron {
+.carousel-section {
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.jumbotron-carousel {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 1.5rem 1rem;
     margin: 2rem 0;
@@ -474,7 +481,7 @@ section > div.preview > img {
         max-height: 600px;
     }
 
-    .highlights-jumbotron {
+    .jumbotron-carousel {
         padding: 1rem;
     }
 }

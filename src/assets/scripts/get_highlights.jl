@@ -1,10 +1,10 @@
-if isempty(get(metadata["homepage"], "highlights", []))
+if isempty(get(metadata["homepage"], "carousel", []))
     nothing
 else
-    highlights_data = metadata["homepage"]["highlights"]
+    carousel_data = metadata["homepage"]["carousel"]
     
     @htl("""
-    <div class="highlights-jumbotron">
+    <div class="jumbotron-carousel">
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <div class="carousel-track">
@@ -19,7 +19,7 @@ else
                   <img src="$(x["img"])">
               </div>
               </section>
-              """) for x in highlights_data
+              """) for x in carousel_data
             ])
           </div>
         </div>
@@ -30,7 +30,7 @@ else
         <div class="carousel-dots">
           $([
             @htl("""<button class="dot $(i == 1 ? "active" : "")" data-slide="$(i-1)" aria-label="Go to slide $(i)"></button>""")
-            for i in 1:length(highlights_data)
+            for i in 1:length(carousel_data)
           ])
         </div>
       </div>

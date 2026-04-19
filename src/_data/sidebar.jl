@@ -5,7 +5,7 @@
         "parent1_mod2" => "Module 2: Quantum Gates"
     ],
     "parent2" => [
-        "parent2_mod1" => "Module 3: Placeholder",
-        "parent2_mod2" => "Module 4: Coming Soon"
+        "parent2_mod1" => "Module 1: Placeholder",
+        "parent2_mod2" => "Module 2: Coming Soon"
     ]
 ]

@@ -1,7 +1,7 @@
 ---
-title: "Module 4: Coming Soon"
+title: "Module 2: Coming Soon"
 order: 2
-chapter: 4
+chapter: 2
 section: 0
 layout: "md.jlmd"
 tags: ["parent2_mod2", "placeholder", "coming_soon"]

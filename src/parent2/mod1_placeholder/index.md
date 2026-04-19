@@ -1,7 +1,7 @@
 ---
-title: "Module 3: Placeholder"
-order: 1
-chapter: 3
+title: "Module 2: Placeholder"
+order: 2
+chapter: 1
 section: 0
 layout: "md.jlmd"
 tags: ["parent2_mod1", "placeholder", "coming_soon"]
