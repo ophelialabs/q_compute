@@ -35,6 +35,7 @@ Dict(
         Dict("name" => "Azure Quantum Ignite",
              "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
              "description" => "Microsoft's comprehensive guide to quantum computing on Azure. Learn about quantum hardware access, development tools, and cloud-based quantum simulation.",
+             "img" => nothing,
              "category" => "Core Quantum Platforms"
         ),
         Dict("name" => "D-Wave Documentation",
