@@ -456,12 +456,15 @@ section > div.preview > img {
     }
 
     .carousel-slide .preview {
-        flex: 0 0 100%;
+        flex: 0 0 auto;
         height: auto;
+        min-height: 200px;
+        width: 100%;
     }
 
     .carousel-slide .preview img {
         max-height: 200px;
+        width: 100%;
     }
 
     .carousel-btn {
@@ -478,7 +481,7 @@ section > div.preview > img {
     }
 
     .carousel-wrapper {
-        max-height: 600px;
+        max-height: 700px;
     }
 
     .jumbotron-carousel {
