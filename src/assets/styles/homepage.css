@@ -48,7 +48,7 @@ a:hover {
 }
 
 div.banner {
-    min-height: 6rem;
+    max-height: 6rem;
     display: grid;
     place-items: center;
     background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
