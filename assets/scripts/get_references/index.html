@@ -8,9 +8,12 @@ else
           desc = get(x, &quot;description&quot;, get(x, &quot;text&quot;, &quot;&quot;))
           title = desc |> string
           
-          image === nothing || isempty(image) ? nothing : @htl(&quot;&quot;&quot;&lt;a title=$(title) class=$(class) href=$(x[&quot;url&quot;]) target=&quot;_blank&quot;>
+          @htl(&quot;&quot;&quot;&lt;a title=$(title) class=$(class) href=$(x[&quot;url&quot;]) target=&quot;_blank&quot;>
               &lt;h3>$(x[&quot;name&quot;])&lt;/h3>
-              &lt;img src=$(image)>
+              &lt;p>$(desc)&lt;/p>
+              $(if !(image === nothing || isempty(image))
+                  @htl(&quot;&quot;&quot;&lt;img src=$(image)>&quot;&quot;&quot;)
+              end)
           &lt;/a>&quot;&quot;&quot;)
       end for x in metadata[&quot;homepage&quot;][&quot;references&quot;]
     ]
