@@ -15,7 +15,8 @@
 }
 
 :root {
-    --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
+    --system-fonts:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol", system-ui, sans-serif;
     --system-fonts-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
@@ -28,6 +29,36 @@
 
     --track-bg: hsl(56 50% 94% / 1);
     --track-bg-accent: #a3987c;
+}
+
+/* Dark Theme */
+[data-theme="dark"] :root,
+[data-theme="dark"] {
+    --fg: #ddd;
+    --faded-1: #b3b3b3;
+    --faded-2: #999999;
+
+    --sidebar-accent-1: #d0a493;
+    --search-bg: #363b33;
+    --search-bg-accent: #4d6542;
+
+    --track-bg: #545346;
+    --track-bg-accent: #dad1b9;
+}
+
+/* Light Theme */
+[data-theme="light"] :root,
+[data-theme="light"] {
+    --fg: #1e293b;
+    --faded-1: #64748b;
+    --faded-2: #94a3b8;
+
+    --sidebar-accent-1: #3b82f6;
+    --search-bg: #f1f5f9;
+    --search-bg-accent: #e2e8f0;
+
+    --track-bg: #e2e8f0;
+    --track-bg-accent: #475569;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -144,9 +175,10 @@ a.pluto_home_link {
 .sidebar-about .logos {
     display: flex;
     flex-direction: row;
-    gap: 1em;
-    padding: 1em;
+    gap: 1rem;
+    padding: 1rem 0;
     align-items: center;
+    justify-content: center;
 }
 
 .sidebar-about .logos picture {
@@ -154,50 +186,88 @@ a.pluto_home_link {
     min-width: 0;
     height: auto;
     object-fit: contain;
+    filter: brightness(0.9);
+    transition: filter 200ms ease;
+}
+
+.sidebar-about .logos picture:hover {
+    filter: brightness(1);
 }
 
 .sidebar-about .course-numbers {
-    opacity: 0.6;
+    opacity: 0.7;
+    font-size: 0.85rem;
 }
+
 .sidebar-about .course-numbers > span {
-    font-family: var(--system-fonts-mono);
+    font-family: "Inter", system-ui, monospace;
     font-size: 0.9em;
+    color: #60a5fa;
 }
+
 .sidebar-about .course-numbers::before {
     /* content: " | "; */
 }
 
 .semester-details,
 .authors {
-    border-radius: var(--border-radius);
-    padding: var(--child-padding);
+    border-radius: 0.6em;
+    padding: 0.5em 0.7em;
+    transition: all 200ms ease;
 }
+
+.semester-details {
+    background: rgba(96, 165, 250, 0.05);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    margin-bottom: 1rem;
+}
+
+.semester-details:hover {
+    background: rgba(96, 165, 250, 0.1);
+}
+
 .semester-details > a {
-    font-weight: 700;
+    font-weight: 600;
+    color: #60a5fa;
 }
 
 #pages-sidebar h1 {
+    font-family: "Poppins", sans-serif;
     font-size: 1.4rem;
+    font-weight: 700;
     margin-block-end: 0px;
-    margin: 0; /* line-height: 1; */
+    margin: 0;
+    color: #f1f5f9;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 #pages-sidebar h2 {
-    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
     font-weight: 500;
-    font-style: italic;
-    opacity: 0.8;
-    margin-block-start: 0.2em;
+    font-style: normal;
+    opacity: 0.7;
+    margin-block-start: 0.3em;
+    color: #cbd5e1;
 }
 
 .authors {
-    color: var(--faded-2);
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
-.authors {
-    color: var(--faded-2);
-}
+
 #pages-sidebar .authors > a {
-    color: var(--fg);
+    color: #60a5fa;
+    font-weight: 500;
+    transition: color 200ms ease;
+}
+
+#pages-sidebar .authors > a:hover {
+    color: #a78bfa;
 }
 
 .search-result strong {
@@ -210,10 +280,48 @@ a.pluto_home_link {
 #pages-sidebar .search-bar form {
     display: flex;
     flex-direction: row;
+    gap: 0.5rem;
+    margin: 1rem 0;
 }
+
 #pages-sidebar .search-bar input[type="search"] {
     flex: 1 1 auto;
     min-width: 0px;
+    padding: 0.6em;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 0.6em;
+    background: rgba(30, 41, 59, 0.5);
+    color: #f1f5f9;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    transition: all 200ms ease;
+}
+
+#pages-sidebar .search-bar input[type="search"]::placeholder {
+    color: #64748b;
+}
+
+#pages-sidebar .search-bar input[type="search"]:focus {
+    outline: none;
+    border-color: #60a5fa;
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+#pages-sidebar .search-bar input[type="submit"] {
+    padding: 0.5em 0.8em;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 0.6em;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    color: #60a5fa;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+#pages-sidebar .search-bar input[type="submit"]:hover {
+    border-color: #60a5fa;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%);
 }
 
 a.search-result,

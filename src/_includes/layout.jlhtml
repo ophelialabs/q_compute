@@ -43,6 +43,7 @@ end)
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
+<script src="$(root_url)/assets/scripts/theme.js" defer></script>
 <script src="$(root_url)/assets/scripts/sidebar.js" type="module"></script>
 <script src="$(root_url)/assets/scripts/carousel.js" defer></script>
 
@@ -102,6 +103,11 @@ $(pluto_head)
                         ])
                     </select>
                     </label>
+                </div>
+            </li>
+            <li>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" title="Switch theme" aria-label="Switch theme"></button>
                 </div>
             </li>
         $(let
