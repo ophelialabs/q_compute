@@ -1,3 +1,5 @@
+[Departments](https://github.com/ophelialabs/a/tree/main/pages/learn/Departments). Create table for track selection, Parent sidebar paths for vis. 
+
 # Quantum Computing Learning Course Agents
 
 This document describes the AI agents and automation tools used to generate, maintain, and enhance this comprehensive quantum computing learning course.

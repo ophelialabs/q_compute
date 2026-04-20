@@ -1,7 +1,24 @@
-# ============================================================================
-# COMPREHENSIVE MATHEMATICS CHEATSHEET
-# Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics
-# ============================================================================
+### A Pluto.jl notebook ###
+# v0.19.25
+
+#> [frontmatter]
+#> chapter = 
+#> section = 
+#> order = 
+#> image = "https://raw.githubusercontent.com/JuliaQuantumComputing/QuantumTutorials.jl/main/assets/pauli_gates.png"
+#> title = "COMPREHENSIVE MATHEMATICS CHEATSHEET"
+#> tags = ["math cheatsheet", "trigonometry", "linear", "quadratic", "algebra", "discrete math"]
+#> layout = "layout.jlhtml"
+#> description = "Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics"
+
+using Markdown
+using InteractiveUtils
+
+# ╔═╡ 05ef0df-8ab8-4e54-a476-89d521f29ee0
+using PlutoUI, LinearAlgebra, Plots
+
+# ╔═╡ 4f643fd4-1e8d-4304-961b-a30a37a58de3
+TableOfContents()
 
 # ============================================================================
 # SECTION 1: TRIGONOMETRIC FUNCTIONS & IDENTITIES
