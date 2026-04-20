@@ -20,7 +20,7 @@ Describe here the logistics of your class.
 1. [Azure Quantum](https://azure.microsoft.com/en-us/services/quantum/)
 2. [Jupyter Hub](https://jupyter.org/hub)
 3. [MLJ: Machine Learning Framework for Julia](https://juliaai.github.io/MLJ.jl/stable/)
-4. [Quantum](https://ophelialabs.github.io/a/pages/quantum/index.html)
+4. [Sister_Site](https://ophelialabs.github.io/a/pages/quantum/index.html)
 
 ## Textbooks:
 The following textbooks provide resource material for this course:
