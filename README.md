@@ -1,3 +1,5 @@
+- Choose your track should act like search and direct user to landing page
+
 # Quantum Computing Learning Course
 
 An extensive, in-depth quantum computing curriculum built with **Julia** and **PlutoPages**, featuring interactive Pluto notebooks, hands-on exercises, and comprehensive coverage from fundamentals to advanced research topics.
