@@ -40,7 +40,7 @@ Dict(
         ),
         Dict("name" => "IBM Quantum",
              "url" => "https://www.ibm.com/quantum/",
-             "description" => "Access IBM's quantum processors and simulators through the cloud. Learn quantum computing with real quantum hardware on enterprise infrastructure using [RHEL](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) and [HashiCorp](https://www.hashicorp.com/) tools (Terraform, Vault, Consul) for scalable deployment and management.",
+             "description" => "Access IBM's quantum processors and simulators through the cloud. Learn quantum computing with real quantum hardware on enterprise infrastructure using RHEL and HashiCorp tools (Terraform, Vault, Consul) for scalable deployment and management.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
         ),
