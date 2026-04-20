@@ -44,7 +44,7 @@ Dict(
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Interactive Learning & Tools"
         ),
-        Dict("name" => "Azure Quantum Ignite",
+        Dict("name" => "Azure Quantum: Ignite",
              "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
              "description" => "Microsoft's comprehensive guide to quantum computing on Azure. Learn about quantum hardware access, development tools, and cloud-based quantum simulation.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
@@ -62,13 +62,13 @@ Dict(
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
         ),
-        Dict("name" => "Google Quantum AI",
+        Dict("name" => "Google Quantum AI: Cirq & Sycamore",
              "url" => "https://quantumai.google/",
              "description" => "Explore Google's quantum computing initiatives and resources. Access quantum hardware, software tools, and research insights from one of the leading companies in quantum technology.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
         ),
-        Dict("name" => "Amazon Braket",
+        Dict("name" => "Amazon: Braket",
              "url" => "https://aws.amazon.com/braket/",
              "description" => "Amazon Braket is a fully managed quantum computing service that helps you get started with quantum computing. It provides access to quantum hardware from multiple providers, as well as a development environment for building and testing quantum algorithms.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
