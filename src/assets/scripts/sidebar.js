@@ -1,20 +1,6 @@
-const sidebar = document.querySelector("#pages-sidebar")
-const layout = document.querySelector("#pages-layout")
-const navtoggle = document.querySelector(".navbar-menu-toggle")
-
-document.querySelector(".navbar-menu-toggle").addEventListener("click", function (e) {
-    console.log(e)
-    layout.classList.toggle("pages_show_sidebar")
-    e.stopPropagation()
-})
-
-window.addEventListener("click", function (e) {
-    if (!sidebar.contains(e.target) && !navtoggle.contains(e.target)) {
-        layout.classList.remove("pages_show_sidebar")
-    }
-})
-
 // Dropdown toggle functionality
+const sidebar = document.querySelector("#pages-sidebar")
+
 document.querySelectorAll("h3.dropdown-toggle").forEach((toggle) => {
     toggle.addEventListener("click", function (e) {
         e.preventDefault()

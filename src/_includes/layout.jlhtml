@@ -43,7 +43,9 @@ end)
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="$(root_url)/assets/styles/navbar.css" type="text/css" />
 <script src="$(root_url)/assets/scripts/theme.js" defer></script>
+<script src="$(root_url)/assets/scripts/navbar.js" defer></script>
 <script src="$(root_url)/assets/scripts/sidebar.js" type="module"></script>
 <script src="$(root_url)/assets/scripts/carousel.js" defer></script>
 
@@ -63,7 +65,7 @@ $(pluto_head)
 </head>
 <body>
     <!-- TOP NAVBAR -->
-    $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "navbar.jl")))
+    $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "_data", "navbar.jl")))
 
     <!-- MAIN LAYOUT -->
     <div id="pages-layout">
