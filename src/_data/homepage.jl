@@ -30,8 +30,20 @@ Dict(
              )    
     ],
     
-    # References section with complementary resources - defined directly instead of loading from YAML
+    # References section with complementary resources
     "references" => [
+        Dict("name" => "JupyterHub",
+             "url" => "https://jupyterhub.readthedocs.io/",
+             "description" => "Multi-user Jupyter notebook server for collaborative computing. Deploy and manage Jupyter environments for educational use and shared development.",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Interactive Learning & Tools"
+        ),
+        Dict("name" => "IBM Quantum",
+             "url" => "https://www.ibm.com/quantum/",
+             "description" => "Access IBM's quantum processors and simulators through the cloud. Learn quantum computing with real quantum hardware on enterprise infrastructure using [RHEL](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) and [HashiCorp](https://www.hashicorp.com/) tools (Terraform, Vault, Consul) for scalable deployment and management.",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Core Quantum Platforms"
+        ),
         Dict("name" => "Azure Quantum Ignite",
              "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
              "description" => "Microsoft's comprehensive guide to quantum computing on Azure. Learn about quantum hardware access, development tools, and cloud-based quantum simulation.",
@@ -67,6 +79,6 @@ Dict(
              "description" => "Explore materials science principles. Relevant for understanding quantum applications in material simulation and discovery.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Quantum Concepts & Visualization"
-        )
+        ),
     ]
 )
