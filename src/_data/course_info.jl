@@ -1,4 +1,5 @@
 Dict(
+    "course_name" => "QCOMP-101",
     "course_subtitle" => "From Foundations to Research Frontiers",
     "code" => "QUANTCOMP-101",
     "semester" => "Self-paced, 2024-2025",
