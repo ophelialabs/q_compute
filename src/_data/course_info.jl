@@ -1,5 +1,4 @@
 Dict(
-    "course_name" => "Quantum Computing Learning Course",
     "course_subtitle" => "From Foundations to Research Frontiers",
     "code" => "QUANTCOMP-101",
     "semester" => "Self-paced, 2024-2025",
