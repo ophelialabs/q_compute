@@ -65,7 +65,7 @@ $(pluto_head)
 </head>
 <body>
     <!-- TOP NAVBAR -->
-    $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "_data", "navbar.jl")))
+    $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "navbar.jl")))
 
     <!-- MAIN LAYOUT -->
     <div id="pages-layout">
