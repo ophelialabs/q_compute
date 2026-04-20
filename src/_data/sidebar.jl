@@ -1,7 +1,7 @@
 [
     "welcome" => "Welcome",
     "resources" => [
-        "resource1" => "Resource 1: Quantum Computing Basics",
+        "resource1" => "Cheatsheets",
         "resource2" => "Resource 2: Quantum Algorithms"
     ],
     "parent1" => [
