@@ -21,6 +21,7 @@ Describe here the logistics of your class.
 2. [Jupyter Hub](https://jupyter.org/hub)
 3. [MLJ: Machine Learning Framework for Julia](https://juliaai.github.io/MLJ.jl/stable/)
 4. [Sister_Site](https://ophelialabs.github.io/a/pages/quantum/index.html)
+5. [Docs](https://ophelialabs.github.io/dev/networking/index2/)
 
 ## Textbooks:
 The following textbooks provide resource material for this course:
