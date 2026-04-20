@@ -7,9 +7,6 @@
             <a href="$(root_url)" class="navbar-logo" title="Home">
                 <span class="logo-text">Q</span>
             </a>
-            <a href="$(root_url)" class="navbar-title" title="Home">
-                <span>$(metadata["course_info"]["course_name"])</span>
-            </a>
         </div>
         
         <!-- Navbar Center: Search -->
