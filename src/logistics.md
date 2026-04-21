@@ -28,10 +28,11 @@ The following textbooks provide resource material for this course:
 
 ### Core Textbooks
 1. Nielsen & Chuang, "Quantum Computation and Quantum Information" (2010)
-2. Preskill, "Quantum Computing in the NISQ era and beyond" (2018)
-3. [Quantum Mechanics for Engineers](https://web1.eng.famu.fsu.edu/~dommelen/quantum/pdf/index.pdf)
-4. [Introduction to Computation and Programming Using Python: With Application to Understanding Data](https://github.com/guttag/Intro-to-Computation-and-Programming/tree/main) Guttag, John. 2nd ed. MIT Press, 2016. ISBN: 9780262529624.
+2. [Introduction to Computation and Programming Using Python: With Application to Understanding Data](https://github.com/guttag/Intro-to-Computation-and-Programming/tree/main) Guttag, John. 2nd ed. MIT Press, 2016. ISBN: 9780262529624. (2016)
+3. Preskill, "Quantum Computing in the NISQ era and beyond" (2018)
+4. [Quantum Mechanics for Engineers](https://web1.eng.famu.fsu.edu/~dommelen/quantum/pdf/index.pdf) Dommelen
+08/26/18 Version 5.63 alpha (2018)
 5. [Intermediate Quantitative Economics
-with Python](https://python.quantecon.org/_pdf/quantecon-python.pdf) Sargent & Stachurski, Apr 13, 2026.
+with Python](https://python.quantecon.org/_pdf/quantecon-python.pdf) Sargent & Stachurski, Apr 13, 2026. (2026
 
 ## 
