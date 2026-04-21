@@ -1,6 +1,6 @@
 1. Choose your track should act like search, direct user to landing page
 2. Create table to plan out cross-reference and for tag
-3. SOC vs uni. Combined search, mkdir humanities, science etc...
+3. SOC vs uni. => Combined search, mkdir humanities, science etc...
 4. Add images/icons to landscapes for better vis, clarity, mem retention
 
 # Quantum Computing Learning Course
