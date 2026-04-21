@@ -231,12 +231,6 @@ We welcome contributions! Please see [AGENTS.md](./AGENTS.md) for:
 - Improving visualizations
 - Fixing errors or outdated content
 
-## 📚 References & Resources
-
-### Core Textbooks
-- Nielsen & Chuang, "Quantum Computation and Quantum Information" (2010)
-- Preskill, "Quantum Computing in the NISQ era and beyond" (2018)
-
 ### Julia Quantum Libraries
 - [Yao.jl Documentation](https://yaoquantum.org/)
 - [QuantumOptics.jl](https://qojulia.org/)
