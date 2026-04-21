@@ -28,5 +28,7 @@ The following textbooks provide resource material for this course:
 
 1. [Quantum Mechanics for Engineers](https://web1.eng.famu.fsu.edu/~dommelen/quantum/pdf/index.pdf)
 2. [Introduction to Computation and Programming Using Python: With Application to Understanding Data](https://github.com/guttag/Intro-to-Computation-and-Programming/tree/main) Guttag, John. 2nd ed. MIT Press, 2016. ISBN: 9780262529624.
+3. [Intermediate Quantitative Economics
+with Python](https://python.quantecon.org/_pdf/quantecon-python.pdf) Sargent & Stachurski, Apr 13, 2026.
 
 ## 
