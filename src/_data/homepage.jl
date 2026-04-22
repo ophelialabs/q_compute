@@ -41,7 +41,7 @@ Dict(
         Dict("name" => "QT",
             "url" => "https://www.qt.io/development/tools",
             "description" => "",
-            "img" => "",
+            "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.pn",
             "category" => ""
         ),
         Dict("name" => "Q# IOT Project",
@@ -61,6 +61,12 @@ Dict(
              "description" => "Interactive programming exercises designed to teach quantum computing concepts hands-on. Perfect for reinforcing your understanding through coding practice.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Interactive Learning & Tools"
+        ),
+        Dict("name" => "Guppy",
+            "url" => "https://docs.quantinuum.com/guppy/getting_started.html",
+            "description" => "",
+            "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.pn",
+            "category" => ""
         ),
         Dict("name" => "Honeywell: Quantinuum Nexus",
              "url" => "https://docs.quantinuum.com/nexus/index.html",
