@@ -49,6 +49,12 @@ Dict(
              "description" => "A practical project that integrates Q# with IoT devices. Learn how to connect quantum computing concepts with real-world applications in the Internet of Things (IoT) domain.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
+        ), 
+        Dict("name" => "Nuget F#",
+             "url" => "https://www.nuget.org/packages/FSharp.Azure.Quantum#c-fluent-api",
+             "description" => "",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Core Quantum Platforms"
         ),
         Dict("name" => "Azure Quantum: Ignite",
              "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
