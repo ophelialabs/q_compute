@@ -2,7 +2,7 @@
 2. Create table to plan out cross-reference and for tag
 3. SOC vs uni. => Combined search, mkdir humanities, science etc...
 4. Add images/icons to landscapes for better vis, clarity, mem retention
-   - Add [QT](https://www.qt.io/development/developers), [PSI (mu2e, mu3e)](https://elog.psi.ch/), [Expand](https://executablebooks.org/en/latest/) Jupyter and Julia notebooks and documentation sections. Add notebook galleries
+   - Add [QT](https://www.qt.io/development/developers), [PSI (mu2e, mu3e)](https://elog.psi.ch/), [Expand](https://executablebooks.org/en/latest/) Jupyter and Julia notebooks and [documentation](https://pydata-sphinx-theme.readthedocs.io/en/stable/examples/gallery.html) sections.
 
 # Quantum Computing Learning Course
 
