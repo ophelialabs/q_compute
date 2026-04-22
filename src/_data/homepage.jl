@@ -32,23 +32,35 @@ Dict(
     
     # References section with complementary resources
     "references" => [
-        Dict("name" => "Q# IOT Project",
-             "url" => "https://github.com/jlabclouds/qsharpIoT",
-             "description" => "A practical project that integrates Q# with IoT devices. Learn how to connect quantum computing concepts with real-world applications in the Internet of Things (IoT) domain.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
         Dict("name" => "JupyterHub",
              "url" => "https://jupyterhub.readthedocs.io/",
              "description" => "Multi-user Jupyter notebook server for collaborative computing. Deploy and manage Jupyter environments for educational use and shared development.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Interactive Learning & Tools"
         ),
+        Dict("name" => "QT",
+            "url" => "https://www.qt.io/development/tools",
+            "description" => "",
+            "img" => "",
+            "category" => ""
+        ),
+        Dict("name" => "Q# IOT Project",
+             "url" => "https://github.com/jlabclouds/qsharpIoT",
+             "description" => "A practical project that integrates Q# with IoT devices. Learn how to connect quantum computing concepts with real-world applications in the Internet of Things (IoT) domain.",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Core Quantum Platforms"
+        ),
         Dict("name" => "Azure Quantum: Ignite",
              "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
              "description" => "Microsoft's comprehensive guide to quantum computing on Azure. Learn about quantum hardware access, development tools, and cloud-based quantum simulation.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
+        ),
+        Dict("name" => "Quantum Katas",
+             "url" => "https://quantum.microsoft.com/en-us/tools/quantum-katas",
+             "description" => "Interactive programming exercises designed to teach quantum computing concepts hands-on. Perfect for reinforcing your understanding through coding practice.",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Interactive Learning & Tools"
         ),
         Dict("name" => "Honeywell: Quantinuum Nexus",
              "url" => "https://docs.quantinuum.com/nexus/index.html",
@@ -79,12 +91,6 @@ Dict(
              "description" => "Access D-Wave's quantum annealing resources and documentation. Explore an alternative approach to quantum computing using adiabatic quantum computation.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Quantum Katas",
-             "url" => "https://quantum.microsoft.com/en-us/tools/quantum-katas",
-             "description" => "Interactive programming exercises designed to teach quantum computing concepts hands-on. Perfect for reinforcing your understanding through coding practice.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Interactive Learning & Tools"
         ),
         Dict("name" => "Algorithm Visualizer",
              "url" => "https://algorithm-visualizer.org/",
