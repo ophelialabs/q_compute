@@ -4,7 +4,7 @@
 #> [frontmatter]
 #> chapter = 
 #> section = 
-#> order = "2"
+#> order = 
 #> image = "https://raw.githubusercontent.com/JuliaQuantumComputing/QuantumTutorials.jl/main/assets/pauli_gates.png"
 #> title = "MATH CHEATSHEET"
 #> tags = ["resources", "math cheatsheet", "trigonometry", "linear", "quadratic", "algebra", "discrete math"]
