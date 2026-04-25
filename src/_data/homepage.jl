@@ -40,9 +40,9 @@ Dict(
         ),
         Dict("name" => "QT",
             "url" => "https://www.qt.io/development/tools",
-            "description" => "",
+            "description" => "QT is a powerful cross-platform application development framework. It provides tools for building interactive applications with rich graphical interfaces, making it ideal for creating engaging educational content and simulations in quantum computing.",
             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.pn",
-            "category" => ""
+            "category" => "Interactive Learning & Tools"
         ),
         Dict("name" => "Q# IOT Project",
              "url" => "https://github.com/jlabclouds/qsharpIoT",
@@ -52,7 +52,7 @@ Dict(
         ), 
         Dict("name" => "Nuget F#",
              "url" => "https://www.nuget.org/packages/FSharp.Azure.Quantum#c-fluent-api",
-             "description" => "",
+             "description" => "NuGet package for F# Azure Quantum development. Provides tools and libraries for building quantum applications using F# on the Azure Quantum platform.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
         ),
@@ -70,9 +70,9 @@ Dict(
         ),
         Dict("name" => "Guppy",
             "url" => "https://docs.quantinuum.com/guppy/getting_started.html",
-            "description" => "Add to [framework-landscape](https://jlabclouds.github.io/framework-landscape/?group=modern-specialized)",
+            "description" => "Guppy is a quantum programming language developed by Quantinuum. It offers a high-level syntax for expressing quantum algorithms and is designed to be user-friendly for both beginners and experienced quantum programmers.",
             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.pn",
-            "category" => ""
+            "category" => "Core Quantum Platforms"
         ),
         Dict("name" => "Honeywell: Quantinuum Nexus",
              "url" => "https://docs.quantinuum.com/nexus/index.html",
