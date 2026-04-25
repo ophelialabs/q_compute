@@ -13,7 +13,7 @@ layout: "md.jlmd"
 - [Fastrack to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/) cheatsheet.
 - [MATLAB-Julia-Python comparative cheatsheet](https://cheatsheets.quantecon.org/) by [QuantEcon group](https://quantecon.org)
 - [Plots.jl cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)
-- [Comprehensive Mathematics Cheatsheet](/q_compute/resources/mat.jl) - Trigonometry, Linear Algebra, Quadratic Functions, Abstract Algebra, and Discrete Mathematics
+- [Comprehensive Mathematics Cheatsheet](/q_compute/resources/mat) - Trigonometry, Linear Algebra, Quadratic Functions, Abstract Algebra, and Discrete Mathematics
 - [Sample Homework](/homework/hw1.jl) - Introduction to homework submission with PlutoTeachingTools
 
 ---
