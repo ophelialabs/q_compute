@@ -14,15 +14,15 @@ layout: "md.jlmd"
 
 ---
 
-- [Getting Started with Julia - live](/basic_syntax/).
-- [Fastrack to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/) cheatsheet.
-- [Sample Homework](/q_compute/homework/hw1) - Introduction to homework submission with PlutoTeachingTools
+- [Getting Started with Julia](/basic_syntax/)
+| [Fastrack to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/)
+| [Sample Homework](/q_compute/homework/hw1) 
 
 ---
 
 - [MATLAB-Julia-Python comparative cheatsheet](https://cheatsheets.quantecon.org/) by [QuantEcon group](https://quantecon.org)
-- [Plots.jl cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)
-- [Comprehensive Mathematics Cheatsheet](/q_compute/resources/mat) - Trigonometry, Linear Algebra, Quadratic Functions, Abstract Algebra, and Discrete Mathematics
+| [Plots.jl cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)
+| [Comprehensive Mathematics Cheatsheet](/q_compute/resources/mat)
 
 ---
 
