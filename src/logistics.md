@@ -16,7 +16,7 @@ main a img {
 
 A live online Julia/Pluto textbook, adapted for quantum computing education. The content is a work in progress, and welcome contributions to expand and improve the materials.
 
-## Sites-[Docs](https://ophelialabs.github.io/a/)
+## Sites - [(Docs)](https://ophelialabs.github.io/a/)
 ---
 - [Computational Thinking](https://computationalthinking.mit.edu)
 | [Jupyter Lab](https://executablebooks.org/en/latest/gallery/)
