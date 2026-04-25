@@ -4,13 +4,6 @@ tags: ["resources"]
 order: 1
 layout: "md.jlmd"
 ---
----
-
-- [CNCF](https://landscape.cncf.io/) 
-| [Programming](https://jlabclouds.github.io/framework-landscape) 
-| [Tools](https://jlabclouds.github.io/tools-landscape) 
-| [Clouds](https://ophelialabs.github.io/landscape) 
-| [Adopters](https://github.com/cncf/landscape2/blob/main/ADOPTERS.md) 
 
 ---
 

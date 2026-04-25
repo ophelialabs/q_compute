@@ -17,6 +17,16 @@ main a img {
 Describe here the logistics of your class.
 
 ## Sites
+---
+- [CNCF](https://landscape.cncf.io/) 
+| [Programming](https://jlabclouds.github.io/framework-landscape) 
+| [Tools](https://jlabclouds.github.io/tools-landscape) 
+| [Clouds](https://ophelialabs.github.io/landscape) 
+| [Adopters](https://github.com/cncf/landscape2/blob/main/ADOPTERS.md) 
+---
+- [Computational Thinking](https://computationalthinking.mit.edu)
+| 
+---
 1. [MLJ: Machine Learning Framework for Julia](https://juliaai.github.io/MLJ.jl/stable/) Add to [framework-landscape](https://jlabclouds.github.io/framework-landscape/?group=modern-specialized)
 2. [Sister_Site](https://ophelialabs.github.io/a/pages/quantum/index.html)
 3. [Docs](https://ophelialabs.github.io/dev/networking/index2/)
