@@ -70,7 +70,7 @@ Dict(
         ),
         Dict("name" => "Guppy",
             "url" => "https://docs.quantinuum.com/guppy/getting_started.html",
-            "description" => "",
+            "description" => "Add to [framework-landscape](https://jlabclouds.github.io/framework-landscape/?group=modern-specialized)",
             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.pn",
             "category" => ""
         ),
