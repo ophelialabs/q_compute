@@ -1,7 +1,7 @@
 Dict(
     # Page title and optional disclaimer for the homepage
     "title" => "Quantum Computing",
-    "disclaimer" => "Website based on the MIT course <a href=\"https://computationalthinking.mit.edu\">Computational Thinking, a live online Julia/Pluto textbook</a>, adapted for quantum computing education. The content is a work in progress, and welcome contributions to expand and improve the materials.",
+    "disclaimer" => "Website based on the MIT course [Computational Thinking](https://computationalthinking.mit.edu), a live online Julia/Pluto textbook, adapted for quantum computing education. The content is a work in progress, and welcome contributions to expand and improve the materials.",
     
     # Jumbotron Carousel - Featured highlights displayed separately
     "carousel" => [
@@ -62,6 +62,18 @@ Dict(
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Interactive Learning & Tools"
         ),
+        Dict("name" => "Algorithm Visualizer",
+             "url" => "https://algorithm-visualizer.org/",
+             "description" => "Visualize classic algorithms step-by-step. Useful for understanding algorithmic foundations that underpin quantum algorithms.",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Interactive Learning & Tools"
+        ),
+        Dict("name" => "Circuit Diagrams",
+             "url" => "https://github.com/microsoft/qdk/wiki/Circuit-Diagrams-from-Q%23-Code",
+             "description" => "Learn how to visualize quantum circuits from Q# code. Essential for understanding circuit representation and gate operations.",
+             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+             "category" => "Quantum Concepts & Visualization"
+        ),
         Dict("name" => "Azure Quantum: Ignite",
              "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
              "description" => "Microsoft's comprehensive guide to quantum computing on Azure. Learn about quantum hardware access, development tools, and cloud-based quantum simulation.",
@@ -103,18 +115,6 @@ Dict(
              "description" => "Access D-Wave's quantum annealing resources and documentation. Explore an alternative approach to quantum computing using adiabatic quantum computation.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Algorithm Visualizer",
-             "url" => "https://algorithm-visualizer.org/",
-             "description" => "Visualize classic algorithms step-by-step. Useful for understanding algorithmic foundations that underpin quantum algorithms.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Interactive Learning & Tools"
-        ),
-        Dict("name" => "Circuit Diagrams",
-             "url" => "https://github.com/microsoft/qdk/wiki/Circuit-Diagrams-from-Q%23-Code",
-             "description" => "Learn how to visualize quantum circuits from Q# code. Essential for understanding circuit representation and gate operations.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Quantum Concepts & Visualization"
         ),
         Dict("name" => "Materials Science Learning",
              "url" => "https://matsci.org/",
