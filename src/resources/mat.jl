@@ -4,10 +4,10 @@
 #> [frontmatter]
 #> chapter = 
 #> section = 
-#> order = 
+#> order = 2
 #> image = "https://raw.githubusercontent.com/JuliaQuantumComputing/QuantumTutorials.jl/main/assets/pauli_gates.png"
 #> title = "COMPREHENSIVE MATHEMATICS CHEATSHEET"
-#> tags = ["math cheatsheet", "trigonometry", "linear", "quadratic", "algebra", "discrete math"]
+#> tags = ["resources", "math cheatsheet", "trigonometry", "linear", "quadratic", "algebra", "discrete math"]
 #> layout = "layout.jlhtml"
 #> description = "Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics"
 
