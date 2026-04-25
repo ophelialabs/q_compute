@@ -1,7 +1,7 @@
 Dict(
     # Page title and optional disclaimer for the homepage
     "title" => "Quantum Computing",
-    "disclaimer" => "Website based on the MIT course [Computational Thinking](https://computationalthinking.mit.edu), a live online Julia/Pluto textbook, adapted for quantum computing education. The content is a work in progress, and welcome contributions to expand and improve the materials.",
+    "disclaimer" => "",
     
     # Jumbotron Carousel - Featured highlights displayed separately
     "carousel" => [

@@ -14,7 +14,7 @@ main a img {
 
 # Course logistics
 
-Describe here the logistics of your class.
+A live online Julia/Pluto textbook, adapted for quantum computing education. The content is a work in progress, and welcome contributions to expand and improve the materials.
 
 ## Sites
 ---
