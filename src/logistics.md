@@ -40,6 +40,5 @@ The following textbooks provide resource material for this course:
 4. [Quantum Mechanics for Engineers](https://web1.eng.famu.fsu.edu/~dommelen/quantum/pdf/index.pdf) Dommelen
 08/26/18 Version 5.63 alpha (2018)
 5. [Intermediate Quantitative Economics
-with Python](https://python.quantecon.org/_pdf/quantecon-python.pdf) Sargent & Stachurski, Apr 13, 2026. (2026
+with Python](https://python.quantecon.org/_pdf/quantecon-python.pdf) Sargent & Stachurski, Apr 13, 2026. (2026)
 
-## 
