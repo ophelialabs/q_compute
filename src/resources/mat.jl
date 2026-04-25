@@ -6,7 +6,7 @@
 #> section = 2
 #> order = 2
 #> image = "https://raw.githubusercontent.com/JuliaQuantumComputing/QuantumTutorials.jl/main/assets/pauli_gates.png"
-#> title = "MATH CHEATSHEET"
+#> title = "Math Cheatsheet"
 #> tags = ["resources", "math cheatsheet", "trigonometry", "linear", "quadratic", "algebra", "discrete math"]
 #> layout = "layout.jlhtml"
 #> description = "Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics"
