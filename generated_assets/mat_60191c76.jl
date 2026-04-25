@@ -20,6 +20,8 @@ using PlutoUI, LinearAlgebra, Plots
 # ╔═╡ 4f643fd4-1e8d-4304-961b-a30a37a58de3
 TableOfContents()
 
+# ╔═╡ 4f643fd4-1e8d-4304-961b-a30a37a58de4
+begin
 # ============================================================================
 # SECTION 1: TRIGONOMETRIC FUNCTIONS & IDENTITIES
 # ============================================================================
@@ -1063,3 +1065,4 @@ end
 # - Most problems solved by breaking into sub-problems (Recursion)
 #
 # ============================================================================
+end
