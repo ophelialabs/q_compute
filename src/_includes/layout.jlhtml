@@ -44,6 +44,7 @@ end)
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/navbar.css" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="$(root_url)/assets/scripts/theme.js" defer></script>
 <script src="$(root_url)/assets/scripts/navbar.js" defer></script>
 <script src="$(root_url)/assets/scripts/sidebar.js" type="module"></script>
