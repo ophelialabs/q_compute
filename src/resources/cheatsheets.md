@@ -4,7 +4,6 @@ tags: ["resources"]
 order: 1
 layout: "md.jlmd"
 ---
-
 ---
 
 - [CNCF](https://landscape.cncf.io/) 
