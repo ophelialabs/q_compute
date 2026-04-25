@@ -14,7 +14,7 @@ layout: "md.jlmd"
 
 ---
 
-[CNCF](https://landscape.cncf.io/) 
+- [CNCF](https://landscape.cncf.io/) 
 | [Programming](https://jlabclouds.github.io/framework-landscape) 
 | [Tools](https://jlabclouds.github.io/tools-landscape) 
 | [Clouds](https://ophelialabs.github.io/landscape) 
@@ -34,262 +34,170 @@ layout: "md.jlmd"
  ---
 
 ## Tools
-::: {.container-fluid .p-4}
-::: {.pb-3 .mb-4 .border-bottom}
-### Development Tools & Languages {#development-tools-languages .fw-light}
+
+::: {.tools-section}
+
+::: {.tools-section-header}
+### Development Tools & Languages {#development-tools-languages}
 
 Essential resources, frameworks, and languages for modern development.
 :::
 
-::: {.row .row-cols-2 .row-cols-md-4 .row-cols-lg-6 .g-4}
-::: {.col}
-[MDN Web Docs](https://developer.mozilla.org/en-US/){.card .h-100 .link-card
-.shadow-sm}
+::: {.icon-grid}
 
-::: {.card-body}
-![MDN](https://developer.mozilla.org/apple-touch-icon.528534bba673c38049c2.png){.mb-3}
+::: {.icon-card}
+[MDN Web Docs](https://developer.mozilla.org/en-US/ "Comprehensive resource for web standards, HTML, CSS, and JavaScript documentation.")
+![MDN](https://developer.mozilla.org/apple-touch-icon.528534bba673c38049c2.png){.icon-image}
 
-###### MDN Web Docs {#mdn-web-docs .card-title}
-
-Comprehensive resource for web standards, HTML, CSS, and JavaScript
-documentation.
-:::
+MDN Web Docs
+{.icon-card-label}
 :::
 
-::: {.col}
-[W3Schools](https://www.w3schools.com){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[W3Schools](https://www.w3schools.com "Tutorials and references for web development languages and frameworks.")
+![W3Schools](https://www.w3schools.com/favicon-32x32.png){.icon-image}
 
-::: {.card-body}
-![W3Schools](https://www.w3schools.com/favicon-32x32.png){.mb-3}
-
-###### W3Schools {#w3schools .card-title}
-
-Tutorials and references for web development languages and frameworks.
-:::
+W3Schools
+{.icon-card-label}
 :::
 
-::: {.col}
-[IT Tools](https://it-tools.tech){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[IT Tools](https://it-tools.tech "Handy online tools for developers: encoders, decoders, formatters, and more.")
+![IT Tools](https://it-tools.tech/favicon-32x32.png){.icon-image}
 
-::: {.card-body}
-![it-tools logo](https://it-tools.tech/favicon-32x32.png){.mb-3}
-
-###### IT Tools {#it-tools .card-title}
-
-Handy online tools for developers: encoders, decoders, formatters, and
-more.
-:::
+IT Tools
+{.icon-card-label}
 :::
 
-::: {.col}
-[React](https://react.dev/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[React](https://react.dev/ "A JavaScript library for building user interfaces, maintained by Meta.")
+![React](https://react.dev/apple-touch-icon.png){.icon-image}
 
-::: {.card-body}
-![React](https://react.dev/apple-touch-icon.png){.mb-3}
-
-###### React {#react .card-title}
-
-A JavaScript library for building user interfaces, maintained by Meta.
-:::
+React
+{.icon-card-label}
 :::
 
-::: {.col}
-[CodeSandbox](https://codesandbox.io/p/sandbox/react-new){.card .h-100 .link-card
-.shadow-sm}
+::: {.icon-card}
+[CodeSandbox](https://codesandbox.io/p/sandbox/react-new "Online code editor and prototyping tool for rapid web development.")
+![CodeSandbox](https://codesandbox.io/csb-ios.svg){.icon-image}
 
-::: {.card-body}
-![CodeSandbox](https://codesandbox.io/csb-ios.svg){.mb-3}
-
-###### CodeSandbox {#codesandbox .card-title}
-
-Online code editor and prototyping tool for rapid web development.
-:::
+CodeSandbox
+{.icon-card-label}
 :::
 
-::: {.col}
-[GoLang](https://go.dev/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[GoLang](https://go.dev/ "Open-source programming language designed for simplicity and reliability.")
+![GoLang](https://go.dev/images/favicon-gopher-plain.png){.icon-image}
 
-::: {.card-body}
-![GoLang](https://go.dev/images/favicon-gopher-plain.png){.mb-3}
-
-###### GoLang {#golang .card-title}
-
-Open-source programming language designed for simplicity and
-reliability.
-:::
+GoLang
+{.icon-card-label}
 :::
 
-::: {.col}
-[FastAPI](https://fastapi.tiangolo.com/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[FastAPI](https://fastapi.tiangolo.com/ "Modern, fast (high-performance) web framework for building APIs with Python 3.7+.")
+![FastAPI](https://fastapi.tiangolo.com/img/favicon.png){.icon-image}
 
-::: {.card-body}
-![FastAPI](https://fastapi.tiangolo.com/img/favicon.png){.mb-3}
-
-###### FastAPI {#fastapi .card-title}
-
-Modern, fast (high-performance) web framework for building APIs with
-Python 3.7+.
-:::
+FastAPI
+{.icon-card-label}
 :::
 
-::: {.col}
-[Angular](https://angular.dev/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Angular](https://angular.dev/ "Web application framework for building scalable single-page applications.")
+![Angular](https://angular.dev/assets/icons/apple-touch-icon.png){.icon-image}
 
-::: {.card-body}
-![Angular](https://angular.dev/assets/icons/apple-touch-icon.png){.mb-3}
-
-###### Angular {#angular .card-title}
-
-Web application framework for building scalable single-page
-applications.
-:::
+Angular
+{.icon-card-label}
 :::
 
-::: {.col}
-[Kotlin](https://kotlinlang.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Kotlin](https://kotlinlang.org/ "Modern programming language targeting JVM, Android, JavaScript, and Native.")
+![Kotlin](https://kotlinlang.org/assets/images/favicon.svg?v2){.icon-image}
 
-::: {.card-body}
-![Kotlin](https://kotlinlang.org/assets/images/favicon.svg?v2){.mb-3}
-
-###### Kotlin {#kotlin .card-title}
-
-Modern programming language targeting JVM, Android, JavaScript, and
-Native.
-:::
+Kotlin
+{.icon-card-label}
 :::
 
-::: {.col}
-[Rust](https://www.rust-lang.org/learn){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Rust](https://www.rust-lang.org/learn "A language empowering everyone to build reliable and efficient software.")
+![Rust](https://www.rust-lang.org/static/images/apple-touch-icon.png?v=ngJW8jGAmR){.icon-image}
 
-::: {.card-body}
-![Rust](https://www.rust-lang.org/static/images/apple-touch-icon.png?v=ngJW8jGAmR){.mb-3}
-
-###### Rust {#rust .card-title}
-
-A language empowering everyone to build reliable and efficient software.
-:::
+Rust
+{.icon-card-label}
 :::
 
-::: {.col}
-[Cargo](https://doc.rust-lang.org/cargo/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Cargo](https://doc.rust-lang.org/cargo/ "Rust's package manager and build system for managing dependencies and projects.")
+![Cargo](https://doc.rust-lang.org/cargo/favicon-ba9a2803.png){.icon-image}
 
-::: {.card-body}
-![Cargo](https://doc.rust-lang.org/cargo/favicon-ba9a2803.png){.mb-3}
-
-###### Cargo {#cargo .card-title}
-
-Rust\'s package manager and build system for managing dependencies and
-projects.
-:::
+Cargo
+{.icon-card-label}
 :::
 
-::: {.col}
-[Ruby](https://www.ruby-lang.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Ruby](https://www.ruby-lang.org/ "Dynamic, open source programming language with a focus on simplicity and productivity.")
+![Ruby](https://www.ruby-lang.org/favicon.ico){.icon-image}
 
-::: {.card-body}
-![Ruby](https://www.ruby-lang.org/favicon.ico){.mb-3}
-
-###### Ruby {#ruby .card-title}
-
-Dynamic, open source programming language with a focus on simplicity and
-productivity.
-:::
+Ruby
+{.icon-card-label}
 :::
 
-::: {.col}
-[Perl](https://www.perl.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Perl](https://www.perl.org/ "Highly capable, feature-rich programming language with over 30 years of development.")
+![Perl](https://cdn.perl.org/perlweb/favicon.ico){.icon-image}
 
-::: {.card-body}
-![Perl](https://cdn.perl.org/perlweb/favicon.ico){.mb-3}
-
-###### Perl {#perl .card-title}
-
-Highly capable, feature-rich programming language with over 30 years of
-development.
-:::
+Perl
+{.icon-card-label}
 :::
 
-::: {.col}
-[Scala](https://www.scala-lang.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Scala](https://www.scala-lang.org/ "A hybrid functional and object-oriented programming language for the JVM.")
+![Scala](https://www.scala-lang.org/resources/apple-touch-icon.png){.icon-image}
 
-::: {.card-body}
-![Scala](https://www.scala-lang.org/resources/apple-touch-icon.png){.mb-3}
-
-###### Scala {#scala .card-title}
-
-A hybrid functional and object-oriented programming language for the
-JVM.
-:::
+Scala
+{.icon-card-label}
 :::
 
-::: {.col}
-[Swift](https://www.swift.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Swift](https://www.swift.org/ "Powerful and intuitive programming language for macOS, iOS, watchOS, and tvOS.")
+![Swift](https://www.swift.org/apple-touch-icon-180x180.png){.icon-image}
 
-::: {.card-body}
-![Swift](https://www.swift.org/apple-touch-icon-180x180.png){.mb-3}
-
-###### Swift {#swift .card-title}
-
-Powerful and intuitive programming language for macOS, iOS, watchOS, and
-tvOS.
-:::
+Swift
+{.icon-card-label}
 :::
 
-::: {.col}
-[Python](https://www.python.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Python](https://www.python.org/ "Official Python programming language site for downloads, docs, and resources.")
+![Python Logo](https://www.python.org/static/apple-touch-icon-144x144-precomposed.png){.icon-image}
 
-::: {.card-body}
-![Python
-Logo](https://www.python.org/static/apple-touch-icon-144x144-precomposed.png){.mb-3}
-
-###### Python {#python .card-title}
-
-Official Python programming language site for downloads, docs, and
-resources.
-:::
+Python
+{.icon-card-label}
 :::
 
-::: {.col}
-[Jupyter Notebooks](https://jupyter.org/){.card .h-100 .link-card .shadow-sm}
+::: {.icon-card}
+[Jupyter Notebooks](https://jupyter.org/ "Interactive computing environment for creating and sharing code, equations, and visualizations.")
+![Jupyter Notebook Logo](https://jupyter.org/favicon.ico){.icon-image}
 
-::: {.card-body}
-![Jupyter Notebook Logo](https://jupyter.org/favicon.ico){.mb-3}
-
-###### Jupyter Notebooks {#jupyter-notebooks .card-title}
-
-Interactive computing environment for creating and sharing code,
-equations, and visualizations.
-:::
+Jupyter Notebooks
+{.icon-card-label}
 :::
 
-::: {.col}
-[Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli){.card .h-100
-.link-card .shadow-sm}
+::: {.icon-card}
+[Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli "Command-line interface for managing models and datasets on Hugging Face Hub.")
+![Hugging Face Logo](https://huggingface.co/front/assets/huggingface_logo-noborder.svg){.icon-image}
 
-::: {.card-body}
-![Hugging Face
-Logo](https://huggingface.co/front/assets/huggingface_logo-noborder.svg){.mb-3}
-
-###### Hugging Face CLI {#hugging-face-cli .card-title}
-
-Command-line interface for managing models and datasets on Hugging Face
-Hub.
-:::
+Hugging Face CLI
+{.icon-card-label}
 :::
 
-::: {.col}
-[TensorFlow](https://www.tensorflow.org/install){.card .h-100 .link-card
-.shadow-sm}
+::: {.icon-card}
+[TensorFlow](https://www.tensorflow.org/install "Open-source platform for machine learning and deep learning by Google.")
+![TensorFlow Logo](https://avatars.githubusercontent.com/u/15658638?s=200&v=4){.icon-image}
 
-::: {.card-body}
-![TensorFlow
-Logo](https://avatars.githubusercontent.com/u/15658638?s=200&v=4){.mb-3}
+TensorFlow
+{.icon-card-label}
+:::
 
-###### TensorFlow {#tensorflow .card-title}
+:::
 
-Open-source platform for machine learning and deep learning by Google.
-:::
-:::
-:::
 :::
 
