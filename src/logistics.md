@@ -16,7 +16,7 @@ main a img {
 
 A live online Julia/Pluto textbook, adapted for quantum computing education. The content is a work in progress, and welcome contributions to expand and improve the materials.
 
-## Sites
+## Sites-[Docs](https://ophelialabs.github.io/a/)
 ---
 - [Computational Thinking](https://computationalthinking.mit.edu)
 | [Jupyter Lab](https://executablebooks.org/en/latest/gallery/)
@@ -29,7 +29,6 @@ A live online Julia/Pluto textbook, adapted for quantum computing education. The
 | [Adopters](https://github.com/cncf/landscape2/blob/main/ADOPTERS.md) 
 ---
 1. [MLJ: Machine Learning Framework for Julia](https://juliaai.github.io/MLJ.jl/stable/) Add to [framework-landscape](https://jlabclouds.github.io/framework-landscape/?group=modern-specialized)
-2. [Docs](https://ophelialabs.github.io/a/)
 
 ## 📚 References & Resources
 The following textbooks provide resource material for this course:
