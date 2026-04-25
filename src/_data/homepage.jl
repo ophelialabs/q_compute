@@ -116,11 +116,11 @@ Dict(
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
         ),
-        Dict("name" => "Materials Science Learning",
-             "url" => "https://matsci.org/",
-             "description" => "Explore materials science principles. Relevant for understanding quantum applications in material simulation and discovery.",
+         Dict("name" => "Quantum Algorithm Zoo",
+             "url" => "https://quantumalgorithmzoo.org/",
+             "description" => "A comprehensive collection of quantum algorithms categorized by their applications. A valuable resource for exploring the breadth of quantum algorithmic techniques.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Quantum Concepts & Visualization"
-        ),
+             "category" => "Quantum Algorithms"
+        )
     ]
 )

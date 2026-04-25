@@ -20,6 +20,7 @@ A live online Julia/Pluto textbook, adapted for quantum computing education. The
 ---
 - [Computational Thinking](https://computationalthinking.mit.edu)
 | [Jupyter Lab](https://executablebooks.org/en/latest/gallery/)
+| [MatSCI](https://matsci.org/)
 ---
 - [CNCF](https://landscape.cncf.io/) 
 | [Programming](https://jlabclouds.github.io/framework-landscape) 
