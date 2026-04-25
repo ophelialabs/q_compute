@@ -5,17 +5,6 @@ order: 1
 layout: "md.jlmd"
 ---
 
-# Cheatsheets
-
-## Course Resources
-
-- [Getting Started with Julia - live](/basic_syntax/).
-- [Fastrack to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/) cheatsheet.
-- [MATLAB-Julia-Python comparative cheatsheet](https://cheatsheets.quantecon.org/) by [QuantEcon group](https://quantecon.org)
-- [Plots.jl cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)
-- [Comprehensive Mathematics Cheatsheet](/q_compute/resources/mat) - Trigonometry, Linear Algebra, Quadratic Functions, Abstract Algebra, and Discrete Mathematics
-- [Sample Homework](/q_compute/homework/hw1) - Introduction to homework submission with PlutoTeachingTools
-
 ---
 
 - [CNCF](https://landscape.cncf.io/) 
@@ -23,6 +12,17 @@ layout: "md.jlmd"
 | [Tools](https://jlabclouds.github.io/tools-landscape) 
 | [Clouds](https://ophelialabs.github.io/landscape) 
 | [Adopters](https://github.com/cncf/landscape2/blob/main/ADOPTERS.md) 
+
+---
+
+# Cheatsheets
+
+- [Getting Started with Julia - live](/basic_syntax/).
+- [Fastrack to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/) cheatsheet.
+- [MATLAB-Julia-Python comparative cheatsheet](https://cheatsheets.quantecon.org/) by [QuantEcon group](https://quantecon.org)
+- [Plots.jl cheatsheet](https://github.com/sswatson/cheatsheets/blob/master/plotsjl-cheatsheet.pdf)
+- [Comprehensive Mathematics Cheatsheet](/q_compute/resources/mat) - Trigonometry, Linear Algebra, Quadratic Functions, Abstract Algebra, and Discrete Mathematics
+- [Sample Homework](/q_compute/homework/hw1) - Introduction to homework submission with PlutoTeachingTools
 
 ---
 
