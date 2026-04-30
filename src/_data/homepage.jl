@@ -1,3 +1,4 @@
+Dict(
     # Page title and optional disclaimer for the homepage
     "title" => "Quantum Computing",
     "disclaimer" => "",
@@ -68,3 +69,4 @@
                     "category" => "Quantum Tools"
           ),
     ]
+)
