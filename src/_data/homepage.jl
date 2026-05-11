@@ -32,11 +32,11 @@ Dict(
     
     # References section 
     "references" => [
-        Dict("name" => "JupyterHub",
-             "url" => "https://jupyterhub.readthedocs.io/",
-             "description" => "Multi-user Jupyter notebook server for collaborative computing. Deploy and manage Jupyter environments for educational use and shared development.",
+        Dict("name" => "Genie",
+             "url" => "https://genie.julialang.org/",
+             "description" => "A full-stack web framework for Julia. Genie makes it easy to build modern web applications with Julia.",
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Interactive Learning & Tools"
+             "category" => "Core Quantum Platforms"
         ),
         Dict("name" => "Q# IOT Project",
              "url" => "https://github.com/jlabclouds/qsharpIoT",
