@@ -8,7 +8,7 @@ tags: ["parent1_mod1", "track_material", "markdown", "frontmatter"]
 ---
 
 ## Add markdown files
-
+<wiki:Qt_Creator>
 If your lecture does not need to run code or use interactivity. You can write it as a markdown file.
 
 As an extra twist, you can evaluate julia code inside a `\$` symbol. For example,
