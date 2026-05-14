@@ -4,6 +4,29 @@
 4. Add images/icons to landscapes for better vis, clarity, mem retention
    - Add [QT](https://www.qt.io/development/developers), [PSI (mu2e, mu3e)](https://elog.psi.ch/), [Expand](https://executablebooks.org/en/latest/) Jupyter and Julia notebooks and [documentation](https://pydata-sphinx-theme.readthedocs.io/en/stable/examples/gallery.html) sections.
 
+External References in Documenter.jl
+- Standard Markdown: Use standard [name](URL) syntax in docstrings or markdown files.
+- @extref (DocumenterInterLinks.jl): Enables linking to external Documenter projects (e.g., Plots.jl, SciML) by loading their objects.inv files. Install with ] add DocumenterInterLinks.
+   * Syntax: [`Package.function\](@extref)or[Link Text](@extref Package.module function)`.
+
+- Configuring make.jl:
+```
+using DocumenterInterLinks
+links = InterLinks(
+    "matplotlib" => "https://matplotlib.org/3.7.3/",
+    "sphinx" => "https://www.sphinx-doc.org/en/master/"
+)
+makedocs(plugins=[links], ...)
+```
+
+Markdown Tooltips: You can add hover tooltips by adding a title in quotes after the URL: [Link Text](URL "Tooltip text")
+
+Markdown in Julia DocstringsRaw Strings: Use raw"..." to avoid escaping backslashes in LaTeX, especially with docstrings: """ @doc raw"$\LaTeX$" """.Internal References: Use [`Function\](@ref)` to link to other functions in your own documentation.
+
+External Link Best Practices
+- Reference Links: While standard Markdown supports reference-style links, Documenter.jl often discourages them in favor of direct links, sometimes making them unavailable in certain scenarios.
+- Remote Links: Define remotes in makedocs to create links from local files to their GitHub/GitLab counterparts.
+
 # Quantum Computing Learning Course
 
 An extensive, in-depth quantum computing curriculum built with **Julia** and **PlutoPages**, featuring interactive Pluto notebooks, hands-on exercises, and comprehensive coverage from fundamentals to advanced research topics.
