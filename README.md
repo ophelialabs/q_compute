@@ -1,3 +1,9 @@
+[](https://www.youtube.com/watch?v=URxE2nMVzpw)
+[Raspberry Pi Spectrometer](https://www.youtube.com/watch?v=SCp9T8NKfnM)
+[Nanosecond Laser](https://www.youtube.com/watch?v=3-htF8Jrixo)
+[Grow Crystals at Home](https://www.youtube.com/watch?v=uSSoSIcXWa0)
+[Electron microscopy - Crystal Structure](https://share.google/aimode/8nyjSydnPbL5jhr2U)
+
 1. Choose your track should act like search, direct user to landing page
 2. Create table to plan out cross-reference and for tag
 3. SOC vs uni. => Combined search, mkdir humanities, science etc...
