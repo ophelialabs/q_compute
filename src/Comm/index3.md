@@ -65,21 +65,21 @@ Primary applications:
 ## Mathematical derivation (simplified)
 
 Fields:
-- Signal: \(E_S = A_S \cos(\omega t + \theta)\)  
-- Local oscillator: \(E_{LO} = A_{LO} \cos(\omega t + \phi)\)
+- Signal: \\(E_S = A_S \\cos(\\omega t + \\theta)\\)  
+- Local oscillator: \\(E_{LO} = A_{LO} \\cos(\\omega t + \\phi)\\)
 
 Beam splitter outputs (50/50):
-\[
-E_1 = \frac{1}{\sqrt{2}}(E_{LO} + E_S),\qquad
-E_2 = \frac{1}{\sqrt{2}}(E_{LO} - E_S)
-\]
+\\[
+E_1 = \\frac{1}{\\sqrt{2}}(E_{LO} + E_S),\\qquad
+E_2 = \\frac{1}{\\sqrt{2}}(E_{LO} - E_S)
+\\]
 Photocurrents (intensity ∝ |E|^2) and subtraction give:
-\[
-i_{diff} \propto 2 E_{LO} E_S \Rightarrow i_{diff}\propto A_{LO}A_{S}\cos(\theta-\phi)
-\]
+\\[
+i_{diff} \\propto 2 E_{LO} E_S \\Rightarrow i_{diff}\\propto A_{LO}A_{S}\\cos(\\theta-\\phi)
+\\]
 Implications:
-- The small signal \(A_S\) is amplified by the large LO amplitude \(A_{LO}\).  
-- Adjusting LO phase \(\phi\) selects the measured quadrature.
+- The small signal \\(A_S\\) is amplified by the large LO amplitude \\(A_{LO}\\).  
+- Adjusting LO phase \\(\\phi\\) selects the measured quadrature.
 
 ---
 
@@ -103,10 +103,10 @@ Key technical challenges:
 ## Shot noise and its role in QKD
 
 Shot noise is the quantum-limited variance from photon arrival statistics. For a balanced homodyne detector:
-\[
-\sigma_{sn}^2 = 2 e \, R \, P_{LO} \, B
-\]
-where e is the electron charge, R is photodiode responsivity, \(P_{LO}\) is LO power and B is bandwidth.
+\\[
+\\sigma_{sn}^2 = 2 e \\, R \\, P_{LO} \\, B
+\\]
+where e is the electron charge, R is photodiode responsivity, \\(P_{LO}\\) is LO power and B is bandwidth.
 
 Shot-noise clearance: compare dark noise (LO off) to shot noise (LO on). For quantum-limited operation, shot noise should be 10–20 dB above dark noise.
 
@@ -142,9 +142,9 @@ Distance | Short-to-medium (<~100 km) | Long-range (can exceed 400 km)
 The goal is to transform correlated real-valued measurements into identical bit strings.
 
 Channel model:
-\[
+\\[
 X_B = t X_A + z
-\]
+\\]
 where t is transmission and z is noise (shot + electronic).
 
 Two approaches:
@@ -172,19 +172,19 @@ LDPC codes (especially MET-LDPC) are optimized for low SNR. Key points:
 
 ## Secret Key Rate (reverse reconciliation)
 
-\[
-K = f\cdot[\beta I(A\!:\!B)-\chi(E\!:\!B)]
-\]
+\\[
+K = f\\cdot[\\beta I(A\\!:\\!B)-\\chi(E\\!:\\!B)]
+\\]
 - f: repetition rate (Hz)  
 - β: reconciliation efficiency  
-- \(I(A:B) = \tfrac{1}{2}\log_2(1+\text{SNR})\) for Gaussian modulation  
-- \(\chi(E:B)\): Holevo bound (Eve’s maximum info about Bob)
+- \\(I(A:B) = \\tfrac{1}{2}\\log_2(1+\\text{SNR})\\) for Gaussian modulation  
+- \\(\\chi(E:B)\\): Holevo bound (Eve's maximum info about Bob)
 
 SNR at Bob:
-\[
-\text{SNR} = \frac{T V_A}{1 + T\xi + \nu_{el}}
-\]
-with transmissivity T, modulation variance \(V_A\), excess noise ξ, and electronic noise \(\nu_{el}\).
+\\[
+\\text{SNR} = \\frac{T V_A}{1 + T\\xi + \\nu_{el}}
+\\]
+with transmissivity T, modulation variance \\(V_A\\), excess noise ξ, and electronic noise \\(\\nu_{el}\\).
 
 Distance regimes:
 - Short (<15 km): plateau, limited by electronics and processing.  
@@ -213,9 +213,9 @@ Real-time detectors use change-point algorithms (e.g., CUSUM) and abort the prot
 
 - Assume collective attacks and worst-case quantum-capable Eve.  
 - Holevo bound:
-\[
-\chi(E:B) = S(\rho_E) - \int dp_B\, S(\rho_{E|m_B})
-\]
+\\[
+\\chi(E:B) = S(\\rho_E) - \\int dp_B\\, S(\\rho_{E|m_B})
+\\]
 - Gaussian optimality: given measured covariance, Gaussian attacks are optimal — simplifies parameterization to (T, ξ).  
 - Finite-size corrections increase security margins and reduce SKR for small blocks.
 
@@ -224,10 +224,10 @@ Real-time detectors use change-point algorithms (e.g., CUSUM) and abort the prot
 ## Phase stability and pilot tones
 
 Phase jitter between signal and LO maps into excess noise. For small phase error δφ:
-\[
-X_{measured} = X\cos(\delta\phi) - P\sin(\delta\phi)
-\]
-Contribution to excess noise: \(\xi_{phase}\approx V_A\cdot\mathrm{var}(\delta\phi)\).
+\\[
+X_{measured} = X\\cos(\\delta\\phi) - P\\sin(\\delta\\phi)
+\\]
+Contribution to excess noise: \\(\\xi_{phase}\\approx V_A\\cdot\\mathrm{var}(\\delta\\phi)\\).
 
 Mitigation:
 - Pilot tones (time- or frequency-multiplexed) used for real-time phase estimation and digital compensation.  
