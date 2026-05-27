@@ -157,7 +157,7 @@ Pipeline:
 3. Error correction (high-efficiency LDPC; target β close to 1)  
 4. Privacy amplification (universal hashing)
 
-Reconciliation efficiency β affects secret-key rate: \(\Delta K = \beta I_{AB} - I_{AE}\).
+Reconciliation efficiency β affects secret-key rate: \\(\Delta K = \beta I_{AB} - I_{AE}\\).
 
 ---
 
@@ -196,7 +196,7 @@ Distance regimes:
 ## Excess noise monitoring & sources
 
 Parameter estimation:
-- Bob calibrates shot noise \(N_0\) and electronic noise \(v_{el}\).  
+- Bob calibrates shot noise \\(N_0\\) and electronic noise \\(v_{el}\\).  
 - Alice and Bob reveal a test subset to estimate T and ξ.  
 - Express variances in SNU; use upper confidence bounds for security (finite-size effects).
 
