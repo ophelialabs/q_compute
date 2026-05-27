@@ -50,7 +50,7 @@ While the Singapore-linked projects often focus on applied technology, Fermilab'
     1. Tomographic reconstruction algoriths (e.g., Point-Of-Closest-Approach)
 
 ## Charged Lepton Flavor Violations (CLFV) 
-The physical processes where one type of charged lepton (electron, muon, or tau) transforms into another without the emission of their corresponding neutrinos. Because the the Standard Model predicts CLFV rates to be negligible (branching rations < 10^-50), any observation would be unambigous evidence of New Physics.
+The physical processes where one type of charged lepton (electron, muon, or tau) transforms into another without the emission of their corresponding neutrinos. Because the the Standard Model predicts CLFV rates to be negligible (branching rations &lt; 10^-50), any observation would be unambigous evidence of New Physics.
 - Electron:
 - Muon: ~207x more massive than the electron
 - Tau (or Tauon): Approximately 17x heavier than muon and about 3,500x heavier than electron. Unlike its lighter siblings, the tau is heavy enough to decay into hadrons (like pions) as well as other leptons. Because of its enormous mass, it is highly unstable, with a lifetime of only about 2.9 x 10^-13 seconds - much shorter than the the muon's 2.2 microseconds.
