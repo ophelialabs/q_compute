@@ -26,11 +26,11 @@ Broadcom DX NetOps can be strategically applied to the global quantum network (7
 - **Qubit Fidelity Metrics**: Monitor quantum state preservation at each hop
   - Target: >95% fidelity
   - Warning threshold: 85-95%
-  - Critical: <85%
+  - Critical: &lt;85%
   - Display: Color-coded polylines (green → yellow → red)
 
 - **Quantum Bit Error Rate (QBER)**:
-  - Standard: <11% (indicates no eavesdropping in QKD)
+  - Standard: &lt;11% (indicates no eavesdropping in QKD)
   - Real-time tracking per facility
   - Alert when QBER exceeds thresholds
   - Critical for security monitoring
@@ -101,13 +101,13 @@ const channelMetrics = {
 - **Blue #3b82f6**: Fidelity 88-93%, availability 99.0-99.8%
 - **Yellow #f59e0b**: Fidelity 85-88%, availability 98.0-99.0%
 - **Orange #f97316**: Fidelity 80-85%, availability 95.0-98.0%
-- **Red #ef4444**: Fidelity <80%, availability <95%
+- **Red #ef4444**: Fidelity &lt;80%, availability &lt;95%
 
 ### 2.2 Polyline Thickness = Capacity Utilization
 
 **Application**: Thicker lines indicate higher capacity usage
 
-- **Thin (1px)**: <25% utilization (underused)
+- **Thin (1px)**: &lt;25% utilization (underused)
 - **Medium (2px)**: 25-75% utilization (optimal)
 - **Thick (4px)**: 75-95% utilization (heavily loaded)
 - **Extra thick (6px)**: >95% utilization (congested)
@@ -116,7 +116,7 @@ const channelMetrics = {
 
 **Application**: Color gradient shows quantum teleportation delays
 
-- **Green**: <30ms latency (excellent)
+- **Green**: &lt;30ms latency (excellent)
 - **Blue**: 30-50ms latency (good)
 - **Yellow**: 50-100ms latency (acceptable)
 - **Orange**: 100-200ms latency (degraded)
@@ -130,7 +130,7 @@ const channelMetrics = {
 
 **Cairo Hub Critical Alerts**:
 - Capacity alert: >80% usage
-- Fidelity alert: <90% fidelity
+- Fidelity alert: &lt;90% fidelity
 - Redundancy alert: Only 1 alternate route
 - Availability alert: 99.87% (below 99.99% SLA)
 
@@ -221,7 +221,7 @@ When user shows dependencies:
 
 **Cairo Hub QKD Status**:
 - Active QKD links: 12
-- Average QBER: 8.9% (safe, <11% threshold)
+- Average QBER: 8.9% (safe, &lt;11% threshold)
 - Eavesdropping detected: None
 - Keys generated: 2400/second
 
