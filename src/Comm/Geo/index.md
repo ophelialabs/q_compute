@@ -6,7 +6,6 @@ layout: "md.jlmd"
 ---
 
 [Home](#) | [Index](#geo) | [Index2](#geo-index2) | [Index3](#geo-index3) | [Hybrid](#hybrid) | [SIEM](#siem)
-- **BRUH**
 
 ---
 
@@ -139,7 +138,7 @@ const event = downtown.handleLocationUpdate('device-123',
 );
 
 if (event) {
-    console.log(`Device ${event.deviceId} ${event.type}ed ${event.geofenceId}`);
+    console.log(`Device \${event.deviceId} \${event.type}ed \${event.geofenceId}`);
 }
 ```
 
