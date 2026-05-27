@@ -1,3 +1,10 @@
+---
+title: "HEP-index"
+tags: ["hep"]
+order: 1
+layout: "md.jlmd"
+---
+
 ## Garfield and Geant
 Garfield++ is a C++ toolkit primarily used for simulating particle detector response in gases and semiconductors, focusing on electron transport, avalanche, and signal formation. It can model the ionization and charge collection process, including the generation of photons from gas excitation, which might be relevant in optical readout scenarios, such as in GEM detectors. Geant4 handles the large-scale muon transport through a target (like a cargo container or a building), while Garfield provides a detailed "microscopic" simulation of the detector's internal response
 

@@ -1,3 +1,10 @@
+---
+title: "Dashboard-index"
+tags: ["dashboard"]
+order: 1
+layout: "md.jlmd"
+---
+
 # Broadcom DX NetOps: 
 ## Executive Overview
 Quantum Network Monitoring & Intelligence

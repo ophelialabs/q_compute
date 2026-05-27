@@ -1,3 +1,10 @@
+---
+title: "Comm-notes"
+tags: ["comm"]
+order: 1
+layout: "md.jlmd"
+---
+
 - [Power Pages](https://www.microsoft.com/en-us/power-platform/products/power-pages): functions as a secure portal for structured data exchange, often used when an organization needs to bridge the gap between internal teams and external stakeholders like vendors or partners.
 - [Power Automate](https://learn.microsoft.com/en-us/power-automate/): More than 400 pre-built connectors allow the platform to talk to services like Microsoft 365, Dynamics 365, Salesforce, and Google Drive.
 - [Azure AI Foundry](#): This is your "Command Center." Use Prompt Flow to visualize the handoff between your Master Agent and specialized workers.

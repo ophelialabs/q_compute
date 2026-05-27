@@ -1,3 +1,10 @@
+---
+title: "Comm-index2"
+tags: ["comm"]
+order: 1
+layout: "md.jlmd"
+---
+
 [DX NetOps](#comm) | [QCon](#comm-index1) | [IBM](#comm-index2) | [Homodyne](#comm-index3)
 
 ---

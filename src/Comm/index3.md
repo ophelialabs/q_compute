@@ -1,3 +1,10 @@
+---
+title: "Comm-index3"
+tags: ["comm"]
+order: 1
+layout: "md.jlmd"
+---
+
 [DX NetOps](#comm) | [QCon](#comm-index1) | [IBM](#comm-index2) | [Homodyne](#comm-index3)
 
 ---
@@ -156,6 +163,8 @@ Pipeline:
 2. Slepian–Wolf coding (Bob sends syndrome using LDPC codes)  
 3. Error correction (high-efficiency LDPC; target β close to 1)  
 4. Privacy amplification (universal hashing)
+
+Reconciliation efficiency β affects secret-key rate: \\(\Delta K = \beta I_{AB} - I_{AE}\\).
 
 ---
 
