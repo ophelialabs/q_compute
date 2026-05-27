@@ -164,7 +164,7 @@ Pipeline:
 3. Error correction (high-efficiency LDPC; target β close to 1)  
 4. Privacy amplification (universal hashing)
 
-Reconciliation efficiency β affects secret-key rate: \\(\Delta K = \beta I_{AB} - I_{AE}\\).
+Reconciliation efficiency β affects secret-key rate: \\(\\Delta K = \\beta I_{AB} - I_{AE}\\).
 
 ---
 
