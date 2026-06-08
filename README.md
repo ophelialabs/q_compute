@@ -1,3 +1,15 @@
+**Julia**
+```
+curl -fsSL https://install.julialang.org | sh
+```
+ - select continue
+```
+julia
+import Pkg; Pkg.add("Pluto")
+import Pluto
+Pluto.run()
+```
+
 [Probing non-equilibrium topological order 
 on a quantum processor](https://arxiv.org/pdf/2501.18461)
 
