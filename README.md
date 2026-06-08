@@ -1,3 +1,6 @@
+[Probing non-equilibrium topological order 
+on a quantum processor](https://arxiv.org/pdf/2501.18461)
+
 [SolR](https://apache.github.io/solr-operator/docs/solr-prometheus-exporter/#prometheus-stack)
 | [Lunr](https://lunrjs.com/)
 | [Lene Hau: Light & Matter](https://www.youtube.com/watch?v=cxFx8m41QWM)
