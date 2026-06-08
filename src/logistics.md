@@ -43,3 +43,6 @@ The following textbooks provide resource material for this course:
 5. [Intermediate Quantitative Economics
 with Python](https://python.quantecon.org/_pdf/quantecon-python.pdf) Sargent & Stachurski, Apr 13, 2026. (2026)
 
+- [Statistics for Applications](https://ocw.mit.edu/courses/18-443-statistics-for-applications-spring-2015/pages/syllabus/)
+- [Intro to Probability and Statistics](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/syllabus/)
+- [High-Dimensional Statistics](https://ocw.mit.edu/courses/18-s997-high-dimensional-statistics-spring-2015/)
