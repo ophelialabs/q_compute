@@ -216,7 +216,8 @@ coverage for global surveillance
 
 ### Data Processing Pipeline
 
-```javascript
+```
+// javascript
 // Conceptual Space Fence tracking pipeline
 class SpaceTrackingSystem {
     constructor() {
