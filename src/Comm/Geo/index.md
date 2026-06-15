@@ -5,10 +5,6 @@ order: 1
 layout: "md.jlmd"
 ---
 
-[Home](#) | [Index](#geo) | [Index2](#geo-index2) | [Index3](#geo-index3) | [Hybrid](#hybrid) | [SIEM](#siem)
-
----
-
 # Geofencing & Space Fence Technology
 
 Comprehensive guide to enterprise geofencing implementation and space-based fence monitoring systems. Learn about terrestrial geofence applications and next-generation space surveillance technologies.
