@@ -5,10 +5,6 @@ order: 1
 layout: "md.jlmd"
 ---
 
-[Home](#) | [Index](#siem) | [Index2](#siem-index2) | [Index3](#siem-index3) | [Geo](#geo) | [Hybrid](#hybrid)
-
----
-
 # Broadcom DX NetOps: Quantum Network Monitoring & Intelligence
 
 ## Executive Overview
@@ -209,7 +205,7 @@ When user shows dependencies:
 
 **East Africa Backup Hub**:
 - Priority: CRITICAL
-- Cost: $50M
+- Cost: &#36;50M
 - Timeline: 18 months
 - Impact: 2x redundancy for Africa
 
@@ -250,8 +246,8 @@ When user shows dependencies:
 - Confidence: 87%
 - Root cause: Temperature rising
 - Degradation trend: -0.3% fidelity/day
-- Maintenance cost: $50K
-- Failure cost: $2M+
+- Maintenance cost: &#36;50K
+- Failure cost: &#36;2M+
 
 ### 7.2 Capacity Forecasting
 
