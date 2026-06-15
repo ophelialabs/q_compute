@@ -1,0 +1,496 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>Comm-index3 — QCOMP-101 </title>
+
+
+<link rel="root" href="../.." />
+
+<link rel="icon" href="../../assets/favicon.ico" />
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/cheatsheets.css" type="text/css" />
+<script src="../../assets/scripts/theme.js" defer></script>
+<script src="../../assets/scripts/navbar.js" defer></script>
+<script src="../../assets/scripts/sidebar.js" type="module"></script>
+<script src="../../assets/scripts/carousel.js" defer></script>
+<script src="../../assets/scripts/cheatsheets.js" defer></script>
+
+<link rel="pp-search-data" href="../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js" integrity="sha256-sDRYYtDc+jNi2rrJPUS5kGxXXMlmnOSCq5ek5tYAk/M=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.css" integrity="sha256-lv6SEl7Dhri7d86yiHCTuSWFb9CYROQFewxZ7Je0n5k=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<script type="importmap">{"imports":{"aVc6E":"./firebase-firestore.7f842f36.js","bEDS4":"./firebase-app.b603aaa4.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.6d99411f.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.1a8c75c9.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.72627891.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje), Παναγιώτης (Panagiotis) Γεωργακόπουλος (https://github.com/pankgeorg), Paul Berg (https://github.com/Pangoraw) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.2f9fc277.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.7a04a462.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.34f4e0d4.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v1.0.0";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.c026cb75.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/tex-svg-full.b78c0ac1.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+</head>
+<body>
+    <!-- TOP NAVBAR -->
+    <!-- TOP NAVBAR -->
+<header id="pages-navbar">
+    <div class="navbar-container">
+        <!-- Navbar Left: Logo/Title -->
+        <div class="navbar-left">
+            <a href="../.." class="navbar-logo" title="Home">
+                <span class="logo-text">Q</span>
+            </a>
+        </div>
+        
+        <!-- Navbar Center: Search -->
+        <div class="navbar-center">
+            <form action="../../search" method="GET" class="navbar-search">
+                <input type="search" name="q" placeholder="Search lessons..." aria-label="Search">
+                <button type="submit" aria-label="Search" title="Search">
+                    <span>🔎</span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Navbar Right: Theme + Menu -->
+        <div class="navbar-right">
+            <button id="theme-toggle" title="Switch theme" aria-label="Switch theme" class="navbar-icon"></button>
+            <button id="toggle-nav" class="navbar-menu-toggle" title="Open navigation" aria-label="Open navigation"></button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div id="pages-layout">
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="../.."><span>QCOMP-101</span></a></h1>
+                    <h2><span>From Foundations to Research Frontiers</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://github.com/jlabclouds">Quantum Learning Team</a>, <a href="https://github.com/jlabclouds/q_compute">Contributors</a>
+                </div>
+            </li>
+            <li>
+                <div class="track-chooser">
+                    <label>
+                    <h2>Choose your track:</h2>
+                    <select>
+                        <option value="">Choose...</option>
+                        <option value="julia">💻 Robotics</option> <option value="material">Medical</option> <option value="setup">Networking</option> 
+                    </select>
+                    </label>
+                </div>
+            </li>
+        <li>
+<h3>Welcome</h3>
+<ul>
+<li class=' lecture tag_welcome'><a href='../../logistics/'><span class="entry-number"></span> Class logistics</a></li><li class=' lecture tag_welcome'><a href='../../installation/'><span class="entry-number"></span> Software installation</a></li>
+</ul>
+</li>
+<li>
+<h3>Resources</h3>
+<ul>
+<li class=' lecture tag_resources'><a href='../../resources/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent1</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Adding course material</h4>
+<ul>
+<li class=' lecture tag_parent1_mod1 tag_track_material tag_markdown tag_frontmatter'><a href='../../parent1/mod1_add_material/add_markdown/'><span class="entry-number">1.1</span> Add markdown files</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../parent1/mod1_add_material/add_pluto/'><span class="entry-number">1.2</span> Add Pluto notebooks</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../parent1/mod1_add_material/plutoui_showcase/'><span class="entry-number">1.3</span> PlutoUI showcase</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Quantum Gates</h4>
+<ul>
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../parent1/mod2_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../parent1/mod2_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../parent1/mod2_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../parent1/mod2_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../parent1/mod2_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../parent1/mod2_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent2</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Placeholder</h4>
+<ul>
+<li class=' lecture tag_parent2_mod1 tag_placeholder tag_coming_soon'><a href='../../parent2/mod1_placeholder/' title='Placeholder for future content'><span class="entry-number">1.0</span> Module 2: Placeholder</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Coming Soon</h4>
+<ul>
+<li class=' lecture tag_parent2_mod2 tag_placeholder tag_coming_soon'><a href='../../parent2/mod2_coming_soon/' title='Placeholder for future content'><span class="entry-number">2.0</span> Module 2: Coming Soon</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="../../semesters/">Self-paced, 2024-2025</a>
+                    <div class="course-numbers"><span>QUANTCOMP-101</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Quantum Learning Initiative">
+                        <img src="../../assets/quantum_logo.svg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="../../assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="../../assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           <div class="lecture-header" >
+    
+    <h1>Comm-index3</h1>
+    
+    
+</div>
+        <div class="pages-markdown">
+<main>
+<p><a href="#comm">DX NetOps</a> | <a href="#comm-index1">QCon</a> | <a href="#comm-index2">IBM</a> | <a href="#comm-index3">Homodyne</a></p>
+<hr />
+<h1 id="homodyne-detection--practical-overview"><a href="#homodyne-detection--practical-overview" class="anchor"></a>Homodyne Detection — Practical Overview</h1>
+<h2 id="what-it-is"><a href="#what-it-is" class="anchor"></a>What it is</h2>
+<p>Balanced homodyne detection mixes a weak optical signal with a strong local oscillator (LO) to measure amplitude/phase quadratures with high sensitivity.</p>
+<h2 id="how-it-works-short"><a href="#how-it-works-short" class="anchor"></a>How it works (short)</h2>
+<ul>
+<li>Mix signal + LO on a 50/50 beam splitter.</li>
+<li>Two photodiodes measure outputs; subtract photocurrents to cancel LO noise.</li>
+<li>The differential current ∝ A_LO × A_signal × cos(phase difference).</li>
+</ul>
+<h2 id="typical-hardware"><a href="#typical-hardware" class="anchor"></a>Typical Hardware</h2>
+<ul>
+<li>50/50 beam splitter (high symmetry)</li>
+<li>Matched photodiode pair (matched responsivity/capacitance)</li>
+<li>Stable, high‑power LO with phase control (piezo/phase shifter)</li>
+<li>Low‑noise transimpedance amplifiers and balanced subtraction</li>
+</ul>
+<h2 id="key-performance-metrics"><a href="#key-performance-metrics" class="anchor"></a>Key Performance Metrics</h2>
+<ul>
+<li>Shot‑noise clearance (shot noise &gt;&gt; electronic noise)</li>
+<li>Common Mode Rejection Ratio (CMRR) of detector pair</li>
+<li>Spatial mode overlap (visibility) between LO and signal</li>
+</ul>
+<h2 id="common-challenges--mitigations"><a href="#common-challenges--mitigations" class="anchor"></a>Common Challenges &amp; Mitigations</h2>
+<ul>
+<li>Phase noise → pilot tone or pilot pulses for phase estimation and digital compensation.</li>
+<li>LO manipulation attacks (in QKD) → prefer Local LO (LLO) with pilot tone synchronization.</li>
+<li>Detector saturation/blinding → real‑time shot‑noise monitoring and linearity checks.</li>
+</ul>
+<h2 id="applications"><a href="#applications" class="anchor"></a>Applications</h2>
+<ul>
+<li>CV‑QKD receivers (homodyne/heterodyne)</li>
+<li>Quantum state tomography and squeezed light detection</li>
+<li>High‑sensitivity interferometry (LIGO, metrology)</li>
+</ul>
+<h2 id="practical-tips"><a href="#practical-tips" class="anchor"></a>Practical Tips</h2>
+<ul>
+<li>Ensure &gt;10 dB shot‑noise clearance for quantum‑limited operation.</li>
+<li>Use pilot tones and DSP for LLO synchronization in telecom links.</li>
+<li>Match photodiode pairs and keep amplifier noise low.</li>
+</ul>
+<h1 id="homodyne-detection-and-continuous-variable-qkd--overview"><a href="#homodyne-detection-and-continuous-variable-qkd--overview" class="anchor"></a>Homodyne Detection and Continuous-Variable QKD — Overview</h1>
+<p>Homodyne detection is a sensitive measurement technique that extracts information by mixing a weak signal with a reference oscillation (the Local Oscillator, LO) at the same frequency. In optics and quantum mechanics it is the primary tool for measuring the field quadratures (amplitude X and phase P) of light.</p>
+<h2 id="core-mechanism"><a href="#core-mechanism" class="anchor"></a>Core mechanism</h2>
+<ul>
+<li>Mixing: A weak signal is combined with a strong LO on a 50/50 beam splitter.</li>
+<li>Interference: LO and signal must share frequency and a stable relative phase.</li>
+<li>Detection: Two photodiodes measure intensities at the beam splitter outputs.</li>
+<li>Subtraction: In a balanced detector, the two photocurrents are subtracted to cancel common-mode noise and yield a signal proportional to a field quadrature.</li>
+</ul>
+<p>Key characteristics:</p>
+<ul>
+<li>Phase sensitivity: Vary LO phase to measure X (in‑phase) or P (quadrature).</li>
+<li>Quantum precision: Resolves vacuum fluctuations and squeezed states.</li>
+<li>Direct conversion: Converts signal to baseband (DC), unlike heterodyne detection.</li>
+</ul>
+<p>Primary applications:</p>
+<ul>
+<li>Quantum communication (QKD, QRNG)</li>
+<li>Gravitational-wave detectors (e.g., LIGO upgrades)</li>
+<li>Coherent fiber communications and sensing</li>
+<li>Remote sensing (velocity, topography)</li>
+</ul>
+<hr />
+<h2 id="mathematical-derivation-simplified"><a href="#mathematical-derivation-simplified" class="anchor"></a>Mathematical derivation (simplified)</h2>
+<p>Fields:</p>
+<ul>
+<li>Signal: (E_S = A_S \cos(\omega t + \theta))</li>
+<li>Local oscillator: (E_ = A_ \cos(\omega t + \phi))</li>
+</ul>
+<p>Beam splitter outputs (50/50):
+[
+E_1 = \frac{1}{\sqrt{2}}(E_ + E_S),\qquad
+E_2 = \frac{1}{\sqrt{2}}(E_ - E_S)
+]
+Photocurrents (intensity ∝ |E|^2) and subtraction give:
+[
+i_ \propto 2 E_ E_S \Rightarrow i_\propto A_A_\cos(\theta-\phi)
+]
+Implications:</p>
+<ul>
+<li>The small signal (A_S) is amplified by the large LO amplitude (A_).</li>
+<li>Adjusting LO phase (\phi) selects the measured quadrature.</li>
+</ul>
+<hr />
+<h2 id="hardware-requirements-summary"><a href="#hardware-requirements-summary" class="anchor"></a>Hardware requirements (summary)</h2>
+<p>Component | Requirement | Purpose
+— | —: | —
+50/50 beam splitter | High symmetry (&lt;0.5% deviation) | Ensures LO noise cancels
+Photodiode pair | Matched responsivity &amp; capacitance | Prevents noise leakage
+Local Oscillator | High power; spatial mode match | Lifts signal above electronics noise
+Phase controller | Piezo or phase shifter | Sweep/lock relative phase
+Transimpedance amplifier | Low-noise, high-bandwidth | Convert current to voltage</p>
+<p>Key technical challenges:</p>
+<ul>
+<li>Common-Mode Rejection Ratio (CMRR) — target &gt;30 dB</li>
+<li>Spatial overlap (visibility) — mismatch reduces signal and adds vacuum noise</li>
+<li>Shot-noise clearance — LO shot noise must be ≫ electronic dark noise (typically &gt;10 dB)</li>
+</ul>
+<hr />
+<h2 id="shot-noise-and-its-role-in-qkd"><a href="#shot-noise-and-its-role-in-qkd" class="anchor"></a>Shot noise and its role in QKD</h2>
+<p>Shot noise is the quantum-limited variance from photon arrival statistics. For a balanced homodyne detector:
+[
+\sigma_^2 = 2 e , R , P_ , B
+]
+where e is the electron charge, R is photodiode responsivity, (P_) is LO power and B is bandwidth.</p>
+<p>Shot-noise clearance: compare dark noise (LO off) to shot noise (LO on). For quantum-limited operation, shot noise should be 10–20 dB above dark noise.</p>
+<p>In CV-QKD, shot noise is the normalization unit (1 SNU) used to spot excess noise and detect eavesdropping.</p>
+<hr />
+<h2 id="cvqkd-basics-protocol-flow"><a href="#cvqkd-basics-protocol-flow" class="anchor"></a>CV‑QKD basics (protocol flow)</h2>
+<ul>
+<li>Alice: prepares weak pulses, Gaussian-modulates amplitude X and phase P.</li>
+<li>Bob: measures with homodyne detector; randomly chooses X or P by changing LO phase.</li>
+<li>Sifting: Alice and Bob keep only matching-quadrature events.</li>
+<li>Reconciliation + privacy amplification yield final secret keys.</li>
+</ul>
+<p>Why CV-QKD? Uses standard telecom components, high symbol rates, and is daylight‑tolerant due to the LO acting as a narrowband filter.</p>
+<hr />
+<h2 id="cv-vs-dv-qkd-high-level"><a href="#cv-vs-dv-qkd-high-level" class="anchor"></a>CV vs DV QKD (high-level)</h2>
+<p>Feature | CV-QKD | DV-QKD
+— | — | —
+Detection | Homodyne (quadratures) | Single-photon counters
+Hardware | Telecom components (PIN diodes, LOs) | SNSPDs/APDs (often cryogenic)
+Operating env. | Room temperature, daylight-friendly | Often requires cooling; sunlight-sensitive
+Data rate | Very high (Gbps potential) | Lower (detector dead time)
+Distance | Short-to-medium (&lt;~100 km) | Long-range (can exceed 400 km)</p>
+<hr />
+<h2 id="reconciliation-in-cv-qkd-overview"><a href="#reconciliation-in-cv-qkd-overview" class="anchor"></a>Reconciliation in CV-QKD (overview)</h2>
+<p>The goal is to transform correlated real-valued measurements into identical bit strings.</p>
+<p>Channel model:
+[
+X_B = t X_A + z
+]
+where t is transmission and z is noise (shot + electronic).</p>
+<p>Two approaches:</p>
+<ul>
+<li>Direct reconciliation — Bob corrects to Alice (limited by 3 dB loss).</li>
+<li>Reverse reconciliation — Alice corrects to Bob (robust to loss; standard in CV-QKD).</li>
+</ul>
+<p>Pipeline:</p>
+<ol>
+<li>Quantization (multi-level slicing)</li>
+<li>Slepian–Wolf coding (Bob sends syndrome using LDPC codes)</li>
+<li>Error correction (high-efficiency LDPC; target β close to 1)</li>
+<li>Privacy amplification (universal hashing)</li>
+</ol>
+<p>Reconciliation efficiency β affects secret-key rate: (\Delta K = \beta I_ - I_).</p>
+<hr />
+<h2 id="ldpc-and-hardware-tradeoffs"><a href="#ldpc-and-hardware-tradeoffs" class="anchor"></a>LDPC and hardware tradeoffs</h2>
+<p>LDPC codes (especially MET-LDPC) are optimized for low SNR. Key points:</p>
+<ul>
+<li>Use rate-adaptive codes (puncturing/shortening) as SNR changes.</li>
+<li>Large block sizes (10^6–10^8 bits) needed for close-to-Shannon efficiency.</li>
+<li>GPUs are common for prototypes; FPGAs lower latency but are harder to implement.</li>
+</ul>
+<hr />
+<h2 id="secret-key-rate-reverse-reconciliation"><a href="#secret-key-rate-reverse-reconciliation" class="anchor"></a>Secret Key Rate (reverse reconciliation)</h2>
+<p>[
+K = f\cdot[\beta I(A!:!B)-\chi(E!:!B)]
+]</p>
+<ul>
+<li>f: repetition rate (Hz)</li>
+<li>β: reconciliation efficiency</li>
+<li>(I(A:B) = \tfrac{1}{2}\log_2(1+\text)) for Gaussian modulation</li>
+<li>(\chi(E:B)): Holevo bound (Eve’s maximum info about Bob)</li>
+</ul>
+<p>SNR at Bob:
+[
+\text = \frac{1 + T\xi + \nu_}
+]
+with transmissivity T, modulation variance (V_A), excess noise ξ, and electronic noise (\nu_).</p>
+<p>Distance regimes:</p>
+<ul>
+<li>Short (&lt;15 km): plateau, limited by electronics and processing.</li>
+<li>Medium (15–50 km): exponential loss-dominated decay.</li>
+<li>Long (&gt;50 km): waterfall cutoff when βI(A:B) ≈ χ(E:B).</li>
+</ul>
+<hr />
+<h2 id="excess-noise-monitoring--sources"><a href="#excess-noise-monitoring--sources" class="anchor"></a>Excess noise monitoring &amp; sources</h2>
+<p>Parameter estimation:</p>
+<ul>
+<li>Bob calibrates shot noise (N_0) and electronic noise (v_).</li>
+<li>Alice and Bob reveal a test subset to estimate T and ξ.</li>
+<li>Express variances in SNU; use upper confidence bounds for security (finite-size effects).</li>
+</ul>
+<p>Sources of technical excess noise:</p>
+<ul>
+<li>Laser RIN (relative intensity noise)</li>
+<li>Residual phase noise (laser coherence/locking)</li>
+<li>Raman scattering from co-propagating classical channels</li>
+</ul>
+<p>Real-time detectors use change-point algorithms (e.g., CUSUM) and abort the protocol if ξ exceeds thresholds (often 0.01–0.1 SNU).</p>
+<hr />
+<h2 id="security-proofs-and-the-holevo-bound"><a href="#security-proofs-and-the-holevo-bound" class="anchor"></a>Security proofs and the Holevo bound</h2>
+<ul>
+<li>Assume collective attacks and worst-case quantum-capable Eve.</li>
+<li>Holevo bound:
+[
+\chi(E:B) = S(\rho_E) - \int dp_B, S(\rho_{E|m_B})
+]</li>
+<li>Gaussian optimality: given measured covariance, Gaussian attacks are optimal — simplifies parameterization to (T, ξ).</li>
+<li>Finite-size corrections increase security margins and reduce SKR for small blocks.</li>
+</ul>
+<hr />
+<h2 id="phase-stability-and-pilot-tones"><a href="#phase-stability-and-pilot-tones" class="anchor"></a>Phase stability and pilot tones</h2>
+<p>Phase jitter between signal and LO maps into excess noise. For small phase error δφ:
+[
+X_ = X\cos(\delta\phi) - P\sin(\delta\phi)
+]
+Contribution to excess noise: (\xi_\approx V_A\cdot\mathrm(\delta\phi)).</p>
+<p>Mitigation:</p>
+<ul>
+<li>Pilot tones (time- or frequency-multiplexed) used for real-time phase estimation and digital compensation.</li>
+<li>Local LO (LLO) vs Transmitted LO (TLO): LLO is more secure (no transmitted strong LO), TLO inherently shares fiber drift but opens LO-manipulation risks.</li>
+</ul>
+<p>Pilot-tone budget considerations: pilot power, frequency offset, and DSP speed (must correct faster than laser coherence time).</p>
+<hr />
+<h2 id="attacks-and-defenses-concise"><a href="#attacks-and-defenses-concise" class="anchor"></a>Attacks and defenses (concise)</h2>
+<ul>
+<li>Trojan-horse: defend with isolators and filters.</li>
+<li>LO manipulation: prefer LLO; authenticate/check LO if TLO used.</li>
+<li>Saturation/blinding: real-time shot-noise monitoring and linearity checks.</li>
+<li>Side-channels (EM/power): shielding, randomized power consumption, constant-time processing.</li>
+</ul>
+<hr />
+<h2 id="state-of-the-art--trends"><a href="#state-of-the-art--trends" class="anchor"></a>State of the art &amp; trends</h2>
+<ul>
+<li>Distance records: lab ~202 km; field deployments 100+ km (very low SKR).</li>
+<li>High SKR: Gbps at short distances using FPGA/GPU acceleration.</li>
+<li>Integration: Photonic integrated circuits (SiPh) for stability and cost reduction.</li>
+<li>Coexistence: CV-QKD can co-propagate with high-capacity classical channels (WDM).</li>
+</ul>
+<hr />
+<h2 id="standardization-and-certification"><a href="#standardization-and-certification" class="anchor"></a>Standardization and certification</h2>
+<p>Key SDOs:</p>
+<ul>
+<li>ETSI QKD ISG — interoperability and certification frameworks.</li>
+<li>ITU‑T — QKD network architectures and protocol recommendations.</li>
+<li>3GPP/GSMA — roadmaps enabling QKD integration into 5G–6G.</li>
+</ul>
+<p>Common Criteria (ISO/IEC 15408) for QKD:</p>
+<ul>
+<li>Protection Profiles (PP) define module boundaries and security objectives.</li>
+<li>Functional requirements include secure RNG, key zeroization, tamper detection, and side-channel resistance.</li>
+<li>Typical target assurance: EAL4+ for commercial QKD.</li>
+</ul>
+<p>Certification focuses: entropy tests for QRNG, shot-noise calibration and dynamic checks, optical isolation, tamper sensors, constant-time LDPC implementations, and audited finite-size security proofs.</p>
+<hr />
+<h2 id="vendor-evaluation-checklist-practical"><a href="#vendor-evaluation-checklist-practical" class="anchor"></a>Vendor evaluation checklist (practical)</h2>
+<ul>
+<li>QRNG standards compliance (NIST / AIS 20/31) and health tests.</li>
+<li>Shot-noise clearance and dynamic calibration.</li>
+<li>Local LO generation or authenticated LO delivery.</li>
+<li>Optical isolation and wavelength filtering.</li>
+<li>Tamper detection and key zeroization.</li>
+<li>Constant-time cryptographic/post-processing implementation.</li>
+<li>ETSI/CC interoperability and REST key delivery interfaces.</li>
+</ul>
+<hr />
+<h2 id="optional-security-target-st-example"><a href="#optional-security-target-st-example" class="anchor"></a>(Optional) Security Target (ST) example</h2>
+<p>…existing code…
+{ add a specific Security Target (ST) example here if required }</p>
+</main>
+</div>
+
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="https://github.com/jlabclouds/q_compute"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

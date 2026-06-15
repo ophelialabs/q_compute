@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>SIEM-index — QCOMP-101 </title>
+
+
+<link rel="root" href="../.." />
+
+<link rel="icon" href="../../assets/favicon.ico" />
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/cheatsheets.css" type="text/css" />
+<script src="../../assets/scripts/theme.js" defer></script>
+<script src="../../assets/scripts/navbar.js" defer></script>
+<script src="../../assets/scripts/sidebar.js" type="module"></script>
+<script src="../../assets/scripts/carousel.js" defer></script>
+<script src="../../assets/scripts/cheatsheets.js" defer></script>
+
+<link rel="pp-search-data" href="../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js" integrity="sha256-sDRYYtDc+jNi2rrJPUS5kGxXXMlmnOSCq5ek5tYAk/M=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.css" integrity="sha256-lv6SEl7Dhri7d86yiHCTuSWFb9CYROQFewxZ7Je0n5k=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<script type="importmap">{"imports":{"aVc6E":"./firebase-firestore.7f842f36.js","bEDS4":"./firebase-app.b603aaa4.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.6d99411f.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.1a8c75c9.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.72627891.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje), Παναγιώτης (Panagiotis) Γεωργακόπουλος (https://github.com/pankgeorg), Paul Berg (https://github.com/Pangoraw) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.2f9fc277.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.7a04a462.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.34f4e0d4.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v1.0.0";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.c026cb75.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/tex-svg-full.b78c0ac1.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+</head>
+<body>
+    <!-- TOP NAVBAR -->
+    <!-- TOP NAVBAR -->
+<header id="pages-navbar">
+    <div class="navbar-container">
+        <!-- Navbar Left: Logo/Title -->
+        <div class="navbar-left">
+            <a href="../.." class="navbar-logo" title="Home">
+                <span class="logo-text">Q</span>
+            </a>
+        </div>
+        
+        <!-- Navbar Center: Search -->
+        <div class="navbar-center">
+            <form action="../../search" method="GET" class="navbar-search">
+                <input type="search" name="q" placeholder="Search lessons..." aria-label="Search">
+                <button type="submit" aria-label="Search" title="Search">
+                    <span>🔎</span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Navbar Right: Theme + Menu -->
+        <div class="navbar-right">
+            <button id="theme-toggle" title="Switch theme" aria-label="Switch theme" class="navbar-icon"></button>
+            <button id="toggle-nav" class="navbar-menu-toggle" title="Open navigation" aria-label="Open navigation"></button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div id="pages-layout">
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="../.."><span>QCOMP-101</span></a></h1>
+                    <h2><span>From Foundations to Research Frontiers</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://github.com/jlabclouds">Quantum Learning Team</a>, <a href="https://github.com/jlabclouds/q_compute">Contributors</a>
+                </div>
+            </li>
+            <li>
+                <div class="track-chooser">
+                    <label>
+                    <h2>Choose your track:</h2>
+                    <select>
+                        <option value="">Choose...</option>
+                        <option value="julia">💻 Robotics</option> <option value="material">Medical</option> <option value="setup">Networking</option> 
+                    </select>
+                    </label>
+                </div>
+            </li>
+        <li>
+<h3>Welcome</h3>
+<ul>
+<li class=' lecture tag_welcome'><a href='../../logistics/'><span class="entry-number"></span> Class logistics</a></li><li class=' lecture tag_welcome'><a href='../../installation/'><span class="entry-number"></span> Software installation</a></li>
+</ul>
+</li>
+<li>
+<h3>Resources</h3>
+<ul>
+<li class=' lecture tag_resources'><a href='../../resources/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent1</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Adding course material</h4>
+<ul>
+<li class=' lecture tag_parent1_mod1 tag_track_material tag_markdown tag_frontmatter'><a href='../../parent1/mod1_add_material/add_markdown/'><span class="entry-number">1.1</span> Add markdown files</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../parent1/mod1_add_material/add_pluto/'><span class="entry-number">1.2</span> Add Pluto notebooks</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../parent1/mod1_add_material/plutoui_showcase/'><span class="entry-number">1.3</span> PlutoUI showcase</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Quantum Gates</h4>
+<ul>
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../parent1/mod2_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../parent1/mod2_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../parent1/mod2_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../parent1/mod2_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../parent1/mod2_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../parent1/mod2_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent2</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Placeholder</h4>
+<ul>
+<li class=' lecture tag_parent2_mod1 tag_placeholder tag_coming_soon'><a href='../../parent2/mod1_placeholder/' title='Placeholder for future content'><span class="entry-number">1.0</span> Module 2: Placeholder</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Coming Soon</h4>
+<ul>
+<li class=' lecture tag_parent2_mod2 tag_placeholder tag_coming_soon'><a href='../../parent2/mod2_coming_soon/' title='Placeholder for future content'><span class="entry-number">2.0</span> Module 2: Coming Soon</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="../../semesters/">Self-paced, 2024-2025</a>
+                    <div class="course-numbers"><span>QUANTCOMP-101</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Quantum Learning Initiative">
+                        <img src="../../assets/quantum_logo.svg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="../../assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="../../assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           <div class="lecture-header" >
+    
+    <h1>SIEM-index</h1>
+    
+    
+</div>
+        <div class="pages-markdown">
+<main>
+<h1 id="broadcom-dx-netops-quantum-network-monitoring--intelligence"><a href="#broadcom-dx-netops-quantum-network-monitoring--intelligence" class="anchor"></a>Broadcom DX NetOps: Quantum Network Monitoring &amp; Intelligence</h1>
+<h2 id="executive-overview"><a href="#executive-overview" class="anchor"></a>Executive Overview</h2>
+<p>Broadcom DX NetOps can be strategically applied to the global quantum network (74 facilities across 6 continents) to add enterprise-grade monitoring, predictive analytics, and intelligent service management. This document outlines comprehensive implementation strategies for quantum network operations.</p>
+<hr />
+<h2 id="real-time-network-monitoring--observability"><a href="#real-time-network-monitoring--observability" class="anchor"></a>1. Real-Time Network Monitoring &amp; Observability</h2>
+<h3 id="quantum-channel-health-monitoring"><a href="#quantum-channel-health-monitoring" class="anchor"></a>1.1 Quantum Channel Health Monitoring</h3>
+<p><strong>Application</strong>: Track entanglement distribution across polyline links in real-time</p>
+<ul>
+<li>
+<p><strong>Qubit Fidelity Metrics</strong>: Monitor quantum state preservation at each hop</p>
+<ul>
+<li>Target: &gt;95% fidelity</li>
+<li>Warning threshold: 85-95%</li>
+<li>Critical: &lt;85%</li>
+<li>Display: Color-coded polylines (green → yellow → red)</li>
+</ul>
+</li>
+<li>
+<p><strong>Quantum Bit Error Rate (QBER)</strong>:</p>
+<ul>
+<li>Standard: &lt;11% (indicates no eavesdropping in QKD)</li>
+<li>Real-time tracking per facility</li>
+<li>Alert when QBER exceeds thresholds</li>
+<li>Critical for security monitoring</li>
+</ul>
+</li>
+<li>
+<p><strong>Entanglement Success Rate</strong>:</p>
+<ul>
+<li>Track successful Bell pair distributions</li>
+<li>Monitor correlation coefficients</li>
+<li>Detect degradation patterns</li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation Example</strong>:</p>
+<pre><code class="language-javascript">const channelMetrics = {
+  link_id: &quot;fermilab_to_brookhaven&quot;,
+  fidelity: 93.2,
+  qber: 8.7,
+  success_rate: 97.5,
+  latency_ms: 42,
+  timestamp: &quot;2026-01-17T14:32:15Z&quot;,
+  status: &quot;healthy&quot; // green polyline
+}
+</code></pre>
+<h3 id="link-availability--uptime-tracking"><a href="#link-availability--uptime-tracking" class="anchor"></a>1.2 Link Availability &amp; Uptime Tracking</h3>
+<p><strong>Application</strong>: Monitor quantum channel connectivity status</p>
+<ul>
+<li>
+<p><strong>Per-link SLA tracking</strong>:</p>
+<ul>
+<li>Standard nodes: 99.5% uptime</li>
+<li>Critical hubs (Cairo, Delft): 99.99% uptime</li>
+<li>Teleport stations: 99.9% uptime</li>
+<li>Arrays: 98% uptime (environmental sensitivity)</li>
+</ul>
+</li>
+<li>
+<p><strong>Degradation Detection</strong>:</p>
+<ul>
+<li>Identify when channels operate below SLA</li>
+<li>Trigger automatic failover recommendations</li>
+<li>Historical tracking for capacity planning</li>
+</ul>
+</li>
+</ul>
+<h3 id="facility-level-health-scoring"><a href="#facility-level-health-scoring" class="anchor"></a>1.3 Facility-Level Health Scoring</h3>
+<p><strong>Application</strong>: Aggregate health metrics into single facility score</p>
+<pre><code class="language-javascript">{
+  id: 34,
+  name: 'Cairo Hub',
+  performance: {
+    fidelity: 92.5,
+    qber: 9.2,
+    latency_ms: 45,
+    throughput_gbps: 850,
+    availability_percent: 99.87,
+    health_score: 92,
+    criticality_score: 9.5,
+    risk_score: 4.2
+  }
+}
+</code></pre>
+<hr />
+<h2 id="network-topology-intelligence-with-performance-context"><a href="#network-topology-intelligence-with-performance-context" class="anchor"></a>2. Network Topology Intelligence with Performance Context</h2>
+<h3 id="dynamic-color-coding-by-health-status"><a href="#dynamic-color-coding-by-health-status" class="anchor"></a>2.1 Dynamic Color-Coding by Health Status</h3>
+<p><strong>Enhancement</strong>: Color markers by HEALTH instead of type</p>
+<ul>
+<li><strong>Green #10b981</strong>: Fidelity &gt;93%, availability &gt;99.8%</li>
+<li><strong>Blue #3b82f6</strong>: Fidelity 88-93%, availability 99.0-99.8%</li>
+<li><strong>Yellow #f59e0b</strong>: Fidelity 85-88%, availability 98.0-99.0%</li>
+<li><strong>Orange #f97316</strong>: Fidelity 80-85%, availability 95.0-98.0%</li>
+<li><strong>Red #ef4444</strong>: Fidelity &lt;80%, availability &lt;95%</li>
+</ul>
+<h3 id="polyline-thickness--capacity-utilization"><a href="#polyline-thickness--capacity-utilization" class="anchor"></a>2.2 Polyline Thickness = Capacity Utilization</h3>
+<p><strong>Application</strong>: Thicker lines indicate higher capacity usage</p>
+<ul>
+<li><strong>Thin (1px)</strong>: &lt;25% utilization (underused)</li>
+<li><strong>Medium (2px)</strong>: 25-75% utilization (optimal)</li>
+<li><strong>Thick (4px)</strong>: 75-95% utilization (heavily loaded)</li>
+<li><strong>Extra thick (6px)</strong>: &gt;95% utilization (congested)</li>
+</ul>
+<h3 id="latency-heat-map-visualization"><a href="#latency-heat-map-visualization" class="anchor"></a>2.3 Latency Heat Map Visualization</h3>
+<p><strong>Application</strong>: Color gradient shows quantum teleportation delays</p>
+<ul>
+<li><strong>Green</strong>: &lt;30ms latency (excellent)</li>
+<li><strong>Blue</strong>: 30-50ms latency (good)</li>
+<li><strong>Yellow</strong>: 50-100ms latency (acceptable)</li>
+<li><strong>Orange</strong>: 100-200ms latency (degraded)</li>
+<li><strong>Red</strong>: &gt;200ms latency (poor)</li>
+</ul>
+<hr />
+<h2 id="intelligent-alerting--anomaly-detection"><a href="#intelligent-alerting--anomaly-detection" class="anchor"></a>3. Intelligent Alerting &amp; Anomaly Detection</h2>
+<h3 id="threshold-based-alerts"><a href="#threshold-based-alerts" class="anchor"></a>3.1 Threshold-Based Alerts</h3>
+<p><strong>Cairo Hub Critical Alerts</strong>:</p>
+<ul>
+<li>Capacity alert: &gt;80% usage</li>
+<li>Fidelity alert: &lt;90% fidelity</li>
+<li>Redundancy alert: Only 1 alternate route</li>
+<li>Availability alert: 99.87% (below 99.99% SLA)</li>
+</ul>
+<h3 id="anomaly-detection-algorithms"><a href="#anomaly-detection-algorithms" class="anchor"></a>3.2 Anomaly Detection Algorithms</h3>
+<p><strong>1. Statistical Baseline Detection</strong>:</p>
+<ul>
+<li>Track 30-day fidelity history</li>
+<li>Alert if &gt;2 standard deviations below mean</li>
+</ul>
+<p><strong>2. Pattern Recognition</strong>:</p>
+<ul>
+<li>Detect degradation trends</li>
+<li>Predict failures before they occur</li>
+</ul>
+<p><strong>3. Correlation Detection</strong>:</p>
+<ul>
+<li>If Cairo Hub latency increases, check Africa nodes</li>
+<li>Detect cascading failures automatically</li>
+</ul>
+<p><strong>4. Entropy Detection for QKD</strong>:</p>
+<ul>
+<li>Monitor quantum key generation randomness</li>
+<li>Alert if entropy decreases (eavesdropping risk)</li>
+</ul>
+<h3 id="alert-severity--escalation"><a href="#alert-severity--escalation" class="anchor"></a>3.3 Alert Severity &amp; Escalation</h3>
+<table><thead><tr><th align="left">Level</th><th align="left">Response Time</th><th align="left">Action</th></tr></thead><tbody><tr><td align="left"><strong>Critical</strong></td><td align="left">Immediate</td><td align="left">Page engineer</td></tr><tr><td align="left"><strong>High</strong></td><td align="left">15 minutes</td><td align="left">Alert team lead</td></tr><tr><td align="left"><strong>Medium</strong></td><td align="left">1 hour</td><td align="left">Create ticket</td></tr><tr><td align="left"><strong>Low</strong></td><td align="left">4 hours</td><td align="left">Log notification</td></tr></tbody></table>
+<hr />
+<h2 id="service-dependency-mapping"><a href="#service-dependency-mapping" class="anchor"></a>4. Service Dependency Mapping</h2>
+<h3 id="criticality-analysis-single-points-of-failure"><a href="#criticality-analysis-single-points-of-failure" class="anchor"></a>4.1 Criticality Analysis: Single Points of Failure</h3>
+<p><strong>Cairo Hub Impact</strong>:</p>
+<ul>
+<li>Criticality score: 9.5/10 (highest)</li>
+<li>18 dependent facilities if it fails</li>
+<li>850M+ people in Africa affected</li>
+<li>Current redundancy: 1 (insufficient)</li>
+</ul>
+<h3 id="dependency-graph-visualization"><a href="#dependency-graph-visualization" class="anchor"></a>4.2 Dependency Graph Visualization</h3>
+<p>When user shows dependencies:</p>
+<ul>
+<li>Cairo Hub highlighted in bright red</li>
+<li>18 dependent African nodes outlined in yellow</li>
+<li>Polylines to dependents thickened/colored red</li>
+<li>Legend shows impact radius</li>
+</ul>
+<h3 id="redundancy-heat-map"><a href="#redundancy-heat-map" class="anchor"></a>4.3 Redundancy Heat Map</h3>
+<ul>
+<li><strong>Adequate</strong>: 2+ independent paths</li>
+<li><strong>Marginal</strong>: Cairo Hub (1 alternate path only)</li>
+<li><strong>Beijing Center</strong>: Also marginal</li>
+</ul>
+<hr />
+<h2 id="capacity-planning--network-optimization"><a href="#capacity-planning--network-optimization" class="anchor"></a>5. Capacity Planning &amp; Network Optimization</h2>
+<h3 id="utilization-analysis"><a href="#utilization-analysis" class="anchor"></a>5.1 Utilization Analysis</h3>
+<p><strong>Underutilized Facilities</strong>:</p>
+<ul>
+<li>Vladivostok Node: 20% utilization (expand usage)</li>
+</ul>
+<p><strong>Near Capacity</strong>:</p>
+<ul>
+<li>Delft Hub: 98.7% capacity (URGENT: expand by 50%)</li>
+</ul>
+<h3 id="bottleneck-identification"><a href="#bottleneck-identification" class="anchor"></a>5.2 Bottleneck Identification</h3>
+<ol>
+<li><strong>Geographic</strong>: Cairo Hub (Africa gateway)</li>
+<li><strong>Capacity</strong>: Delft (98.7% utilization)</li>
+<li><strong>Latency</strong>: Links &gt;100ms</li>
+</ol>
+<h3 id="deployment-recommendations"><a href="#deployment-recommendations" class="anchor"></a>5.3 Deployment Recommendations</h3>
+<p><strong>East Africa Backup Hub</strong>:</p>
+<ul>
+<li>Priority: CRITICAL</li>
+<li>Cost: $50M</li>
+<li>Timeline: 18 months</li>
+<li>Impact: 2x redundancy for Africa</li>
+</ul>
+<hr />
+<h2 id="security--qkd-monitoring"><a href="#security--qkd-monitoring" class="anchor"></a>6. Security &amp; QKD Monitoring</h2>
+<h3 id="quantum-key-distribution-qkd-integrity"><a href="#quantum-key-distribution-qkd-integrity" class="anchor"></a>6.1 Quantum Key Distribution (QKD) Integrity</h3>
+<p><strong>Cairo Hub QKD Status</strong>:</p>
+<ul>
+<li>Active QKD links: 12</li>
+<li>Average QBER: 8.9% (safe, &lt;11% threshold)</li>
+<li>Eavesdropping detected: None</li>
+<li>Keys generated: 2400/second</li>
+</ul>
+<h3 id="eavesdropping-detection"><a href="#eavesdropping-detection" class="anchor"></a>6.2 Eavesdropping Detection</h3>
+<ul>
+<li>Real-time QBER monitoring on all QKD links</li>
+<li>Automatic alert if QBER &gt; 11% (eavesdropping risk)</li>
+<li>Statistical analysis for coordinated attacks</li>
+<li>Auto-suspend key distribution on compromised links</li>
+</ul>
+<h3 id="access-pattern-monitoring"><a href="#access-pattern-monitoring" class="anchor"></a>6.3 Access Pattern Monitoring</h3>
+<ul>
+<li>Track facility access by timestamp</li>
+<li>Alert if teleport station accessed outside hours</li>
+<li>Flag unusual geographic access patterns</li>
+<li>Monitor brute-force attempts on key systems</li>
+</ul>
+<hr />
+<h2 id="predictive-analytics--forecasting"><a href="#predictive-analytics--forecasting" class="anchor"></a>7. Predictive Analytics &amp; Forecasting</h2>
+<h3 id="failure-prediction"><a href="#failure-prediction" class="anchor"></a>7.1 Failure Prediction</h3>
+<p><strong>Example - Cairo Hub</strong>:</p>
+<ul>
+<li>Days until failure: 45</li>
+<li>Confidence: 87%</li>
+<li>Root cause: Temperature rising</li>
+<li>Degradation trend: -0.3% fidelity/day</li>
+<li>Maintenance cost: $50K</li>
+<li>Failure cost: $2M+</li>
+</ul>
+<h3 id="capacity-forecasting"><a href="#capacity-forecasting" class="anchor"></a>7.2 Capacity Forecasting</h3>
+<p><strong>Delft Hub</strong>:</p>
+<ul>
+<li>Current: 98.7% utilization</li>
+<li>Growth rate: 2.1%/month</li>
+<li>Capacity exceeded: ~3 weeks</li>
+<li>Recommendation: Expand 100 Gbps immediately</li>
+</ul>
+<h3 id="sla-compliance-forecasting"><a href="#sla-compliance-forecasting" class="anchor"></a>7.3 SLA Compliance Forecasting</h3>
+<p><strong>Cairo Hub</strong>:</p>
+<ul>
+<li>Current availability: 99.87%</li>
+<li>Target SLA: 99.99%</li>
+<li>Trend: Declining</li>
+<li>Days until miss: 12</li>
+<li>Action: Increase redundancy now</li>
+</ul>
+<hr />
+<h2 id="real-time-dashboard-implementation"><a href="#real-time-dashboard-implementation" class="anchor"></a>8. Real-Time Dashboard Implementation</h2>
+<h3 id="enhanced-sidebar-metrics"><a href="#enhanced-sidebar-metrics" class="anchor"></a>8.1 Enhanced Sidebar Metrics</h3>
+<pre><code>=== NETWORK HEALTH ===
+Overall Health Score: 92/100
+Critical Alerts: 2 🔴
+High Alerts: 5 🟠
+<p>=== CAPACITY ===
+Global Utilization: 68% (Delft: 98.7% ⚠️)
+Bottleneck: Delft Hub</p>
+<p>=== CRITICALITY ===
+Most Critical: Cairo Hub (9.5/10)
+Redundancy: MARGINAL</p>
+<p>=== SECURITY (QKD) ===
+Active QKD Links: 156
+Avg QBER: 8.9% (safe)
+Eavesdropping: None</p>
+<p>=== PERFORMANCE ===
+Avg Latency: 54ms
+Avg Fidelity: 91.2%
+Uptime: 99.87%
+</code></pre></p>
+<hr />
+<h2 id="integration-architecture"><a href="#integration-architecture" class="anchor"></a>9. Integration Architecture</h2>
+<h3 id="data-flow"><a href="#data-flow" class="anchor"></a>9.1 Data Flow</h3>
+<pre><code>74 Facilities (collectors)
+        ↓
+DX NetOps Gateway (aggregation)
+        ↓
+Analytics Engine (anomaly detection, prediction)
+        ↓
+net.html Visualization (markers, polylines, alerts)
+</code></pre>
+<hr />
+<h2 id="implementation-roadmap"><a href="#implementation-roadmap" class="anchor"></a>10. Implementation Roadmap</h2>
+<h3 id="phase-1-foundation-months-1-3"><a href="#phase-1-foundation-months-1-3" class="anchor"></a>Phase 1: Foundation (Months 1-3)</h3>
+<ul>
+<li>Deploy data collectors to all 74 facilities</li>
+<li>Establish DX NetOps infrastructure</li>
+<li>Define baseline metrics</li>
+</ul>
+<h3 id="phase-2-basic-monitoring-months-4-6"><a href="#phase-2-basic-monitoring-months-4-6" class="anchor"></a>Phase 2: Basic Monitoring (Months 4-6)</h3>
+<ul>
+<li>Implement health score calculation</li>
+<li>Enable threshold-based alerting</li>
+<li>Create dashboard displays</li>
+</ul>
+<h3 id="phase-3-intelligence-layer-months-7-9"><a href="#phase-3-intelligence-layer-months-7-9" class="anchor"></a>Phase 3: Intelligence Layer (Months 7-9)</h3>
+<ul>
+<li>Deploy anomaly detection</li>
+<li>Enable predictive analytics</li>
+<li>Implement dependency mapping</li>
+</ul>
+<h3 id="phase-4-advanced-analytics-months-10-12"><a href="#phase-4-advanced-analytics-months-10-12" class="anchor"></a>Phase 4: Advanced Analytics (Months 10-12)</h3>
+<ul>
+<li>ML-based failure prediction</li>
+<li>Capacity forecasting</li>
+<li>Intelligent recommendations</li>
+</ul>
+<h3 id="phase-5-optimization-year-2"><a href="#phase-5-optimization-year-2" class="anchor"></a>Phase 5: Optimization (Year 2+)</h3>
+<ul>
+<li>Algorithm tuning</li>
+<li>Network expansion</li>
+<li>Advanced security analytics</li>
+</ul>
+<hr />
+<h2 id="key-performance-indicators"><a href="#key-performance-indicators" class="anchor"></a>11. Key Performance Indicators</h2>
+<table><thead><tr><th align="left">KPI</th><th align="left">Target</th><th align="left">Current</th><th align="left">Status</th></tr></thead><tbody><tr><td align="left">Network Availability</td><td align="left">99.95%</td><td align="left">99.87%</td><td align="left">⚠️ Below</td></tr><tr><td align="left">Avg Fidelity</td><td align="left">&gt;93%</td><td align="left">91.2%</td><td align="left">⚠️ Below</td></tr><tr><td align="left">Cairo SLA</td><td align="left">99.99%</td><td align="left">99.87%</td><td align="left">⚠️ Below</td></tr><tr><td align="left">Critical Alerts</td><td align="left">0</td><td align="left">2</td><td align="left">🔴 Critical</td></tr><tr><td align="left">Eavesdropping</td><td align="left">0</td><td align="left">0</td><td align="left">✓ Good</td></tr><tr><td align="left">Uptime (annual)</td><td align="left">99.95%</td><td align="left">~12 incidents prevented</td><td align="left">✓ Good</td></tr></tbody></table>
+<hr />
+<h2 id="conclusion"><a href="#conclusion" class="anchor"></a>Conclusion</h2>
+<p>Broadcom DX NetOps transforms the quantum network from a <strong>static map</strong> into a <strong>dynamic, intelligent operational system</strong> that:</p>
+<ol>
+<li><strong>Prevents failures</strong> before they cascade</li>
+<li><strong>Optimizes resources</strong> by identifying gaps</li>
+<li><strong>Ensures security</strong> through continuous QKD monitoring</li>
+<li><strong>Guides investment</strong> with data-driven recommendations</li>
+<li><strong>Supports operations</strong> with intelligent dashboards</li>
+</ol>
+<p>The Cairo Hub case study exemplifies the impact: a single facility failing would isolate 18 facilities serving 850M+ people—<strong>predictive monitoring prevents this disaster</strong>.</p>
+</main>
+</div>
+
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="https://github.com/jlabclouds/q_compute"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

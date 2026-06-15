@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>Module 2: Quantum Gates — QCOMP-101 </title>
-<meta name="description" content='Learn fundamental quantum gates and their properties' />
+<title>Hybrid-index2 — QCOMP-101 </title>
+
 
 <link rel="root" href="../../.." />
 
@@ -165,7 +165,7 @@ window.pluto_recording_audio_url = undefined;
 <li class="dropdown-group">
 <h4>Module 2: Quantum Gates</h4>
 <ul>
-<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../../parent1/mod2_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../../parent1/mod2_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class='active lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../../parent1/mod2_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../../parent1/mod2_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../../parent1/mod2_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../../parent1/mod2_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../../parent1/mod2_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../../parent1/mod2_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../../parent1/mod2_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../../parent1/mod2_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../../parent1/mod2_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../../parent1/mod2_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
 </ul>
 </li>
 
@@ -211,165 +211,52 @@ window.pluto_recording_audio_url = undefined;
         </nav>
         <div id="pages-content">
            <div class="lecture-header" >
-    <p class="number">Section 2.0</p>
-    <h1>Module 2: Quantum Gates</h1>
+    
+    <h1>Hybrid-index2</h1>
     
     
 </div>
         <div class="pages-markdown">
 <main>
-<h1 id="module-2-quantum-gates"><a href="#module-2-quantum-gates" class="anchor"></a>Module 2: Quantum Gates</h1>
-<h2 id="welcome-to-quantum-gates"><a href="#welcome-to-quantum-gates" class="anchor"></a>Welcome to Quantum Gates!</h2>
-<p>In this module, you’ll master the fundamental building blocks of quantum circuits. Just as classical computers are built from logic gates (AND, OR, NOT), quantum computers are built from quantum gates.</p>
-<h2 id="what-youll-learn"><a href="#what-youll-learn" class="anchor"></a>What You’ll Learn</h2>
-<h3 id="lesson-21-single-qubit-gates-pauli-gates"><a href="#lesson-21-single-qubit-gates-pauli-gates" class="anchor"></a>Lesson 2.1: Single-Qubit Gates (Pauli Gates)</h3>
-<ul>
-<li>Understand the Pauli matrices (X, Y, Z)</li>
-<li>Learn their mathematical properties</li>
-<li>See how they transform quantum states</li>
-<li>Explore eigenvalues and eigenvectors</li>
-</ul>
-<h3 id="lesson-22-hadamard-and-phase-gates"><a href="#lesson-22-hadamard-and-phase-gates" class="anchor"></a>Lesson 2.2: Hadamard and Phase Gates</h3>
-<ul>
-<li>Master superposition with the Hadamard gate</li>
-<li>Learn phase gates (S, T) and their importance</li>
-<li>Understand rotation gates on the Bloch sphere</li>
-<li>Create arbitrary single-qubit states</li>
-</ul>
-<h3 id="lesson-23-multi-qubit-gates-cnot--toffoli"><a href="#lesson-23-multi-qubit-gates-cnot--toffoli" class="anchor"></a>Lesson 2.3: Multi-Qubit Gates (CNOT &amp; Toffoli)</h3>
-<ul>
-<li>Explore controlled gates and their applications</li>
-<li>Create entangled states (Bell states)</li>
-<li>Understand the CNOT (controlled-NOT) gate</li>
-<li>Learn the universal Toffoli gate</li>
-</ul>
-<h3 id="lesson-24-universal-gate-sets"><a href="#lesson-24-universal-gate-sets" class="anchor"></a>Lesson 2.4: Universal Gate Sets</h3>
-<ul>
-<li>Understand what makes gates “universal”</li>
-<li>Learn the Solovay-Kitaev theorem</li>
-<li>Compare common universal sets</li>
-<li>See how hardware implements universal gates</li>
-</ul>
-<h3 id="lesson-25-gate-decomposition--practice"><a href="#lesson-25-gate-decomposition--practice" class="anchor"></a>Lesson 2.5: Gate Decomposition &amp; Practice</h3>
-<ul>
-<li>Break complex gates into simpler components</li>
-<li>Master Euler angle decompositions</li>
-<li>Solve comprehensive exercises</li>
-<li>Optimize quantum circuits</li>
-</ul>
-<h2 id="module-learning-path"><a href="#module-learning-path" class="anchor"></a>Module Learning Path</h2>
-<pre><code>Start: Classical vs Quantum Computing
-  ↓
-Learn: Single-qubit Pauli gates (X, Y, Z)
-  ↓
-Explore: Hadamard and phase gates
-  ↓
-Discover: Multi-qubit entanglement (CNOT, Toffoli)
-  ↓
-Understand: Universal gate sets and completeness
-  ↓
-Practice: Gate decomposition and optimization
-  ↓
-Next: Build quantum circuits (Module 3)
-</code></pre>
-<h2 id="key-concepts"><a href="#key-concepts" class="anchor"></a>Key Concepts</h2>
-<h3 id="quantum-gates-are-unitary-matrices"><a href="#quantum-gates-are-unitary-matrices" class="anchor"></a>Quantum Gates are Unitary Matrices</h3>
-<ul>
-<li>Preserve probability: U†U = I</li>
-<li>Reversible operations</li>
-<li>Can be measured and verified</li>
-</ul>
-<h3 id="single-qubit-vs-multi-qubit"><a href="#single-qubit-vs-multi-qubit" class="anchor"></a>Single-Qubit vs Multi-Qubit</h3>
-<ul>
-<li><strong>Single-qubit:</strong> Rotate state on Bloch sphere</li>
-<li><strong>Multi-qubit:</strong> Create entanglement, scale complexity</li>
-</ul>
-<h3 id="universality-matters"><a href="#universality-matters" class="anchor"></a>Universality Matters</h3>
-<ul>
-<li>Not all gates are universally compatible</li>
-<li>Hardware has native gate sets</li>
-<li>Decomposition is crucial for real devices</li>
-</ul>
-<h2 id="prerequisites"><a href="#prerequisites" class="anchor"></a>Prerequisites</h2>
-<p>Before starting this module, you should be comfortable with:</p>
-<ul>
-<li>✓ Quantum superposition and entanglement (Module 1)</li>
-<li>✓ Linear algebra (matrices, eigenvalues)</li>
-<li>✓ Complex numbers</li>
-<li>✓ Julia basics or willingness to learn</li>
-</ul>
-<h2 id="how-to-use-this-module"><a href="#how-to-use-this-module" class="anchor"></a>How to Use This Module</h2>
-<h3 id="for-each-lesson"><a href="#for-each-lesson" class="anchor"></a>For Each Lesson:</h3>
-<ol>
-<li><strong>Read the Theory</strong>: Understand the concepts</li>
-<li><strong>Run the Code</strong>: Execute Julia examples in Pluto</li>
-<li><strong>Explore Interactively</strong>: Use sliders and visualizations</li>
-<li><strong>Complete Exercises</strong>: Practice with coding problems</li>
-<li><strong>Extend It</strong>: Modify code and experiment</li>
-</ol>
-<h3 id="time-commitment"><a href="#time-commitment" class="anchor"></a>Time Commitment</h3>
-<ul>
-<li><strong>Total module time</strong>: 8-12 hours</li>
-<li><strong>Per lesson</strong>: 1.5-2.5 hours</li>
-<li><strong>Self-paced</strong>: Go at your own speed</li>
-</ul>
-<h2 id="common-applications"><a href="#common-applications" class="anchor"></a>Common Applications</h2>
-<h3 id="where-are-quantum-gates-used"><a href="#where-are-quantum-gates-used" class="anchor"></a>Where Are Quantum Gates Used?</h3>
-<ol>
-<li>
-<p><strong>Quantum Algorithms</strong></p>
-<ul>
-<li>Grover’s search: Uses Hadamard and phase gates</li>
-<li>Shor’s algorithm: Uses many controlled gates</li>
-<li>VQE: Uses parameterized rotation gates</li>
-</ul>
-</li>
-<li>
-<p><strong>Quantum Hardware</strong></p>
-<ul>
-<li>IBM Quantum: Native {Rx, Rz, CX} gates</li>
-<li>Ion Traps: Native {Ry, XX} gates</li>
-<li>Photonic: Single-qubit + 2-qubit gates</li>
-</ul>
-</li>
-<li>
-<p><strong>Error Correction</strong></p>
-<ul>
-<li>Stabilizer codes use controlled Pauli gates</li>
-<li>Syndrome extraction uses CNOT</li>
-</ul>
-</li>
-</ol>
-<h2 id="resources"><a href="#resources" class="anchor"></a>Resources</h2>
-<h3 id="textbooks"><a href="#textbooks" class="anchor"></a>Textbooks</h3>
-<ul>
-<li>Nielsen &amp; Chuang, <em>Quantum Computation and Quantum Information</em> (Chapter 2)</li>
-<li>Preskill, <em>Quantum Computing NISQ era and beyond</em> (Lecture notes)</li>
-</ul>
-<h3 id="online-tools"><a href="#online-tools" class="anchor"></a>Online Tools</h3>
-<ul>
-<li><a href="https://quantum.ibm.com/composer">IBM Quantum Composer</a> - Interactive circuit builder</li>
-<li><a href="https://qiskit.org">Qiskit</a> - Python quantum computing framework</li>
-<li><a href="https://quantumai.google/cirq">Cirq</a> - Google’s quantum framework</li>
-</ul>
-<h3 id="videos"><a href="#videos" class="anchor"></a>Videos</h3>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=g_IaVvIYvYw">3Blue1Brown Quantum Computing</a></li>
-<li><a href="https://learning.quantum.ibm.com/">IBM Quantum Learning</a></li>
-</ul>
-<h2 id="module-2-goals"><a href="#module-2-goals" class="anchor"></a>Module 2 Goals</h2>
-<p>By the end of this module, you will be able to:</p>
-<ol>
-<li>✓ Identify and apply common quantum gates</li>
-<li>✓ Create superposition and entangled states</li>
-<li>✓ Understand gate universality and completeness</li>
-<li>✓ Decompose complex gates into simple gates</li>
-<li>✓ Optimize circuits for different hardware</li>
-<li>✓ Write quantum circuits in Julia</li>
-</ol>
-<h2 id="lets-begin"><a href="#lets-begin" class="anchor"></a>Let’s Begin!</h2>
-<p>Ready to dive in? Start with <strong>Lesson 2.1: Single-Qubit Gates</strong> and work your way through the module. Each lesson builds on previous concepts.</p>
-<p>Happy learning! 🎓</p>
+<p><a href="#">Home</a> | <a href="#hybrid">Index</a> | <a href="#hybrid-index2">Index2</a> | <a href="#hybrid-index3">Index3</a> | <a href="#geo">Geo</a> | <a href="#siem">SIEM</a></p>
+<hr />
+<h2 id="hypori--avd-setup-instructions"><a href="#hypori--avd-setup-instructions" class="anchor"></a>Hypori &amp; AVD Setup Instructions</h2>
+<p>Enterprise AVD Quick Facts
+•  Enterprise AVD is a Windows 11 virtual machine that uses your  365 credentials
+for an optimized, complete single sign-on (SSO) experience.
+• The Remote Desktop client (MacOS/Windows) supports CAC login and S/MIME encryption.
+• It is BEST experienced from a Windows or MacOS desktop computer, using the Remote
+Desktop client downloaded from the web (instructions in Setup)
+• Available from NIPR and commercial (including home) networks using government,
+corporate, and personal devices
+• Dual personas can access both sets of account (.m/.c) or (.m/.ctr)
+– Each persona requires its own virtual workspace if user wants access to each of their 365
+email/MS Teams accounts
+– Users will need to enroll and complete the onboarding process twice (once for each persona).</p>
+<h2 id="avd-registration-and-setup"><a href="#avd-registration-and-setup" class="anchor"></a>AVD Registration and Setup</h2>
+<p>• Initial Steps:
+– Step 1: Login to a NIPR computer or use a personal computer with CAC capabilities
+– Step 2: Sign up for onboarding at https://’’connect.me/go/avd-setup (CAC required); read the
+User Acknowledgment, select “Yes”, click Save button, and then close the browser
+– Step 3: You will receive an onboarding email from the 365 AVD Onboarding Team
+– Step 4: Choose one of the options</p>
+<p>• Option A: Access from Azure Virtual Desktop Application
+• Step 5a: Once you receive the onboarding email, Download and install the Microsoft Remote
+Desktop application. Direct links depending on device and browser are located at:
+https://’‘connect.me/’’-azure-virtual-desktop-avd-and-remote-workspace/
+• Step 6a: Open the application and select ‘add workspace’.
+• Step 7a: Input the following link: rdweb.wvd.azure.us.
+• Step 8a: Login to AVD using your A365/M365 account username.
+• Step 9a: Select the correct CAC certificate and enter your PIN.
+• Step 10a: Select the server closest to you; East or West.
+• Step 11a: Two additional prompts where you click “OK” and you are set.
+– OR –
+• Option B: Access from Web Browser
+– Step 5b: Once you receive the onboarding email, Go to
+https://client.wvd.azure.us/arm/webclient/index.html
+– Step 6b: Login to AVD using your A365/M365 account username.
+– Step 7b: Select the correct CAC certificate and enter your PIN.
+– Step 8b: Select the server closest to you; East or West.</p>
 </main>
 </div>
 

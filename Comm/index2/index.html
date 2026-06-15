@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>Math Cheatsheet — QCOMP-101 </title>
-<meta name="description" content='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics' />
+<title>Comm-index2 — QCOMP-101 </title>
+
 
 <link rel="root" href="../.." />
 
@@ -150,7 +150,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Resources</h3>
 <ul>
-<li class=' lecture tag_resources'><a href='../../resources/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class='active lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
+<li class=' lecture tag_resources'><a href='../../resources/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
 </ul>
 </li>
 <li class="dropdown-section">
@@ -211,18 +211,67 @@ window.pluto_recording_audio_url = undefined;
         </nav>
         <div id="pages-content">
            <div class="lecture-header" >
-    <p class="number">Section 1.2</p>
-    <h1>Math Cheatsheet</h1>
+    
+    <h1>Comm-index2</h1>
     
     
 </div>
-        <pluto-editor 
- statefile='../../generated_assets/mat_0f86a555.plutostate' 
- notebookfile='../../generated_assets/mat_c765256a.jl' 
-
-
-	disable_ui
-></pluto-editor>
+        <div class="pages-markdown">
+<main>
+<p><a href="#comm">DX NetOps</a> | <a href="#comm-index1">QCon</a> | <a href="#comm-index2">IBM</a> | <a href="#comm-index3">Homodyne</a></p>
+<hr />
+<h2 id="data-acquisition"><a href="#data-acquisition" class="anchor"></a>Data Acquisition</h2>
+<p>IBM&gt;Solaris(legacy)-Enterprise Linux&gt;</p>
+<h3 id="the-validity-of-an-ibm-solaris-and-quantinuum-path-"><a href="#the-validity-of-an-ibm-solaris-and-quantinuum-path-" class="anchor"></a>The validity of an IBM, Solaris and Quantinuum path</h3>
+<p>In the context of the Information Network, the combination of Solaris and Alpine Linux creates a high-performance, security-focused hybrid architecture that addresses both legacy infrastructure needs and modern, cloud-native requirements</p>
+<ol>
+<li>
+<p>Concurrent Trusted Platform Architecture
+In a dual-OS environment, these platforms are used together to create a Defense-in-Depth strategy:</p>
+<ul>
+<li><a href="">IBM AIX (Secure Control Plane)</a>: Acts as the primary host for mission-critical databases (e.g., <a href="">Oracle Database on Power11</a>) where it uses <a href="https://sourceforge.net/projects/ibmswtpm2/">vTPM 2.0</a> and <a href="">PowerSC</a> to perform real-time Quantum Safety Analysis scans.</li>
+<li>Solaris (Cryptographic Gateway): Historically integrated features from Trusted Solaris, a specialized OS developed in collaboration for intelligence-level security. It provides <strong>RBAC</strong> and Labeled Security, which are vital for meeting strict IN security benchmarks.
+Often serves as the frontend or middleware layer, utilizing its Cryptographic Framework to provide KMIP (Key Management Interoperability Protocol) client support. This allows Solaris to securely pull quantum-safe keys from a central <a href="">IBM</a> or <a href="">Oracle</a> <em>key manager</em> and serve them to <a href="">AIX</a> via PKCS #11.</li>
+<li>Alpine Linux: Focused on minimizing the attack surface through a tiny footprint (approx. 5 MB base). It uses security-hardened components <code>musl libc</code> and <code>BusyBox</code>, which are easier to audit and contain fewer vulnerabilities than standard Linux libraries.</li>
+</ul>
+</li>
+<li>
+<p>Passing PKCS #11 Compliance
+Both systems implement PKCS #11 through a hardware-to-software “bridge”:</p>
+<ul>
+<li>Solaris Implementation: Uses the pkcs11_tpm and pkcs11_kmip providers. Applications call the standard PKCS #11 API, which Solaris then routes to the TPM or a remote KMIP-compliant server for signing and encryption, ensuring the actual keys never leave the hardware boundary.</li>
+<li>AIX Implementation: On Power10/11 hardware, AIX utilizes the <a href="https://www.ibm.com/docs/systems-hardware/zsystems/3931-A01?topic=features-crypto-express">Crypto Express cards</a> or vTPM to provide <a href="https://share.google/aimode/jTMJwImDBHdHlHh5X">PKCS #11 tokens</a>. This architecture is designed to meet FIPS 140-2/3 requirements, which are the baseline for most PKCS #11 enterprise audits.</li>
+</ul>
+</li>
+<li>
+<p>Meeting Quantum Compliance (CNSA 2.0 / PQC)
+The transition to quantum compliance is achieved through Crypto-Agility:</p>
+<ul>
+<li>IBM Power11 Quantum-Safe Boot: AIX on Power11 features a Quantum-Safe Root of Trust that verifies firmware and OS signatures using NIST-standard algorithms like CRYSTALS-Dilithium. This ensures the platform is trusted even before the OS loads.</li>
+<li>Hybrid Algorithmic Support: Both platforms are moving toward hybrid key exchange (e.g., combining classical X25519 with quantum-safe ML-KEM). This allows them to pass modern regulations (like the US National Security Agency’s CNSA 2.0) that require a transition to PQC by 2030–2035.</li>
+</ul>
+</li>
+</ol>
+<h3 id="compliance-tools"><a href="#compliance-tools" class="anchor"></a>Compliance Tools:</h3>
+<ul>
+<li>IBM Guardium Quantum Safe: Scans the entire hybrid environment to build a “Cryptography Bill of Materials” (CBOM), identifying vulnerable legacy algorithms (like RSA-2048) that must be replaced to maintain compliance.</li>
+<li>Solaris Compliance Framework: Uses the compliance command to run assessments against specific security benchmarks (like PCI-DSS or custom PQC-ready profiles) and generate audit-ready reports.</li>
+</ul>
+<h3 id="operational-readiness--compliance"><a href="#operational-readiness--compliance" class="anchor"></a>Operational Readiness &amp; Compliance:</h3>
+<ul>
+<li>IN APL (Phased out) Alignment: Solaris has a long history of certification for the IN <a href="(aplits.disa.mil)">Approved Products List (APL)</a>. It offers built-in Compliance Assessment tools that map system controls directly to security benchmarks.</li>
+<li>DevSecOps &amp; Zero Trust: Alpine is a primary choice for <a href="DoDcio.defense.gov">Enterprise DevSecOps</a> becuae its lightweight nature allows for rapid scaling and faster vulnerability scanning in “software factory” environments like <a href="https://p1.dso.mil">Platform One</a>.</li>
+</ul>
+<h3 id="reliability-and-resilience"><a href="#reliability-and-resilience" class="anchor"></a>Reliability and Resilience</h3>
+<ul>
+<li>Enterprise Reliability: Solaris features like ZFS for data integrity and Predictive Self-Healing ensure the stability required for mission-critical command and control systems. <a href="">Q</a></li>
+<li>Edge and Tactical Flexibility: Alpine’s minimal resource requirements make it ideal for Edge Computing and Iot devices used in remote or constrained tactical environments, ensuring fast boot times and low latency.</li>
+</ul>
+<h2 id="architectural-synergy"><a href="#architectural-synergy" class="anchor"></a>Architectural Synergy</h2>
+<p>(table here)</p>
+<p><a href="https://github.com/ophelialabs/ophelialabs.github.io/tree/main/pages/legacy/wiki-old/linux/pages/setup">Stig</a></p>
+</main>
+</div>
 
         <div class="page-foot">
             <div class="copyright">

@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>Math Cheatsheet — QCOMP-101 </title>
-<meta name="description" content='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics' />
+<title>HEP-index — QCOMP-101 </title>
+
 
 <link rel="root" href="../.." />
 
@@ -150,7 +150,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Resources</h3>
 <ul>
-<li class=' lecture tag_resources'><a href='../../resources/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class='active lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
+<li class=' lecture tag_resources'><a href='../../resources/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
 </ul>
 </li>
 <li class="dropdown-section">
@@ -211,18 +211,130 @@ window.pluto_recording_audio_url = undefined;
         </nav>
         <div id="pages-content">
            <div class="lecture-header" >
-    <p class="number">Section 1.2</p>
-    <h1>Math Cheatsheet</h1>
+    
+    <h1>HEP-index</h1>
     
     
 </div>
-        <pluto-editor 
- statefile='../../generated_assets/mat_0f86a555.plutostate' 
- notebookfile='../../generated_assets/mat_c765256a.jl' 
-
-
-	disable_ui
-></pluto-editor>
+        <div class="pages-markdown">
+<main>
+<h2 id="garfield-and-geant"><a href="#garfield-and-geant" class="anchor"></a>Garfield and Geant</h2>
+<p>Garfield++ is a C++ toolkit primarily used for simulating particle detector response in gases and semiconductors, focusing on electron transport, avalanche, and signal formation. It can model the ionization and charge collection process, including the generation of photons from gas excitation, which might be relevant in optical readout scenarios, such as in GEM detectors. Geant4 handles the large-scale muon transport through a target (like a cargo container or a building), while Garfield provides a detailed “microscopic” simulation of the detector’s internal response</p>
+<h2 id="capabilities-and-applications"><a href="#capabilities-and-applications" class="anchor"></a>Capabilities and Applications</h2>
+<ul>
+<li>Detector Simulation: Garfield++ simulates movement of electrons and ions in gaseous (e.g., drift chambers, GEMs, Micromegas) and semiconductor detectors.</li>
+<li>Signal Generation: It calculates induced signals, taking into account detector geometry, electric fields, and electronic readout.</li>
+<li>Integration: it interfaces with tools like Heed for ionization, Magboltz for transport properties, and Degrad.</li>
+<li>Optical Readout: It can simulate the scintillation light produced during electron multiplication in gas-based detectors, which might be detected using optical methods.</li>
+</ul>
+<p><strong>Homodyne Detection:</strong></p>
+<ul>
+<li>Definition: Homodyne detection is an optical method where a signal field is mixed with a local oscillator (LO) of the same frequency to measure amplitude or phase quadrutures.</li>
+<li>Context: While Garfield++ deals with particle detection, homodyne detection is a quantum optics or ‘optical communication’ technique.</li>
+</ul>
+<h2 id="computational-requirements"><a href="#computational-requirements" class="anchor"></a>Computational Requirements</h2>
+<p>Running a high-fidelity simulation is resource-intensive:</p>
+<ul>
+<li>The Bottleneck: Garfield tracks every single electron in an avalanche (microscopic tracking). This is CPU-bound. A single muon track simulation can take seconds to minutes depending on the gas gain.</li>
+<li>Multi-Threading: Because Garfield is traditionally single-threaded, researchers run “Massively Parallel” (julia) jobs on clusters (like Fermilab’s FermiGrid) to simulate millions of events.</li>
+<li>Memory: While memory-efficient</li>
+<li>Storage: High-energy physics data is measured in Petabytes, though localized tomography simulations usually stay within the Gigabyte range.</li>
+</ul>
+<h2 id="garfield-in-muon-tomography"><a href="#garfield-in-muon-tomography" class="anchor"></a>Garfield++ in Muon Tomography</h2>
+<p>Garfield++ is utilized in the development and optimization of high-precision detectors, and to model the charge-based and occasionally light-based output of particle detectors. The tookit is essential for simulating how these detectors respond to cosmic-ray muons at a microscopic level</p>
+<ul>
+<li>Detector Simulation:</li>
+<li>GEM Detectors:</li>
+</ul>
+<h2 id="collaborative-muon-projects"><a href="#collaborative-muon-projects" class="anchor"></a>Collaborative Muon Projects</h2>
+<p>Fermilab and Singaporean institutions have collaborated on specialized muon detection technology, specifically focusing on cosmic-ray muon tomography and portable muon detectors for non-destructive imaging.</p>
+<ul>
+<li>Cosmic-Muon Detector Technology:</li>
+<li>Muon Tomography Applications:</li>
+</ul>
+<h2 id="fermilabs-broader-muon-research"><a href="#fermilabs-broader-muon-research" class="anchor"></a>Fermilab’s Broader Muon Research</h2>
+<p>While the Singapore-linked projects often focus on applied technology, Fermilab’s primary muon research occurs on its Muon Campus through two flagship experiments:</p>
+<ul>
+<li>Muon g-2: This experiment measures the muon’s magnetic anomaly. A beam of muons is injected into a 50-foot-wide superconducting magnetic storage ring. if the muon’s “wobble” (precession) differs from theoretical predictions, it suggests undiscovered particles are interacting with it.</li>
+<li>Mu2e: Seeks to observe the direct conversion of a muon into an electron without emitting neutrinos, a process that has never been seen. The experiment looks for Charged Lepton Flavor Violation. It seeks a rare decay where a muon converts directly into an electron with no neutrinos. This is essentially “forbidden” in the Standard Model; seeing even one event would rewrite moderd physics.</li>
+</ul>
+<h2 id="fermilabs-role-in-tomography"><a href="#fermilabs-role-in-tomography" class="anchor"></a>Fermilab’s Role in Tomography</h2>
+<ul>
+<li>Silicon-Strip Technology: While many large experiments use gas, the portable detectors (often linked to Singapore collaborations) favor Silicon Strip Detectors (SSDs). These detectors do not require the flammable gases or high voltages of older systems, making the ideal for field use in locations like Singapore.
+<ol>
+<li>Compactness:</li>
+<li>No Consumables:</li>
+<li>Signal Processing:</li>
+</ol>
+</li>
+<li>Non-Destructive Imaging: Thes trackers use naturally occuring cosmic-ray muons to “see” through dense shielding, such as concrete or lead, to detect hidden materials (such as nuclear) or structural flaws.</li>
+<li>Algorithms:
+<ol>
+<li>Tomographic reconstruction algoriths (e.g., Point-Of-Closest-Approach)</li>
+</ol>
+</li>
+</ul>
+<h2 id="charged-lepton-flavor-violations-clfv-"><a href="#charged-lepton-flavor-violations-clfv-" class="anchor"></a>Charged Lepton Flavor Violations (CLFV)</h2>
+<p>The physical processes where one type of charged lepton (electron, muon, or tau) transforms into another without the emission of their corresponding neutrinos. Because the the Standard Model predicts CLFV rates to be negligible (branching rations &lt; 10^-50), any observation would be unambigous evidence of New Physics.</p>
+<ul>
+<li>Electron:</li>
+<li>Muon: ~207x more massive than the electron</li>
+<li>Tau (or Tauon): Approximately 17x heavier than muon and about 3,500x heavier than electron. Unlike its lighter siblings, the tau is heavy enough to decay into hadrons (like pions) as well as other leptons. Because of its enormous mass, it is highly unstable, with a lifetime of only about 2.9 x 10^-13 seconds - much shorter than the the muon’s 2.2 microseconds.</li>
+<li></li>
+</ul>
+<h2 id="clfv-primary-search-channels"><a href="#clfv-primary-search-channels" class="anchor"></a>CLFV Primary Search Channels</h2>
+<p>Experimental searches focus on rare decays where the initial and final states differ in flavor:</p>
+<ul>
+<li>Muon Decays:</li>
+<li>Tau Decays:</li>
+<li>Heavy State Transitions: Searches also occur in Z boson decays () and top quark decays ()</li>
+</ul>
+<h2 id="clfv-major-experiments"><a href="#clfv-major-experiments" class="anchor"></a>CLFV Major Experiments</h2>
+<pre><code>- Mu3e: Searching for the decay at the Paul Scherrer institute
+- Meg-II: Aiming for unprecented sensitivity in 
+- **Mu2e &amp; COMET: Dedicated to detecting the conversion of a muon into an electron in the field of a nucleus**
+- Belle II: Primarily investigating LFV in tau leptons and mesons.
+</code></pre>
+<h2 id="specific-gas-mixtures"><a href="#specific-gas-mixtures" class="anchor"></a>Specific Gas Mixtures</h2>
+<p>For gas-based trackers (like those used in the Mu2e straw tubes or GEM-based tomography), the choice of gas is critical for timing and resolution.</p>
+<ul>
+<li>Magboltz Gas Database (The Gold Standard): This is the underlying Fortran engine Garfield uses. It contains the cross-sections for almost every gas atom/molecule used in detectors.</li>
+<li>LXCat (Plasma Data Exchange Project): An open-access platform for curated data needed for modeling low-temperature plasmas (electron/ion scattering cross-sections).</li>
+<li>CERN’s Gas Files Repository: Often, large collaborations (like ATLAS or CMS) host internal libraries of .gas files.</li>
+</ul>
+<h2 id="key-parameters"><a href="#key-parameters" class="anchor"></a>Key Parameters</h2>
+<p>When choosing a mixture for muon tomography, focus on:</p>
+<ol>
+<li>Townsend Coefficient ():</li>
+<li>Diffusion Coefficients:</li>
+<li>Drift Velocity ():</li>
+</ol>
+<h3 id="c-code-snippet-setting-up-a-gas-mixture"><a href="#c-code-snippet-setting-up-a-gas-mixture" class="anchor"></a>C++ Code Snippet: Setting up a Gas Mixture</h3>
+<p>To define a gas mixture in Garfield, you use the MediumMagboltz class. This snippet demonstrates how to initialize a standard Argon/CO2 mixture, which is frequently used in muon detectors.</p>
+<pre><code class="language-cpp"></code></pre>
+<h2 id="muon-source-for-tomography-setup"><a href="#muon-source-for-tomography-setup" class="anchor"></a>Muon Source for Tomography setup</h2>
+<p>To simulate a muon source for tomography, your Geant macro needs to replicate the cosmic-ray muon flux. This is useally modeled with a cos2(0) angular distribution and a specific energy spectrum (mean energy around 3-4 GeV).</p>
+<p>Below is a standard .mac file using the Generap Particle Source (GPS), which is the most powerful tool in Geant for this purpose.</p>
+<h3 id="muon-tomography-source-macro-muonsourcemac"><a href="#muon-tomography-source-macro-muonsourcemac" class="anchor"></a>Muon Tomography Source Macro (muon_source.mac)</h3>
+<pre><code class="language-yaml"></code></pre>
+<h3 id="breakdown-of-key-settings"><a href="#breakdown-of-key-settings" class="anchor"></a>Breakdown of Key Settings</h3>
+<ul>
+<li>/gps/pos/type Plane:</li>
+<li>/gps/ang/type cos:</li>
+<li>/gps/ene/alpha -2.7:</li>
+</ul>
+<h3 id="implementation-tip-interfacing-with-garfield"><a href="#implementation-tip-interfacing-with-garfield" class="anchor"></a>Implementation Tip: Interfacing with Garfield</h3>
+<p>To connect this Geant source to your Garfield simulation, you generally follow this workflow:</p>
+<ol>
+<li>Geant4 Step: Run the macro above. In your SteppingAction.cc, record the Position (x,y,z), Direction (px,py,pz), and Energy (E) of any muon that enters your detector volume.</li>
+<li>Export to Root/CSV:</li>
+<li>Garfield++ Step: Use a TrackHeed object to read those coordinates. Use track-&gt;NewTrack(x, y, z, t, dx, dy, dz) to inject that specific muon into your gas/silicon simulation to see the electronic signal it produces.</li>
+</ol>
+<h2 id="c-code-for-a-steppingaction-that-exports-muon-hits-into-a-foormat-garfield-can-read"><a href="#c-code-for-a-steppingaction-that-exports-muon-hits-into-a-foormat-garfield-can-read" class="anchor"></a>C++ code for a SteppingAction that exports muon hits into a foormat Garfield can read</h2>
+<p><strong>A Note on Singapore-Specific Constraints</strong>
+If you are simulating a detector located in a basement or a tunnel (common in dense urban environments like Singapore), you would need to add a “Volume Source” of concrete or soil above your detector in Geant. This will correctly simulate the energy filtering effect, where only the most energetic muons reach the sensor.</p>
+</main>
+</div>
 
         <div class="page-foot">
             <div class="copyright">
