@@ -207,7 +207,7 @@ When user shows dependencies:
 
 **East Africa Backup Hub**:
 - Priority: CRITICAL
-- Cost: $50M
+- Cost: \$50M
 - Timeline: 18 months
 - Impact: 2x redundancy for Africa
 
@@ -248,8 +248,8 @@ When user shows dependencies:
 - Confidence: 87%
 - Root cause: Temperature rising
 - Degradation trend: -0.3% fidelity/day
-- Maintenance cost: $50K
-- Failure cost: $2M+
+- Maintenance cost: \$50K
+- Failure cost: \$2M+
 
 ### 7.2 Capacity Forecasting
 
