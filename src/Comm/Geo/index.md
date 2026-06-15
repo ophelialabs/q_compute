@@ -304,7 +304,7 @@ Object.keys(objects).forEach(objectId => {
         );
         
         if (risk.recommendation === 'MANEUVER_REQUIRED') {
-            console.log(`ALERT: High-risk conjunction detected for satellite ${objectId}`);
+            console.log(`ALERT: High-risk conjunction detected for satellite \${objectId}`);
         }
     }
 });
