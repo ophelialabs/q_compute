@@ -62,11 +62,17 @@ Dict(
                 "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                 "category" => "Quantum Providers"
         ),
-           Dict("name" => "Quantum Tools",
-                    "url" => "resources/tools",
-                    "description" => "Discover a curated list of tools and platforms for quantum computing, including simulators, visualizers, and development environments. Enhance your quantum computing experience with these essential resources.",
-                    "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-                    "category" => "Quantum Tools"
+         Dict("name" => "Resources",
+                "url" => "resources/providers3",
+                "description" => "Explore a curated list of quantum computing resources.",
+                "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                "category" => "Quantum Resources"
+        ),  
+         Dict("name" => "Quantum Tools",
+                "url" => "resources/tools",
+                "description" => "Discover a curated list of tools and platforms for quantum computing, including simulators, visualizers, and development environments. Enhance your quantum computing experience with these essential resources.",
+                "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                "category" => "Quantum Tools"
           ),
     ]
 )
