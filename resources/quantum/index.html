@@ -1,0 +1,615 @@
+<!DOCTYPE html>Dict(
+    # Page title and optional disclaimer for the page
+    "title" => "Quantum Computing",
+    "disclaimer" => "",
+
+<div class="content-section">
+    <h1>🚀 Quantum Computing Research</h1>
+    <p class="lead">Enterprise-grade quantum computing framework integrating quantum algorithms, machine learning, and IoT edge computing with specialized implementations for medical imaging, robotics control, and advanced optimization.</p>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="https://docs.quantuinuum.com/nexus/index.html" target="_blank" rel="noopener noreferrer">Quantinuum Nexus</a></li>
+            <li><a href="https://qbraid.com" target="_blank" rel="noopener noreferrer">qBraid</a></li>
+            <li><a href="https://ophelialabs.github.io/pages/quantum/content/qnet/net.html" target="_blank" rel="noopener noreferrer">QNET</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#quick-start">Quick Start</a></li>
+            <li><a href="#building-on-project">Building on the Project</a></li>
+            <li><a href="#deployment-scenarios">Deployment Scenarios</a></li>
+            <li><a href="#future-directions">Future Directions</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#contributing">Contributing</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Overview -->
+    <section id="overview" class="section">
+        <h2>Project Overview</h2>
+        <p>This Quantum platform provides a comprehensive suite of tools for:</p>
+        <ul>
+            <li><strong>Quantum Algorithm Implementation:</strong> Grover's search, Shor's factorization, Quantum Fourier Transform</li>
+            <li><strong>Hybrid Machine Learning:</strong> Quantum neural networks, quantum kernels, variational algorithms</li>
+            <li><strong>Optimization:</strong> QAOA and VQE implementations</li>
+            <li><strong>Specialized Applications:</strong> Medical diagnostics/imaging and robotics control</li>
+            <li><strong>Inference & Language Models:</strong> Quantum transformers with attention mechanisms</li>
+            <li><strong>Generative Models:</strong> QGAN and quantum autoencoders</li>
+        </ul>
+    </section>
+
+    <div class="section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kHobC1dock0?si=eZ5tbIoZpUBDKPc2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IWGOpuca7cs?si=KaC0Odc3LVPaCtTd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://youtube.com/shorts/hONWe7IP7ek?si=FixY_gwAZclX-ix3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0grN9gInwwA?si=DDeYV-pOqRxcnO3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8GY4m022tgo?si=1nuJwMUtbrX7CEOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>*Note: not for free energy or propulsion*</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IvqbexczrEg?si=7P-UPd38j6h1IL5V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Key Capabilities -->
+    <section id="capabilities" class="section">
+        <h2>Key Capabilities</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Purpose</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Core Algorithms</td>
+                    <td>Foundational quantum computing</td>
+                    <td><span class="badge success">Production-ready</span></td>
+                </tr>
+                <tr>
+                    <td>ML Integration</td>
+                    <td>Quantum-classical hybrid learning</td>
+                    <td><span class="badge warning">Beta</span></td>
+                </tr>
+                <tr>
+                    <td>Optimization</td>
+                    <td>QAOA/VQE implementations</td>
+                    <td><span class="badge warning">Beta</span></td>
+                </tr>
+                <tr>
+                    <td>Specialized Domains</td>
+                    <td>Medical & Robotics applications</td>
+                    <td><span class="badge info">Development</span></td>
+                </tr>
+                <tr>
+                    <td>LLM Integration</td>
+                    <td>Quantum inference pipelines</td>
+                    <td><span class="badge secondary">Experimental</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Architecture -->
+    <section id="architecture" class="section">
+        <h2>Architecture & System Design</h2>
+        
+        <h3>System Data Flow</h3>
+        <pre class="mermaid">
+graph LR
+    A["📥 Input Layer<br/>Data Sources<br/>Configuration"] 
+    B["⚛️ Quantum Core<br/>Algorithms & Optimization"]
+    C["🤖 ML Integration<br/>QNN, Kernels, Training"]
+    D["🎯 Applications<br/>Medical, Robotics, Opt"]
+    E["📤 Output Layer<br/>Results & Inference"]
+    
+    A --> B
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    
+    style A fill:#0d4d7a,stroke:#00bfff,color:#fff
+    style B fill:#0d7a0d,stroke:#00ff00,color:#fff
+    style C fill:#4d0d7a,stroke:#ff00ff,color:#fff
+    style D fill:#7a4d0d,stroke:#ffaa00,color:#fff
+    style E fill:#0d7a4d,stroke:#00ffaa,color:#fff
+        </pre>
+
+        <h3>Modular Approach: Targeted, Lightweight & Focused</h3>
+        <div class="mermaid">
+graph TD
+    subgraph MODULAR["MODULAR APPROACH"]
+    direction TB
+
+    M_Start["User needs: Healthcare Imaging Solution"] --> M_Run["Run: generate_medical()"]
+    M_Run --> M_Box["Medical Specialization Module"]
+
+    subgraph M_Box ["Specialization: Medical"]
+        M_Dirs["src/Specializations/Medical/<br/>├── Imaging/<br/>└── Diagnostics/"]
+        M_Benefit["BENEFIT: Domain Isolation<br/>Only contains files relevant to healthcare.<br/>Zero distraction from ML or Robotics code."]
+    end
+
+    R_Start["User needs: Robot Arm Controller"] --> R_Run["Run: generate_robotics()"]
+    R_Run --> R_Box["Robotics Specialization Module"]
+
+    subgraph R_Box ["Specialization: Robotics"]
+        R_Dirs["src/Specializations/Robotics/<br/>├── Control/<br/>└── Sensing/"]
+        R_Benefit["BENEFIT: Hardware-Specific Focus<br/>Structure tailored for real-time loops.<br/>Lightweight footprint for embedded systems."]
+    end
+
+    S_Start["User needs: Run Shor's Algorithm"] --> S_Run["Run: generate_scientific()"]
+    S_Run --> S_Box["Scientific Core Module"]
+
+    subgraph S_Box ["Core Scientific Algorithms"]
+        S_Dirs["src/Quantum/Algorithms/<br/>├── QFT/<br/>├── Grover/<br/>└── Shor/"]
+        S_Benefit["BENEFIT: Foundational Research<br/>Pure algorithmic focus.<br/>Clear structure for benchmarking."]
+    end
+    end
+
+    Global_B["OVERALL ADVANTAGES:<br/>1. Reduced Cognitive Load<br/>2. Faster Setup Time<br/>3. Clear Ownership boundaries"]
+
+    M_Box -.-> Global_B
+    R_Box -.-> Global_B
+    S_Box -.-> Global_B
+        </div>
+
+        <h3>Integrated Ecosystem: Comprehensive & Synergistic</h3>
+        <div class="mermaid">
+graph TD
+    subgraph INTEGRATED["INTEGRATED ECOSYSTEM"]
+    direction TB
+
+    User["Enterprise Quantum Platform"] --> RunFull["Project Setup"]
+    RunFull --> BigBox["QuantumProject.csproj"]
+
+    subgraph BigBox ["PROJECT ROOT"]
+        subgraph Layer1 ["Layer 1: Infrastructure & SDLC"]
+            L1_Config["Config/ - qubit setup"]
+            L1_Tests["Tests/ - Unit & Integration"]
+            L1_Docs["Docs/ - API & Tutorials"]
+            L1_Lib["Lib/ - Shared Code"]
+        end
+
+        subgraph Layer2 ["Layer 2: Quantum Foundations"]
+            L2_Circuits["src/Circuits/"]
+            L2_Utils["src/Quantum/Utils/"]
+            L2_Opt["src/Quantum/Optimization/"]
+        end
+
+        subgraph Layer3 ["Layer 3: Advanced Applications"]
+            L3_ML["src/ML/ - QNN, Kernels"]
+            L3_LLM["src/LLM/ - Transformers"]
+            L3_AI["src/AI/ - RL, Generative"]
+        end
+
+        L1_Tests -->|Validates| Layer2
+        L1_Tests -->|Validates| Layer3
+        L1_Lib -->|Used by| Layer2
+        L1_Lib -->|Used by| Layer3
+        L2_Circuits -->|Building Blocks| L3_ML
+        L2_Opt -->|Training Engines| L3_AI
+        L2_Utils -->|Required by| L3_LLM
+    end
+
+    Global_Full_B["ADVANTAGES:<br/>Standardization | Scalability | Complex Workflows"]
+    BigBox --> Global_Full_B
+    end
+        </div>
+
+        <h3>Project Component Dependencies</h3>
+        <div class="mermaid">
+graph LR
+    Config["Config"]
+    Core["Core Quantum"]
+    ML["ML"]
+    Apps["Applications"]
+    Tests["Tests"]
+    Lib["Libraries"]
+    Opt["Optimization"]
+    
+    Config --> Core
+    Core --> ML
+    ML --> Apps
+    Tests --> Core
+    Tests --> ML
+    Tests --> Apps
+    Lib --> ML
+    Lib --> Apps
+    Core --> Opt
+    Opt --> ML
+        </div>
+
+        <h3>Project Structure</h3>
+        <div class="code-block">
+            <pre><code>qsharpIoT/
+├── src/
+│   ├── Quantum/              # Core quantum algorithms
+│   │   ├── Algorithms/       # Grover, QFT, Shor
+│   │   ├── Optimization/     # QAOA, VQE
+│   │   └── Utils/            # Custom gates & measurements
+│   ├── ML/                   # Machine learning modules
+│   │   ├── QuantumNeuralNetworks/  # QNN architectures
+│   │   ├── QuantumKernels/   # Quantum kernel methods
+│   │   ├── Classifiers/      # QKNeighbors, QuantumPerceptron
+│   │   └── Training/         # Optimization algorithms
+│   ├── LLM/                  # Language model quantum integration
+│   │   ├── QuantumTransformers/    # QAttention, QEmbeddings
+│   │   └── Inference/        # Quantum inference engines
+│   ├── AI/                   # Advanced AI applications
+│   │   ├── Generative/       # QGAN, autoencoders
+│   │   └── QuantumRL/        # Quantum reinforcement learning
+│   ├── Circuits/             # Quantum circuit templates
+│   │   ├── Custom/           # Entanglement, teleportation
+│   │   └── Templates/        # Basic gates, standard operations
+│   ├── Specializations/      # Domain-specific implementations
+│   │   ├── Medical/          # Diagnostics, imaging
+│   │   └── Robotics/         # Control, sensing
+│   └── Classical/            # Classical preprocessing/postprocessing
+├── Tests/
+│   ├── Unit/                 # Algorithm tests
+│   └── Integration/          # System-wide tests
+├── Config/
+│   ├── qubitConfig.json      # Qubit configuration
+│   └── quantum-db.json       # Quantum database configuration
+├── Lib/
+│   ├── QuantumLibrary.qs     # Custom library functions
+│   ├── StandardLib.qs        # Standard library wrappers
+│   └── QuantumDatabase.qs    # Quantum database interface
+├── Examples/
+│   └── *Demo.qs              # Demonstration implementations
+└── Docs/
+    ├── API.md                # API documentation
+    └── Tutorials/            # Learning materials</code></pre>
+        </div>
+
+        <h3>Component Interactions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Purpose</th>
+                    <th>Key Components</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Quantum Core</strong></td>
+                    <td>Fundamental quantum operations</td>
+                    <td>Algorithms, Optimization, Utils</td>
+                </tr>
+                <tr>
+                    <td><strong>ML Pipeline</strong></td>
+                    <td>Hybrid quantum-classical ML</td>
+                    <td>QNN, Kernels, Classifiers, Training</td>
+                </tr>
+                <tr>
+                    <td><strong>LLM Integration</strong></td>
+                    <td>Language model quantum ops</td>
+                    <td>Quantum Transformers, Inference</td>
+                </tr>
+                <tr>
+                    <td><strong>Specializations</strong></td>
+                    <td>Domain-specific applications</td>
+                    <td>Medical Imaging, Robotics Control</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Quick Start -->
+    <section id="quick-start" class="section">
+        <h2>Quick Start</h2>
+        
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Q# SDK (latest version)</li>
+            <li>.NET 6.0 or higher</li>
+            <li>Azure Quantum account (for cloud execution)</li>
+            <li>Quantum Database Server (for data persistence)</li>
+            <li>Connection credentials for Quantum DB</li>
+        </ul>
+
+        <h3>Setup</h3>
+        <div class="code-block">
+            <pre><code class="bash"># Clone and navigate to project
+cd qsharpIoT
+
+# Build the project
+dotnet build QuantumProject.csproj
+
+# Configure Quantum Database connection
+cp Config/quantum-db.json.template Config/quantum-db.json
+# Edit Config/quantum-db.json with your connection details
+
+# Run tests
+dotnet test Tests/
+
+# Execute examples
+dotnet run -- Examples/GroverDemo.qs</code></pre>
+        </div>
+    </section>
+
+    <!-- Building on the Project -->
+    <section id="building-on-project" class="section">
+        <h2>Building on the Project</h2>
+
+        <h3>1. Development Environment Setup</h3>
+        <div class="subsection">
+            <h4>Initial Configuration</h4>
+            <div class="code-block">
+                <pre><code class="bash"># Initialize development environment
+dotnet new console -n CustomQuantumModule
+cd CustomQuantumModule
+
+# Add project references
+dotnet add reference ../QuantumProject.csproj
+
+# Restore dependencies
+dotnet restore</code></pre>
+            </div>
+        </div>
+
+        <h3>2. Adding New Quantum Algorithms</h3>
+        <div class="subsection">
+            <h4>Step-by-Step Guide</h4>
+            
+            <h5>Step 1: Create Algorithm File</h5>
+            <div class="code-block">
+                <pre><code class="bash">mkdir -p src/Quantum/Algorithms/YourAlgorithm
+touch src/Quantum/Algorithms/YourAlgorithm/YourAlgorithm.qs</code></pre>
+            </div>
+
+            <h5>Step 2: Implement Core Logic</h5>
+            <div class="code-block">
+                <pre><code class="qsharp">// src/Quantum/Algorithms/YourAlgorithm/YourAlgorithm.qs
+namespace Quantum.Algorithms.YourAlgorithm {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Canon;
+    
+    operation MainAlgorithm(input : Int) : Result[] {
+        use qubits = Qubit[input];
+        // Implementation here
+        return [];
+    }
+}</code></pre>
+            </div>
+
+            <h5>Step 3: Write Comprehensive Tests</h5>
+            <p>Create test files in Tests/Unit/ and Tests/Integration/ directories to validate your implementation.</p>
+
+            <h5>Step 4: Documentation</h5>
+            <p>Add documentation to Docs/API.md with algorithm description, complexity analysis, and usage examples.</p>
+        </div>
+
+        <h3>3. Quantum Database Integration</h3>
+        <div class="subsection">
+            <h4>Setup and Connection</h4>
+            
+            <h5>Step 1: Install Quantum Database Driver</h5>
+            <div class="code-block">
+                <pre><code class="bash">dotnet add package QuantumDB.Client</code></pre>
+            </div>
+
+            <h5>Current Limitations</h5>
+            <ul>
+                <li><strong>Maximum state size:</strong> ~1GB (depends on available memory)</li>
+                <li><strong>Practical limit:</strong> ~30-32 qubits for full state vectors</li>
+                <li><strong>State retrieval latency:</strong> 10-100ms depending on state complexity</li>
+                <li><strong>Concurrent query limit:</strong> 100 simultaneous connections</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Deployment Scenarios -->
+    <section id="deployment-scenarios" class="section">
+        <h2>Project Deployment Scenarios</h2>
+
+        <h3>Scenario 1: Local Development & Testing</h3>
+        <div class="subsection">
+            <h4>Target Environment</h4>
+            <ul>
+                <li>Single developer machine or local cluster</li>
+                <li>Q# Simulator for algorithm development</li>
+                <li>No cloud dependencies</li>
+            </ul>
+
+            <h4>Deployment Steps</h4>
+            <div class="code-block">
+                <pre><code class="bash"># Build Configuration
+dotnet build QuantumProject.csproj -c Debug
+
+# Run with Simulator
+dotnet run -- --target QuantumSimulator --operation YourOperation
+
+# Enable Debug Logging
+export QDK_DEBUG=1
+dotnet run</code></pre>
+            </div>
+        </div>
+
+        <h3>Scenario 2: Azure Quantum Cloud Deployment</h3>
+        <div class="subsection">
+            <h4>Prerequisites</h4>
+            <ul>
+                <li>Azure subscription with Quantum workspace</li>
+                <li>Azure CLI installed and configured</li>
+                <li>Authentication tokens provisioned</li>
+            </ul>
+
+            <h4>Deployment Process</h4>
+            <div class="code-block">
+                <pre><code class="bash"># Setup Azure Resources
+az group create --name QuantumIoT --location eastus
+
+# Create Quantum workspace
+az quantum workspace create \
+  --resource-group QuantumIoT \
+  --name QuantumIoTWorkspace \
+  --location eastus</code></pre>
+            </div>
+        </div>
+
+        <h3>Scenario 3: IoT Edge Integration</h3>
+        <div class="subsection">
+            <h4>Target Architecture</h4>
+            <p>IoT Devices → Edge Server (Quantum Computation) → Classical Processing → Cloud Storage/Analytics</p>
+
+            <h4>Deployment Configuration</h4>
+            <div class="code-block">
+                <pre><code class="dockerfile"># Dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+WORKDIR /app
+COPY . .
+RUN dotnet build QuantumProject.csproj
+ENTRYPOINT ["dotnet", "run"]</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Directions -->
+    <section id="future-directions" class="section">
+        <h2>Future Directions and Integration</h2>
+
+        <h3>1. Enhanced Quantum Algorithms</h3>
+        <div class="subsection">
+            <h4>Research Roadmap</h4>
+            
+            <h5>Near Term (3-6 months)</h5>
+            <ul>
+                <li>Quantum Principal Component Analysis (qPCA)</li>
+                <li>Quantum Support Vector Machines (qSVM) optimization</li>
+                <li>Error mitigation techniques implementation</li>
+            </ul>
+
+            <h5>Medium Term (6-12 months)</h5>
+            <ul>
+                <li>Quantum Hidden Markov Models</li>
+                <li>Quantum Boltzmann Machines</li>
+                <li>Hybrid classical-quantum optimization frameworks</li>
+                <li>Noise-resilient algorithms</li>
+            </ul>
+
+            <h5>Long Term (12+ months)</h5>
+            <ul>
+                <li>Fault-tolerant quantum error correction integration</li>
+                <li>Topological quantum computing support</li>
+                <li>Scalable quantum machine learning</li>
+                <li>Distributed quantum computing</li>
+            </ul>
+        </div>
+
+        <h3>2. Hardware Provider Integration</h3>
+        <div class="subsection">
+            <h4>Multi-Provider Support</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Timeline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IonQ</td>
+                        <td>Q1 2025</td>
+                        <td><span class="badge warning">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Rigetti</td>
+                        <td>Q2 2025</td>
+                        <td><span class="badge info">Planned</span></td>
+                    </tr>
+                    <tr>
+                        <td>IBM Quantum</td>
+                        <td>Q3 2025</td>
+                        <td><span class="badge info">Planned</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>3. Advanced ML Capabilities</h3>
+        <div class="subsection">
+            <ul>
+                <li><strong>Quantum Transfer Learning:</strong> Pre-trained models and domain adaptation</li>
+                <li><strong>Federated Quantum Learning:</strong> Distributed training across quantum processors</li>
+                <li><strong>Quantum Continual Learning:</strong> Online learning and catastrophic forgetting mitigation</li>
+            </ul>
+        </div>
+
+        <h3>4. Enterprise Integration</h3>
+        <div class="subsection">
+            <h4>API Development</h4>
+            <div class="code-block">
+                <pre><code>REST API Endpoints:
+
+POST   /api/quantum/execute         # Submit quantum job
+GET    /api/quantum/jobs/{id}       # Get job status
+GET    /api/quantum/results/{id}    # Retrieve results
+POST   /api/ml/predict              # ML inference
+GET    /api/diagnostics/status      # System health</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation -->
+    <section id="documentation" class="section">
+        <h2>Documentation</h2>
+        <div class="subsection">
+            <h3>Available Resources</h3>
+            <ul>
+                <li><strong>API.md</strong> - Complete API reference</li>
+                <li><strong>Tutorials/</strong> - Learning materials and examples</li>
+                <li><strong>Examples/</strong> - Working demonstrations of key capabilities</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contributing -->
+    <section id="contributing" class="section">
+        <h2>Contributing</h2>
+        <div class="subsection">
+            <h3>Code Contribution Process</h3>
+            <ol>
+                <li>Create feature branch: <code>git checkout -b feature/your-feature</code></li>
+                <li>Follow naming conventions and documentation standards</li>
+                <li>Add comprehensive tests</li>
+                <li>Submit pull request with detailed description</li>
+            </ol>
+
+            <h3>Development Guidelines</h3>
+            <ul>
+                <li>Use semantic commit messages</li>
+                <li>Keep functions focused and well-documented</li>
+                <li>Achieve >80% test coverage</li>
+                <li>Follow Q# style guidelines</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section id="applications" class="section">
+        <h2>Applications</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 30px 0; padding: 0 20px;">
+            <div style="padding: 24px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)'">
+                <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.4em;">🏥 Medical Imaging</h3>
+                <p style="color: #555; line-height: 1.6; margin: 12px 0 0 0;">Advanced quantum algorithms for enhanced diagnostic imaging, pattern recognition in medical data, and predictive health analytics using quantum-classical hybrid approaches.</p>
+            </div>
+            <div style="padding: 24px; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)'">
+                <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.4em;">🤖 Robotics Control</h3>
+                <p style="color: #555; line-height: 1.6; margin: 12px 0 0 0;">Quantum-optimized control systems for complex robotic tasks, trajectory optimization, and real-time decision making using quantum advantage.</p>
+            </div>
+            <div style="padding: 24px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)'">
+                <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.4em;">⚙️ Optimization Problems</h3>
+                <p style="color: #555; line-height: 1.6; margin: 12px 0 0 0;">Solving complex optimization challenges in logistics, finance, and resource allocation using QAOA and other quantum optimization algorithms.</p>
+            </div>
+            <div style="padding: 24px; background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)'">
+                <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.4em;">🤖 Machine Learning</h3>
+                <p style="color: #555; line-height: 1.6; margin: 12px 0 0 0;">Accelerated machine learning pipelines leveraging quantum machine learning techniques for classification, clustering, and pattern recognition.</p>
+            </div>
+        </div>
+    </section>
+</div>
