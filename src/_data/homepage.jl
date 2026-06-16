@@ -57,7 +57,7 @@ Dict(
              "category" => "Quantum Algorithms"
         ),
          Dict("name" => "Quantum Providers",
-                "url" => "resources/providers",
+                "url" => "resources/quantum2",
                 "description" => "Explore a curated list of quantum computing providers, including cloud platforms and hardware vendors. Find the right provider for your quantum computing needs.",
                 "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                 "category" => "Quantum Providers"
