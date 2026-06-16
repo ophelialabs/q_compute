@@ -7,7 +7,7 @@
 <link rel="root" href=".." />
 
 <link rel="icon" href="../assets/favicon.ico" />
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
 
 <link rel="stylesheet" href="../assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="../assets/styles/layout.css" type="text/css" />
@@ -16,6 +16,24 @@
 
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mermaid Charts -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                fontSize: '14px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
 
 <script src="../assets/scripts/theme.js" defer></script>
 <script src="../assets/scripts/navbar.js" defer></script>
