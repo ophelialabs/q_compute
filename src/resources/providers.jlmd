@@ -371,12 +371,12 @@ document.getElementById('provider-dropdown').addEventListener('change', function
 const resourcesGrid = document.getElementById('resources-grid');
 resourcesGrid.innerHTML = Object.entries(learningData).map(([key, resource]) => `
     <div class="resource-item">
-        <img class="resource-image" src="${resource.img}" alt="${resource.name}">
+        <img class="resource-image" src="\${resource.img}" alt="\${resource.name}">
         <div class="resource-content">
-            <div class="resource-category">${resource.category}</div>
-            <h3 class="resource-name">${resource.name}</h3>
-            <p class="resource-description">${resource.description}</p>
-            <a href="${resource.url}" target="_blank" class="resource-link">Learn More →</a>
+            <div class="resource-category">\${resource.category}</div>
+            <h3 class="resource-name">\${resource.name}</h3>
+            <p class="resource-description">\${resource.description}</p>
+            <a href="\${resource.url}" target="_blank" class="resource-link">Learn More →</a>
         </div>
     </div>
 `).join('');
