@@ -1,255 +1,163 @@
 ---
 title: "Quantum Providers"
-layout: "md.jlmd"
+layout: "layout.jlhtml"
 ---
 
-# Quantum Computing Providers
+<link rel="stylesheet" href="$(root_url)/assets/styles/homepage.css" type="text/css" />
+
+<div id="title" class="banner">
+    <h1>Quantum Computing Providers</h1>
+    <p style="font-size: 1.1em; color: #666; max-width: 800px; margin: 20px auto;">Explore and connect to leading quantum computing platforms. Select a provider below to access documentation, tools, and resources.</p>
+</div>
+
+<!-- PROVIDERS GRID SECTION -->
+<main style="padding: 40px 20px; max-width: 1400px; margin: 0 auto;">
 
 ```julia:provider_data
+# Core provider data with categories and links
 providers = Dict(
+    # Core Quantum Platforms
     "azure" => Dict(
-        "name" => "Microsoft: Azure Quantum",
-        "url" => "https://azure.microsoft.com/en-us/services/quantum/",
-        "description" => "Microsoft's Azure Quantum platform offers access to quantum hardware, software tools, and resources for quantum computing development. Explore quantum algorithms, simulators, and cloud-based quantum services to accelerate your quantum computing journey.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "Microsoft Azure Quantum",
+        "category" => "Core Quantum Platforms",
+        "icon" => "☁️",
+        "options" => [
+            "Platform" => "https://azure.microsoft.com/en-us/services/quantum/",
+            "Documentation" => "https://learn.microsoft.com/en-us/azure/quantum/",
+            "Development Kit" => "https://learn.microsoft.com/en-us/azure/quantum/development-kit-overview",
+            "Quantum Katas" => "https://quantum.microsoft.com/en-us/tools/quantum-katas"
+        ]
     ),
     "quantinuum" => Dict(
-        "name" => "Honeywell: Quantinuum Nexus",
-        "url" => "https://docs.quantinuum.com/nexus/index.html",
-        "description" => "Quantinuum's Nexus platform documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
-    ),
-    "guppy" => Dict(
-        "name" => "Guppy",
-        "url" => "https://docs.quantinuum.com/guppy/getting_started.html",
-        "description" => "Guppy is a quantum programming language developed by Quantinuum. It offers a high-level syntax for expressing quantum algorithms and is designed to be user-friendly for both beginners and experienced quantum programmers.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "Honeywell Quantinuum",
+        "category" => "Core Quantum Platforms",
+        "icon" => "⚛️",
+        "options" => [
+            "Nexus Platform" => "https://docs.quantinuum.com/nexus/index.html",
+            "Guppy Language" => "https://docs.quantinuum.com/guppy/getting_started.html"
+        ]
     ),
     "ibm" => Dict(
-        "name" => "IBM Quantum: Qiskit",
-        "url" => "https://www.ibm.com/quantum/",
-        "description" => "Access IBM's quantum processors and simulators through the cloud. Learn quantum computing with real quantum hardware on enterprise infrastructure using RHEL and HashiCorp tools (Terraform, Vault, Consul) for scalable deployment and management.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "IBM Quantum",
+        "category" => "Core Quantum Platforms",
+        "icon" => "🔬",
+        "options" => [
+            "Platform" => "https://www.ibm.com/quantum/",
+            "Qiskit Textbook" => "https://qiskit.org/textbook/preface.html",
+            "Qiskit Framework" => "https://qiskit.org/"
+        ]
     ),
     "google" => Dict(
-        "name" => "Google Quantum AI: Cirq & Sycamore",
-        "url" => "https://quantumai.google/",
-        "description" => "Explore Google's quantum computing initiatives and resources. Access quantum hardware, software tools, and research insights from one of the leading companies in quantum technology.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "Google Quantum AI",
+        "category" => "Core Quantum Platforms",
+        "icon" => "🌐",
+        "options" => [
+            "Quantum AI" => "https://quantumai.google/",
+            "Cirq Framework" => "https://quantumai.google/cirq"
+        ]
     ),
-    "braket" => Dict(
-        "name" => "Amazon: Braket",
-        "url" => "https://aws.amazon.com/braket/",
-        "description" => "Amazon Braket is a fully managed quantum computing service that helps you get started with quantum computing. It provides access to quantum hardware from multiple providers, as well as a development environment for building and testing quantum algorithms.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+    "amazon" => Dict(
+        "name" => "Amazon Braket",
+        "category" => "Core Quantum Platforms",
+        "icon" => "📦",
+        "options" => [
+            "Braket Service" => "https://aws.amazon.com/braket/",
+            "Documentation" => "https://docs.aws.amazon.com/braket/"
+        ]
     ),
+    
+    # Quantum Hardware & Simulators
     "rigetti" => Dict(
-        "name" => "Rigetti: Forest",
-        "url" => "https://www.rigetti.com/forest",
-        "description" => "Rigetti's Forest platform documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "Rigetti Computing",
+        "category" => "Quantum Hardware",
+        "icon" => "🔧",
+        "options" => [
+            "Forest Platform" => "https://www.rigetti.com/forest",
+            "QCS" => "https://www.rigetti.com/qcs"
+        ]
     ),
     "ionq" => Dict(
-        "name" => "IonQ: Quantum Cloud",
-        "url" => "https://ionq.com/quantum-cloud",
-        "description" => "IonQ's Quantum Cloud documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "IonQ",
+        "category" => "Quantum Hardware",
+        "icon" => "💎",
+        "options" => [
+            "Quantum Cloud" => "https://ionq.com/quantum-cloud",
+            "Documentation" => "https://docs.ionq.com/"
+        ]
     ),
     "dwave" => Dict(
-        "name" => "D-Wave: Quantum Annealing",
-        "url" => "https://www.dwavesys.com/quantum-computing/quantum-annealing",
-        "description" => "D-Wave's quantum annealing platform documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
-    ),
-    "dwave-docs" => Dict(
-        "name" => "D-Wave Documentation",
-        "url" => "https://docs.dwavequantum.com/en/latest/",
-        "description" => "Access D-Wave's quantum annealing resources and documentation. Explore an alternative approach to quantum computing using adiabatic quantum computation.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "D-Wave",
+        "category" => "Quantum Hardware",
+        "icon" => "❄️",
+        "options" => [
+            "Quantum Annealing" => "https://www.dwavesys.com/quantum-computing/quantum-annealing",
+            "Documentation" => "https://docs.dwavequantum.com/en/latest/",
+            "Leap Platform" => "https://cloud.dwavesys.com/leap/"
+        ]
     ),
     "xanadu" => Dict(
-        "name" => "Xanadu: Strawberry Fields",
-        "url" => "https://www.xanadu.ai/strawberryfields",
-        "description" => "Xanadu's Strawberry Fields documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
+        "name" => "Xanadu",
+        "category" => "Quantum Hardware",
+        "icon" => "🌟",
+        "options" => [
+            "Strawberry Fields" => "https://www.xanadu.ai/strawberryfields",
+            "Photonic Hardware" => "https://www.xanadu.ai/"
+        ]
     ),
-    "quantum-inspire" => Dict(
+    
+    # Open Source & Community
+    "quantum_inspire" => Dict(
         "name" => "Quantum Inspire",
-        "url" => "https://www.quantum-inspire.com/",
-        "description" => "Quantum Inspire is a quantum computing platform developed by QuTech. It provides access to quantum hardware and simulators, as well as a development environment for building and testing quantum algorithms. Quantum Inspire is designed to be user-friendly and accessible to researchers, educators, and students interested in quantum computing.",
-        "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-        "category" => "Core Quantum Platforms"
-    )
+        "category" => "Open Source & Community",
+        "icon" => "🎓",
+        "options" => [
+            "Platform" => "https://www.quantum-inspire.com/",
+            "Documentation" => "https://www.quantum-inspire.com/kbase/"
+        ]
+    ),
 )
 ```
 
 ```julia
 using PlutoUI
 
-@bind selected_provider Select(
-    ["" => "-- Choose a Provider --",
-     "azure" => "Microsoft: Azure Quantum",
-     "quantinuum" => "Honeywell: Quantinuum Nexus",
-     "guppy" => "Guppy",
-     "ibm" => "IBM Quantum: Qiskit",
-     "google" => "Google Quantum AI: Cirq & Sycamore",
-     "braket" => "Amazon: Braket",
-     "rigetti" => "Rigetti: Forest",
-     "ionq" => "IonQ: Quantum Cloud",
-     "dwave" => "D-Wave: Quantum Annealing",
-     "dwave-docs" => "D-Wave Documentation",
-     "xanadu" => "Xanadu: Strawberry Fields",
-     "quantum-inspire" => "Quantum Inspire"
-    ]
-)
+# Generate provider cards with dropdown buttons
+html"""
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin: 30px 0;">
+"""  *
+    [
+        let provider_key = key, provider = providers[key]
+            html"""
+            <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+                 onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'"
+                 onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
+                
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <span style="font-size: 2.5em;">$(provider["icon"])</span>
+                    <div>
+                        <h3 style="margin: 0; color: #2c3e50; font-size: 1.2em;">$(provider["name"])</h3>
+                        <p style="margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;">$(provider["category"])</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <label style="display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;">Quick Links:</label>
+                    <select style="width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;" 
+                            onchange="if(this.value) window.open(this.value, '_blank'); this.selectedIndex=0;"
+                            onmouseover="this.style.borderColor='#667eea'"
+                            onmouseout="this.style.borderColor='#e0e6ed'">
+                        <option value="">📍 Select a link...</option>
+                        $(join([html"<option value=\"$(url)\">$(label)</option>" for (label, url) in provider["options"]], "\n"))
+                    </select>
+                </div>
+            </div>
+            """
+        end for key in sort(collect(keys(providers)))
+    ]...
+"""  *
+html"""
+</div>
+"""
 ```
 
-```julia
-if selected_provider != "" && haskey(providers, selected_provider)
-    provider = providers[selected_provider]
-    html"""
-    <div style="margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f8f9fa; display: flex; gap: 20px;">
-        <img src="$(provider["img"])" alt="$(provider["name"]) Logo" style="width: 150px; height: 150px; object-fit: cover; border-radius: 4px;">
-        <div style="flex: 1;">
-            <h2 style="margin-top: 0;">$(provider["name"])</h2>
-            <p style="font-size: 12px; color: #667eea; font-weight: 600; text-transform: uppercase; margin: 8px 0;">$(provider["category"])</p>
-            <p style="line-height: 1.6; margin: 12px 0;">$(provider["description"])</p>
-            <a href="$(provider["url"])" target="_blank" style="display: inline-block; padding: 10px 16px; background: #667eea; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">Visit Website →</a>
-        </div>
-    </div>
-    """
-else
-    html""
-end
-``` 
-    "providers" => [
-        Dict("name" => "Microsoft: Azure Quantum",
-             "url" => "https://azure.microsoft.com/en-us/services/quantum/",
-             "description" => "Microsoft's Azure Quantum platform offers access to quantum hardware, software tools, and resources for quantum computing development. Explore quantum algorithms, simulators, and cloud-based quantum services to accelerate your quantum computing journey.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Honeywell: Quantinuum Nexus",
-             "url" => "https://docs.quantinuum.com/nexus/index.html",
-             "description" => "Quantinuum's Nexus platform documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Guppy",
-            "url" => "https://docs.quantinuum.com/guppy/getting_started.html",
-            "description" => "Guppy is a quantum programming language developed by Quantinuum. It offers a high-level syntax for expressing quantum algorithms and is designed to be user-friendly for both beginners and experienced quantum programmers.",
-            "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.pn",
-            "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "IBM Quantum: Qiskit",
-             "url" => "https://www.ibm.com/quantum/",
-             "description" => "Access IBM's quantum processors and simulators through the cloud. Learn quantum computing with real quantum hardware on enterprise infrastructure using RHEL and HashiCorp tools (Terraform, Vault, Consul) for scalable deployment and management.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Google Quantum AI: Cirq & Sycamore",
-             "url" => "https://quantumai.google/",
-             "description" => "Explore Google's quantum computing initiatives and resources. Access quantum hardware, software tools, and research insights from one of the leading companies in quantum technology.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Amazon: Braket",
-             "url" => "https://aws.amazon.com/braket/",
-             "description" => "Amazon Braket is a fully managed quantum computing service that helps you get started with quantum computing. It provides access to quantum hardware from multiple providers, as well as a development environment for building and testing quantum algorithms.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Rigetti: Forest",
-             "url" => "https://www.rigetti.com/forest",
-             "description" => "Rigetti's Forest platform documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "IonQ: Quantum Cloud",
-             "url" => "https://ionq.com/quantum-cloud",
-             "description" => "IonQ's Quantum Cloud documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "D-Wave: Quantum Annealing",
-             "url" => "https://www.dwavesys.com/quantum-computing/quantum-annealing",
-             "description" => "D-Wave's quantum annealing platform documentation. Access quantum hardware, software tools, and resources from one of the leading companies in quantum technology.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"         
-        ),
-        Dict("name" => "D-Wave Documentation",
-             "url" => "https://docs.dwavequantum.com/en/latest/",
-             "description" => "Access D-Wave's quantum annealing resources and documentation. Explore an alternative approach to quantum computing using adiabatic quantum computation.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Xanadu: Strawberry Fields",
-             "url" => "https://www.xanadu.ai/strawberryfields",
-             "description" => "Xanadu's Strawberry Fields documentation. Access quantum hardware, software  tools, and resources from one of the leading companies in quantum technology.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Quantum Inspire",
-             "url" => "https://www.quantum-inspire.com/",
-             "description" => "Quantum Inspire is a quantum computing platform developed by QuTech. It provides access to quantum hardware and simulators, as well as a development environment for building and testing quantum algorithms. Quantum Inspire is designed to be user-friendly and accessible to researchers, educators, and students interested in quantum computing.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-    ],
-    
-    # Learning resources section
-    "learning_resources" => [
-        Dict("name" => "Q#",
-             "url" => "https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview#structure-of-a-q-program",
-             "description" => "Microsoft's Q# programming language documentation. Access resources for learning and developing quantum applications using Q# on the Azure Quantum platform.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Azure Quantum: Ignite",
-             "url" => "https://learn.microsoft.com/en-us/azure/quantum/",
-             "description" => "Microsoft's comprehensive guide to quantum computing on Azure. Learn about quantum hardware access, development tools, and cloud-based quantum simulation.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Quantum Katas",
-             "url" => "https://quantum.microsoft.com/en-us/tools/quantum-katas",
-             "description" => "Interactive programming exercises designed to teach quantum computing concepts hands-on. Perfect for reinforcing your understanding through coding practice. Added this before Azure Quantum Ignite to utilize Azure's trial period after completing the katas.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Interactive Learning & Tools"
-        ),
-        Dict("name" => "Qiskit Textbook",
-             "url" => "https://qiskit.org/textbook/preface.html",
-             "description" => "The Qiskit Textbook is an open-source resource for learning quantum computing. It provides a comprehensive introduction to quantum computing concepts, algorithms, and programming using the Qiskit framework. The textbook is designed for learners of all levels, from beginners to experienced programmers, and includes interactive examples, exercises, and real-world applications of quantum computing.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Interactive Learning & Tools"
-        ),
-        Dict("name" => "Microsoft Quantum Development Kit",
-             "url" => "https://learn.microsoft.com/en-us/azure/quantum/development-kit-overview",
-             "description" => "Microsoft's Quantum Development Kit documentation. Access resources for learning and developing quantum applications using the Quantum Development Kit on the Azure Quantum platform.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-        Dict("name" => "Q# Jupyter Notebooks",
-             "url" => "https://github.com/microsoft/Quantum/blob/main/samples/getting-started/README.md",
-             "description" => "A collection of Jupyter Notebooks for learning and developing quantum applications using the Q# programming language.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Interactive Learning & Tools"
-        ),
-        Dict("name" => "Quantum Programming Studio",
-             "url" => "https://quantumprogrammingstudio.com/",
-             "description" => "Quantum Programming Studio is an online platform for learning and developing quantum algorithms. It provides a user-friendly interface for writing and testing quantum code, as well as access to quantum hardware and simulators. Quantum Programming Studio is designed to be accessible to learners of all levels, making it an excellent resource for anyone interested in exploring quantum computing concepts and programming.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
-    ]
+</main>
