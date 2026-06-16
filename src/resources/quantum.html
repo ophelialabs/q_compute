@@ -1,13 +1,40 @@
-Dict(
-    # Page title and optional disclaimer for the page
-    "title" => "Quantum Computing",
-    "disclaimer" => "",
+---
+title: "Quantum Research & Infrastructure"
+---
 
-<div class="content-section">
-    <h1>🚀 Quantum Computing Research</h1>
-    <p class="lead">Enterprise-grade quantum computing framework integrating quantum algorithms, machine learning, and IoT edge computing with specialized implementations for medical imaging, robotics control, and advanced optimization.</p>
-    
-    <!-- Navigation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ophelia Labs - Research, Infrastructure & Resources</title>
+    <meta name="description" content="Comprehensive platform for quantum computing research, enterprise infrastructure, and technical resources.">
+    <meta name="keywords" content="quantum computing, infrastructure, research, deployment, enterprise, Q#, Python, HDF5">
+    <meta property="og:title" content="Ophelia Labs - Research & Infrastructure">
+    <meta property="og:description" content="Comprehensive platform for quantum computing research, enterprise infrastructure, and technical resources.">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                fontSize: '14px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="content-section">
+        <h1>🚀 Quantum Computing Research</h1>
+        <p class="lead">Enterprise-grade quantum computing framework integrating quantum algorithms, machine learning, and IoT edge computing with specialized implementations for medical imaging, robotics control, and advanced optimization.</p>
+
+        <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#overview">Overview</a></li>
@@ -590,7 +617,6 @@ GET    /api/diagnostics/status      # System health</code></pre>
         </div>
     </section>
 
-    <!-- Applications -->
     <section id="applications" class="section">
         <h2>Applications</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 30px 0; padding: 0 20px;">
@@ -613,3 +639,19 @@ GET    /api/diagnostics/status      # System health</code></pre>
         </div>
     </section>
 </div>
+<script>
+    // Utility functions
+function renderDataGrid(containerId, data, template) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = data.map(item => {
+        if (typeof template === 'function') {
+            return template(item);
+        }
+        return template;
+    }).join('');
+}
+</script>
+</body>
+</html>
