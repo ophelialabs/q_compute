@@ -7,8 +7,8 @@ layout: "md.jlmd"
 <section id="applications" class="section">
         <h2>Applications</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 30px 0; padding: 0 20px;">
-            <div style="padding: 24px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)'">
 <!-- Provider Card -->
+            <div style="padding: 24px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.08)'">
                 <h3 style="margin-top: 0; color: #2c3e50; font-size: 1.4em;">🏥 Provider</h3>
                 <p style="color: #555; line-height: 1.6; margin: 12px 0 0 0;">Advanced quantum algorithms for enhanced diagnostic imaging, pattern recognition in medical data, and predictive health analytics using quantum-classical hybrid approaches.</p>
                     <div style="align: center">
@@ -63,8 +63,7 @@ layout: "md.jlmd"
                 </div>
             </div>
         </div>
-    </section>
-</div>
+</section>
 
 <div id="provider-content" style="margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: var(--pluto-background, #f8f9fa); display: none;">
     <div style="display: flex; gap: 20px;">
