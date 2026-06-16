@@ -129,28 +129,28 @@ cards_html = begin
     for key in sorted_keys
         provider = providers[key]
         options_html = join([
-            "<option value=\"$(url)\">$(label)</option>"
+            "<option value=\"" * url * "\">" * label * "</option>"
             for (label, url) in provider["options"]
         ], "")
         
-        card = """
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                <span style="font-size: 2.5em;">$(provider["icon"])</span>
-                <div>
-                    <h3 style="margin: 0; color: #2c3e50; font-size: 1.2em;">$(provider["name"])</h3>
-                    <p style="margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;">$(provider["category"])</p>
-                </div>
-            </div>
-            <div style="margin-top: 20px;">
-                <label style="display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;">Quick Links:</label>
-                <select style="width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;" onchange="if(this.value) window.open(this.value, '_blank'); this.selectedIndex=0;" onmouseover="this.style.borderColor='#667eea'" onmouseout="this.style.borderColor='#e0e6ed'">
-                    <option value="">📍 Select a link...</option>
-                    $options_html
-                </select>
-            </div>
-        </div>
-        """
+        card = 
+            "<div style=\"background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;\" onmouseover=\"this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'\" onmouseout=\"this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'\">" *
+            "  <div style=\"display: flex; align-items: center; gap: 12px; margin-bottom: 16px;\">" *
+            "    <span style=\"font-size: 2.5em;\">" * provider["icon"] * "</span>" *
+            "    <div>" *
+            "      <h3 style=\"margin: 0; color: #2c3e50; font-size: 1.2em;\">" * provider["name"] * "</h3>" *
+            "      <p style=\"margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;\">" * provider["category"] * "</p>" *
+            "    </div>" *
+            "  </div>" *
+            "  <div style=\"margin-top: 20px;\">" *
+            "    <label style=\"display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;\">Quick Links:</label>" *
+            "    <select style=\"width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;\" onchange=\"if(this.value) window.open(this.value, '_blank'); this.selectedIndex=0;\" onmouseover=\"this.style.borderColor='#667eea'\" onmouseout=\"this.style.borderColor='#e0e6ed'\">" *
+            "      <option value=\"\">📍 Select a link...</option>" *
+            options_html *
+            "    </select>" *
+            "  </div>" *
+            "</div>"
+        
         push!(cards, card)
     end
     
