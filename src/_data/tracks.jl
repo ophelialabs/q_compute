@@ -1,5 +1,5 @@
 [
-    "julia" => "💻 Robotics",
-    "material" => "Medical",
-    "setup" => "Networking"
+    "julia" => "🤖 Robotics",
+    "material" => "🏥 Medical",
+    "setup" => "⚙️ Networking"
 ]
