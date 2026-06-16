@@ -124,20 +124,35 @@ const providers = {
     }
 };
 
-document.getElementById('provider-select').addEventListener('change', function(e) {
-    const selectedKey = e.target.value;
-    if (selectedKey && providers[selectedKey]) {
-        const provider = providers[selectedKey];
-        document.getElementById('provider-title').textContent = provider.name;
-        document.getElementById('provider-description').textContent = provider.description;
-        document.getElementById('provider-img').src = provider.img;
-        document.getElementById('provider-category').textContent = provider.category;
-        document.getElementById('provider-link').href = provider.url;
-        document.getElementById('provider-content').style.display = 'flex';
-    } else {
-        document.getElementById('provider-content').style.display = 'none';
+function initProviderSelector() {
+    const select = document.getElementById('provider-select');
+    if (!select) {
+        console.error('provider-select element not found');
+        return;
     }
-});
+    
+    select.addEventListener('change', function(e) {
+        const selectedKey = e.target.value;
+        if (selectedKey && providers[selectedKey]) {
+            const provider = providers[selectedKey];
+            document.getElementById('provider-title').textContent = provider.name;
+            document.getElementById('provider-description').textContent = provider.description;
+            document.getElementById('provider-img').src = provider.img;
+            document.getElementById('provider-category').textContent = provider.category;
+            document.getElementById('provider-link').href = provider.url;
+            document.getElementById('provider-content').style.display = 'flex';
+        } else {
+            document.getElementById('provider-content').style.display = 'none';
+        }
+    });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProviderSelector);
+} else {
+    initProviderSelector();
+}
 </script> 
     "providers" => [
         Dict("name" => "Microsoft: Azure Quantum",
