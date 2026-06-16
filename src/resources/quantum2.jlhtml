@@ -1,6 +1,5 @@
 ---
 title: "Quantum Providers"
-layout: "layout.jlhtml"
 ---
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/homepage.css" type="text/css" />
