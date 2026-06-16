@@ -39,7 +39,7 @@ end)
 <link rel="root" href="$(root_url)" />
 
 <link rel="icon" href="$(root_url)/assets/favicon.ico" />
-<link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml" />
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
@@ -48,6 +48,24 @@ end)
 
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mermaid Charts -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                fontSize: '14px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
 
 <script src="$(root_url)/assets/scripts/theme.js" defer></script>
 <script src="$(root_url)/assets/scripts/navbar.js" defer></script>
