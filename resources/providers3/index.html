@@ -1,0 +1,158 @@
+<!DOCTYPE html><link rel="stylesheet" href="../../assets/styles/homepage.css" type="text/css" />
+<div id="title" class="banner">
+    <h1>Quantum Computing Platforms</h1>
+    <p style="font-size: 1.1em; color: #666; max-width: 800px; margin: 20px auto;">
+        Explore and connect to leading quantum computing platforms. Select a provider below to access documentation, tools, and resources.
+    </p>
+</div>
+<main style="padding: 40px 20px; max-width: 1400px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin: 30px 0;">
+<pre><code>    &lt;!-- Provider Card 1: Azure Quantum --&gt;
+    &lt;div style=&quot;background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;&quot; 
+         onmouseover=&quot;this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'&quot; 
+         onmouseout=&quot;this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'&quot;&gt;
+        &lt;div style=&quot;display: flex; align-items: center; gap: 12px; margin-bottom: 16px;&quot;&gt;
+            &lt;span style=&quot;font-size: 2.5em;&quot;&gt;☁️&lt;/span&gt;
+            &lt;div&gt;
+                &lt;h3 style=&quot;margin: 0; color: #2c3e50; font-size: 1.2em;&quot;&gt;Microsoft Azure Quantum&lt;/h3&gt;
+                &lt;p style=&quot;margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;&quot;&gt;Core Platforms&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 20px;&quot;&gt;
+            &lt;label style=&quot;display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;&quot;&gt;Quick Links:&lt;/label&gt;
+            &lt;select style=&quot;width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;&quot; 
+                    onchange=&quot;if(this.value) window.location.href = this.value; this.selectedIndex=0;&quot; 
+                    onmouseover=&quot;this.style.borderColor='#667eea'&quot; 
+                    onmouseout=&quot;this.style.borderColor='#e0e6ed'&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;📍 Select a link...&lt;/option&gt;
+                &lt;option value=&quot;https://azure.microsoft.com/en-us/services/quantum/&quot;&gt;Platform&lt;/option&gt;
+                &lt;option value=&quot;https://learn.microsoft.com/en-us/azure/quantum/&quot;&gt;Documentation&lt;/option&gt;
+                &lt;option value=&quot;https://quantum.microsoft.com/en-us/tools/quantum-katas&quot;&gt;Katas&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Provider Card 2: IBM Quantum --&gt;
+    &lt;div style=&quot;background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;&quot; 
+         onmouseover=&quot;this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'&quot; 
+         onmouseout=&quot;this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'&quot;&gt;
+        &lt;div style=&quot;display: flex; align-items: center; gap: 12px; margin-bottom: 16px;&quot;&gt;
+            &lt;span style=&quot;font-size: 2.5em;&quot;&gt;🔬&lt;/span&gt;
+            &lt;div&gt;
+                &lt;h3 style=&quot;margin: 0; color: #2c3e50; font-size: 1.2em;&quot;&gt;IBM Quantum&lt;/h3&gt;
+                &lt;p style=&quot;margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;&quot;&gt;Core Platforms&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 20px;&quot;&gt;
+            &lt;label style=&quot;display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;&quot;&gt;Quick Links:&lt;/label&gt;
+            &lt;select style=&quot;width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;&quot; 
+                    onchange=&quot;if(this.value) window.location.href = this.value; this.selectedIndex=0;&quot; 
+                    onmouseover=&quot;this.style.borderColor='#667eea'&quot; 
+                    onmouseout=&quot;this.style.borderColor='#e0e6ed'&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;📍 Select a link...&lt;/option&gt;
+                &lt;option value=&quot;https://www.ibm.com/quantum/&quot;&gt;Platform&lt;/option&gt;
+                &lt;option value=&quot;https://qiskit.org/&quot;&gt;Qiskit&lt;/option&gt;
+                &lt;option value=&quot;https://qiskit.org/textbook/&quot;&gt;Textbook&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Provider Card 3: Google Quantum AI --&gt;
+    &lt;div style=&quot;background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;&quot; 
+         onmouseover=&quot;this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'&quot; 
+         onmouseout=&quot;this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'&quot;&gt;
+        &lt;div style=&quot;display: flex; align-items: center; gap: 12px; margin-bottom: 16px;&quot;&gt;
+            &lt;span style=&quot;font-size: 2.5em;&quot;&gt;🌐&lt;/span&gt;
+            &lt;div&gt;
+                &lt;h3 style=&quot;margin: 0; color: #2c3e50; font-size: 1.2em;&quot;&gt;Google Quantum AI&lt;/h3&gt;
+                &lt;p style=&quot;margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;&quot;&gt;Core Platforms&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 20px;&quot;&gt;
+            &lt;label style=&quot;display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;&quot;&gt;Quick Links:&lt;/label&gt;
+            &lt;select style=&quot;width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;&quot; 
+                    onchange=&quot;if(this.value) window.location.href = this.value; this.selectedIndex=0;&quot; 
+                    onmouseover=&quot;this.style.borderColor='#667eea'&quot; 
+                    onmouseout=&quot;this.style.borderColor='#e0e6ed'&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;📍 Select a link...&lt;/option&gt;
+                &lt;option value=&quot;https://quantumai.google/&quot;&gt;Quantum AI&lt;/option&gt;
+                &lt;option value=&quot;https://quantumai.google/cirq&quot;&gt;Cirq&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Provider Card 4: AWS Braket --&gt;
+    &lt;div style=&quot;background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;&quot; 
+         onmouseover=&quot;this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'&quot; 
+         onmouseout=&quot;this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'&quot;&gt;
+        &lt;div style=&quot;display: flex; align-items: center; gap: 12px; margin-bottom: 16px;&quot;&gt;
+            &lt;span style=&quot;font-size: 2.5em;&quot;&gt;📦&lt;/span&gt;
+            &lt;div&gt;
+                &lt;h3 style=&quot;margin: 0; color: #2c3e50; font-size: 1.2em;&quot;&gt;Amazon Braket&lt;/h3&gt;
+                &lt;p style=&quot;margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;&quot;&gt;Core Platforms&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 20px;&quot;&gt;
+            &lt;label style=&quot;display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;&quot;&gt;Quick Links:&lt;/label&gt;
+            &lt;select style=&quot;width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;&quot; 
+                    onchange=&quot;if(this.value) window.location.href = this.value; this.selectedIndex=0;&quot; 
+                    onmouseover=&quot;this.style.borderColor='#667eea'&quot; 
+                    onmouseout=&quot;this.style.borderColor='#e0e6ed'&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;📍 Select a link...&lt;/option&gt;
+                &lt;option value=&quot;https://aws.amazon.com/braket/&quot;&gt;Braket Service&lt;/option&gt;
+                &lt;option value=&quot;https://docs.aws.amazon.com/braket/&quot;&gt;Documentation&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Provider Card 5: Quantinuum --&gt;
+    &lt;div style=&quot;background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;&quot; 
+         onmouseover=&quot;this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'&quot; 
+         onmouseout=&quot;this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'&quot;&gt;
+        &lt;div style=&quot;display: flex; align-items: center; gap: 12px; margin-bottom: 16px;&quot;&gt;
+            &lt;span style=&quot;font-size: 2.5em;&quot;&gt;⚛️&lt;/span&gt;
+            &lt;div&gt;
+                &lt;h3 style=&quot;margin: 0; color: #2c3e50; font-size: 1.2em;&quot;&gt;Honeywell Quantinuum&lt;/h3&gt;
+                &lt;p style=&quot;margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;&quot;&gt;Hardware Platforms&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 20px;&quot;&gt;
+            &lt;label style=&quot;display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;&quot;&gt;Quick Links:&lt;/label&gt;
+            &lt;select style=&quot;width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;&quot; 
+                    onchange=&quot;if(this.value) window.location.href = this.value; this.selectedIndex=0;&quot; 
+                    onmouseover=&quot;this.style.borderColor='#667eea'&quot; 
+                    onmouseout=&quot;this.style.borderColor='#e0e6ed'&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;📍 Select a link...&lt;/option&gt;
+                &lt;option value=&quot;https://docs.quantinuum.com/nexus/index.html&quot;&gt;Nexus&lt;/option&gt;
+                &lt;option value=&quot;https://docs.quantinuum.com/guppy/getting_started.html&quot;&gt;Guppy&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Provider Card 6: IonQ --&gt;
+    &lt;div style=&quot;background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;&quot; 
+         onmouseover=&quot;this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'&quot; 
+         onmouseout=&quot;this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'&quot;&gt;
+        &lt;div style=&quot;display: flex; align-items: center; gap: 12px; margin-bottom: 16px;&quot;&gt;
+            &lt;span style=&quot;font-size: 2.5em;&quot;&gt;💎&lt;/span&gt;
+            &lt;div&gt;
+                &lt;h3 style=&quot;margin: 0; color: #2c3e50; font-size: 1.2em;&quot;&gt;IonQ&lt;/h3&gt;
+                &lt;p style=&quot;margin: 4px 0 0 0; font-size: 0.85em; color: #667eea; font-weight: 600;&quot;&gt;Hardware Platforms&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 20px;&quot;&gt;
+            &lt;label style=&quot;display: block; font-size: 0.9em; color: #555; font-weight: 500; margin-bottom: 8px;&quot;&gt;Quick Links:&lt;/label&gt;
+            &lt;select style=&quot;width: 100%; padding: 10px; border: 2px solid #e0e6ed; border-radius: 6px; font-size: 0.95em; cursor: pointer; transition: border-color 0.2s;&quot; 
+                    onchange=&quot;if(this.value) window.location.href = this.value; this.selectedIndex=0;&quot; 
+                    onmouseover=&quot;this.style.borderColor='#667eea'&quot; 
+                    onmouseout=&quot;this.style.borderColor='#e0e6ed'&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;📍 Select a link...&lt;/option&gt;
+                &lt;option value=&quot;https://ionq.com/quantum-cloud&quot;&gt;Quantum Cloud&lt;/option&gt;
+                &lt;option value=&quot;https://docs.ionq.com/&quot;&gt;Documentation&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+</main>
