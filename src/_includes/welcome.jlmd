@@ -15,8 +15,9 @@ $(isempty(get(metadata["homepage"], "disclaimer", "")) ? nothing : @htl("""<bloc
 $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_highlights.jl")))
 </section>
 
-<!-- REFERENCES AND SUBJECTS SECTIONS -->
+<!-- REFERENCES, RESOURCES AND SUBJECTS SECTIONS -->
 <main class="homepage">
 $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_references.jl")))
+$(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_resources.jl")))
 $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_subjects.jl")))
 </main>
