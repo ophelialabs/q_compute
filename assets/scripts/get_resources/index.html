@@ -1,0 +1,132 @@
+<!DOCTYPE html><pre class="language-julia"><code>using JSON
+
+if isempty(get(metadata[&quot;homepage&quot;], &quot;resources&quot;, []))
+    nothing
+else
+    cards = [
+        let
+            resource = res
+            unique_id = replace(resource[&quot;name&quot;], &quot; &quot; => &quot;_&quot;, &quot;:&quot; => &quot;&quot;)
+            dropdown_options = get(resource, &quot;options&quot;, [])
+            
+            @htl(&quot;&quot;&quot;
+            &lt;div style=&quot;padding: 24px; background: linear-gradient(135deg, $(resource[&quot;gradient_from&quot;]) 0%, $(resource[&quot;gradient_to&quot;]) 100%); border: 1px solid #e0e6ed; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;&quot; 
+                 onmouseover=&quot;this.style.transform=&apos;translateY(-4px)&apos;; this.style.boxShadow=&apos;0 8px 20px rgba(0, 0, 0, 0.15)&apos;&quot; 
+                 onmouseout=&quot;this.style.transform=&apos;translateY(0)&apos;; this.style.boxShadow=&apos;0 4px 12px rgba(0, 0, 0, 0.08)&apos;&quot;>
+                &lt;h3 style=&quot;margin-top: 0; color: #2c3e50; font-size: 1.4em;&quot;>$(resource[&quot;emoji&quot;]) $(resource[&quot;name&quot;])&lt;/h3>
+                &lt;p style=&quot;color: #555; line-height: 1.6; margin: 12px 0 0 0;&quot;>$(resource[&quot;description&quot;])&lt;/p>
+                &lt;div style=&quot;align: center&quot;>
+                    &lt;select id=&quot;$(unique_id)-select&quot; class=&quot;resource-select&quot; data-resource=&quot;$(unique_id)&quot; style=&quot;padding: 8px 12px; border-radius: 4px; border: 1px solid #ddd; font-size: 14px;&quot;>
+                        &lt;option value=&quot;&quot;>-- $(get(resource, &quot;select_placeholder&quot;, &quot;Choose an option&quot;)) --&lt;/option>
+                        $([
+                            let opt = option_item
+                                opt_json = JSON.json(opt)
+                                @htl(&quot;&quot;&quot;&lt;option value=&apos;$(opt_json)&apos;>$(opt[&quot;name&quot;])&lt;/option>&quot;&quot;&quot;)
+                            end
+                            for option_item in dropdown_options
+                        ])
+                    &lt;/select>
+                &lt;/div>
+            &lt;/div>
+            &quot;&quot;&quot;)
+        end for res in metadata[&quot;homepage&quot;][&quot;resources&quot;]
+    ]
+
+    @htl(&quot;&quot;&quot;
+    &lt;div class=&quot;wide subjectscontainer&quot;>
+      &lt;h1>Resources&lt;/h1>
+      &lt;div style=&quot;display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 30px 0; padding: 0 20px;&quot;>
+      $(cards)      
+      &lt;/div>
+    &lt;/div>
+
+    &lt;!-- Modal for resource details -->
+    &lt;div id=&quot;resourceModal&quot; style=&quot;display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;&quot;>
+        &lt;div style=&quot;background: white; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);&quot;>
+            &lt;div style=&quot;display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;&quot;>
+                &lt;h2 id=&quot;modalTitle&quot; style=&quot;margin: 0; color: #2c3e50; font-size: 1.8em;&quot;>&lt;/h2>
+                &lt;button id=&quot;closeModal&quot; style=&quot;background: none; border: none; font-size: 28px; cursor: pointer; color: #999;&quot;>×&lt;/button>
+            &lt;/div>
+            &lt;div style=&quot;display: flex; gap: 20px; margin-bottom: 20px;&quot;>
+                &lt;img id=&quot;modalImage&quot; src=&quot;&quot; alt=&quot;Resource&quot; style=&quot;width: 150px; height: 150px; object-fit: cover; border-radius: 8px;&quot;>
+                &lt;div style=&quot;flex: 1;&quot;>
+                    &lt;p id=&quot;modalCategory&quot; style=&quot;font-size: 12px; color: #667eea; font-weight: 600; text-transform: uppercase; margin: 0 0 10px 0;&quot;>&lt;/p>
+                    &lt;p id=&quot;modalDescription&quot; style=&quot;color: #555; line-height: 1.6; margin: 0 0 15px 0; font-size: 14px;&quot;>&lt;/p>
+                    &lt;div id=&quot;modalRelatedTools&quot; style=&quot;display: none; background: #f9f9f9; padding: 12px; border-radius: 6px; border-left: 4px solid #667eea;&quot;>
+                        &lt;p style=&quot;margin: 0 0 8px 0; font-weight: 600; font-size: 12px; color: #333;&quot;>Related Tools:&lt;/p>
+                        &lt;div id=&quot;relatedToolsList&quot; style=&quot;display: flex; flex-direction: column; gap: 8px;&quot;>&lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div style=&quot;display: flex; gap: 10px;&quot;>
+                &lt;a id=&quot;modalLink&quot; href=&quot;&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%); color: white; text-decoration: none; border-radius: 6px; font-weight: 500; text-align: center; flex: 1;&quot;>Visit Resource →&lt;/a>
+                &lt;button id=&quot;closeModalBtn&quot; style=&quot;padding: 12px 20px; background: #f0f0f0; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; font-weight: 500; color: #333;&quot;>Close&lt;/button>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+
+    &lt;script>
+    document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+        const selects = document.querySelectorAll(&quot;.resource-select&quot;);
+        const modal = document.getElementById(&quot;resourceModal&quot;);
+        const closeBtn = document.getElementById(&quot;closeModal&quot;);
+        const closeModalBtn = document.getElementById(&quot;closeModalBtn&quot;);
+
+        function openModal(optionData) {
+            try {
+                document.getElementById(&quot;modalTitle&quot;).textContent = optionData.name;
+                document.getElementById(&quot;modalCategory&quot;).textContent = optionData.category;
+                document.getElementById(&quot;modalDescription&quot;).textContent = optionData.description;
+                document.getElementById(&quot;modalImage&quot;).src = optionData.img;
+                document.getElementById(&quot;modalLink&quot;).href = optionData.url;
+                
+                // Handle related tools if present
+                const relatedToolsDiv = document.getElementById(&quot;modalRelatedTools&quot;);
+                const relatedToolsList = document.getElementById(&quot;relatedToolsList&quot;);
+                
+                if (optionData.related_tools &amp;&amp; optionData.related_tools.length > 0) {
+                    relatedToolsList.innerHTML = optionData.related_tools.map(tool => 
+                        `&lt;a href=&quot;\${tool.url}&quot; target=&quot;_blank&quot; style=&quot;color: #667eea; text-decoration: none; font-size: 13px; padding: 4px 0;&quot;>&lt;strong>\${tool.name}&lt;/strong>: \${tool.description}&lt;/a>`
+                    ).join(&quot;&quot;);
+                    relatedToolsDiv.style.display = &quot;block&quot;;
+                } else {
+                    relatedToolsDiv.style.display = &quot;none&quot;;
+                }
+                
+                modal.style.display = &quot;flex&quot;;
+            } catch (e) {
+                console.error(&quot;Error opening modal:&quot;, e);
+            }
+        }
+
+        function closeResourceModal() {
+            modal.style.display = &quot;none&quot;;
+        }
+
+        selects.forEach(select => {
+            select.addEventListener(&quot;change&quot;, function(e) {
+                if (this.value) {
+                    try {
+                        const optionData = JSON.parse(this.value);
+                        openModal(optionData);
+                        this.value = &quot;&quot;;
+                    } catch (err) {
+                        console.error(&quot;Error parsing option data:&quot;, err);
+                    }
+                }
+            });
+        });
+
+        closeBtn.addEventListener(&quot;click&quot;, closeResourceModal);
+        closeModalBtn.addEventListener(&quot;click&quot;, closeResourceModal);
+
+        modal.addEventListener(&quot;click&quot;, function(e) {
+            if (e.target === modal) {
+                closeResourceModal();
+            }
+        });
+    });
+    &lt;/script>
+    &quot;&quot;&quot;)
+end
+</code></pre>
