@@ -10,6 +10,31 @@ import Pluto
 Pluto.run()
 ```
 
+### Local Development
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/jlabclouds/q_compute.git
+   cd q_compute
+   ```
+   ```
+   rm /proj_dir/q_compute/pluto-deployment-environment/Manifest.toml && cd /proj_dir/q_compute && julia -e "using Pkg; Pkg.activate("./pluto-deployment-environment"); Pkg.instantiate()"
+   ```
+
+2. **Install Julia dependencies**:
+   ```bash
+   julia
+   ] instantiate  # or: using Pkg; Pkg.instantiate()
+   ```
+
+3. **Run development server**:
+   ```bash
+   julia develop.jl
+   ```
+   The site will be available at `http://localhost:1234` (or specified port)
+
+4. **View course**: Open your browser and navigate to the local URL
+
 [Probing non-equilibrium topological order 
 on a quantum processor](https://arxiv.org/pdf/2501.18461)
 
@@ -143,28 +168,6 @@ By completing this course, you will:
 - Julia 1.10 or later installed
 - Basic linear algebra knowledge
 - Familiarity with complex numbers
-
-### Local Development
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/jlabclouds/q_compute.git
-   cd q_compute
-   ```
-
-2. **Install Julia dependencies**:
-   ```bash
-   julia
-   ] instantiate  # or: using Pkg; Pkg.instantiate()
-   ```
-
-3. **Run development server**:
-   ```bash
-   julia develop.jl
-   ```
-   The site will be available at `http://localhost:1234` (or specified port)
-
-4. **View course**: Open your browser and navigate to the local URL
 
 ### File Structure
 
