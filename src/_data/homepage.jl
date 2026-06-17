@@ -303,5 +303,18 @@ Dict(
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                      "category" => "Quantum Concepts & Visualization"),
              ]),
+        Dict("name" => "Robotics Control",
+             "emoji" => "🤖",
+             "gradient_from" => "#ffecd2",
+             "gradient_to" => "#fcb69f",
+             "description" => "Quantum-optimized control systems for complex robotic tasks, trajectory optimization, and real-time decision making using quantum advantage.",
+             "select_placeholder" => "Choose a Tool",
+             "options" => [
+                Dict("key" => "ros2", "name" => "ROS 2",
+                     "url" => "https://docs.ros.org/en/humble/",
+                     "description" => "Robot Operating System 2 - A flexible framework for writing robot software with middleware, tools, and libraries. developed and tested on Ubuntu Linux, making it the recommended operating system",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Robotics Simulation & Control"),
+                ]),
     ],
 )
