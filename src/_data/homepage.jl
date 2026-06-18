@@ -68,7 +68,7 @@ Dict(
                      "category" => "Core Quantum Platforms",
                      "related_tools" => [
                         Dict("name" => "Q#", "url" => "https://learn.microsoft.com/en-us/azure/quantum/overview-what-is-qsharp", "description" => "Microsoft's Q# quantum programming language"),
-                        Dict("name" => "QIR", "url" => "https://learn.microsoft.com/en-us/azure/quantum/concepts-qir", "description" => "Quantum Intermediate Representation for cross-platform quantum programs")
+                        Dict("name" => "QIR", "url" => "https://learn.microsoft.com/en-us/azure/quantum/concepts-qir", "description" => "Quantum Intermediate Representation for cross-platform quantum programs"),
                         Dict("name" => "Nuget F#", "url" => "https://www.nuget.org/packages/FSharp.Azure.Quantum#c-fluent-api", "description" => "NuGet package for F# Azure Quantum development. Provides tools and libraries for building quantum applications using F# on the Azure Quantum platform.")
                      ]),
                 Dict("key" => "quantinuum", "name" => "Honeywell: Quantinuum Nexus",
