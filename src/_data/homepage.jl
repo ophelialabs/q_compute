@@ -54,6 +54,40 @@ Dict(
 
     # Resources section - Quantum Providers and Tools with Dropdowns
     "resources" => [
+        Dict("name" => "Landscapes",
+             "emoji" => "🏥",
+             "gradient_from" => "#f5f7fa",
+             "gradient_to" => "#c3cfe2",
+             "description" => "Explore the quantum computing ecosystem through curated landscapes of providers, tools, and applications across various domains. Dive into interactive dropdowns to discover the latest advancements and resources in quantum technology.",
+             "select_placeholder" => "Choose a Provider",
+             "options" => [
+                Dict("key" => "CNCF", "name" => "Cloud Native Computing Foundation",
+                     "url" => "https://www.cncf.io/",
+                     "description" => "The Cloud Native Computing Foundation (CNCF) is an open-source software foundation that promotes the adoption of cloud-native computing. CNCF hosts and supports a wide range of projects that enable organizations to build and run applications in modern, dynamic environments such as public, private, and hybrid clouds.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Core Quantum Platforms"),
+                     "related_tools" => [
+                         Dict("key" => "Adopters", "name" => "Adapters & Middleware", "url" => "https://jlabclouds.github.io/adapters-landscape", "description" => "Explore adapters and middleware solutions that facilitate interoperability between different quantum computing platforms and tools. Learn how these technologies enable seamless integration and enhance the functionality of quantum computing ecosystems."),
+                     ]
+                Dict("key" => "Programming", "name" => "Programming Languages",
+                     "url" => "https://jlabclouds.github.io/framework-landscape",
+                     "description" => "Overview programming languages. Learn about the syntax, features, and use cases of each language for quantum algorithm development.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Core Quantum Platforms"), 
+                     "related_tools" => [
+                        Dict("name" => "Programming", "name" => "Programming Languages", "url" => "https://www.quantum-inspire.com/kbase/quantum-programming-languages/", "description" => "Overview of quantum programming languages, including Q#, Qiskit, Cirq, and more. Learn about the syntax, features, and use cases of each language for quantum algorithm development."),
+                     ]),
+                Dict("key" => "Tools", "name" => "Tools & Frameworks",
+                     "url" => "https://jlabclouds.github.io/tools-landscape",
+                     "description" => "Explore the tools and frameworks available for quantum computing. Discover software libraries, development environments, and simulation platforms that support quantum algorithm design and execution.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Core Quantum Platforms"),
+                Dict("key" => "Clouds", "name" => "Cloud Providers",
+                     "url" => "https://ophelialabs.github.io/landscape",
+                     "description" => "Discover cloud providers offering quantum computing services. Learn about the features, pricing, and access options for each provider to find the best fit for your quantum computing needs.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Core Quantum Platforms"),
+               ]),
         Dict("name" => "Quantum Providers",
              "emoji" => "🏥",
              "gradient_from" => "#f5f7fa",
