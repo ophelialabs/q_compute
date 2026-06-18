@@ -328,7 +328,22 @@ Dict(
                         Dict("name" => "DICOM Viewer", "url" => "https://www.dicomviewer.com/", "description" => "DICOM Viewer is a software application for viewing and analyzing DICOM medical images, providing tools for diagnosis and research.")
                         Dict("name" => "DICOM Toolkit (DCMTK)", "url" => "https://dicom.offis.de/dcmtk.php.en", "description" => "DCMTK is a collection of libraries and applications for working with DICOM files, offering functionality for parsing, converting, and managing medical imaging data.")
                         Dict("name" => "Understanding and Using DICOM", "url" => "https://pmc.ncbi.nlm.nih.gov/articles/PMC61235/", "description" => "DICOM in Practice: A Comprehensive Guide to DICOM Standards and Implementation in Medical Imaging")
-                     ]
-                 )  
+                ]),
+                Dict("key" => "ITK", "name" => "ITK",
+                     "url" => "https://itk.org/",
+                     "description" => "The Insight Segmentation and Registration Toolkit (ITK) is an open-source software library for medical image processing, segmentation, and registration. It provides a wide range of algorithms and tools for analyzing and manipulating medical imaging data, making it a valuable resource for researchers and clinicians in the field of medical imaging.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Medical Imaging"),
+                Dict("key" => "SimpleITK", "name" => "SimpleITK",
+                     "url" => "https://simpleitk.org/",
+                     "description" => "SimpleITK is a simplified layer built on top of the Insight Segmentation and Registration Toolkit (ITK) that provides an easy-to-use interface for medical image processing tasks. It offers a high-level API for image segmentation, registration, and analysis, making it accessible to researchers and developers working with medical imaging data.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Medical Imaging"),
+                Dict("key" => "Syology", "name" => "Syology",
+                     "url" => "https://www.syology.com/",
+                     "description" => "Syology is a cutting-edge software platform that leverages quantum computing to enhance medical imaging analysis and diagnostics. By utilizing quantum algorithms, Syology aims to provide faster and more accurate insights from medical imaging data, ultimately improving patient outcomes and advancing healthcare research.",
+                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
+                     "category" => "Medical Imaging"),
+                ]
     ],
 )
