@@ -44,12 +44,6 @@ Dict(
              "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
              "category" => "Core Quantum Platforms"
         ), 
-        Dict("name" => "Nuget F#",
-             "url" => "https://www.nuget.org/packages/FSharp.Azure.Quantum#c-fluent-api",
-             "description" => "NuGet package for F# Azure Quantum development. Provides tools and libraries for building quantum applications using F# on the Azure Quantum platform.",
-             "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-             "category" => "Core Quantum Platforms"
-        ),
         Dict("name" => "QuTiP: Quantum Toolbox in Python",
              "url" => "http://qutip.org/",
              "description" => "QuTiP is an open-source software for simulating the dynamics of quantum systems. It provides a comprehensive set of tools for quantum mechanics, quantum optics, and quantum information processing. QuTiP is widely used in research and education for modeling and analyzing quantum systems, making it an essential resource for anyone interested in quantum computing and quantum physics.",
@@ -75,6 +69,7 @@ Dict(
                      "related_tools" => [
                         Dict("name" => "Q#", "url" => "https://learn.microsoft.com/en-us/azure/quantum/overview-what-is-qsharp", "description" => "Microsoft's Q# quantum programming language"),
                         Dict("name" => "QIR", "url" => "https://learn.microsoft.com/en-us/azure/quantum/concepts-qir", "description" => "Quantum Intermediate Representation for cross-platform quantum programs")
+                        Dict("name" => "Nuget F#", "url" => "https://www.nuget.org/packages/FSharp.Azure.Quantum#c-fluent-api", "description" => "NuGet package for F# Azure Quantum development. Provides tools and libraries for building quantum applications using F# on the Azure Quantum platform.")
                      ]),
                 Dict("key" => "quantinuum", "name" => "Honeywell: Quantinuum Nexus",
                      "url" => "https://docs.quantinuum.com/nexus/index.html",
