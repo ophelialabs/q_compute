@@ -315,35 +315,34 @@ Dict(
                      "description" => "NIfTI (Neuroimaging Informatics Technology Initiative) is a widely used file format for storing and sharing medical imaging data, particularly in neuroimaging research. It provides a standardized way to represent and organize complex imaging datasets, facilitating interoperability and data exchange among researchers and clinicians.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                      "category" => "Medical Imaging"),
-                ]),
                 Dict("key" => "DICOM", "name" => "DICOM",
                      "url" => "https://www.dicomstandard.org/",
                      "description" => "DICOM (Digital Imaging and Communications in Medicine) is the international standard for handling, storing, and transmitting medical imaging information. It defines a file format and communication protocol for medical images, enabling interoperability between different imaging devices and healthcare systems.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-                     "category" => "Medical Imaging"
+                     "category" => "Medical Imaging",
                      "related_tools" => [
-                        Dict("name" => "Orthanc", "url" => "https://www.orthanc-server.com/", "description" => "Orthanc is an open-source DICOM server for medical imaging data management and processing.")
-                        Dict("name" => "pydicom", "url" => "https://pydicom.github.io/", "description" => "pydicom is a Python library for working with DICOM files, allowing you to read, modify, and write DICOM data in your applications.")
-                        Dict("name" => "DICOMweb", "url" => "https://www.dicomstandard.org/dicomweb", "description" => "DICOMweb is a web-based standard for accessing and sharing DICOM data over HTTP, enabling modern web applications to interact with medical imaging data.")
-                        Dict("name" => "DICOM Viewer", "url" => "https://www.dicomviewer.com/", "description" => "DICOM Viewer is a software application for viewing and analyzing DICOM medical images, providing tools for diagnosis and research.")
-                        Dict("name" => "DICOM Toolkit (DCMTK)", "url" => "https://dicom.offis.de/dcmtk.php.en", "description" => "DCMTK is a collection of libraries and applications for working with DICOM files, offering functionality for parsing, converting, and managing medical imaging data.")
+                        Dict("name" => "Orthanc", "url" => "https://www.orthanc-server.com/", "description" => "Orthanc is an open-source DICOM server for medical imaging data management and processing."),
+                        Dict("name" => "pydicom", "url" => "https://pydicom.github.io/", "description" => "pydicom is a Python library for working with DICOM files, allowing you to read, modify, and write DICOM data in your applications."),
+                        Dict("name" => "DICOMweb", "url" => "https://www.dicomstandard.org/dicomweb", "description" => "DICOMweb is a web-based standard for accessing and sharing DICOM data over HTTP, enabling modern web applications to interact with medical imaging data."),
+                        Dict("name" => "DICOM Viewer", "url" => "https://www.dicomviewer.com/", "description" => "DICOM Viewer is a software application for viewing and analyzing DICOM medical images, providing tools for diagnosis and research."),
+                        Dict("name" => "DICOM Toolkit (DCMTK)", "url" => "https://dicom.offis.de/dcmtk.php.en", "description" => "DCMTK is a collection of libraries and applications for working with DICOM files, offering functionality for parsing, converting, and managing medical imaging data."),
                         Dict("name" => "Understanding and Using DICOM", "url" => "https://pmc.ncbi.nlm.nih.gov/articles/PMC61235/", "description" => "DICOM in Practice: A Comprehensive Guide to DICOM Standards and Implementation in Medical Imaging")
-                ]),
+                     ]),
                 Dict("key" => "ITK", "name" => "ITK",
                      "url" => "https://itk.org/",
                      "description" => "The Insight Segmentation and Registration Toolkit (ITK) is an open-source software library for medical image processing, segmentation, and registration. It provides a wide range of algorithms and tools for analyzing and manipulating medical imaging data, making it a valuable resource for researchers and clinicians in the field of medical imaging.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-                     "category" => "Medical Imaging"),
-                Dict("key" => "SimpleITK", "name" => "SimpleITK",
-                     "url" => "https://simpleitk.org/",
-                     "description" => "SimpleITK is a simplified layer built on top of the Insight Segmentation and Registration Toolkit (ITK) that provides an easy-to-use interface for medical image processing tasks. It offers a high-level API for image segmentation, registration, and analysis, making it accessible to researchers and developers working with medical imaging data.",
-                     "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-                     "category" => "Medical Imaging"),
+                     "category" => "Medical Imaging",
+                     "related_tools" => [
+                        Dict("name" => "SimpleITK", "url" => "https://simpleitk.org/", "description" => "SimpleITK is a simplified layer built on top of ITK that provides an easy-to-use interface for medical image processing tasks."),
+                        Dict("name" => "3D Slicer", "url" => "https://www.slicer.org/", "description" => "3D Slicer is an open-source software platform for medical image informatics, image processing, and three-dimensional visualization."),
+                        Dict("name" => "Fiji (ImageJ)", "url" => "https://fiji.sc/", "description" => "Fiji is an open-source image processing package based on ImageJ, widely used in the life sciences for analyzing and visualizing medical imaging data.")
+                     ]),
                 Dict("key" => "Syology", "name" => "Syology",
                      "url" => "https://www.syology.com/",
                      "description" => "Syology is a cutting-edge software platform that leverages quantum computing to enhance medical imaging analysis and diagnostics. By utilizing quantum algorithms, Syology aims to provide faster and more accurate insights from medical imaging data, ultimately improving patient outcomes and advancing healthcare research.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                      "category" => "Medical Imaging"),
-                ]
+             ]),
     ],
 )
