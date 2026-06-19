@@ -1,7 +1,7 @@
 Dict(
     # Page title and optional disclaimer for the homepage
     "title" => "Quantum Computing",
-    "disclaimer" => "",
+    "disclaimer" => "All because I wanted to print a return sheet for my coworker",
     
     # Jumbotron Carousel - Featured highlights displayed separately
     "carousel" => [
