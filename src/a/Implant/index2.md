@@ -65,8 +65,7 @@ ImageView.jl is designed for interactive GUI use. For documentation (Documenter.
 
 ## 3.  The Pipeline Workflow (GitHub Actions Example)
 Here is how the automated pipeline handles the "Data → Doc" transition:
-```
-yaml
+```yaml
 name: Data-Driven Documentation
 on:
   repository_dispatch: # Triggered via API call from your data server
