@@ -65,18 +65,20 @@ Dict(
                      "url" => "https://www.cncf.io/",
                      "description" => "The Cloud Native Computing Foundation (CNCF) is an open-source software foundation that promotes the adoption of cloud-native computing. CNCF hosts and supports a wide range of projects that enable organizations to build and run applications in modern, dynamic environments such as public, private, and hybrid clouds.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-                     "category" => "Core Quantum Platforms"),
+                     "category" => "Core Quantum Platforms",
                      "related_tools" => [
                          Dict("key" => "Adopters", "name" => "Adapters & Middleware", "url" => "https://jlabclouds.github.io/adapters-landscape", "description" => "Explore adapters and middleware solutions that facilitate interoperability between different quantum computing platforms and tools. Learn how these technologies enable seamless integration and enhance the functionality of quantum computing ecosystems."),
                      ]
+                ),
                 Dict("key" => "Programming", "name" => "Programming Languages",
                      "url" => "https://jlabclouds.github.io/framework-landscape",
                      "description" => "Overview programming languages. Learn about the syntax, features, and use cases of each language for quantum algorithm development.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
-                     "category" => "Core Quantum Platforms"), 
+                     "category" => "Core Quantum Platforms", 
                      "related_tools" => [
                         Dict("name" => "Programming", "name" => "Programming Languages", "url" => "https://www.quantum-inspire.com/kbase/quantum-programming-languages/", "description" => "Overview of quantum programming languages, including Q#, Qiskit, Cirq, and more. Learn about the syntax, features, and use cases of each language for quantum algorithm development."),
-                     ]),
+                     ]
+                ),
                 Dict("key" => "Tools", "name" => "Tools & Frameworks",
                      "url" => "https://jlabclouds.github.io/tools-landscape",
                      "description" => "Explore the tools and frameworks available for quantum computing. Discover software libraries, development environments, and simulation platforms that support quantum algorithm design and execution.",
