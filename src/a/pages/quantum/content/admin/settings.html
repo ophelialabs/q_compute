@@ -1,0 +1,193 @@
+<div class="content-section">
+    <h1>⚙️ Settings</h1>
+    <p class="lead">Configure system settings, preferences, and administrative options.</p>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#general">General</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#backup">Backup & Recovery</a></li>
+        </ul>
+    </nav>
+
+    <!-- General Settings -->
+    <section id="general" class="section">
+        <h2>General Settings</h2>
+        
+        <div class="form-group">
+            <label>Site Title</label>
+            <input type="text" value="Ophelia Labs" placeholder="Site title">
+        </div>
+
+        <div class="form-group">
+            <label>Site Description</label>
+            <textarea placeholder="Site description">Research platform for quantum computing and enterprise infrastructure</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Site URL</label>
+            <input type="url" value="https://ophelialabs.github.io" placeholder="https://example.com">
+        </div>
+
+        <div class="form-group">
+            <label>Support Email</label>
+            <input type="email" value="support@ophelialabs.com" placeholder="support@example.com">
+        </div>
+
+        <div class="form-group">
+            <label>Timezone</label>
+            <select style="width: 100%; padding: 10px; background-color: #0d0d0d; border: 1px solid #333; border-radius: 4px; color: white;">
+                <option>UTC</option>
+                <option>EST</option>
+                <option>PST</option>
+                <option>GMT</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button style="background-color: #00bfff; color: black; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Save Changes</button>
+        </div>
+    </section>
+
+    <!-- Security Settings -->
+    <section id="security" class="section">
+        <h2>Security Settings</h2>
+        
+        <h3>Authentication</h3>
+        <div class="subsection">
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" checked> Enable Two-Factor Authentication
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" checked> Require Strong Passwords
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox"> Enable Single Sign-On (SSO)
+                </label>
+            </div>
+        </div>
+
+        <h3>Access Control</h3>
+        <div class="subsection">
+            <div class="form-group">
+                <label>Password Expiration (days)</label>
+                <input type="number" value="90" min="30" max="365">
+            </div>
+            <div class="form-group">
+                <label>Session Timeout (minutes)</label>
+                <input type="number" value="30" min="15" max="480">
+            </div>
+            <div class="form-group">
+                <label>Max Login Attempts</label>
+                <input type="number" value="5" min="3" max="10">
+            </div>
+        </div>
+
+        <h3>SSL/TLS</h3>
+        <div class="subsection">
+            <p><span class="badge success">✓ SSL Enabled</span></p>
+            <p>Certificate Expires: 2026-01-15</p>
+        </div>
+
+        <div class="form-group">
+            <button style="background-color: #00bfff; color: black; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Save Security Settings</button>
+        </div>
+    </section>
+
+    <!-- Notifications -->
+    <section id="notifications" class="section">
+        <h2>Notification Settings</h2>
+        
+        <h3>Email Notifications</h3>
+        <div class="subsection">
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" checked> System alerts
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" checked> User activity
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" checked> Security events
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox"> Weekly digest
+                </label>
+            </div>
+        </div>
+
+        <h3>Alert Thresholds</h3>
+        <div class="subsection">
+            <div class="form-group">
+                <label>CPU Usage Alert (%)</label>
+                <input type="number" value="80" min="50" max="95">
+            </div>
+            <div class="form-group">
+                <label>Memory Usage Alert (%)</label>
+                <input type="number" value="85" min="50" max="95">
+            </div>
+            <div class="form-group">
+                <label>Error Rate Alert (%)</label>
+                <input type="number" value="1" min="0.1" max="5">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button style="background-color: #00bfff; color: black; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Save Notification Settings</button>
+        </div>
+    </section>
+
+    <!-- Backup & Recovery -->
+    <section id="backup" class="section">
+        <h2>Backup & Recovery</h2>
+        
+        <h3>Automated Backups</h3>
+        <div class="subsection">
+            <p><strong>Status:</strong> <span class="badge success">Enabled</span></p>
+            <p><strong>Last Backup:</strong> Today at 14:32 UTC</p>
+            <p><strong>Backup Frequency:</strong> Daily</p>
+            <p><strong>Retention Period:</strong> 30 days</p>
+        </div>
+
+        <h3>Manual Backup</h3>
+        <div class="subsection">
+            <p>Create an immediate backup of all system data.</p>
+            <div class="form-group">
+                <button style="background-color: #00ff00; color: black; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Start Backup Now</button>
+            </div>
+        </div>
+
+        <h3>Restore from Backup</h3>
+        <div class="subsection">
+            <p>Restore system data from a previous backup point.</p>
+            <div class="form-group">
+                <label>Select Backup Point</label>
+                <select style="width: 100%; padding: 10px; background-color: #0d0d0d; border: 1px solid #333; border-radius: 4px; color: white;">
+                    <option>Today 14:32 - Latest</option>
+                    <option>Yesterday 14:32</option>
+                    <option>2 days ago 14:32</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button style="background-color: #ff6b6b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Restore</button>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Warning:</strong> Restore operations will overwrite current data. Ensure you have selected the correct backup point.
+        </div>
+    </section>
+</div>

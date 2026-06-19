@@ -1,0 +1,142 @@
+<div class="content-section">
+    <h1>👥 User Management</h1>
+    <p class="lead">Administrative interface for user account management, roles, and permissions.</p>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#users-list">Users List</a></li>
+            <li><a href="#roles">Roles & Permissions</a></li>
+            <li><a href="#add-user">Add User</a></li>
+        </ul>
+    </nav>
+
+    <!-- Users List -->
+    <section id="users-list" class="section">
+        <h2>Active Users</h2>
+        
+        <div class="form-group">
+            <input type="text" placeholder="Search users..." style="width: 100%; padding: 10px; background-color: #0d0d0d; border: 1px solid #333; border-radius: 4px; color: white;">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Last Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>admin</td>
+                    <td>admin@ophelialabs.com</td>
+                    <td><span class="badge success">Administrator</span></td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>Today</td>
+                </tr>
+                <tr>
+                    <td>researcher1</td>
+                    <td>researcher1@ophelialabs.com</td>
+                    <td><span class="badge info">Researcher</span></td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>Today</td>
+                </tr>
+                <tr>
+                    <td>analyst1</td>
+                    <td>analyst1@ophelialabs.com</td>
+                    <td><span class="badge info">Analyst</span></td>
+                    <td><span class="badge success">Active</span></td>
+                    <td>Yesterday</td>
+                </tr>
+                <tr>
+                    <td>viewer1</td>
+                    <td>viewer1@ophelialabs.com</td>
+                    <td><span class="badge secondary">Viewer</span></td>
+                    <td><span class="badge warning">Inactive</span></td>
+                    <td>3 days ago</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Roles & Permissions -->
+    <section id="roles" class="section">
+        <h2>Roles & Permissions</h2>
+        
+        <h3>Administrator</h3>
+        <div class="subsection">
+            <p><strong>Permissions:</strong></p>
+            <ul>
+                <li>Full system access</li>
+                <li>User management (create, edit, delete)</li>
+                <li>System configuration</li>
+                <li>Database administration</li>
+                <li>Backup and recovery</li>
+                <li>Security policies</li>
+            </ul>
+        </div>
+
+        <h3>Researcher</h3>
+        <div class="subsection">
+            <p><strong>Permissions:</strong></p>
+            <ul>
+                <li>Read/write research data</li>
+                <li>Create and manage projects</li>
+                <li>Access quantum computing resources</li>
+                <li>View analytics</li>
+                <li>Collaborate with team members</li>
+            </ul>
+        </div>
+
+        <h3>Analyst</h3>
+        <div class="subsection">
+            <p><strong>Permissions:</strong></p>
+            <ul>
+                <li>Read project data</li>
+                <li>Generate reports</li>
+                <li>Access dashboards</li>
+                <li>View analytics</li>
+                <li>Limited configuration access</li>
+            </ul>
+        </div>
+
+        <h3>Viewer</h3>
+        <div class="subsection">
+            <p><strong>Permissions:</strong></p>
+            <ul>
+                <li>Read-only access</li>
+                <li>View dashboards</li>
+                <li>View reports</li>
+                <li>No modification rights</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Add User -->
+    <section id="add-user" class="section">
+        <h2>Add New User</h2>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label>Role</label>
+            <select style="width: 100%; padding: 10px; background-color: #0d0d0d; border: 1px solid #333; border-radius: 4px; color: white;">
+                <option>Administrator</option>
+                <option>Researcher</option>
+                <option>Analyst</option>
+                <option>Viewer</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button style="background-color: #00bfff; color: black; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Create User</button>
+        </div>
+    </section>
+</div>

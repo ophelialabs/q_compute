@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geofencing & Space Fence - Ophelia Labs</title>
+    <meta name="description" content="Comprehensive guide to enterprise geofencing implementation and space fence technology.">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <style>
+        .subsection-detailed {
+            margin: 20px 0;
+            background-color: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 15px;
+        }
+
+        .subsection-detailed h4 {
+            color: #00bfff;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        .diagram {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="sidebar"></div>
+    <main id="main-content">
+        <div class="content-section">
+            <!-- Header Section -->
+            <h1>Geofencing & Space Fence Technology</h1>
+            <p class="lead">Comprehensive guide to enterprise geofencing implementation and space-based fence monitoring systems. Learn about terrestrial geofence applications and next-generation space surveillance technologies.</p>
+
+            <!-- Table of Contents -->
+            <div class="table-of-contents">
+                <h3>📋 Table of Contents</h3>
+                <div class="toc-list">
+                    <a href="#overview">Overview</a>
+                    <a href="#geofencing">Enterprise Geofencing</a>
+                    <a href="#space-fence">Space Fence Technology</a>
+                    <a href="#architecture">Architecture & Implementation</a>
+                    <a href="#applications">Applications & Use Cases</a>
+                    <a href="#best-practices">Best Practices</a>
+                </div>
+            </div>
+
+            <!-- Overview Section -->
+            <section id="overview" class="content-box">
+                <h2>Overview</h2>
+                
+                <div class="subsection-detailed">
+                    <h4>What is Geofencing?</h4>
+                    <p>Geofencing is a technology that uses GPS, RFID, or cellular data to monitor when a mobile device or asset enters or exits a defined geographic area (geofence). These virtual boundaries can be as small as a few meters or as large as cities, enabling real-time location-based services and automated triggers.</p>
+                    <p><strong>Key Characteristics:</strong></p>
+                    <ul>
+                        <li>Real-time location tracking and monitoring</li>
+                        <li>Automatic event triggering upon boundary crossing</li>
+                        <li>Scalable to thousands of simultaneous geofences</li>
+                        <li>Integrates with mobile devices and IoT sensors</li>
+                        <li>Enables location-based notifications and automations</li>
+                    </ul>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Evolution: From Terrestrial to Space-Based</h4>
+                    <p>While traditional geofencing applies to Earth-based operations, modern space surveillance has evolved to include advanced space-based fence systems. These systems track objects in orbit and near-Earth space, providing unprecedented awareness of space activities.</p>
+                </div>
+            </section>
+
+            <!-- Enterprise Geofencing Section -->
+            <section id="geofencing" class="content-box">
+                <h2>Enterprise Geofencing Implementation</h2>
+
+                <div class="subsection-detailed">
+                    <h4>Core Use Cases</h4>
+                    <ul>
+                        <li><strong>Asset Tracking:</strong> Monitor high-value equipment and inventory locations</li>
+                        <li><strong>Fleet Management:</strong> Track vehicle movements and optimize routes in real-time</li>
+                        <li><strong>Workforce Productivity:</strong> Verify employee presence at job sites and facilities</li>
+                        <li><strong>Security & Access Control:</strong> Restrict entry to sensitive areas and compound perimeters</li>
+                        <li><strong>Logistics & Delivery:</strong> Automate notifications when deliveries reach destinations</li>
+                        <li><strong>Retail & Marketing:</strong> Trigger location-based promotions and customer engagement</li>
+                        <li><strong>Compliance & Auditing:</strong> Maintain records of personnel and asset movements</li>
+                    </ul>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Technical Characteristics</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Geofence Shapes</strong></td>
+                                <td>Circle, polygon, rectangle, complex custom boundaries</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accuracy</strong></td>
+                                <td>5-50 meters (GPS), 1-5 meters (RFID), 10+ meters (cellular)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coverage Area</strong></td>
+                                <td>From single room to regional/continental scale</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Latency</strong></td>
+                                <td>Milliseconds to seconds depending on technology</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Power Consumption</strong></td>
+                                <td>Low for passive RFID, moderate for active GPS/BLE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>System Architecture</h4>
+                    <div class="diagram">Location Data Collection
+↓
+GPS/RFID/BLE Receivers → Location Processing Engine
+↓
+Geofence Calculation
+↓
+Point-in-Polygon Tests → Event Detection
+↓
+Event Processing
+↓
+Real-time Notifications → Database Logging → API Integration</div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Implementation Example - Basic Geofence Logic</h4>
+                    <pre><code class="javascript">// Simplified geofence detection
+class Geofence {
+    constructor(id, center, radiusMeters) {
+        this.id = id;
+        this.center = center; // {lat, lng}
+        this.radiusMeters = radiusMeters;
+    }
+
+    // Haversine formula for distance calculation
+    calculateDistance(point1, point2) {
+        const R = 6371000; // Earth radius in meters
+        const φ1 = point1.lat * Math.PI / 180;
+        const φ2 = point2.lat * Math.PI / 180;
+        const Δφ = (point2.lat - point1.lat) * Math.PI / 180;
+        const Δλ = (point2.lng - point1.lng) * Math.PI / 180;
+
+        const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+                  Math.cos(φ1) * Math.cos(φ2) *
+                  Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c; // Distance in meters
+    }
+
+    isPointInside(point) {
+        const distance = this.calculateDistance(this.center, point);
+        return distance <= this.radiusMeters;
+    }
+
+    handleLocationUpdate(deviceId, newLocation, previousState) {
+        const isNowInside = this.isPointInside(newLocation);
+        
+        if (isNowInside && !previousState.isInside) {
+            return { type: 'ENTER', geofenceId: this.id, deviceId };
+        } else if (!isNowInside && previousState.isInside) {
+            return { type: 'EXIT', geofenceId: this.id, deviceId };
+        }
+        return null; // No state change
+    }
+}
+
+// Usage
+const downtown = new Geofence('downtown-sf', 
+    {lat: 37.7749, lng: -122.4194}, 
+    1000 // 1km radius
+);
+
+const event = downtown.handleLocationUpdate('device-123', 
+    {lat: 37.7759, lng: -122.4194},
+    {isInside: false}
+);
+
+if (event) {
+    console.log(`Device ${event.deviceId} ${event.type}ed ${event.geofenceId}`);
+}</code></pre>
+                </div>
+            </section>
+            <!-- Space Fence Section -->
+            <section id="space-fence" class="content-box">
+                <h2>Space Fence Technology</h2>
+
+                <div class="subsection-detailed">
+                    <h4>What is Space Fence?</h4>
+                    <p>Space Fence is an advanced space surveillance system that monitors objects in Earth orbit and near-Earth space. Developed by the U.S. Space Force, it represents a paradigm shift from conventional radar-based space object tracking to a network-centric approach using phased-array radar technology.</p>
+                    <p><strong>Space Fence provides:</strong></p>
+                    <ul>
+                        <li>Real-time tracking of satellites, debris, and ballistic missiles</li>
+                        <li>High-resolution position and velocity measurements</li>
+                        <li>Multi-object discrimination and tracking capability</li>
+                        <li>Greater sensitivity to small objects in GEO and LEO orbits</li>
+                        <li>Worldwide coverage through strategic deployment</li>
+                        <li>Integration with space traffic management systems</li>
+                    </ul>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Technical Specifications</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Capability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Detection Range</strong></td>
+                                <td>Beyond Geostationary Orbit (GEO) to Low Earth Orbit (LEO)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Object Size Threshold</strong></td>
+                                <td>Down to 10cm objects in LEO, smaller in specific orbits</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Update Rate</strong></td>
+                                <td>Multiple observations per pass for improved accuracy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accuracy</strong></td>
+                                <td>Meters-level position accuracy, velocity vectors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Technology</strong></td>
+                                <td>Phased-array radar, solid-state architecture</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coverage</strong></td>
+                                <td>Hemisphere to global depending on antenna configuration</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="two-column-layout">
+                    <div class="subsection-detailed">
+                        <h4>Key Advantages over Legacy Systems</h4>
+                        <ul>
+                            <li>No moving parts - improved reliability</li>
+                            <li>Electronic beam steering - faster scanning</li>
+                            <li>Better small object detection in crowded orbits</li>
+                            <li>Simultaneous multi-target tracking</li>
+                            <li>Reduced maintenance costs</li>
+                            <li>Scalable architecture for global deployment</li>
+                            <li>Modern data integration capabilities</li>
+                        </ul>
+                    </div>
+                    <div class="subsection-detailed">
+                        <h4>Operational Focus Areas</h4>
+                        <ul>
+                            <li><strong>Space Debris Tracking:</strong> Monitor inactive satellites and fragmentation</li>
+                            <li><strong>Conjunction Assessment:</strong> Predict close approaches between objects</li>
+                            <li><strong>Satellite Operations:</strong> Support active satellite management</li>
+                            <li><strong>Launch Support:</strong> Track new payloads and debris clouds</li>
+                            <li><strong>Missile Warning:</strong> Ballistic missile detection and tracking</li>
+                            <li><strong>Space Object Identification:</strong> Attribute analysis for ownership</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Space Fence vs. Traditional Geofencing</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Terrestrial Geofencing</th>
+                                <th>Space Fence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Domain</strong></td>
+                                <td>Earth surface and low altitude</td>
+                                <td>Earth orbit and near-space</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Object Types</strong></td>
+                                <td>Mobile devices, vehicles, assets</td>
+                                <td>Satellites, debris, missiles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Boundary Definition</strong></td>
+                                <td>Geographic (latitude/longitude)</td>
+                                <td>Orbital elements (altitude, inclination)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Update Frequency</strong></td>
+                                <td>Seconds to minutes</td>
+                                <td>Multiple times per orbital pass</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Technology</strong></td>
+                                <td>GPS, RFID, Cellular triangulation</td>
+                                <td>Phased-array radar, optical sensors</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Typical Range</strong></td>
+                                <td>Meters to hundreds of kilometers</td>
+                                <td>Thousands of kilometers (orbital)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Global Deployment Architecture</h4>
+                    <div class="diagram">Space Fence Network Topology
+
+Phased-Array Radar Sites (Strategic Locations)
+↓
+Real-time Tracking Data
+↓
+Fusion Centers → Orbit Determination Stations
+↓
+Conjunction Assessment → Space Catalog Management
+↓
+Multi-Agency Integration (NORAD, SDA, International Partners)
+
+Typical Locations: Pacific/Atlantic regions, strategic geographic coverage for global surveillance</div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Data Processing Pipeline</h4>
+                    <pre><code class="javascript">// Conceptual Space Fence tracking pipeline
+class SpaceTrackingSystem {
+    constructor() {
+        this.radarStations = [];
+        this.orbitDatabase = {};
+        this.conjunctionRisk = [];
+    }
+
+    // Raw radar observations
+    processRadarObservation(station, rawData) {
+        const observation = {
+            timestamp: rawData.timestamp,
+            station: station.id,
+            range: rawData.range,        // Distance in km
+            velocity: rawData.velocity,  // km/s
+            azimuth: rawData.azimuth,    // Degrees
+            elevation: rawData.elevation, // Degrees
+        };
+        return this.convertToOrbitalElements(observation);
+    }
+
+    convertToOrbitalElements(observation) {
+        // Calculate orbital parameters from observation
+        return {
+            semiMajorAxis: null,    // Calculated from range/velocity
+            eccentricity: null,
+            inclination: null,
+            raan: null,              // Right Ascension of Ascending Node
+            argumentPerigee: null,
+            trueAnomaly: null,
+            epoch: observation.timestamp
+        };
+    }
+
+    // Multi-station data fusion
+    fuseObservations(observations) {
+        const station1 = observations[0];
+        const station2 = observations[1];
+        
+        // Triangulation for improved accuracy
+        const fusedState = {
+            position: this.triangulate(station1, station2),
+            velocity: this.estimateVelocity(observations),
+            accuracy: this.calculateAccuracy(observations),
+            confidence: this.assessConfidence(observations)
+        };
+        
+        return fusedState;
+    }
+
+    // Conjunction assessment
+    assessConjunctionRisk(object1, object2) {
+        const minDistance = this.calculateClosestApproach(object1, object2);
+        const riskThreshold = 250; // meters
+        
+        return {
+            probability: minDistance < riskThreshold ? 'HIGH' : 'LOW',
+            timeToClosestApproach: this.timeToClosestApproach(object1, object2),
+            minimumDistance: minDistance,
+            recommendation: minDistance < 25 ? 'MANEUVER_REQUIRED' : 'MONITOR'
+        };
+    }
+
+    calculateClosestApproach(obj1, obj2) {
+        // Calculate conjunction using orbital mechanics
+        // Simplified: Returns distance at closest point
+        return Math.sqrt(
+            Math.pow(obj1.position.x - obj2.position.x, 2) +
+            Math.pow(obj1.position.y - obj2.position.y, 2) +
+            Math.pow(obj1.position.z - obj2.position.z, 2)
+        );
+    }
+}
+
+// Real-time space tracking
+const spaceTracker = new SpaceTrackingSystem();
+const objects = spaceTracker.orbitDatabase;
+
+// Monitor for conjunction events
+Object.keys(objects).forEach(objectId => {
+    for (let i = 0; i < objects.length - 1; i++) {
+        const risk = spaceTracker.assessConjunctionRisk(
+            objects[i], 
+            objects[i + 1]
+        );
+        
+        if (risk.recommendation === 'MANEUVER_REQUIRED') {
+            console.log(`ALERT: High-risk conjunction detected for satellite ${objectId}`);
+        }
+    }
+});</code></pre>
+                </div>
+            </section>
+
+            <!-- Architecture & Implementation -->
+            <section id="architecture" class="content-box">
+                <h2>Architecture & Implementation</h2>
+
+                <div class="subsection-detailed">
+                    <h4>Enterprise Geofencing Architecture Components</h4>
+                    <div class="diagram">System Layer Stack
+
+Client Layer (Mobile Apps, Devices) ← Wireless Protocols (GPS, BLE, WiFi)
+↓
+Communication Layer (API Gateway, Message Brokers)
+↓
+Processing Layer (Location Engine, Event Processor)
+↓
+Storage Layer (Time-series DB, Cache, Geospatial Index)
+↓
+Integration Layer (Webhooks, Third-party APIs)</div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>High Availability Deployment</h4>
+                    <pre><code class="yaml"># Kubernetes deployment example
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geofencing-service
+  namespace: production
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: geofencing
+  template:
+    metadata:
+      labels:
+        app: geofencing
+    spec:
+      containers:
+      - name: geofencing
+        image: geofencing:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: uri
+        - name: REDIS_HOST
+          value: redis-cluster.production.svc.cluster.local
+        resources:
+          requests:
+            cpu: 500m
+            memory: 512Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - geofencing
+              topologyKey: kubernetes.io/hostname</code></pre>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Database Indexing for Performance</h4>
+                    <pre><code class="javascript">// MongoDB geospatial indexes for geofencing
+db.devices.createIndex({
+    location: "2dsphere"  // Geospatial index for proximity queries
+});
+
+db.geofences.createIndex({
+    geometry: "2dsphere"  // For polygon-based geofences
+});
+
+// Performance indexes
+db.devices.createIndex({
+    lastUpdated: -1,
+    deviceId: 1
+});
+
+db.events.createIndex({
+    timestamp: -1,
+    geofenceId: 1,
+    deviceId: 1
+});
+
+// Compound indexes for common queries
+db.devices.createIndex({
+    geofenceId: 1,
+    active: 1,
+    lastUpdated: -1
+});
+
+// TTL index for auto-cleanup old events
+db.events.createIndex(
+    { createdAt: 1 },
+    { expireAfterSeconds: 2592000 }  // 30 days
+);</code></pre>
+                </div>
+            </section>
+
+            <!-- Applications & Use Cases -->
+            <section id="applications" class="content-box">
+                <h2>Applications & Use Cases</h2>
+
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>📦 Logistics & Supply Chain</h3>
+                        <p><strong>Use Case:</strong> Track shipments in real-time, automate warehouse entry/exit notifications, optimize delivery routes, and ensure cargo integrity through geofence-based alerts.</p>
+                        <p><strong>Impact:</strong> 30-40% improvement in delivery efficiency, real-time visibility into supply chain.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🚗 Fleet Management</h3>
+                        <p><strong>Use Case:</strong> Monitor vehicle locations, restrict off-route travel, automate service area boundaries, and optimize fuel consumption through intelligent route management.</p>
+                        <p><strong>Impact:</strong> 20-25% fuel cost reduction, improved dispatch efficiency.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>👷 Work Site Security</h3>
+                        <p><strong>Use Case:</strong> Ensure workers stay within authorized zones, trigger alerts for unauthorized entry to restricted areas, and maintain real-time attendance records.</p>
+                        <p><strong>Impact:</strong> Enhanced safety, 100% attendance accuracy, reduced security incidents.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏭 Asset Protection</h3>
+                        <p><strong>Use Case:</strong> Track high-value equipment movement, prevent theft through geofence boundaries, and automate asset allocation across multiple facilities.</p>
+                        <p><strong>Impact:</strong> Reduced equipment loss by 80%+, better resource allocation.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏥 Healthcare Facility Management</h3>
+                        <p><strong>Use Case:</strong> Track patient location (elderly/vulnerable), monitor equipment within hospital zones, alert staff if patients leave designated areas.</p>
+                        <p><strong>Impact:</strong> Improved patient safety, faster emergency response.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🛰️ Space Object Tracking (Space Fence)</h3>
+                        <p><strong>Use Case:</strong> Monitor satellites, track space debris, detect conjunction risks, and support space traffic management initiatives.</p>
+                        <p><strong>Impact:</strong> Enhanced space domain awareness, improved collision avoidance.</p>
+                    </div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Case Study: Multi-Region Geofencing System</h4>
+                    <p><strong>Scenario:</strong> Large construction company with equipment across 15 active job sites</p>
+                    <ul>
+                        <li><strong>Implementation:</strong> GPS-based geofence on all heavy equipment and vehicles</li>
+                        <li><strong>Geofence Boundaries:</strong> 500m radius around each job site perimeter</li>
+                        <li><strong>Real-time Events:</strong> Notifications for unauthorized site exits, after-hours movement</li>
+                        <li><strong>Results:</strong> 45% reduction in equipment theft, 25% improvement in project timeline accuracy</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Best Practices -->
+            <section id="best-practices" class="content-box">
+                <h2>Best Practices & Recommendations</h2>
+
+                <div class="two-column-layout">
+                    <div class="subsection-detailed">
+                        <h4>Design Best Practices</h4>
+                        <ul>
+                            <li><strong>Geofence Size:</strong> Design fences with sufficient buffer (20-50m) to avoid false positives</li>
+                            <li><strong>Accuracy Requirements:</strong> Match accuracy to use case (fleet: 50m, assets: 10m, entry: 5m)</li>
+                            <li><strong>Boundary Shapes:</strong> Use circular for simplicity, polygons for precise boundaries</li>
+                            <li><strong>Overlapping Zones:</strong> Handle overlapping geofences with priority-based logic</li>
+                            <li><strong>Dwell Time:</strong> Implement minimum dwell duration to confirm geofence entry</li>
+                            <li><strong>Hysteresis:</strong> Add buffer distance to prevent rapid enter/exit oscillations</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection-detailed">
+                        <h4>Operational Best Practices</h4>
+                        <ul>
+                            <li><strong>Monitoring:</strong> Track system latency and accuracy continuously</li>
+                            <li><strong>Data Retention:</strong> Implement TTL policies for old event data</li>
+                            <li><strong>Scalability:</strong> Test with 10x expected geofence/device count</li>
+                            <li><strong>Redundancy:</strong> Multi-region deployment with automatic failover</li>
+                            <li><strong>Security:</strong> Encrypt location data, use JWT for API authentication</li>
+                            <li><strong>Privacy:</strong> Implement GDPR/privacy-compliant data handling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Common Pitfalls to Avoid</h4>
+                    <div class="info-box">
+                        <ul>
+                            <li>❌ <strong>Ignoring GPS accuracy variance:</strong> Account for ±5-15m error in calculations</li>
+                            <li>❌ <strong>Over-alerting:</strong> Too many notifications lead to user fatigue</li>
+                            <li>❌ <strong>Single point of failure:</strong> Always implement redundancy</li>
+                            <li>❌ <strong>Not testing edge cases:</strong> Test urban canyons, tunnels, and interference</li>
+                            <li>❌ <strong>Ignoring battery impact:</strong> High-frequency location polling drains device battery</li>
+                            <li>❌ <strong>Inadequate logging:</strong> Essential for debugging and compliance</li>
+                            <li>❌ <strong>Missing privacy controls:</strong> Audit trails for location data access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection-detailed">
+                    <h4>Space Fence Considerations</h4>
+                    <ul>
+                        <li><strong>Orbital Mechanics:</strong> Understand satellite passes and orbital characteristics</li>
+                        <li><strong>Data Fusion:</strong> Integrate multiple radar and optical sensors for accuracy</li>
+                        <li><strong>Conjunction Assessment:</strong> Implement rigorous probability of collision (Pc) calculations</li>
+                        <li><strong>International Coordination:</strong> Share space object tracking data with international partners</li>
+                        <li><strong>Debris Modeling:</strong> Account for fragmentation patterns in conjunction assessments</li>
+                        <li><strong>Update Frequency:</strong> More frequent observations needed for objects in LEO vs. GEO</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Additional Resources -->
+            <div class="content-box" style="margin-top: 30px;">
+                <h2>📚 Additional Resources</h2>
+                <div class="subsection-detailed">
+                    <h4>References & Further Reading</h4>
+                    <ul>
+                        <li><strong>Terrestrial Geofencing:</strong> Open Geospatial Consortium (OGC) standards for geospatial data</li>
+                        <li><strong>Space Surveillance:</strong> U.S. Space Force Space Delta 2 - Space Fence Program documentation</li>
+                        <li><strong>Orbital Mechanics:</strong> Vallado et al., "Fundamentals of Astrodynamics and Applications"</li>
+                        <li><strong>Implementation Guides:</strong> MongoDB Geospatial Queries, PostGIS spatial database</li>
+                        <li><strong>Safety Standards:</strong> ISO 22133 (Collision Avoidance in Space)</li>
+                        <li><strong>GPS Accuracy:</strong> NIST guidelines on differential GPS and real-time kinematic positioning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <p><strong>Last Updated:</strong> January 2026</p>
+                <p><strong>Status:</strong> Active - Regular updates as technology evolves</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/js/app.js"></script>
+</body>
+</html>

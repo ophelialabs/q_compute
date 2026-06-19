@@ -1,0 +1,248 @@
+<div class="content-section">
+    <h1>🏗️ Architecture & Design Patterns</h1>
+    <p class="lead">Comprehensive architectural patterns, design principles, and best practices for building scalable, enterprise-grade quantum and classical computing systems.</p>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#development-pipeline">Development Pipeline</a></li>
+            <li><a href="#service-patterns">Service Patterns</a></li>
+            <li><a href="#database-architecture">Database Architecture</a></li>
+            <li><a href="#kubernetes-deployment">Kubernetes Deployment</a></li>
+        </ul>
+    </nav>
+
+    <!-- Development Pipeline -->
+    <section id="development-pipeline" class="section">
+        <h2>Linear Development Pipeline</h2>
+        <p>Each application follows a standardized, repeatable path from conception to enterprise deployment:</p>
+        
+        <h3>Pipeline Architecture</h3>
+        <pre class="mermaid">
+graph TB
+    subgraph Dev["Development"]
+        A["Choose Framework"]
+        B["Write Code"]
+        C["Test Features"]
+    end
+    
+    subgraph Build["Build"]
+        D["Compile"]
+        E["Run Tests"]
+        F["Quality Checks"]
+    end
+    
+    subgraph Container["Containerization"]
+        G["Create Dockerfile"]
+        H["Build Image"]
+        I["Container Tests"]
+    end
+    
+    subgraph Registry["Registry"]
+        J["Tag Image"]
+        K["Push to Registry"]
+    end
+    
+    subgraph K8s["Kubernetes"]
+        L["Deploy"]
+        M["Configure Services"]
+        N["Setup Monitoring"]
+    end
+    
+    subgraph Enterprise["Enterprise"]
+        O["Logging"]
+        P["Monitoring"]
+        Q["Scaling"]
+    end
+    
+    Dev --> Build
+    Build --> Container
+    Container --> Registry
+    Registry --> K8s
+    K8s --> Enterprise
+    
+    style Dev fill:#0d4d7a
+    style Build fill:#0d7a0d
+    style Container fill:#7a7a0d
+    style K8s fill:#4d0d7a
+    style Enterprise fill:#7a0d4d
+        </pre>
+
+        <div class="architecture-diagram">
+1. APPLICATION DEVELOPMENT
+   ├── Choose Language/Framework
+   ├── Develop Features
+   └── Write Tests
+
+2. BUILD PHASE
+   ├── Compile/Transpile
+   ├── Run Tests
+   ├── Code Quality Checks
+   └── Generate Artifacts
+
+3. CONTAINERIZATION
+   ├── Create Dockerfile
+   ├── Build Docker Image
+   ├── Run Container Tests
+   └── Optimize Image Size
+
+4. REGISTRY PUSH
+   ├── Tag Image with Version
+   ├── Authenticate
+   ├── Push to Registry
+   └── Manage Versions
+
+5. KUBERNETES DEPLOYMENT
+   ├── Create Deployment Manifests
+   ├── Deploy to K8s Cluster
+   ├── Configure Services
+   └── Setup Ingress
+
+6. ENTERPRISE INTEGRATION
+   ├── Connect to Microservices
+   ├── Configure Logging
+   ├── Setup Monitoring
+   └── Enable Auto-Scaling
+        </div>
+    </section>
+
+    <!-- Service Patterns -->
+    <section id="service-patterns" class="section">
+        <h2>Service Communication Patterns</h2>
+        
+        <h3>Synchronous Communication (REST/gRPC)</h3>
+        <div class="subsection">
+            <p>Direct request-response between services:</p>
+            <div class="architecture-diagram">
+Service A → HTTP/gRPC Request → Service B
+         → Database Query
+         → HTTP/gRPC Response → Service A
+            </div>
+            <ul>
+                <li><strong>Use Case:</strong> Real-time queries, API calls, user interactions</li>
+                <li><strong>Advantages:</strong> Simple, immediate response, easy to debug</li>
+                <li><strong>Disadvantages:</strong> Tight coupling, blocking calls, scalability limits</li>
+                <li><strong>Tools:</strong> REST APIs, gRPC, GraphQL</li>
+            </ul>
+        </div>
+
+        <h3>Asynchronous Communication (Message Queue)</h3>
+        <div class="subsection">
+            <p>Decoupled service communication via message broker:</p>
+            <div class="architecture-diagram">
+Service A → Message → Broker → Service B
+         → Broker → Service C
+         → Persistence → Replay
+            </div>
+            <ul>
+                <li><strong>Use Case:</strong> Background jobs, event processing, high-volume data</li>
+                <li><strong>Advantages:</strong> Loose coupling, scalability, retry logic</li>
+                <li><strong>Disadvantages:</strong> Eventual consistency, complexity</li>
+                <li><strong>Tools:</strong> Kafka, RabbitMQ, AWS SQS, Google Pub/Sub</li>
+            </ul>
+        </div>
+
+        <h3>Service Mesh (Istio)</h3>
+        <div class="subsection">
+            <p>Infrastructure layer managing service-to-service communication:</p>
+            <div class="architecture-diagram">
+        Ingress Gateway
+              ↓
+        Virtual Service
+              ↓
+        Destination Rule
+              ↓
+    Service Mesh Sidecar
+              ↓
+      Load Balancing
+              ↓
+         Service Pod
+            </div>
+            <ul>
+                <li><strong>Features:</strong> Traffic management, security, observability</li>
+                <li><strong>Benefits:</strong> Centralized control, monitoring, circuit breaking</li>
+                <li><strong>Platforms:</strong> Istio, Linkerd, Consul</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Database Architecture -->
+    <section id="database-architecture" class="section">
+        <h2>Database Architecture Patterns</h2>
+        
+        <h3>Java/Spring Stack</h3>
+        <div class="subsection">
+            <ul>
+                <li><strong>ORM:</strong> JPA/Hibernate for object-relational mapping</li>
+                <li><strong>Data Access:</strong> Spring Data repositories</li>
+                <li><strong>Migrations:</strong> Flyway or Liquibase for schema versioning</li>
+                <li><strong>Connection Pooling:</strong> HikariCP for efficient connection management</li>
+                <li><strong>Caching:</strong> Redis or Memcached for high-performance access</li>
+            </ul>
+        </div>
+
+        <h3>Python/Flask Stack</h3>
+        <div class="subsection">
+            <ul>
+                <li><strong>ORM:</strong> SQLAlchemy for database abstraction</li>
+                <li><strong>Migrations:</strong> Alembic for schema evolution</li>
+                <li><strong>Connection Pooling:</strong> SQLAlchemy built-in pooling</li>
+                <li><strong>Async Support:</strong> asyncpg, aiomysql for non-blocking I/O</li>
+                <li><strong>Validation:</strong> Pydantic for data validation</li>
+            </ul>
+        </div>
+
+        <h3>.NET/Aspire Stack</h3>
+        <div class="subsection">
+            <ul>
+                <li><strong>ORM:</strong> Entity Framework Core for LINQ queries</li>
+                <li><strong>Micro-ORM:</strong> Dapper for performance-critical code</li>
+                <li><strong>Connection Pooling:</strong> Built-in connection resilience</li>
+                <li><strong>Multiple Databases:</strong> Support for SQL Server, PostgreSQL, MySQL</li>
+                <li><strong>Caching:</strong> Distributed caching with Azure Cache for Redis</li>
+            </ul>
+        </div>
+
+        <h3>Rust Stack</h3>
+        <div class="subsection">
+            <ul>
+                <li><strong>ORM/Query:</strong> SQLx, Diesel, or Tokio-postgres</li>
+                <li><strong>Connection Pooling:</strong> r2d2 or deadpool</li>
+                <li><strong>Async Runtime:</strong> Tokio for asynchronous operations</li>
+                <li><strong>Type Safety:</strong> Compile-time query checking with SQLx</li>
+                <li><strong>Performance:</strong> Zero-cost abstractions and memory safety</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Kubernetes Deployment -->
+    <section id="kubernetes-deployment" class="section">
+        <h2>Kubernetes Deployment Architecture</h2>
+        
+        <h3>Core Components</h3>
+        <ul>
+            <li><strong>Deployments:</strong> Define desired state and replicas</li>
+            <li><strong>Services:</strong> Expose applications within and outside cluster</li>
+            <li><strong>ConfigMaps:</strong> Non-sensitive configuration management</li>
+            <li><strong>Secrets:</strong> Secure storage for sensitive data</li>
+            <li><strong>Ingress:</strong> HTTP/HTTPS routing rules</li>
+            <li><strong>PersistentVolumes:</strong> Data persistence across pod restarts</li>
+            <li><strong>StatefulSets:</strong> Ordered, stable identity for stateful apps</li>
+        </ul>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use resource requests and limits for all containers</li>
+            <li>Implement health checks (liveness, readiness, startup probes)</li>
+            <li>Configure auto-scaling based on metrics (HPA)</li>
+            <li>Use network policies to control traffic flow</li>
+            <li>Implement pod disruption budgets for high availability</li>
+            <li>Monitor cluster resources and application performance</li>
+            <li>Use GitOps tools (ArgoCD, Flux) for declarative deployment</li>
+        </ul>
+    </section>
+
+    <div class="info-box">
+        <strong>Key Principle:</strong> Standardized patterns enable consistency, maintainability, and scalability across diverse teams and projects.
+    </div>
+</div>

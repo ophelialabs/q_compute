@@ -1,0 +1,136 @@
+<div class="content-section">
+    <h1>📦 Deployment Pipeline</h1>
+    <p class="lead">Standardized development, build, containerization, and deployment pipeline for quantum computing applications and enterprise infrastructure.</p>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#pipeline-overview">Overview</a></li>
+            <li><a href="#stages">Pipeline Stages</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+        </ul>
+    </nav>
+
+    <!-- Pipeline Overview -->
+    <section id="pipeline-overview" class="section">
+        <h2>Pipeline Overview</h2>
+        <p>Each application follows a standardized linear development path from initial development through enterprise integration:</p>
+        
+        <h3>Pipeline Flow Diagram</h3>
+        <pre class="mermaid">
+graph LR
+    A["📝 App Development"] -->|Code| B["🔨 Build Phase"]
+    B -->|Artifacts| C["🐳 Containerization"]
+    C -->|Image| D["📦 Registry Push"]
+    D -->|Tagged Image| E["☸️ K8s Deployment"]
+    E -->|Running Service| F["🏢 Enterprise Integration"]
+    
+    style A fill:#0d4d7a
+    style B fill:#0d7a0d
+    style C fill:#7a7a0d
+    style D fill:#7a4d0d
+    style E fill:#4d0d7a
+    style F fill:#0d7a4d
+        </pre>
+    </section>
+
+    <!-- Detailed Stages -->
+    <section id="stages" class="section">
+        <h2>Pipeline Stages</h2>
+
+        <h3>1. Application Development</h3>
+        <div class="subsection">
+            <ul>
+                <li>Choose Language/Framework</li>
+                <li>Develop Features</li>
+                <li>Write Tests</li>
+                <li>Code Review</li>
+            </ul>
+        </div>
+
+        <h3>2. Build Phase</h3>
+        <div class="subsection">
+            <ul>
+                <li>Compile/Transpile source code</li>
+                <li>Run automated tests</li>
+                <li>Code quality checks (linting, static analysis)</li>
+                <li>Generate artifacts (JAR, DLL, binary)</li>
+                <li>Create documentation</li>
+            </ul>
+        </div>
+
+        <h3>3. Containerization</h3>
+        <div class="subsection">
+            <ul>
+                <li>Create Dockerfile with dependencies</li>
+                <li>Build Docker image with proper versioning</li>
+                <li>Run container tests and validation</li>
+                <li>Optimize image size and layers</li>
+                <li>Security scanning and compliance checks</li>
+            </ul>
+        </div>
+
+        <h3>4. Registry Push</h3>
+        <div class="subsection">
+            <ul>
+                <li>Tag image with version information</li>
+                <li>Authenticate with container registry</li>
+                <li>Push to registry (Docker Hub, JFrog, OCR)</li>
+                <li>Manage multiple versions and tags</li>
+                <li>Document registry location and access</li>
+            </ul>
+        </div>
+
+        <h3>5. Kubernetes Deployment</h3>
+        <div class="subsection">
+            <ul>
+                <li>Create and validate deployment manifests</li>
+                <li>Deploy to target Kubernetes cluster</li>
+                <li>Configure services and load balancing</li>
+                <li>Setup ingress rules and routing</li>
+                <li>Configure persistent storage if needed</li>
+                <li>Health checks and readiness probes</li>
+            </ul>
+        </div>
+
+        <h3>6. Enterprise Integration</h3>
+        <div class="subsection">
+            <ul>
+                <li>Connect to microservices and APIs</li>
+                <li>Configure centralized logging</li>
+                <li>Setup monitoring and alerting</li>
+                <li>Configure auto-scaling policies</li>
+                <li>Document API endpoints and dependencies</li>
+                <li>Establish SLA and performance baselines</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="section">
+        <h2>Technologies Used</h2>
+        
+        <div class="grid-container">
+            <div class="card">
+                <h3>Languages</h3>
+                <p>Java, Python, C#, Rust, C++, Q#</p>
+            </div>
+            <div class="card">
+                <h3>Frameworks & Tools</h3>
+                <p>Spring Boot, Flask, .NET Aspire, Cargo, ROS 2, Docker, Kubernetes</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Platforms</h3>
+                <p>AWS, Azure, GCP, Oracle Cloud</p>
+            </div>
+            <div class="card">
+                <h3>Container Technologies</h3>
+                <p>Docker, Kubernetes, Container Registries (Docker Hub, JFrog, OCR)</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="info-box">
+        <strong>Next Step:</strong> See "Cloud Platforms" section for platform-specific deployment guides and "Architecture" for system design patterns.
+    </div>
+</div>

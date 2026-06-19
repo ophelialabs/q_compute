@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Networks - deck.gl 3D Visualization</title>
+    
+    <!-- Mapbox GL -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    
+    <!-- deck.gl -->
+    <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+            background-color: #0f172a;
+            border-radius: 8px;
+        }
+
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #9ca3af;
+            margin-bottom: 4px;
+        }
+
+        .controls {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            font-size: 14px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button.inactive {
+            background-color: #64748b;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 24px;
+        }
+
+        #deckmap {
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .panel {
+            background-color: #1e293b;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #334155;
+        }
+
+        .panel h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .stat-item {
+            margin-bottom: 12px;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .stat-value.green {
+            color: #4ade80;
+        }
+
+        .stat-value.yellow {
+            color: #facc15;
+        }
+
+        .stat-value.blue {
+            color: #60a5fa;
+        }
+
+        .node-list {
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .node-item {
+            width: 100%;
+            text-align: left;
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+            background-color: #0f172a;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: #d1d5db;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .node-item:hover {
+            background-color: #334155;
+        }
+
+        .node-item.active {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .marker-legend {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #d1d5db;
+        }
+
+        .legend-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .legend-icon.node {
+            background-color: #10b981;
+        }
+
+        .legend-icon.ground-station {
+            background-color: #f59e0b;
+        }
+
+        .legend-icon.array {
+            background-color: #8b5cf6;
+        }
+
+        .legend-icon.teleport {
+            background-color: #ec4899;
+        }
+
+        .hop-legend {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #334155;
+        }
+
+        .hop-line {
+            height: 2px;
+            margin: 4px 0;
+            border-radius: 1px;
+        }
+
+        .hop-line.hop1 {
+            background-color: #10b981;
+            opacity: 1.0;
+        }
+
+        .hop-line.hop2 {
+            background-color: #f59e0b;
+            opacity: 0.7;
+            background-image: repeating-linear-gradient(90deg, #f59e0b 0px, #f59e0b 5px, transparent 5px, transparent 10px);
+        }
+
+        .hop-line.hop3 {
+            background-color: #ef4444;
+            opacity: 0.5;
+            background-image: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 2px, transparent 2px, transparent 6px);
+        }
+
+        .node-details {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #334155;
+            display: none;
+        }
+
+        .node-details.active {
+            display: block;
+        }
+
+        .detail-item {
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: #d1d5db;
+        }
+
+        .detail-label {
+            color: #9ca3af;
+        }
+
+        .tooltip {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #334155;
+            max-width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-size: 12px;
+            z-index: 1000;
+        }
+
+        .tooltip h4 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .tooltip p {
+            margin: 4px 0;
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            #deckmap {
+                height: 500px;
+            }
+
+            .sidebar {
+                max-height: auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+            }
+
+            #deckmap {
+                height: 400px;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Quantum Networks - deck.gl</h1>
+            <p>High-performance 3D network visualization with GPU acceleration</p>
+            <p>satellitetoolbox.jl | Matlab | RINEX | deck.gl</p>
+            <p>AZ Orbital (GS) | AWS LEO | QKD | Legion</p>
+            <div class="controls">
+                <button id="view2dBtn" onclick="switchTo2D()">📋 2D View</button>
+                <button id="view3dBtn" class="inactive" onclick="switchTo3D()">🌐 3D View</button>
+                <button id="toggleLabelsBtn" onclick="toggleLabels()">🏷️ Toggle Labels</button>
+                <button id="toggleHopsBtn" onclick="toggleHops()">🔗 Toggle Hops</button>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div id="deckmap"></div>
+            <div class="sidebar">
+                <div class="panel">
+                    <h3>Network Stats</h3>
+                    <div class="stat-item">
+                        <p class="stat-label">Total Nodes</p>
+                        <p class="stat-value green" id="totalNodes">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Active</p>
+                        <p class="stat-value green" id="activeCount">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Connecting</p>
+                        <p class="stat-value yellow" id="connectingCount">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Total Capacity</p>
+                        <p class="stat-value blue" id="totalCapacity">0 Q</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Marker Legend</h3>
+                    <div class="marker-legend">
+                        <div class="legend-item">
+                            <div class="legend-icon node"></div>
+                            <span>Network Node</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon ground-station"></div>
+                            <span>Ground Station</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon array"></div>
+                            <span>Array</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-icon teleport"></div>
+                            <span>Teleport Station</span>
+                        </div>
+                    </div>
+                    <div class="hop-legend">
+                        <strong style="font-size: 11px;">Network Hops:</strong>
+                        <div class="legend-item" style="margin-top: 8px;">
+                            <div class="hop-line hop1" style="width: 20px;"></div>
+                            <span>1-Hop (Direct)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="hop-line hop2" style="width: 20px;"></div>
+                            <span>2-Hop (Relay)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="hop-line hop3" style="width: 20px;"></div>
+                            <span>3-Hop (Extended)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Stations</h3>
+                    <div class="node-list" id="nodesList"></div>
+                </div>
+
+                <div class="panel">
+                    <div id="nodeDetails" class="node-details"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mapbox token
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycW1tbXBtb3NsMjAifQ.rJcFIG214AriISLbB6B5aw';
+
+        // Network data
+        const NETWORK_NODES = [
+            // North America
+            { id: 1, name: 'Chattanooga Hub', latitude: 35.0456, longitude: -85.2672, status: '🟢 Active', capacity: 250, region: 'North America', type: 'node' },
+            { id: 2, name: 'Oak Ridge Node', latitude: 35.9181, longitude: -84.2679, status: '🟢 Active', capacity: 180, region: 'North America', type: 'node' },
+            { id: 3, name: 'Atlanta Center', latitude: 33.7490, longitude: -84.3880, status: '🟢 Active', capacity: 300, region: 'North America', type: 'node' },
+            { id: 4, name: 'Washington Node', latitude: 38.9072, longitude: -77.0369, status: '🟡 Connecting', capacity: 120, region: 'North America', type: 'node' },
+            { id: 5, name: 'Boston Labs', latitude: 42.3601, longitude: -71.0589, status: '🟢 Active', capacity: 220, region: 'North America', type: 'node' },
+            { id: 6, name: 'Toronto Quantum Center', latitude: 43.6629, longitude: -79.3957, status: '🟢 Active', capacity: 190, region: 'North America', type: 'node' },
+            { id: 7, name: 'San Francisco Node', latitude: 37.7749, longitude: -122.4194, status: '🟢 Active', capacity: 280, region: 'North America', type: 'node' },
+            { id: 8, name: 'Los Angeles Terminal', latitude: 34.0522, longitude: -118.2437, status: '🟢 Active', capacity: 260, region: 'North America', type: 'node' },
+            { id: 25, name: 'White Sands Ground Station', latitude: 32.3890, longitude: -106.4733, status: '🟢 Active', capacity: 350, region: 'North America', type: 'ground-station', description: 'Primary satellite ground station facility' },
+            { id: 26, name: 'Arecibo Observatory Array', latitude: 18.3461, longitude: -66.7528, status: '🟢 Active', capacity: 400, region: 'North America', type: 'array', description: 'Radio telescope array' },
+            { id: 56, name: 'Fermilab Quantum Hub', latitude: 41.8411, longitude: -88.2563, status: '🟢 Active', capacity: 380, region: 'North America', type: 'teleport', description: 'Quantum teleportation research facility' },
+            { id: 57, name: 'Brookhaven National Lab', latitude: 40.8681, longitude: -72.8860, status: '🟢 Active', capacity: 370, region: 'North America', type: 'teleport', description: 'Quantum networking research hub' },
+            { id: 58, name: 'Los Alamos Quantum Center', latitude: 35.8810, longitude: -106.3055, status: '🟢 Active', capacity: 390, region: 'North America', type: 'teleport', description: 'Quantum information science facility' },
+            { id: 60, name: 'MIT Quantum Network', latitude: 42.3601, longitude: -71.0947, status: '🟢 Active', capacity: 350, region: 'North America', type: 'teleport', description: 'Quantum internet research facility' },
+            { id: 61, name: 'Caltech Quantum Hub', latitude: 34.1377, longitude: -118.1253, status: '🟢 Active', capacity: 360, region: 'North America', type: 'teleport', description: 'Quantum teleportation lab' },
+            
+            // Europe
+            { id: 9, name: 'London Hub', latitude: 51.5074, longitude: -0.1278, status: '🟢 Active', capacity: 310, region: 'Europe', type: 'node' },
+            { id: 10, name: 'Berlin Facility', latitude: 52.5200, longitude: 13.4050, status: '🟢 Active', capacity: 240, region: 'Europe', type: 'node' },
+            { id: 11, name: 'Paris Research Lab', latitude: 48.8566, longitude: 2.3522, status: '🟢 Active', capacity: 270, region: 'Europe', type: 'node' },
+            { id: 12, name: 'Amsterdam Center', latitude: 52.3676, longitude: 4.9041, status: '🟡 Connecting', capacity: 150, region: 'Europe', type: 'node' },
+            { id: 13, name: 'Stockholm Node', latitude: 59.3293, longitude: 18.0686, status: '🟢 Active', capacity: 200, region: 'Europe', type: 'node' },
+            { id: 14, name: 'Geneva Hub', latitude: 46.2044, longitude: 6.1432, status: '🟢 Active', capacity: 230, region: 'Europe', type: 'node' },
+            { id: 27, name: 'Westerbork Array', latitude: 52.9159, longitude: 6.6030, status: '🟢 Active', capacity: 380, region: 'Europe', type: 'array', description: 'Radio synthesis telescope array' },
+            { id: 28, name: 'Gilleleje Ground Station', latitude: 55.9375, longitude: 12.2800, status: '🟢 Active', capacity: 320, region: 'Europe', type: 'ground-station', description: 'European ground station facility' },
+            { id: 62, name: 'Delft Quantum Internet Alliance', latitude: 52.0016, longitude: 4.3561, status: '🟢 Active', capacity: 380, region: 'Europe', type: 'teleport', description: 'European quantum internet hub' },
+            { id: 63, name: 'Vienna Quantum Center', latitude: 48.2082, longitude: 16.3738, status: '🟢 Active', capacity: 370, region: 'Europe', type: 'teleport', description: 'Quantum research teleportation node' },
+            { id: 65, name: 'CERN Quantum Network', latitude: 46.2318, longitude: 6.0581, status: '🟢 Active', capacity: 400, region: 'Europe', type: 'teleport', description: 'Particle physics quantum facility' },
+            { id: 66, name: 'Max Planck Institute', latitude: 48.0728, longitude: 11.5062, status: '🟢 Active', capacity: 375, region: 'Europe', type: 'teleport', description: 'Quantum optics research station' },
+            
+            // Asia
+            { id: 15, name: 'Tokyo Quantum Center', latitude: 35.6762, longitude: 139.6503, status: '🟢 Active', capacity: 320, region: 'Asia', type: 'node' },
+            { id: 16, name: 'Singapore Node', latitude: 1.3521, longitude: 103.8198, status: '🟢 Active', capacity: 290, region: 'Asia', type: 'node' },
+            { id: 17, name: 'Shanghai Facility', latitude: 31.2304, longitude: 121.4737, status: '🟢 Active', capacity: 300, region: 'Asia', type: 'node' },
+            { id: 18, name: 'Hong Kong Hub', latitude: 22.3193, longitude: 114.1694, status: '🟡 Connecting', capacity: 170, region: 'Asia', type: 'node' },
+            { id: 19, name: 'Mumbai Terminal', latitude: 19.0760, longitude: 72.8777, status: '🟢 Active', capacity: 210, region: 'Asia', type: 'node' },
+            { id: 20, name: 'Seoul Research Institute', latitude: 37.5665, longitude: 126.9780, status: '🟢 Active', capacity: 250, region: 'Asia', type: 'node' },
+            { id: 29, name: 'Chandra X-ray Array', latitude: 28.3949, longitude: 83.8231, status: '🟢 Active', capacity: 390, region: 'Asia', type: 'array', description: 'Space telescope array facility' },
+            { id: 30, name: 'Hanoi Ground Station', latitude: 21.0285, longitude: 105.8542, status: '🟢 Active', capacity: 340, region: 'Asia', type: 'ground-station', description: 'Asian-Pacific ground station facility' },
+            { id: 50, name: 'Beijing Quantum Center', latitude: 39.9042, longitude: 116.4074, status: '🟢 Active', capacity: 330, region: 'Asia', type: 'node' },
+            { id: 51, name: 'Tianjin Node', latitude: 39.0842, longitude: 117.2010, status: '🟢 Active', capacity: 270, region: 'Asia', type: 'node' },
+            { id: 52, name: 'Urumqi Ground Station', latitude: 43.8171, longitude: 87.6278, status: '🟢 Active', capacity: 320, region: 'Asia', type: 'ground-station', description: 'Central Asian ground station facility' },
+            { id: 53, name: 'Bangkok Hub', latitude: 13.7563, longitude: 100.5018, status: '🟡 Connecting', capacity: 160, region: 'Asia', type: 'node' },
+            { id: 54, name: 'Karachi Terminal', latitude: 24.8607, longitude: 67.0011, status: '🟢 Active', capacity: 200, region: 'Asia', type: 'node' },
+            { id: 67, name: 'Hefei Quantum Lab', latitude: 31.8206, longitude: 117.2272, status: '🟢 Active', capacity: 400, region: 'Asia', type: 'teleport', description: 'Chinese quantum teleportation facility' },
+            { id: 68, name: 'Tsinghua Quantum Institute', latitude: 40.0034, longitude: 116.3186, status: '🟢 Active', capacity: 390, region: 'Asia', type: 'teleport', description: 'Quantum network research center' },
+            { id: 69, name: 'University of Tokyo Quantum Hub', latitude: 35.6758, longitude: 139.7671, status: '🟢 Active', capacity: 360, region: 'Asia', type: 'teleport', description: 'Quantum teleportation research' },
+            
+            // Australia
+            { id: 21, name: 'Sydney Center', latitude: -33.8688, longitude: 151.2093, status: '🟢 Active', capacity: 220, region: 'Australia', type: 'node' },
+            { id: 22, name: 'Melbourne Node', latitude: -37.8136, longitude: 144.9631, status: '🟡 Connecting', capacity: 160, region: 'Australia', type: 'node' },
+            { id: 31, name: 'Australian Square Kilometre Array', latitude: -26.6369, longitude: 116.6363, status: '🟢 Active', capacity: 420, region: 'Australia', type: 'array', description: 'SKA pathfinder radio telescope array' },
+            { id: 71, name: 'University of Melbourne Quantum Lab', latitude: -37.8008, longitude: 144.9628, status: '🟢 Active', capacity: 350, region: 'Australia', type: 'teleport', description: 'Quantum network testbed facility' },
+            { id: 72, name: 'Quantum Communications Infrastructure', latitude: -33.8688, longitude: 151.2093, status: '🟢 Active', capacity: 370, region: 'Australia', type: 'teleport', description: 'Australia-Asia quantum link' },
+            
+            // South America
+            { id: 23, name: 'São Paulo Hub', latitude: -23.5505, longitude: -46.6333, status: '🟢 Active', capacity: 200, region: 'South America', type: 'node' },
+            { id: 24, name: 'Buenos Aires Node', latitude: -34.6037, longitude: -58.3816, status: '🟡 Connecting', capacity: 140, region: 'South America', type: 'node' },
+            { id: 32, name: 'Atacama Large Millimeter Array', latitude: -23.0203, longitude: -67.4891, status: '🟢 Active', capacity: 430, region: 'South America', type: 'array', description: 'Millimeter/submillimeter observatory array' },
+            { id: 33, name: 'Paranal Ground Station', latitude: -24.6273, longitude: -70.4045, status: '🟢 Active', capacity: 360, region: 'South America', type: 'ground-station', description: 'Southern hemisphere ground station facility' },
+            { id: 73, name: 'Brazilian Quantum Network', latitude: -23.5505, longitude: -46.6333, status: '🟡 Connecting', capacity: 310, region: 'South America', type: 'teleport', description: 'South American quantum hub' },
+            
+            // Africa
+            { id: 34, name: 'Cairo Hub', latitude: 30.0444, longitude: 31.2357, status: '🟢 Active', capacity: 240, region: 'Africa', type: 'node' },
+            { id: 35, name: 'Johannesburg Center', latitude: -26.2023, longitude: 28.0436, status: '🟢 Active', capacity: 280, region: 'Africa', type: 'node' },
+            { id: 36, name: 'Lagos Node', latitude: 6.5244, longitude: 3.3792, status: '🟡 Connecting', capacity: 160, region: 'Africa', type: 'node' },
+            { id: 37, name: 'Nairobi Terminal', latitude: -1.2832, longitude: 36.8172, status: '🟢 Active', capacity: 210, region: 'Africa', type: 'node' },
+            { id: 38, name: 'KAT-7 Radio Array', latitude: -30.7215, longitude: 21.4283, status: '🟢 Active', capacity: 370, region: 'Africa', type: 'array', description: 'Karoo Array Telescope - SKA precursor' },
+            { id: 39, name: 'South African Ground Station', latitude: -33.9249, longitude: 18.6299, status: '🟢 Active', capacity: 330, region: 'Africa', type: 'ground-station', description: 'African primary ground station facility' },
+            { id: 40, name: 'MeerKAT Array', latitude: -30.7130, longitude: 21.4438, status: '🟢 Active', capacity: 410, region: 'Africa', type: 'array', description: 'Radio interferometer array' },
+            { id: 41, name: 'Mauritius Ground Station', latitude: -20.3484, longitude: 57.5522, status: '🟢 Active', capacity: 300, region: 'Africa', type: 'ground-station', description: 'Indian Ocean ground station facility' },
+            { id: 74, name: 'Quantum Internet Node Africa', latitude: -33.9249, longitude: 18.6299, status: '🟢 Active', capacity: 360, region: 'Africa', type: 'teleport', description: 'Africa-Europe quantum gateway' },
+            
+            // Russia/Central Asia
+            { id: 42, name: 'Moscow Hub', latitude: 55.7558, longitude: 37.6173, status: '🟢 Active', capacity: 310, region: 'Russia/Central Asia', type: 'node' },
+            { id: 43, name: 'Vladivostok Node', latitude: 43.1056, longitude: 131.8735, status: '🟢 Active', capacity: 220, region: 'Russia/Central Asia', type: 'node' },
+            { id: 44, name: 'Almaty Center', latitude: 43.2380, longitude: 76.9450, status: '🟡 Connecting', capacity: 180, region: 'Russia/Central Asia', type: 'node' },
+            { id: 45, name: 'Siberian Ground Station', latitude: 55.0415, longitude: 82.9346, status: '🟢 Active', capacity: 340, region: 'Russia/Central Asia', type: 'ground-station', description: 'Eurasian ground station facility' },
+            { id: 46, name: 'Pulkovo Observatory Array', latitude: 59.7641, longitude: 30.3369, status: '🟢 Active', capacity: 350, region: 'Russia/Central Asia', type: 'array', description: 'Radio astronomical array' },
+            { id: 47, name: 'Baikonur Ground Station', latitude: 45.9650, longitude: 63.3050, status: '🟢 Active', capacity: 360, region: 'Russia/Central Asia', type: 'ground-station', description: 'Spaceport ground station facility' },
+            { id: 48, name: 'Novosibirsk Hub', latitude: 55.0283, longitude: 82.9235, status: '🟢 Active', capacity: 250, region: 'Russia/Central Asia', type: 'node' },
+            { id: 49, name: 'St. Petersburg Node', latitude: 59.9311, longitude: 30.3609, status: '🟡 Connecting', capacity: 190, region: 'Russia/Central Asia', type: 'node' },
+            { id: 55, name: 'Ursa Major Array', latitude: 55.7964, longitude: 37.5663, status: '🟢 Active', capacity: 400, region: 'Russia/Central Asia', type: 'array', description: 'Russian radio observation array' }
+        ];
+
+        // Application state
+        let map = null;
+        let deckglLayers = [];
+        let focusedNode = null;
+        let showLabels = true;
+        let showHops = true;
+        let currentView = '2d';
+        let selectedNodeId = null;
+
+        // Get marker color for deck.gl
+        function getMarkerColor(node) {
+            switch(node.type) {
+                case 'teleport':
+                    return [236, 72, 153, 255]; // Pink
+                case 'ground-station':
+                    return [245, 158, 11, 255]; // Orange
+                case 'array':
+                    return [139, 92, 246, 255]; // Purple
+                default:
+                    return [16, 185, 129, 255]; // Green
+            }
+        }
+
+        // Get marker size
+        function getMarkerSize(node) {
+            switch(node.type) {
+                case 'teleport':
+                    return 30;
+                case 'ground-station':
+                    return 25;
+                case 'array':
+                    return 27;
+                default:
+                    return 20;
+            }
+        }
+
+        // Calculate distance
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+        }
+
+        // Build network graph
+        function buildNetworkGraph(maxDistanceKm = 8000) {
+            const graph = {};
+            NETWORK_NODES.forEach(node => {
+                graph[node.id] = [];
+            });
+
+            NETWORK_NODES.forEach(node => {
+                const connections = NETWORK_NODES
+                    .filter(n => n.id !== node.id)
+                    .map(n => ({
+                        id: n.id,
+                        node: n,
+                        distance: calculateDistance(node.latitude, node.longitude, n.latitude, n.longitude),
+                        priority: n.type === 'teleport' ? 3 : (n.type === 'ground-station' || n.type === 'array') ? 2 : 1
+                    }))
+                    .filter(c => c.distance <= maxDistanceKm)
+                    .sort((a, b) => {
+                        if (b.priority !== a.priority) return b.priority - a.priority;
+                        return a.distance - b.distance;
+                    })
+                    .slice(0, 8);
+
+                connections.forEach(c => {
+                    graph[node.id].push(c.id);
+                });
+            });
+
+            return graph;
+        }
+
+        // Find hop distances
+        function findHopDistances(startNodeId, graph, maxHops = 3) {
+            const distances = {};
+            const queue = [];
+
+            NETWORK_NODES.forEach(node => {
+                distances[node.id] = Infinity;
+            });
+
+            distances[startNodeId] = 0;
+            queue.push(startNodeId);
+
+            let head = 0;
+            while (head < queue.length) {
+                const currentId = queue[head];
+                head++;
+
+                if (distances[currentId] >= maxHops) continue;
+
+                graph[currentId].forEach(neighborId => {
+                    if (distances[neighborId] > distances[currentId] + 1) {
+                        distances[neighborId] = distances[currentId] + 1;
+                        queue.push(neighborId);
+                    }
+                });
+            }
+
+            return distances;
+        }
+
+        // Get line color by hop
+        function getLineColor(hop) {
+            switch(hop) {
+                case 1:
+                    return [16, 185, 129, 255]; // Green
+                case 2:
+                    return [245, 158, 11, 255]; // Orange
+                case 3:
+                    return [239, 68, 68, 255]; // Red
+                default:
+                    return [100, 116, 139, 255]; // Gray
+            }
+        }
+
+        // Get line width by hop
+        function getLineWidth(hop) {
+            switch(hop) {
+                case 1:
+                    return 5;
+                case 2:
+                    return 3;
+                case 3:
+                    return 2;
+                default:
+                    return 1;
+            }
+        }
+
+        // Initialize deck.gl
+        function initDeckGL() {
+            const layers = [
+                // Scatterplot layer for markers
+                new deck.ScatterplotLayer({
+                    id: 'scatterplot-layer',
+                    data: NETWORK_NODES,
+                    pickable: true,
+                    opacity: 0.8,
+                    stroked: true,
+                    filled: true,
+                    radiusScale: 8,
+                    radiusMinPixels: 5,
+                    radiusMaxPixels: 100,
+                    lineWidthMinPixels: 1,
+                    getPosition: d => [d.longitude, d.latitude],
+                    getFillColor: d => getMarkerColor(d),
+                    getRadius: d => getMarkerSize(d),
+                    getLineColor: d => selectedNodeId === d.id ? [255, 255, 0, 255] : [255, 255, 255, 150],
+                    getLineWidth: d => selectedNodeId === d.id ? 3 : 1,
+                    onHover: (info) => {
+                        if (info.object) {
+                            showTooltip(info);
+                        }
+                    },
+                    onClick: (info) => {
+                        if (info.object) {
+                            setFocusedNode(info.object);
+                        }
+                    }
+                })
+            ];
+
+            // Add line layers for connections if a node is selected
+            if (focusedNode && showHops) {
+                const graph = buildNetworkGraph();
+                const hopDistances = findHopDistances(focusedNode.id, graph);
+
+                const lineData = [];
+                NETWORK_NODES.forEach(targetNode => {
+                    if (targetNode.id === focusedNode.id) return;
+                    const hop = hopDistances[targetNode.id];
+                    if (!hop || hop === Infinity || hop > 3) return;
+
+                    lineData.push({
+                        from: [focusedNode.longitude, focusedNode.latitude],
+                        to: [targetNode.longitude, targetNode.latitude],
+                        hop: hop
+                    });
+                });
+
+                if (lineData.length > 0) {
+                    layers.push(new deck.LineLayer({
+                        id: 'line-layer',
+                        data: lineData,
+                        pickable: false,
+                        getSourcePosition: d => d.from,
+                        getTargetPosition: d => d.to,
+                        getColor: d => getLineColor(d.hop),
+                        getWidth: d => getLineWidth(d.hop),
+                        widthUnits: 'pixels'
+                    }));
+                }
+            }
+
+            // Add text layer for labels
+            if (showLabels) {
+                layers.push(new deck.TextLayer({
+                    id: 'text-layer',
+                    data: NETWORK_NODES,
+                    pickable: false,
+                    getPosition: d => [d.longitude, d.latitude],
+                    getText: d => d.name.split(' ')[0],
+                    getSize: 12,
+                    getColor: [255, 255, 255, 200],
+                    getTextAnchor: 'middle',
+                    getAlignmentBaseline: 'bottom'
+                }));
+            }
+
+            return layers;
+        }
+
+        // Show tooltip
+        function showTooltip(info) {
+            const {x, y, object} = info;
+            if (!object) return;
+
+            const typeLabel = object.type === 'teleport' ? '⚡ Teleport Station' :
+                            object.type === 'ground-station' ? '🛰️ Ground Station' :
+                            object.type === 'array' ? '📡 Array' :
+                            '🔵 Network Node';
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.style.left = x + 'px';
+            tooltip.style.top = y + 'px';
+            tooltip.innerHTML = `
+                <h4>${object.name}</h4>
+                <p><strong>Type:</strong> ${typeLabel}</p>
+                <p><strong>Region:</strong> ${object.region}</p>
+                <p><strong>Status:</strong> ${object.status}</p>
+                <p><strong>Capacity:</strong> ${object.capacity} Q</p>
+                <p><strong>Coords:</strong> ${object.latitude.toFixed(2)}, ${object.longitude.toFixed(2)}</p>
+            `;
+
+            const existing = document.querySelector('.tooltip');
+            if (existing) existing.remove();
+            document.getElementById('deckmap').appendChild(tooltip);
+        }
+
+        // Set focused node
+        function setFocusedNode(node) {
+            focusedNode = node;
+            selectedNodeId = node.id;
+            updateLayers();
+            updateUI();
+        }
+
+        // Update layers
+        function updateLayers() {
+            deckglLayers = initDeckGL();
+            if (window.deckInstance) {
+                window.deckInstance.setProps({ layers: deckglLayers });
+            }
+        }
+
+        // Update UI
+        function updateUI() {
+            updateNodesList();
+            updateNodeDetails();
+        }
+
+        // Update nodes list
+        function updateNodesList() {
+            const nodesList = document.getElementById('nodesList');
+            nodesList.innerHTML = NETWORK_NODES.map(node => `
+                <button class="node-item ${focusedNode?.id === node.id ? 'active' : ''}" onclick="setFocusedNode(NETWORK_NODES.find(n => n.id === ${node.id}))">
+                    <strong>${node.name}</strong><br>
+                    <small>${node.region} • ${node.status}</small>
+                </button>
+            `).join('');
+        }
+
+        // Update node details
+        function updateNodeDetails() {
+            const detailsPanel = document.getElementById('nodeDetails');
+            if (!focusedNode) {
+                detailsPanel.classList.remove('active');
+                detailsPanel.innerHTML = '';
+                return;
+            }
+
+            const typeLabel = focusedNode.type === 'teleport' ? '⚡ Teleport Station' :
+                            focusedNode.type === 'ground-station' ? '🛰️ Ground Station' :
+                            focusedNode.type === 'array' ? '📡 Array' :
+                            '🔵 Network Node';
+
+            const graph = buildNetworkGraph();
+            const hopDistances = findHopDistances(focusedNode.id, graph);
+            const hop1 = Object.values(hopDistances).filter(d => d === 1).length;
+            const hop2 = Object.values(hopDistances).filter(d => d === 2).length;
+            const hop3 = Object.values(hopDistances).filter(d => d === 3).length;
+
+            detailsPanel.classList.add('active');
+            detailsPanel.innerHTML = `
+                <h4 style="margin-bottom: 12px; color: white;">${focusedNode.name}</h4>
+                <div class="detail-item">
+                    <span class="detail-label">Type:</span> ${typeLabel}
+                </div>
+                ${focusedNode.description ? `<div class="detail-item"><span class="detail-label">Description:</span> ${focusedNode.description}</div>` : ''}
+                <div class="detail-item">
+                    <span class="detail-label">Status:</span> ${focusedNode.status}
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Capacity:</span> ${focusedNode.capacity} Q
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Region:</span> ${focusedNode.region}
+                </div>
+                <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #334155;">
+                    <strong style="font-size: 11px;">Network Reach:</strong>
+                    <div style="display: flex; align-items: center; gap: 6px; margin-top: 8px;">
+                        <div style="width: 12px; height: 12px; background-color: #10b981;"></div>
+                        <span>1-Hop: ${hop1}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+                        <div style="width: 12px; height: 12px; background-color: #f59e0b;"></div>
+                        <span>2-Hop: ${hop2}</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+                        <div style="width: 12px; height: 12px; background-color: #ef4444;"></div>
+                        <span>3-Hop: ${hop3}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Update stats
+        function updateStats() {
+            document.getElementById('totalNodes').textContent = NETWORK_NODES.length;
+            document.getElementById('activeCount').textContent = NETWORK_NODES.filter(n => n.status.includes('Active')).length;
+            document.getElementById('connectingCount').textContent = NETWORK_NODES.filter(n => n.status.includes('Connecting')).length;
+            document.getElementById('totalCapacity').textContent = NETWORK_NODES.reduce((sum, n) => sum + n.capacity, 0) + ' Q';
+        }
+
+        // Switch to 2D view
+        function switchTo2D() {
+            currentView = '2d';
+            document.getElementById('view2dBtn').classList.remove('inactive');
+            document.getElementById('view3dBtn').classList.add('inactive');
+            if (window.deckInstance) {
+                window.deckInstance.setProps({ initialViewState: { latitude: 20, longitude: 0, zoom: 2, pitch: 0 } });
+            }
+        }
+
+        // Switch to 3D view
+        function switchTo3D() {
+            currentView = '3d';
+            document.getElementById('view2dBtn').classList.add('inactive');
+            document.getElementById('view3dBtn').classList.remove('inactive');
+            if (window.deckInstance) {
+                window.deckInstance.setProps({ initialViewState: { latitude: 20, longitude: 0, zoom: 2, pitch: 45, bearing: 45 } });
+            }
+        }
+
+        // Toggle labels
+        function toggleLabels() {
+            showLabels = !showLabels;
+            updateLayers();
+        }
+
+        // Toggle hops
+        function toggleHops() {
+            showHops = !showHops;
+            updateLayers();
+        }
+
+        // Initialize map
+        window.addEventListener('load', () => {
+            deckglLayers = initDeckGL();
+
+            window.deckInstance = new deck.Deck({
+                container: 'deckmap',
+                initialViewState: {
+                    latitude: 20,
+                    longitude: 0,
+                    zoom: 2,
+                    pitch: 0,
+                    bearing: 0
+                },
+                controller: true,
+                layers: deckglLayers,
+                onViewStateChange: ({viewState}) => {
+                    // Handle view changes
+                }
+            });
+
+            updateStats();
+            updateNodesList();
+        });
+    </script>
+</body>
+</html>
