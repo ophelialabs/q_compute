@@ -1,2 +1,0 @@
-- [Light-Responsive Materials in Droplet Manipulation for Biochemical Applications](https://advanced.onlinelibrary.wiley.com/doi/epdf/10.1002/adma.202313935)
-- []
