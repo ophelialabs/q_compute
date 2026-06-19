@@ -50,16 +50,16 @@ Implications:
 
 Component | Requirement | Purpose
 --- | ---: | ---
-50/50 beam splitter | High symmetry (<0.5% deviation) | Ensures LO noise cancels
-Photodiode pair | Matched responsivity & capacitance | Prevents noise leakage
+50/50 beam splitter | High symmetry (&lt;0.5% deviation) | Ensures LO noise cancels
+Photodiode pair | Matched responsivity &amp; capacitance | Prevents noise leakage
 Local Oscillator | High power; spatial mode match | Lifts signal above electronics noise
 Phase controller | Piezo or phase shifter | Sweep/lock relative phase
 Transimpedance amplifier | Low-noise, high-bandwidth | Convert current to voltage
 
 Key technical challenges:
-- Common-Mode Rejection Ratio (CMRR) — target >30 dB  
+- Common-Mode Rejection Ratio (CMRR) — target &gt;30 dB  
 - Spatial overlap (visibility) — mismatch reduces signal and adds vacuum noise  
-- Shot-noise clearance — LO shot noise must be ≫ electronic dark noise (typically >10 dB)
+- Shot-noise clearance — LO shot noise must be ≫ electronic dark noise (typically &gt;10 dB)
 
 ---
 
@@ -98,7 +98,7 @@ Detection | Homodyne (quadratures) | Single-photon counters
 Hardware | Telecom components (PIN diodes, LOs) | SNSPDs/APDs (often cryogenic)
 Operating env. | Room temperature, daylight-friendly | Often requires cooling; sunlight-sensitive
 Data rate | Very high (Gbps potential) | Lower (detector dead time)
-Distance | Short-to-medium (<~100 km) | Long-range (can exceed 400 km)
+Distance | Short-to-medium (&lt;~100 km) | Long-range (can exceed 400 km)
 
 ---
 
@@ -155,9 +155,9 @@ SNR = (T·V_A) / (1 + T·ξ + ν_el)
 with transmissivity T, modulation variance V_A, excess noise ξ, and electronic noise ν_el.
 
 Distance regimes:
-- Short (<15 km): plateau, limited by electronics and processing.  
+- Short (&lt;15 km): plateau, limited by electronics and processing.  
 - Medium (15–50 km): exponential loss-dominated decay.  
-- Long (>50 km): waterfall cutoff when βI(A:B) ≈ χ(E:B).
+- Long (&gt;50 km): waterfall cutoff when βI(A:B) ≈ χ(E:B).
 
 ---
 
@@ -254,5 +254,8 @@ Certification focuses: entropy tests for QRNG, shot-noise calibration and dynami
 ---
 
 ## (Optional) Security Target (ST) example
-...existing code...
-{ add a specific Security Target (ST) example here if required }
+
+A Security Target (ST) for a CV-QKD module would include:
+- Security objectives aligned with Common Criteria requirements
+- Threat analysis and countermeasures  
+- Functional specification of the security-relevant components
