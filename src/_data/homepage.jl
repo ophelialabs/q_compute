@@ -116,7 +116,7 @@ Dict(
                         Dict("name" => "Guppy", "url" => "https://docs.quantinuum.com/guppy/getting_started.html", "description" => "Quantum programming language by Quantinuum")
                      ]),
                 Dict("key" => "ibm", "name" => "IBM Quantum: Qiskit",
-                     "url" => "https://www.ibm.com/quantum/",
+                     "url" => "https://quantum.cloud.ibm/docs/en/guides/tools-intro",
                      "description" => "Access IBM's quantum processors and simulators through the cloud.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                      "category" => "Core Quantum Platforms",
