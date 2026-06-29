@@ -1,3 +1,8 @@
+## Remember the importance of tags!
+- *Tags*: reduce the need for structural or "heirarchal" placement, as project grows, how to keep up with influx?
+- Such as particular papers or articles being published in specific magazines. Reducing redundancy and expanding on preciseness (considering the rightfully assigned tags...)
+- One "monolithic" directory and let the tags and algorithm do the work 
+
 **Julia**
 ```
 curl -fsSL https://install.julialang.org | sh
