@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive guide to homodyne detection and continuous-variable quantum key distribution">
-    <title>Homodyne Detection & Continuous-Variable QKD | Ophelia Labs</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         :root {
             --primary: #0066cc;
             --primary-dark: #004499;
@@ -25,20 +17,17 @@
             --warning: #ffc107;
             --danger: #dc3545;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
             color: var(--text-dark);
             background: #fafafa;
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
@@ -46,20 +35,17 @@
             margin-bottom: 40px;
             text-align: center;
         }
-        
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
         }
-        
         header p {
             font-size: 1.1em;
             opacity: 0.95;
             max-width: 800px;
             margin: 0 auto;
         }
-        
         .toc {
             background: white;
             border-left: 4px solid var(--primary);
@@ -68,33 +54,27 @@
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
         .toc h2 {
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.3em;
         }
-        
         .toc ol {
             margin-left: 20px;
         }
-        
         .toc li {
             margin-bottom: 8px;
             color: var(--text-light);
         }
-        
         .toc a {
             color: var(--primary);
             text-decoration: none;
             transition: color 0.3s;
         }
-        
         .toc a:hover {
             color: var(--primary-dark);
             text-decoration: underline;
         }
-        
         section {
             background: white;
             margin-bottom: 30px;
@@ -102,7 +82,6 @@
             border-radius: 6px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
         section h2 {
             color: var(--primary);
             font-size: 1.8em;
@@ -110,7 +89,6 @@
             padding-bottom: 15px;
             border-bottom: 3px solid var(--secondary);
         }
-        
         section h3 {
             color: var(--primary-dark);
             font-size: 1.4em;
@@ -118,7 +96,6 @@
             margin-bottom: 15px;
             font-weight: 600;
         }
-        
         section h4 {
             color: var(--primary);
             font-size: 1.1em;
@@ -126,38 +103,31 @@
             margin-bottom: 10px;
             font-weight: 600;
         }
-        
         p {
             margin-bottom: 15px;
             color: var(--text-dark);
             line-height: 1.8;
         }
-        
         ul, ol {
             margin-left: 30px;
             margin-bottom: 15px;
         }
-        
         li {
             margin-bottom: 10px;
             color: var(--text-dark);
         }
-        
         li strong {
             color: var(--primary);
         }
-        
         a {
             color: var(--primary);
             text-decoration: none;
             transition: color 0.3s;
         }
-        
         a:hover {
             color: var(--primary-dark);
             text-decoration: underline;
         }
-        
         .math-block {
             background: var(--secondary);
             padding: 15px;
@@ -166,14 +136,12 @@
             border-radius: 4px;
             overflow-x: auto;
         }
-        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             font-size: 0.95em;
         }
-        
         th {
             background: var(--primary);
             color: white;
@@ -181,20 +149,16 @@
             text-align: left;
             font-weight: 600;
         }
-        
         td {
             padding: 12px 15px;
             border-bottom: 1px solid var(--border);
         }
-        
         tr:nth-child(even) {
             background: var(--secondary);
         }
-        
         tr:hover {
             background: #f0f8ff;
         }
-        
         .feature-box {
             background: linear-gradient(135deg, rgba(0,102,204,0.05) 0%, rgba(0,68,153,0.05) 100%);
             border-left: 4px solid var(--primary);
@@ -202,13 +166,11 @@
             margin: 20px 0;
             border-radius: 4px;
         }
-        
         .feature-box strong {
             color: var(--primary);
             display: block;
             margin-bottom: 8px;
         }
-        
         .warning-box {
             background: #fff3cd;
             border-left: 4px solid var(--warning);
@@ -216,7 +178,6 @@
             margin: 15px 0;
             border-radius: 4px;
         }
-        
         .success-box {
             background: #d4edda;
             border-left: 4px solid var(--success);
@@ -224,26 +185,22 @@
             margin: 15px 0;
             border-radius: 4px;
         }
-        
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin: 20px 0;
         }
-        
         .comparison-item {
             background: var(--secondary);
             padding: 20px;
             border-radius: 6px;
             border-left: 4px solid var(--primary);
         }
-        
         .comparison-item h4 {
             color: var(--primary);
             margin-bottom: 10px;
         }
-        
         code {
             background: var(--secondary);
             padding: 2px 6px;
@@ -251,7 +208,6 @@
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
-        
         .key-insight {
             background: #e7f3ff;
             border-left: 4px solid var(--primary);
@@ -260,7 +216,6 @@
             border-radius: 4px;
             font-style: italic;
         }
-        
         footer {
             text-align: center;
             padding: 30px;
@@ -268,7 +223,6 @@
             border-top: 1px solid var(--border);
             margin-top: 50px;
         }
-        
         .back-to-top {
             display: inline-block;
             background: var(--primary);
@@ -279,11 +233,9 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        
         .back-to-top:hover {
             background: var(--primary-dark);
         }
-        
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
@@ -297,9 +249,8 @@
                 padding: 20px;
             }
         }
-    </style>
-</head>
-<body>
+</style>
+
 
 <header>
     <h1>Homodyne Detection & Continuous-Variable QKD</h1>
@@ -332,9 +283,9 @@
 <section id="section-1">
     <h2>🔬 Homodyne Detection: The Foundation</h2>
     
-    <p>Homodyne detection is a highly sensitive measurement technique used to extract information from a signal by mixing it with a reference oscillation of the same frequency. In optics and quantum mechanics, it is the primary tool for measuring the quadrature components (amplitude and phase) of light fields.</p>
+<p>Homodyne detection is a highly sensitive measurement technique used to extract information from a signal by mixing it with a reference oscillation of the same frequency. In optics and quantum mechanics, it is the primary tool for measuring the quadrature components (amplitude and phase) of light fields.</p>
     
-    <h3>Core Mechanism</h3>
+<h3>Core Mechanism</h3>
     <p>The process typically involves the following steps:</p>
     <ul>
         <li><strong>Mixing:</strong> A weak signal is combined with a strong local oscillator (LO) on a 50/50 beam splitter.</li>
@@ -343,7 +294,7 @@
         <li><strong>Subtraction:</strong> In balanced homodyne detection, the two photocurrents are subtracted. This cancels out common-mode noise (like LO intensity fluctuations) and leaves a signal proportional to the field quadrature.</li>
     </ul>
     
-    <h3>Key Characteristics</h3>
+<h3>Key Characteristics</h3>
     <div class="feature-box">
         <strong>⚡ Phase Sensitivity:</strong> By varying the phase of the LO, you can choose to measure either the amplitude quadrature (\(X\)) or the phase quadrature (\(P\)).
     </div>
@@ -354,7 +305,7 @@
         <strong>⚙️ Direct Conversion:</strong> Unlike <a href="https://www.rp-photonics.com/optical_heterodyne_detection.html">heterodyne detection</a> (which uses a frequency offset to create a "beat note"), homodyne detection converts the signal directly to baseband (DC).
     </div>
     
-    <h3>Primary Applications</h3>
+<h3>Primary Applications</h3>
     <ul>
         <li><strong>Quantum Communication:</strong> Used in Quantum Key Distribution (QKD) and Quantum Random Number Generation (QRNG).</li>
         <li><strong>Gravitational Wave Detection:</strong> Balanced detectors are critical components for the LIGO upgrade to reduce quantum noise using squeezed light.</li>
@@ -367,17 +318,17 @@
 <section id="section-2">
     <h2>📐 Mathematical Foundation & Hardware Requirements</h2>
     
-    <h3>1. Mathematical Derivation</h3>
+<h3>1. Mathematical Derivation</h3>
     <p>To understand why homodyne detection is so powerful, we have to look at how the interference of two light fields allows us to measure properties that are usually hidden by noise.</p>
     
-    <h4>The Fields</h4>
+<h4>The Fields</h4>
     <p>We define the electric fields (in a simplified classical form) as:</p>
     <ul>
         <li><strong>Signal:</strong> \(E_{S}=A_{S}\cos (\omega t+\theta )\)</li>
         <li><strong>Local Oscillator:</strong> \(E_{LO}=A_{LO}\cos (\omega t+\phi )\)</li>
     </ul>
     
-    <h4>At the Beam Splitter</h4>
+<h4>At the Beam Splitter</h4>
     <p>A 50/50 beam splitter combines these fields. The two outputs (\(E_{1}\) and \(E_{2}\)) are linear combinations of the inputs:</p>
     <div class="math-block">
         \(E_{1}=\frac{1}{\sqrt{2}}(E_{LO}+E_{S})\)<br>
@@ -385,7 +336,7 @@
     </div>
     <p><em>Note: The minus sign in \(E_{2}\) arises from the \(180^{\circ}\) phase shift required by the law of energy conservation at the beam splitter interface.</em></p>
     
-    <h4>Photodetection and Subtraction</h4>
+<h4>Photodetection and Subtraction</h4>
     <p>Photodiodes measure intensity (\(I\propto |E|^{2}\)). In a Balanced Homodyne Detector, we subtract the two resulting currents (\(i_{diff}=i_{1}-i_{2}\)):</p>
     <div class="math-block">
         \(i_{1}\propto \frac{1}{2}|E_{LO}+E_{S}|^{2}=\frac{1}{2}(E_{LO}^{2}+E_{S}^{2}+2E_{LO}E_{S})\)<br>
@@ -393,22 +344,22 @@
         \(i_{diff}=i_{1}-i_{2}\propto 2E_{LO}E_{S}\)
     </div>
     
-    <h4>The Result</h4>
+<h4>The Result</h4>
     <p>Substituting the cosine terms and filtering out the high-frequency \(2\omega\) components (which photodiodes cannot track), we get:</p>
     <div class="math-block">
         \(i_{diff}\propto A_{LO}A_{S}\cos (\theta -\phi )\)
     </div>
     
-    <h4>Why This Matters</h4>
+<h4>Why This Matters</h4>
     <ul>
         <li><strong>Amplification:</strong> The signal \(A_{S}\) is multiplied by the large amplitude \(A_{LO}\). This lifts the signal above the electronic noise of the detector.</li>
         <li><strong>Phase Control:</strong> By adjusting the LO phase (\(\phi \)), you can measure the "in-phase" quadrature (\(X\) when \(\phi =0\)) or the "out-of-phase" quadrature (\(P\) when \(\phi =\pi /2\)).</li>
     </ul>
     
-    <h3>2. Hardware Requirements</h3>
+<h3>2. Hardware Requirements</h3>
     <p>Building a high-performance balanced homodyne detector requires careful matching to ensure the common-mode noise cancellation works effectively.</p>
     
-    <table>
+<table>
         <thead>
             <tr>
                 <th>Component</th>
@@ -445,7 +396,7 @@
         </tbody>
     </table>
     
-    <h4>Key Technical Challenges</h4>
+<h4>Key Technical Challenges</h4>
     <ul>
         <li><strong>Common Mode Rejection Ratio (CMRR):</strong> This is the measure of how well the detector cancels out LO fluctuations. A CMRR of >30 dB is typically required for quantum optics.</li>
         <li><strong>Spatial Overlap (Visibility):</strong> If the signal and LO are not perfectly aligned in space, the interference fringe visibility drops, effectively "thinning" your signal and introducing vacuum noise.</li>
@@ -457,12 +408,12 @@
 <section id="section-3">
     <h2>📊 Shot Noise & Quantum Key Distribution</h2>
     
-    <p>In homodyne detection, shot noise is not just a nuisance; it is the fundamental "floor" of quantum uncertainty. In the context of Quantum Key Distribution (QKD), it acts as the benchmark against which we detect eavesdropping.</p>
+<p>In homodyne detection, shot noise is not just a nuisance; it is the fundamental "floor" of quantum uncertainty. In the context of Quantum Key Distribution (QKD), it acts as the benchmark against which we detect eavesdropping.</p>
     
-    <h3>1. Calculating Shot Noise in Homodyne Detection</h3>
+<h3>1. Calculating Shot Noise in Homodyne Detection</h3>
     <p>Shot noise arises from the discrete nature of photons. Even if you have a perfectly stable laser, photons arrive at the detector at random intervals following a Poisson distribution.</p>
     
-    <h4>The Mathematical Definition</h4>
+<h4>The Mathematical Definition</h4>
     <p>In a balanced homodyne detector, the variance of the difference current (\(i_{diff}\)) is dominated by the Local Oscillator (LO) because it is much stronger than the signal:</p>
     <div class="math-block">
         \(\sigma _{sn}^{2}=2e\cdot R\cdot P_{LO}\cdot B\)
@@ -475,43 +426,43 @@
         <li>\(B\): Measurement bandwidth</li>
     </ul>
     
-    <h4>The "Quantum" Perspective</h4>
+<h4>The "Quantum" Perspective</h4>
     <p>In quantum optics, we normalize the measurement so that the shot noise level represents the Vacuum Fluctuations. This is called Shot-Noise Clearance. To verify your hardware is performing correctly, you compare:</p>
     <ul>
         <li><strong>Dark Noise:</strong> The voltage variance when the LO is OFF.</li>
         <li><strong>Shot Noise:</strong> The voltage variance when the LO is ON (with no signal).</li>
     </ul>
     
-    <div class="key-insight">
+<div class="key-insight">
         For a high-quality system, the Shot Noise should be at least 10–20 dB higher than the Dark Noise. This ensures that the fluctuations you are measuring are physical properties of the light field, not just noisy electronics.
     </div>
     
-    <h3>2. Use in Quantum Key Distribution (QKD)</h3>
+<h3>2. Use in Quantum Key Distribution (QKD)</h3>
     <p>Homodyne detection is the backbone of Continuous-Variable QKD (CV-QKD). Unlike traditional QKD (which counts single photons), CV-QKD uses standard telecommunication hardware to measure the quadratures (\(X\) and \(P\)) of light.</p>
     
-    <h4>How the Protocol Works</h4>
+<h4>How the Protocol Works</h4>
     <ul>
         <li><strong>Alice (Sender):</strong> She prepares weak pulses of light and randomly modulates their amplitude (\(X\)) and phase (\(P\)) using Gaussian distributions.</li>
         <li><strong>Bob (Receiver):</strong> He uses a homodyne detector. For each pulse, he randomly chooses to measure either the \(X\) or \(P\)) quadrature by shifting the phase of his Local Oscillator.</li>
         <li><strong>Sifting:</strong> Alice and Bob later compare which quadrature Bob measured (without revealing the values) and keep only the matching cases.</li>
     </ul>
     
-    <h4>The Role of Shot Noise in Security</h4>
+<h4>The Role of Shot Noise in Security</h4>
     <p>In quantum mechanics, the Heisenberg Uncertainty Principle states that:</p>
     <div class="math-block">
         \(\Delta X\Delta P\ge 1\) (In normalized units where shot noise = 1)
     </div>
     
-    <div class="feature-box">
+<div class="feature-box">
         <strong>🚨 Detecting Eve:</strong> If an eavesdropper (Eve) tries to intercept the signal, she must measure it. According to the No-Cloning Theorem, her measurement inevitably introduces noise.
     </div>
     
-    <ul>
+<ul>
         <li><strong>The Benchmark:</strong> Bob measures the variance of his received signal. If the noise he sees is significantly higher than the theoretical Shot Noise level (plus the noise Alice intentionally added), he knows the link is compromised.</li>
         <li><strong>Secret Key Rate:</strong> Alice and Bob use the ratio of the "Signal" to the "Excess Noise" (noise above the shot noise) to calculate how much information Eve could have stolen. If the excess noise is too high, they abort the key generation.</li>
     </ul>
     
-    <h4>Comparison: Why Homodyne for QKD?</h4>
+<h4>Comparison: Why Homodyne for QKD?</h4>
     <ul>
         <li><strong>Speed:</strong> It can operate at Giga-symbol rates using standard fiber-optic components.</li>
         <li><strong>Daylight Operation:</strong> Because the LO acts as a powerful frequency filter, homodyne detection is much better at filtering out ambient sunlight than single-photon counters, making it ideal for free-space or satellite QKD.</li>
@@ -522,9 +473,9 @@
 <section id="section-4">
     <h2>⚖️ CV-QKD vs. Discrete-Variable QKD: The Trade-off</h2>
     
-    <p>Choosing between Continuous-Variable (CV) and Discrete-Variable (DV) QKD is essentially a trade-off between high-speed integration with existing tech and raw performance over long distances.</p>
+<p>Choosing between Continuous-Variable (CV) and Discrete-Variable (DV) QKD is essentially a trade-off between high-speed integration with existing tech and raw performance over long distances.</p>
     
-    <h3>Comparison Table: CV-QKD vs. DV-QKD</h3>
+<h3>Comparison Table: CV-QKD vs. DV-QKD</h3>
     <table>
         <thead>
             <tr>
@@ -572,7 +523,7 @@
         </tbody>
     </table>
     
-    <h3>1. Continuous-Variable (CV-QKD)</h3>
+<h3>1. Continuous-Variable (CV-QKD)</h3>
     <p>CV-QKD treats the light wave as a continuous signal. It is often referred to as "the pragmatist's QKD" because it looks very similar to modern coherent optical communications.</p>
     <div class="comparison-grid">
         <div class="comparison-item">
@@ -585,7 +536,7 @@
         </div>
     </div>
     
-    <h3>2. Discrete-Variable (DV-QKD)</h3>
+<h3>2. Discrete-Variable (DV-QKD)</h3>
     <p>DV-QKD (like the famous BB84 protocol) relies on the presence or absence of single photons, or the polarization state of a single photon.</p>
     <div class="comparison-grid">
         <div class="comparison-item">
@@ -598,7 +549,7 @@
         </div>
     </div>
     
-    <h3>Which One Wins?</h3>
+<h3>Which One Wins?</h3>
     <p>It depends on the Use Case:</p>
     <ul>
         <li><strong>Metropolitan Networks:</strong> CV-QKD is the winner. If you want to secure data between two banks in the same city, you can use existing fiber and standard rack-mounted equipment without liquid nitrogen.</li>
@@ -611,28 +562,28 @@
 <section id="section-5">
     <h2>🔄 Reconciliation in Continuous-Variable QKD</h2>
     
-    <p>In Continuous-Variable QKD, reconciliation is the most computationally "heavy" part of the process. Unlike Discrete-Variable QKD, where Alice and Bob share discrete bits (0 or 1) that might occasionally flip, in CV-QKD Alice and Bob share correlated Gaussian noise. The goal of reconciliation is to turn two different sets of real-valued numbers into the exact same binary string.</p>
+<p>In Continuous-Variable QKD, reconciliation is the most computationally "heavy" part of the process. Unlike Discrete-Variable QKD, where Alice and Bob share discrete bits (0 or 1) that might occasionally flip, in CV-QKD Alice and Bob share correlated Gaussian noise. The goal of reconciliation is to turn two different sets of real-valued numbers into the exact same binary string.</p>
     
-    <h3>1. The Challenge: Correlated Gaussian Variables</h3>
+<h3>1. The Challenge: Correlated Gaussian Variables</h3>
     <p>Alice sends a value \(X_{A}\) (e.g., 1.253...). Bob measures \(X_{B}\). Because of fiber loss and vacuum noise, Bob's measurement is:</p>
     <div class="math-block">
         \(X_{B}=tX_{A}+z\)
     </div>
     <p>Where \(t\) is the transmission (loss) and \(z\) is the combined noise (shot noise + electronic noise). Their values are correlated, but they are never identical.</p>
     
-    <h3>2. The Two Main Strategies</h3>
+<h3>2. The Two Main Strategies</h3>
     <ul>
         <li><strong>Direct Reconciliation:</strong> Bob tries to guess what Alice sent. This performs poorly as signal loss increases (the "3dB limit").</li>
         <li><strong>Reverse Reconciliation (The Gold Standard):</strong> Alice tries to guess what Bob received. Paradoxically, this is much more robust against loss and allows for secret keys even when the signal is extremely weak (over long distances).</li>
     </ul>
     
-    <h3>3. The Step-by-Step Process</h3>
+<h3>3. The Step-by-Step Process</h3>
     <p>To turn these numbers into bits, they follow a four-step pipeline:</p>
     
-    <h4>Step A: Quantization (Slicing)</h4>
+<h4>Step A: Quantization (Slicing)</h4>
     <p>Alice and Bob convert their continuous values into bits. They don't just use a simple "positive = 1, negative = 0" rule, as that would discard too much information. Instead, they use multi-level quantization, where a single measurement is mapped to several bits.</p>
     
-    <h4>Step B: Slepian-Wolf Coding (The "Helper" Data)</h4>
+<h4>Step B: Slepian-Wolf Coding (The "Helper" Data)</h4>
     <p>Alice cannot simply tell Bob her values (Eve would hear). Instead, they use a technique from information theory:</p>
     <ul>
         <li>Bob calculates a Parity Check (a "syndrome") of his bit string using a powerful error-correcting code, like an LDPC (Low-Density Parity-Check) code.</li>
@@ -640,18 +591,18 @@
         <li>Alice uses this "hint" to adjust her own string until it matches Bob's.</li>
     </ul>
     
-    <h4>Step C: Error Correction (The Heavy Lifting)</h4>
+<h4>Step C: Error Correction (The Heavy Lifting)</h4>
     <p>Because the "noise" in CV-QKD is Gaussian and very high, the error correction must be incredibly efficient.</p>
     <div class="feature-box">
         <strong>📈 The Efficiency (β):</strong> This is a measure of how much information they can extract. If β=1, they are at the Shannon limit. Most real-world systems operate at β ≈ 0.95.
     </div>
     <p>If the code isn't efficient enough, the "cost" of the parity information they exchange exceeds the "value" of the secret key, and the key rate drops to zero.</p>
     
-    <h4>Step D: Privacy Amplification</h4>
+<h4>Step D: Privacy Amplification</h4>
     <p>Now Alice and Bob have identical bit strings. However, Eve might have overheard the "hints" sent during Step B, or she might have gained partial info by tapping the fiber. They use a Universal Hash Function to "compress" the string.</p>
     <p>If they had 1,000,000 bits and they estimate Eve knows 200,000 of them, they hash the string down to 700,000 bits. The result is a shorter string that is completely unknown to Eve.</p>
     
-    <h3>4. Summary Table: From Noise to Key</h3>
+<h3>4. Summary Table: From Noise to Key</h3>
     <table>
         <thead>
             <tr>
@@ -689,7 +640,7 @@
         </tbody>
     </table>
     
-    <h4>Why this is hard</h4>
+<h4>Why this is hard</h4>
     <p>In CV-QKD, the reconciliation must happen in "real-time" at MHz or GHz rates. This requires high-end FPGAs or GPUs to run the LDPC decoding algorithms, as the math involves solving thousands of simultaneous parity equations in milliseconds.</p>
 </section>
 
@@ -697,39 +648,39 @@
 <section id="section-6">
     <h2>⚙️ LDPC Codes: The Engine of CV-QKD</h2>
     
-    <p>In CV-QKD, the Low-Density Parity-Check (LDPC) code is the engine of the entire system. Because we are dealing with Gaussian noise rather than simple bit-flips, the code structure must be specifically optimized for the Signal-to-Noise Ratio (SNR) of the channel.</p>
+<p>In CV-QKD, the Low-Density Parity-Check (LDPC) code is the engine of the entire system. Because we are dealing with Gaussian noise rather than simple bit-flips, the code structure must be specifically optimized for the Signal-to-Noise Ratio (SNR) of the channel.</p>
     
-    <h3>1. LDPC Code Structures for CV-QKD</h3>
+<h3>1. LDPC Code Structures for CV-QKD</h3>
     <p>Standard LDPC codes (like those used in 5G or WiFi) are generally optimized for high SNR. However, CV-QKD often operates in the low SNR regime (sometimes SNR <0.1), where the signal is buried deep in the noise.</p>
     
-    <h4>Key Structural Features</h4>
+<h4>Key Structural Features</h4>
     <ul>
         <li><strong>Multi-Edge Type (MET) LDPC:</strong> This is the "gold standard" for CV-QKD. Unlike standard codes, MET-LDPC codes categorize edges and nodes into different types, allowing for a more precise distribution of degrees. This helps the code converge even when the noise is extremely high.</li>
         <li><strong>Rate-Adaptive Codes:</strong> Since the fiber length (and thus SNR) can change, systems use "puncturing" or "shortening" to adjust the code rate. A typical CV-QKD system might use a very low-rate code (e.g., R=0.1 or 0.02) to maintain a connection over longer distances.</li>
         <li><strong>Large Block Sizes:</strong> To get close to the theoretical Shannon limit, CV-QKD requires very large block lengths—often 10⁶ to 10⁸ bits. This creates a massive computational challenge for the decoder.</li>
     </ul>
     
-    <h3>2. How SNR Dictates Efficiency (β)</h3>
+<h3>2. How SNR Dictates Efficiency (β)</h3>
     <p>In information theory, the maximum secret key rate ΔK is governed by the difference between the information Alice and Bob share (I_AB) and the information Eve can steal (I_AE):</p>
     <div class="math-block">
         \(\Delta K=\beta I_{AB}-I_{AE}\)
     </div>
     
-    <h4>The Reconciliation Efficiency (β)</h4>
+<h4>The Reconciliation Efficiency (β)</h4>
     <p>The parameter β (ranging from 0 to 1) represents how much of the theoretical mutual information Bob can actually recover.</p>
     <ul>
         <li><strong>High SNR (Short Distance):</strong> If you are 10 km away, the SNR is high. Even a "lazy" β of 0.8 might yield a secret key because I_AB is so much larger than I_AE.</li>
         <li><strong>Low SNR (Long Distance):</strong> This is where it gets critical. As the distance increases, I_AB drops until it is nearly equal to I_AE. If your efficiency β is low, the term βI_AB will drop below I_AE, and your secret key rate becomes zero.</li>
     </ul>
     
-    <div class="warning-box">
+<div class="warning-box">
         <strong>⚠️ The "Waterfall" Effect:</strong> For a given LDPC code, there is a specific SNR "threshold." If the SNR drops even slightly below this threshold, the error correction fails completely (the bit error rate stays at 50%). To go further in distance, you must switch to a lower-rate code with a higher β.
     </div>
     
-    <h3>3. The SNR vs. Code Rate Relationship</h3>
+<h3>3. The SNR vs. Code Rate Relationship</h3>
     <p>To maintain a high β across different distances, the system must choose a code rate (R) that matches the channel capacity C at that specific SNR.</p>
     
-    <table>
+<table>
         <thead>
             <tr>
                 <th>SNR (dB)</th>
@@ -760,7 +711,7 @@
         </tbody>
     </table>
     
-    <h3>4. Hardware Implementation: CPU vs. GPU vs. FPGA</h3>
+<h3>4. Hardware Implementation: CPU vs. GPU vs. FPGA</h3>
     <p>Because the block sizes are so large (10⁶ bits) and the decoding is iterative (the Sum-Product Algorithm), the hardware requirements are intense:</p>
     <ul>
         <li><strong>CPUs:</strong> Generally too slow for MHz-rate QKD.</li>
@@ -768,7 +719,7 @@
         <li><strong>GPUs:</strong> Currently the preferred choice for research and high-speed prototypes. They can handle the massive parallelism of the LDPC "Belief Propagation" algorithm, processing millions of parity checks simultaneously to achieve the high β required.</li>
     </ul>
     
-    <div class="key-insight">
+<div class="key-insight">
         The distance of a Homodyne-based QKD system is limited not just by the optics, but by the computational efficiency of the LDPC decoder. If you can't compute the reconciliation fast enough or with high enough β, the quantum advantage disappears into the noise.
     </div>
 </section>
@@ -777,12 +728,12 @@
 <section id="section-7">
     <h2>📈 Secret Key Rate: The Bottom Line</h2>
     
-    <p>The Secret Key Rate (SKR) is the "bottom line" of any QKD system. It represents the number of secure bits generated per transmitted pulse. For a homodyne-based Continuous-Variable (CV-QKD) system using Reverse Reconciliation, the formula is:</p>
+<p>The Secret Key Rate (SKR) is the "bottom line" of any QKD system. It represents the number of secure bits generated per transmitted pulse. For a homodyne-based Continuous-Variable (CV-QKD) system using Reverse Reconciliation, the formula is:</p>
     <div class="math-block">
         \(K=f\cdot [\beta I(A:B)-\chi (E:B)]\)
     </div>
     
-    <h3>1. Breaking Down the Variables</h3>
+<h3>1. Breaking Down the Variables</h3>
     <ul>
         <li><strong>f (Repetition Rate):</strong> The number of pulses sent per second (e.g., 100 MHz or 1 GHz).</li>
         <li><strong>β (Reconciliation Efficiency):</strong> As we discussed, this is the percentage of the physical information Alice and Bob actually extract.</li>
@@ -792,7 +743,7 @@
         <li><strong>χ(E:B) (Holevo Bound):</strong> This is the maximum information the eavesdropper (Eve) could possibly have about Bob's measurement. It is calculated based on the Excess Noise (ξ) and the Channel Transmissivity (T).</li>
     </ul>
     
-    <h3>2. The Impact of Loss and SNR</h3>
+<h3>2. The Impact of Loss and SNR</h3>
     <p>The SNR at Bob's end is directly tied to the fiber loss. If V_A is the variance of the signal Alice sends and T is the fiber transmission (T=10^(-loss/10)):</p>
     <div class="math-block">
         \(\text{SNR}=\frac{T\cdot V_{A}}{1+T\xi +\nu _{el}}\)
@@ -804,24 +755,24 @@
         <li>1: Represents the fundamental Shot Noise (vacuum fluctuations)</li>
     </ul>
     
-    <h3>3. The Performance Curve (The "Distance Limit")</h3>
+<h3>3. The Performance Curve (The "Distance Limit")</h3>
     <p>If you plot the Key Rate vs. Distance, the curve follows three distinct phases:</p>
     
-    <h4>Phase 1: The Plateau (Short Distance)</h4>
+<h4>Phase 1: The Plateau (Short Distance)</h4>
     <ul>
         <li><strong>Distance:</strong> 0–15 km</li>
         <li><strong>Behavior:</strong> The SNR is very high. The key rate is limited mostly by the speed of the electronics (f) and the processing power of the LDPC decoder.</li>
         <li><strong>β Impact:</strong> Even a lower β (e.g., 85%) works fine here.</li>
     </ul>
     
-    <h4>Phase 2: The Exponential Decay (Medium Distance)</h4>
+<h4>Phase 2: The Exponential Decay (Medium Distance)</h4>
     <ul>
         <li><strong>Distance:</strong> 15–50 km</li>
         <li><strong>Behavior:</strong> The key rate drops linearly on a logarithmic scale, following the fiber loss (0.2 dB/km).</li>
         <li><strong>Critical Point:</strong> This is where the choice of Reverse Reconciliation is vital. In "Direct Reconciliation," the key rate would drop to zero at 3 dB of loss (~15 km), but Reverse Reconciliation keeps it alive.</li>
     </ul>
     
-    <h4>Phase 3: The Waterfall (The "Cut-off")</h4>
+<h4>Phase 3: The Waterfall (The "Cut-off")</h4>
     <ul>
         <li><strong>Distance:</strong> 50–100+ km</li>
         <li><strong>Behavior:</strong> The curve dives vertically to zero.</li>
@@ -829,7 +780,7 @@
         <li><strong>The β Factor:</strong> At 80 km, a 1% increase in β (moving from 95% to 96%) can be the difference between having a secure key and having nothing.</li>
     </ul>
     
-    <h3>4. Summary Table: Variables at a Glance</h3>
+<h3>4. Summary Table: Variables at a Glance</h3>
     <table>
         <thead>
             <tr>
@@ -862,7 +813,7 @@
         </tbody>
     </table>
     
-    <h4>A Final Insight: The "3dB Limit"</h4>
+<h4>A Final Insight: The "3dB Limit"</h4>
     <div class="success-box">
         Before Reverse Reconciliation was popularized, CV-QKD was thought to be useless beyond 15 km (the 3dB loss limit). By changing the math so that Alice guesses what Bob saw (rather than Bob guessing what Alice sent), we shifted the reference frame to the "noisy" end of the line, allowing the protocol to tolerate much higher losses.
     </div>
@@ -872,42 +823,42 @@
 <section id="section-8">
     <h2>🔍 Excess Noise & Real-Time Eavesdropping Detection</h2>
     
-    <p>In a real-time Continuous-Variable QKD (CV-QKD) system, excess noise (ξ) represents any variance in the signal at Bob's end that cannot be explained by fundamental shot noise or calibrated electronic noise. Monitoring this value is the primary way Alice and Bob detect eavesdropping.</p>
+<p>In a real-time Continuous-Variable QKD (CV-QKD) system, excess noise (ξ) represents any variance in the signal at Bob's end that cannot be explained by fundamental shot noise or calibrated electronic noise. Monitoring this value is the primary way Alice and Bob detect eavesdropping.</p>
     
-    <h3>1. The Real-Time Measurement Process</h3>
+<h3>1. The Real-Time Measurement Process</h3>
     <p>Alice and Bob perform Parameter Estimation by comparing a randomly selected subset of their data (the "test sample") over an authenticated classical channel.</p>
     
-    <h4>Calibration of the "Knowns"</h4>
+<h4>Calibration of the "Knowns"</h4>
     <ul>
         <li>Before starting, Bob calibrates his Shot Noise (N_0) by measuring the variance with the Local Oscillator (LO) on but the signal port blocked.</li>
         <li>He also measures Electronic Noise (v_el) by turning off both the LO and the signal.</li>
     </ul>
     
-    <h4>Correlation Analysis</h4>
+<h4>Correlation Analysis</h4>
     <ul>
         <li>Alice reveals her sent values (X_A) for the test subset, and Bob compares them to his measured values (X_B).</li>
         <li>They use Maximum Likelihood Estimation to find the channel transmittance (T).</li>
     </ul>
     
-    <h4>Calculating the Variance</h4>
+<h4>Calculating the Variance</h4>
     <p>The total measured variance at Bob's side is V_B = ηT(V_A + ξ) + 1 + v_el. Since Bob knows every other variable in this equation, he can solve for ξ.</p>
     
-    <h4>Normalization</h4>
+<h4>Normalization</h4>
     <p>All measurements are typically expressed in Shot Noise Units (SNU), where the fundamental vacuum fluctuation is set to 1.</p>
     
-    <h3>2. Identifying Eavesdropping</h3>
+<h3>2. Identifying Eavesdropping</h3>
     <p>Because optical fiber is a purely lossy channel, it theoretically adds zero noise to a light pulse. Therefore, any ξ > 0 (beyond a small amount of "trusted" technical noise from modulators) is viewed with suspicion.</p>
     
-    <div class="warning-box">
+<div class="warning-box">
         <strong>🚨 The Quantum "Fingerprint":</strong> Any attempt by Eve to measure the pulses (e.g., via a beam-splitter attack or intercept-resend) inevitably increases the variance of the signal.
     </div>
     
-    <ul>
+<ul>
         <li><strong>Real-Time Monitoring:</strong> Advanced systems use algorithms like CUSUM (Cumulative Sum) to detect minute, sudden shifts in ξ that might indicate a fiber-tapping attempt.</li>
         <li><strong>Security Threshold:</strong> If ξ exceeds a pre-set limit (often as low as 0.01 to 0.1 SNU), the system assumes the link is compromised and immediately aborts the key generation.</li>
     </ul>
     
-    <h3>3. Sources of "Technical" Excess Noise</h3>
+<h3>3. Sources of "Technical" Excess Noise</h3>
     <p>Not all ξ is Eve; real-world hardware adds its own noise which must be tracked:</p>
     <ul>
         <li><strong>Relative Intensity Noise (RIN):</strong> Fluctuations in the laser's power.</li>
@@ -920,9 +871,9 @@
 <section id="section-9">
     <h2>🔐 Security Proofs & The Holevo Bound</h2>
     
-    <p>Security proofs in CV-QKD are designed to provide a "worst-case" estimate of how much information an eavesdropper (Eve) can extract. In the world of quantum mechanics, we assume Eve is limited only by the laws of physics—meaning she has access to perfect technology (zero-noise detectors, infinite computing power, and quantum memories). The standard framework for this is the Holevo Bound.</p>
+<p>Security proofs in CV-QKD are designed to provide a "worst-case" estimate of how much information an eavesdropper (Eve) can extract. In the world of quantum mechanics, we assume Eve is limited only by the laws of physics—meaning she has access to perfect technology (zero-noise detectors, infinite computing power, and quantum memories). The standard framework for this is the Holevo Bound.</p>
     
-    <h3>1. The Holevo Bound: χ(E:B)</h3>
+<h3>1. The Holevo Bound: χ(E:B)</h3>
     <p>The security proof calculates the maximum information Eve can share with Bob's measurement results. We assume a Collective Attack, where Eve interacts with each pulse individually but can wait to measure her stored quantum states until after Alice and Bob finish their classical communication.</p>
     <div class="math-block">
         \(\chi (E:B)=S(\rho _{E})-\int dp_{B}S(\rho _{E|m_{B}})\)
@@ -934,11 +885,11 @@
         <li>S(ρ_{E|m_B}): The entropy of Eve's state after Bob has performed his homodyne measurement</li>
     </ul>
     
-    <div class="key-insight">
+<div class="key-insight">
         In plain English: Eve's information is the difference between the uncertainty she has about her own system before and after Bob makes his measurement.
     </div>
     
-    <h3>2. The Gaussian Optimality Theorem</h3>
+<h3>2. The Gaussian Optimality Theorem</h3>
     <p>A crucial part of CV-QKD security proofs is the Gaussian Optimality Theorem. It states that for a fixed covariance matrix (which Alice and Bob measure during parameter estimation), a Gaussian attack is the most effective attack Eve can perform. This simplifies the proof immensely. Instead of worrying about every possible exotic attack, Alice and Bob only need to measure:</p>
     <ul>
         <li><strong>Transmittance (T):</strong> How much signal is lost</li>
@@ -946,13 +897,13 @@
     </ul>
     <p>Using these, they calculate the Entangled State that Alice and Bob would share in an equivalent "Entanglement-Based" version of the protocol. From this state, they can derive the eigenvalues used to calculate the entropy S.</p>
     
-    <h3>3. How Excess Noise (ξ) Feeds the Proof</h3>
+<h3>3. How Excess Noise (ξ) Feeds the Proof</h3>
     <p>The relationship between excess noise and Eve's information is non-linear and extremely sensitive.</p>
     
-    <h4>The "Pure Loss" Scenario (ξ = 0)</h4>
+<h4>The "Pure Loss" Scenario (ξ = 0)</h4>
     <p>If the channel has loss (T < 1) but zero excess noise, the security proof assumes that all "lost" photons were collected by Eve. However, because Alice and Bob use Reverse Reconciliation, Eve's information χ(E:B) remains lower than the information Alice and Bob share. This is why CV-QKD can work over long distances.</p>
     
-    <h4>The "Noisy" Scenario (ξ > 0)</h4>
+<h4>The "Noisy" Scenario (ξ > 0)</h4>
     <p>When Alice and Bob detect excess noise, the proof must assume the worst: Eve is replacing the lossy fiber with a perfect, noiseless fiber and then adding the noise herself to hide her tracks. The proof treats ξ as a signature of Eve's interaction:</p>
     <ul>
         <li><strong>Small ξ:</strong> Eve has a weak interaction with the field; her information is low.</li>
@@ -960,14 +911,14 @@
         <li><strong>The Breaking Point:</strong> Eventually, χ(E:B) becomes equal to the reconciled information βI(A:B). At this point, the Secret Key Rate drops to zero.</li>
     </ul>
     
-    <h3>4. Finite-Size Effects: The Real-World "Tax"</h3>
+<h3>4. Finite-Size Effects: The Real-World "Tax"</h3>
     <p>In theoretical proofs, we assume Alice and Bob exchange an infinite number of pulses. In reality, they only exchange a finite block (e.g., 10⁸ pulses). To be safe, the security proof adds a statistical uncertainty to the measured excess noise:</p>
     <div class="math-block">
         \(\xi _{secure}=\xi _{measured}+\Delta \xi _{statistical}\)
     </div>
     <p>If the block size is too small, Δξ becomes so large that it kills the key rate. This is why CV-QKD systems require very long "sifting" periods to accumulate enough data for a stable security proof.</p>
     
-    <h4>Summary of the Security Logic</h4>
+<h4>Summary of the Security Logic</h4>
     <ol>
         <li><strong>Alice & Bob Measure:</strong> T and ξ</li>
         <li><strong>Worst-Case Assumption:</strong> Any noise ξ and any loss 1-T are attributed to Eve</li>
@@ -980,9 +931,9 @@
 <section id="section-10">
     <h2>📡 Phase Noise Compensation: Pilot Tones</h2>
     
-    <p>In homodyne detection, phase stability is everything. Because the signal is multiplied by the Local Oscillator (LO), any phase jitter between the two lasers directly manifests as Excess Noise (ξ). If this jitter is not controlled, it can easily exceed the security threshold, causing the secret key rate to drop to zero.</p>
+<p>In homodyne detection, phase stability is everything. Because the signal is multiplied by the Local Oscillator (LO), any phase jitter between the two lasers directly manifests as Excess Noise (ξ). If this jitter is not controlled, it can easily exceed the security threshold, causing the secret key rate to drop to zero.</p>
     
-    <h3>1. How Phase Noise Becomes Excess Noise</h3>
+<h3>1. How Phase Noise Becomes Excess Noise</h3>
     <p>Recall the homodyne current equation:</p>
     <div class="math-block">
         \(i_{diff}\propto A_{LO}A_{S}\cos (\Delta \phi )\)
@@ -992,7 +943,7 @@
         \(X_{measured}=X\cos (\delta \phi )-P\sin (\delta \phi )\)
     </div>
     
-    <h4>The Impact on ξ</h4>
+<h4>The Impact on ξ</h4>
     <p>For small phase errors, this "rotation" of the signal constellation leaks information from one quadrature into the other. The contribution to the excess noise ξ is approximately:</p>
     <div class="math-block">
         \(\xi _{phase}\approx V_{A}\cdot \text{var}(\delta \phi )\)
@@ -1003,14 +954,14 @@
         <li>var(δφ): The variance of the phase jitter</li>
     </ul>
     
-    <div class="warning-box">
+<div class="warning-box">
         Because V_A is usually quite large (to maximize SNR), even a tiny phase jitter is amplified by the signal itself, creating a massive amount of excess noise.
     </div>
     
-    <h3>2. The Solution: Pilot Tones</h3>
+<h3>2. The Solution: Pilot Tones</h3>
     <p>In modern CV-QKD, Alice and Bob don't just send the quantum signal; they also send a Pilot Tone (also called a Phase Reference). This is a strong, classical laser pulse or a sideband used to "measure" the phase noise of the channel in real-time.</p>
     
-    <h4>How it works:</h4>
+<h4>How it works:</h4>
     <ul>
         <li><strong>Multiplexing:</strong> Alice sends the weak quantum signal alongside a much stronger pilot tone. To prevent the pilot tone from "drowning out" the quantum signal, they are separated in time (time-bin multiplexing) or frequency (using a sideband at, say, 100 MHz).</li>
         <li><strong>Bob's Measurement:</strong> Bob's homodyne detector measures both the quantum signal and the pilot tone.</li>
@@ -1018,10 +969,10 @@
         <li><strong>Digital Compensation:</strong> Bob mathematically "rotates" his quantum measurements back by the angle δφ measured from the pilot tone.</li>
     </ul>
     
-    <h3>3. Advanced Technique: Local LO vs. Transmitted LO</h3>
+<h3>3. Advanced Technique: Local LO vs. Transmitted LO</h3>
     <p>There are two main ways to handle the Local Oscillator, each dealing with phase noise differently:</p>
     
-    <div class="comparison-grid">
+<div class="comparison-grid">
         <div class="comparison-item">
             <h4>Transmitted LO (TLO)</h4>
             <ul style="margin-top: 10px;">
@@ -1038,7 +989,7 @@
         </div>
     </div>
     
-    <h3>4. Summary: The Pilot Tone "Budget"</h3>
+<h3>4. Summary: The Pilot Tone "Budget"</h3>
     <table>
         <thead>
             <tr>
@@ -1062,7 +1013,7 @@
         </tbody>
     </table>
     
-    <h4>The "Next Step" for CV-QKD</h4>
+<h4>The "Next Step" for CV-QKD</h4>
     <div class="success-box">
         The use of Local LO with Pilot Tones is what allowed CV-QKD to move from specialized laboratory setups to standard fiber-optic "plug-and-play" hardware. It essentially turned a physics problem (phase stability) into a software/DSP problem.
     </div>
@@ -1072,12 +1023,12 @@
 <section id="section-11">
     <h2>🚀 State of the Art & Future Directions</h2>
     
-    <p>The field of Continuous-Variable QKD is moving rapidly from laboratory curiosity to industrial viability. The current "State of the Art" focuses on pushing the distance limits of homodyne detection while closing the hardware loopholes that eavesdroppers might exploit.</p>
+<p>The field of Continuous-Variable QKD is moving rapidly from laboratory curiosity to industrial viability. The current "State of the Art" focuses on pushing the distance limits of homodyne detection while closing the hardware loopholes that eavesdroppers might exploit.</p>
     
-    <h3>1. State of the Art: Records and Performance</h3>
+<h3>1. State of the Art: Records and Performance</h3>
     <p>Currently, the field is split between achieving maximum distance (overcoming the 100 km barrier) and maximum secret key rate (SKR) for metropolitan use.</p>
     
-    <table>
+<table>
         <thead>
             <tr>
                 <th>Metric</th>
@@ -1109,38 +1060,38 @@
         </tbody>
     </table>
     
-    <div class="key-insight">
+<div class="key-insight">
         The "100 km" Milestone: For a long time, CV-QKD was limited to ~50 km. Recent breakthroughs in Reverse Reconciliation and Phase Compensation (Pilot Tones) have allowed researchers to push past 200 km, though the key rate at that distance is extremely low (bits per second).
     </div>
     
-    <h3>2. Exploring Attacks: Vulnerabilities and Defenses</h3>
+<h3>2. Exploring Attacks: Vulnerabilities and Defenses</h3>
     <p>In the security proof, we assume Eve is limited by physics. In the real world, she exploits the imperfections of the hardware. These are known as Quantum Hacking attacks.</p>
     
-    <h4>A. Trojan Horse Attack</h4>
+<h4>A. Trojan Horse Attack</h4>
     <div class="feature-box">
         <strong>🎯 The Attack:</strong> Eve shines a strong "probe" laser into Alice's or Bob's equipment from the fiber line. The reflections from internal components (like the phase modulator) leak information back to her about their settings.
     </div>
     <p><strong>The Defense:</strong> Installing optical isolators and filters at the entry and exit points to ensure light can only travel in one direction and at specific wavelengths.</p>
     
-    <h4>B. Local Oscillator (LO) Manipulation</h4>
+<h4>B. Local Oscillator (LO) Manipulation</h4>
     <div class="feature-box">
         <strong>🎯 The Attack:</strong> If Alice sends the LO (Transmitted LO), Eve can intercept it and replace it with a "fake" LO. By modulating the intensity of this fake LO, she can control Bob's homodyne detector readings without Alice or Bob knowing.
     </div>
     <p><strong>The Defense:</strong> Moving to Local LO (LLO) setups where Bob generates his own LO. Since Eve cannot touch Bob's internal laser, this entire class of attacks is eliminated.</p>
     
-    <h4>C. Saturation Attack (Detector Blinding)</h4>
+<h4>C. Saturation Attack (Detector Blinding)</h4>
     <div class="feature-box">
         <strong>🎯 The Attack:</strong> Eve sends a burst of light to "saturate" Bob's homodyne detector. While the detector is recovering (the "dead time"), its response is non-linear. Eve can then send pulses that Bob will misinterpret in a way that gives her information.
     </div>
     <p><strong>The Defense:</strong> Implementing real-time monitoring of the shot noise. If the noise level deviates from the calibrated 1 SNU (Shot Noise Unit), the system assumes a saturation attempt and stops.</p>
     
-    <h4>D. Side-Channel Attacks</h4>
+<h4>D. Side-Channel Attacks</h4>
     <div class="feature-box">
         <strong>🎯 The Attack:</strong> Information leaks out via non-quantum means, such as the power consumption of the FPGA or the electromagnetic emissions of the high-speed modulators.
     </div>
     <p><strong>The Defense:</strong> Rigorous electromagnetic shielding and constant "randomized" power consumption (adding noise to the power rail) to hide the correlation between data and power.</p>
     
-    <h3>3. The Future: Chip-Scale Integration</h3>
+<h3>3. The Future: Chip-Scale Integration</h3>
     <p>The most significant trend is the transition from "table-top" optics to Photonic Integrated Circuits (PICs). By putting the entire homodyne detector, the beam splitters, and the local oscillator on a single silicon chip:</p>
     <ul>
         <li><strong>Stability:</strong> Phase noise is reduced because the optical paths are incredibly short and rigid.</li>
@@ -1153,9 +1104,9 @@
 <section id="section-12">
     <h2>📋 Standardization & Certification Frameworks</h2>
     
-    <p>Standardization efforts for Quantum Key Distribution (QKD) are focused on creating a certification framework that bridges the gap between theoretical security and practical hardware implementation. Major standards development organizations (SDOs), including ETSI and the ITU-T, are actively defining the interfaces and architectures required to integrate QKD into emerging 5G-Advanced and future 6G networks.</p>
+<p>Standardization efforts for Quantum Key Distribution (QKD) are focused on creating a certification framework that bridges the gap between theoretical security and practical hardware implementation. Major standards development organizations (SDOs), including ETSI and the ITU-T, are actively defining the interfaces and architectures required to integrate QKD into emerging 5G-Advanced and future 6G networks.</p>
     
-    <h3>ETSI: QKD Industry Specification Group (ISG)</h3>
+<h3>ETSI: QKD Industry Specification Group (ISG)</h3>
     <p>The ETSI QKD ISG is the primary global body developing standards to enable interoperability in quantum communication networks.</p>
     <ul>
         <li><strong>Certification Framework:</strong> The group focuses on combining security analysis with practical implementation details to mitigate risks from side-channel and active attacks.</li>
@@ -1163,7 +1114,7 @@
         <li><strong>Strategic Direction:</strong> In late 2025, ETSI held its first Quantum Committee meeting, marking a milestone for global quantum standards and responding to European Commission calls for evidence on the EU Quantum Act.</li>
     </ul>
     
-    <h3>ITU-T: Network Architecture and Security</h3>
+<h3>ITU-T: Network Architecture and Security</h3>
     <p>The International Telecommunication Union (ITU-T) provides high-level recommendations for QKD network (QKDN) architectures.</p>
     <ul>
         <li><strong>Roadmap for 2025:</strong> A draft supplement to the ITU-T Y.3800-series provides a standardization roadmap for quantum-enhanced networking and services through 2025.</li>
@@ -1171,7 +1122,7 @@
         <li><strong>Protocol Framework:</strong> ITU-T is working on a generic framework for QKD protocols to impose basic requirements and security aspects using normative language, which will facilitate the future certification of QKD modules.</li>
     </ul>
     
-    <h3>Integration in 5G-Advanced and 6G</h3>
+<h3>Integration in 5G-Advanced and 6G</h3>
     <p>Standardization for 6G is expected to begin in 2025, with commercialization targeted for 2030.</p>
     <ul>
         <li><strong>Quantum-Safe 6G:</strong> Future 6G networks are envisioned to employ hybrid encryption schemes combining QKD and Post-Quantum Cryptography (PQC) to provide end-to-end security.</li>
@@ -1180,7 +1131,7 @@
         <li><strong>Satellite Constellations:</strong> Efforts such as Europe's EuroQCI are standardizing how terrestrial fiber networks and satellite-based QKD will work together to protect vital infrastructure.</li>
     </ul>
     
-    <h3>Industry Roadmaps (3GPP and GSMA)</h3>
+<h3>Industry Roadmaps (3GPP and GSMA)</h3>
     <p>While 3GPP and GSMA primarily focus on the radio and core aspects of 5G and 6G, their work sets the stage for QKD adoption.</p>
     <ul>
         <li><strong>3GPP Timeline:</strong> Release 19 (expected in 2024–2025) serves as the second iteration of 5G-Advanced and signals the direction for 6G. Normative work for 6G in 3GPP is anticipated to start from Release 21.</li>
@@ -1192,18 +1143,18 @@
 <section id="section-13">
     <h2>🔒 Common Criteria Certification for QKD</h2>
     
-    <p>The Common Criteria (CC) for Information Technology Security Evaluation (ISO/IEC 15408) is the global gold standard for certifying IT security products. For QKD, the transition to Common Criteria is a major milestone—it moves the technology from "experimental physics" to "certified telecommunications hardware."</p>
+<p>The Common Criteria (CC) for Information Technology Security Evaluation (ISO/IEC 15408) is the global gold standard for certifying IT security products. For QKD, the transition to Common Criteria is a major milestone—it moves the technology from "experimental physics" to "certified telecommunications hardware."</p>
     
-    <p>Because QKD relies on physical laws rather than mathematical complexity, the CC framework for these modules is uniquely focused on Implementation Security.</p>
+<p>Because QKD relies on physical laws rather than mathematical complexity, the CC framework for these modules is uniquely focused on Implementation Security.</p>
     
-    <h3>1. Protection Profiles (PP)</h3>
+<h3>1. Protection Profiles (PP)</h3>
     <p>A Protection Profile is a document that defines the security requirements for a specific class of products. Currently, several international bodies (led by Germany's BSI and France's ANSSI, in collaboration with ETSI) are finalizing PPs for QKD.</p>
     <ul>
         <li><strong>The Goal:</strong> To ensure that a "certified" QKD module from one vendor provides the same security assurance as one from another.</li>
         <li><strong>Module Boundaries:</strong> The CC certification treats the QKD unit as a "Black Box," evaluating the Quantum Management Layer, the Key Distillation Layer, and the Physical Interface.</li>
     </ul>
     
-    <h3>2. Key Security Functional Requirements (SFRs)</h3>
+<h3>2. Key Security Functional Requirements (SFRs)</h3>
     <p>Under Common Criteria, QKD modules must demonstrate they can meet specific functional requirements:</p>
     <ul>
         <li><strong>Random Number Generation (FCS_RNG):</strong> The system must prove that its internal entropy source (the Quantum Random Number Generator) is truly unpredictable and has been tested against NIST or AIS31 standards.</li>
@@ -1212,7 +1163,7 @@
         <li><strong>Side-Channel Analysis:</strong> The hardware is tested to ensure that electrical electromagnetic emissions (EMSEC) or power fluctuations do not leak information about the internal key-sifting process.</li>
     </ul>
     
-    <h3>3. Evaluation Assurance Levels (EAL)</h3>
+<h3>3. Evaluation Assurance Levels (EAL)</h3>
     <p>In the CC framework, products are rated from EAL1 to EAL7.</p>
     <ul>
         <li><strong>Target Level for QKD:</strong> Most commercial QKD systems are currently aiming for EAL4+.</li>
@@ -1220,7 +1171,7 @@
         <li><strong>High-Security Government Use:</strong> Specialized modules for military or intelligence use may eventually seek EAL5 or EAL6, which require semi-formal or formal verification of the entire design.</li>
     </ul>
     
-    <h3>4. The Challenge of "Physical Layer" Certification</h3>
+<h3>4. The Challenge of "Physical Layer" Certification</h3>
     <p>Common Criteria was originally designed for software and standard digital hardware (like SmartCards). QKD presents a unique challenge: the security is in the physics.</p>
     <ul>
         <li><strong>Calibration Traceability:</strong> How do you certify that the homodyne detector's "Shot Noise" calibration hasn't been subtly shifted by an attacker?</li>
@@ -1228,14 +1179,14 @@
         <li><strong>Optical Specs:</strong> The certification process examines the extinction ratio of modulators and the isolation of optical switches to ensure that no "ghost" pulses are leaking information into the fiber.</li>
     </ul>
     
-    <h3>5. Current Leading Efforts</h3>
+<h3>5. Current Leading Efforts</h3>
     <ul>
         <li><strong>BSI (Germany):</strong> Has released a draft for the "Security Requirements for Quantum Key Distribution," which serves as a baseline for German and European CC evaluations.</li>
         <li><strong>EuroQCI:</strong> The European Quantum Communication Infrastructure initiative is mandating that all hardware deployed in its backbone eventually be CC-certified.</li>
         <li><strong>The "Quantum Safe" Transition:</strong> National security agencies (like the NSA in the US or NCSC in the UK) are currently weighing how CC-certified QKD will coexist with Commercial National Security Algorithm Suite 2.0 (which focuses on Post-Quantum Cryptography).</li>
     </ul>
     
-    <h3>Summary Table: CC Certification Focus</h3>
+<h3>Summary Table: CC Certification Focus</h3>
     <table>
         <thead>
             <tr>
@@ -1279,5 +1230,3 @@
     <p>&copy; 2025 Ophelia Labs. All rights reserved. | Comprehensive Technical Guide on Homodyne Detection & CV-QKD</p>
 </footer>
 
-</body>
-</html>

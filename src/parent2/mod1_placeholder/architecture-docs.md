@@ -2,8 +2,8 @@
     <h1>🏗️ Architecture & Design Patterns</h1>
     <p class="lead">Comprehensive architectural patterns, design principles, and best practices for building scalable, enterprise-grade quantum and classical computing systems.</p>
 
-    <!-- Navigation -->
-    <nav>
+<!-- Navigation -->
+<nav>
         <ul>
             <li><a href="#development-pipeline">Development Pipeline</a></li>
             <li><a href="#service-patterns">Service Patterns</a></li>
@@ -12,12 +12,12 @@
         </ul>
     </nav>
 
-    <!-- Development Pipeline -->
-    <section id="development-pipeline" class="section">
+<!-- Development Pipeline -->
+<section id="development-pipeline" class="section">
         <h2>Linear Development Pipeline</h2>
         <p>Each application follows a standardized, repeatable path from conception to enterprise deployment:</p>
         
-        <h3>Pipeline Architecture</h3>
+<h3>Pipeline Architecture</h3>
         <pre class="mermaid">
 graph TB
     subgraph Dev["Development"]
@@ -66,9 +66,9 @@ graph TB
     style Container fill:#7a7a0d
     style K8s fill:#4d0d7a
     style Enterprise fill:#7a0d4d
-        </pre>
+</pre>
 
-        <div class="architecture-diagram">
+<div class="architecture-diagram">
 1. APPLICATION DEVELOPMENT
    ├── Choose Language/Framework
    ├── Develop Features
@@ -108,9 +108,9 @@ graph TB
 
     <!-- Service Patterns -->
     <section id="service-patterns" class="section">
-        <h2>Service Communication Patterns</h2>
+<h2>Service Communication Patterns</h2>
         
-        <h3>Synchronous Communication (REST/gRPC)</h3>
+<h3>Synchronous Communication (REST/gRPC)</h3>
         <div class="subsection">
             <p>Direct request-response between services:</p>
             <div class="architecture-diagram">
@@ -126,7 +126,7 @@ Service A → HTTP/gRPC Request → Service B
             </ul>
         </div>
 
-        <h3>Asynchronous Communication (Message Queue)</h3>
+<h3>Asynchronous Communication (Message Queue)</h3>
         <div class="subsection">
             <p>Decoupled service communication via message broker:</p>
             <div class="architecture-diagram">
@@ -142,8 +142,8 @@ Service A → Message → Broker → Service B
             </ul>
         </div>
 
-        <h3>Service Mesh (Istio)</h3>
-        <div class="subsection">
+<h3>Service Mesh (Istio)</h3>
+<div class="subsection">
             <p>Infrastructure layer managing service-to-service communication:</p>
             <div class="architecture-diagram">
         Ingress Gateway
@@ -166,11 +166,11 @@ Service A → Message → Broker → Service B
         </div>
     </section>
 
-    <!-- Database Architecture -->
-    <section id="database-architecture" class="section">
+<!-- Database Architecture -->
+<section id="database-architecture" class="section">
         <h2>Database Architecture Patterns</h2>
         
-        <h3>Java/Spring Stack</h3>
+<h3>Java/Spring Stack</h3>
         <div class="subsection">
             <ul>
                 <li><strong>ORM:</strong> JPA/Hibernate for object-relational mapping</li>
@@ -181,7 +181,7 @@ Service A → Message → Broker → Service B
             </ul>
         </div>
 
-        <h3>Python/Flask Stack</h3>
+<h3>Python/Flask Stack</h3>
         <div class="subsection">
             <ul>
                 <li><strong>ORM:</strong> SQLAlchemy for database abstraction</li>
@@ -192,7 +192,7 @@ Service A → Message → Broker → Service B
             </ul>
         </div>
 
-        <h3>.NET/Aspire Stack</h3>
+<h3>.NET/Aspire Stack</h3>
         <div class="subsection">
             <ul>
                 <li><strong>ORM:</strong> Entity Framework Core for LINQ queries</li>
@@ -203,7 +203,7 @@ Service A → Message → Broker → Service B
             </ul>
         </div>
 
-        <h3>Rust Stack</h3>
+<h3>Rust Stack</h3>
         <div class="subsection">
             <ul>
                 <li><strong>ORM/Query:</strong> SQLx, Diesel, or Tokio-postgres</li>
@@ -215,11 +215,11 @@ Service A → Message → Broker → Service B
         </div>
     </section>
 
-    <!-- Kubernetes Deployment -->
-    <section id="kubernetes-deployment" class="section">
+<!-- Kubernetes Deployment -->
+<section id="kubernetes-deployment" class="section">
         <h2>Kubernetes Deployment Architecture</h2>
         
-        <h3>Core Components</h3>
+<h3>Core Components</h3>
         <ul>
             <li><strong>Deployments:</strong> Define desired state and replicas</li>
             <li><strong>Services:</strong> Expose applications within and outside cluster</li>
@@ -230,7 +230,7 @@ Service A → Message → Broker → Service B
             <li><strong>StatefulSets:</strong> Ordered, stable identity for stateful apps</li>
         </ul>
 
-        <h3>Best Practices</h3>
+<h3>Best Practices</h3>
         <ul>
             <li>Use resource requests and limits for all containers</li>
             <li>Implement health checks (liveness, readiness, startup probes)</li>
@@ -242,7 +242,7 @@ Service A → Message → Broker → Service B
         </ul>
     </section>
 
-    <div class="info-box">
+<div class="info-box">
         <strong>Key Principle:</strong> Standardized patterns enable consistency, maintainability, and scalability across diverse teams and projects.
     </div>
 </div>

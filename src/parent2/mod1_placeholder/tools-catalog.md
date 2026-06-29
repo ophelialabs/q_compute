@@ -2,8 +2,8 @@
     <h1>🛠️ Tools & Catalog</h1>
     <p class="lead">Complete catalog of development tools, frameworks, and utilities for quantum computing research and infrastructure deployment.</p>
 
-    <!-- Navigation -->
-    <nav>
+<!-- Navigation -->
+<nav>
         <ul>
             <li><a href="#programming-languages">Languages</a></li>
             <li><a href="#frameworks">Frameworks</a></li>
@@ -12,8 +12,8 @@
         </ul>
     </nav>
 
-    <!-- Programming Languages -->
-    <section id="programming-languages" class="section">
+<!-- Programming Languages -->
+<section id="programming-languages" class="section">
         <h2>Programming Languages</h2>
         <div class="grid-container">
             <div class="card">
@@ -43,11 +43,11 @@
         </div>
     </section>
 
-    <!-- Frameworks & Libraries -->
-    <section id="frameworks" class="section">
+<!-- Frameworks & Libraries -->
+<section id="frameworks" class="section">
         <h2>Frameworks & Libraries</h2>
         
-        <h3>Quantum Computing</h3>
+<h3>Quantum Computing</h3>
         <ul>
             <li><strong>Qiskit (IBM):</strong> Python framework for quantum computing</li>
             <li><strong>Cirq (Google):</strong> Quantum algorithm simulation and optimization</li>
@@ -56,7 +56,7 @@
             <li><strong>Ocean SDK:</strong> D-Wave quantum annealing tools</li>
         </ul>
 
-        <h3>Backend Frameworks</h3>
+<h3>Backend Frameworks</h3>
         <ul>
             <li><strong>Spring Boot:</strong> Java microservices framework</li>
             <li><strong>Flask:</strong> Lightweight Python web framework</li>
@@ -65,7 +65,7 @@
             <li><strong>Django:</strong> Full-featured Python web framework</li>
         </ul>
 
-        <h3>Data Processing</h3>
+<h3>Data Processing</h3>
         <ul>
             <li><strong>Apache Spark:</strong> Distributed data processing engine</li>
             <li><strong>Apache Hadoop:</strong> Distributed storage and processing framework</li>
@@ -74,7 +74,7 @@
             <li><strong>Dask:</strong> Parallel computing with dynamic task scheduling</li>
         </ul>
 
-        <h3>Machine Learning</h3>
+<h3>Machine Learning</h3>
         <ul>
             <li><strong>TensorFlow:</strong> Deep learning framework from Google</li>
             <li><strong>PyTorch:</strong> Dynamic deep learning framework from Meta</li>
@@ -84,25 +84,25 @@
         </ul>
     </section>
 
-    <!-- Deployment & Infrastructure -->
-    <section id="deployment-tools" class="section">
+<!-- Deployment & Infrastructure -->
+<section id="deployment-tools" class="section">
         <h2>Deployment & Infrastructure Tools</h2>
         
-        <h3>Containerization</h3>
+<h3>Containerization</h3>
         <ul>
             <li><strong>Docker:</strong> Container platform for packaging applications</li>
             <li><strong>Podman:</strong> Container runtime alternative to Docker</li>
             <li><strong>Containerd:</strong> Lightweight container runtime</li>
         </ul>
 
-        <h3>Orchestration</h3>
+<h3>Orchestration</h3>
         <ul>
             <li><strong>Kubernetes (K8s):</strong> Container orchestration and management</li>
             <li><strong>Docker Swarm:</strong> Docker's native orchestration</li>
             <li><strong>Nomad:</strong> Flexible workload orchestrator</li>
         </ul>
 
-        <h3>Infrastructure as Code</h3>
+<h3>Infrastructure as Code</h3>
         <ul>
             <li><strong>Terraform:</strong> Infrastructure provisioning and management</li>
             <li><strong>Ansible:</strong> Configuration management and automation</li>
@@ -110,7 +110,7 @@
             <li><strong>CloudFormation:</strong> AWS infrastructure templates</li>
         </ul>
 
-        <h3>CI/CD</h3>
+<h3>CI/CD</h3>
         <ul>
             <li><strong>Jenkins:</strong> Open-source automation server</li>
             <li><strong>GitLab CI:</strong> Integrated CI/CD in GitLab</li>
@@ -120,11 +120,11 @@
         </ul>
     </section>
 
-    <!-- Monitoring & Observability -->
-    <section id="monitoring" class="section">
+<!-- Monitoring & Observability -->
+<section id="monitoring" class="section">
         <h2>Monitoring & Observability</h2>
         
-        <h3>Metrics & Monitoring</h3>
+<h3>Metrics & Monitoring</h3>
         <ul>
             <li><strong>Prometheus:</strong> Metrics collection and time series database</li>
             <li><strong>Grafana:</strong> Visualization and analytics platform</li>
@@ -132,7 +132,7 @@
             <li><strong>New Relic:</strong> Application performance monitoring</li>
         </ul>
 
-        <h3>Logging</h3>
+<h3>Logging</h3>
         <ul>
             <li><strong>ELK Stack (Elasticsearch, Logstash, Kibana):</strong> Log aggregation and analysis</li>
             <li><strong>Splunk:</strong> Enterprise logging and analytics</li>
@@ -140,7 +140,7 @@
             <li><strong>Fluentd:</strong> Log forwarding and processing</li>
         </ul>
 
-        <h3>Tracing</h3>
+<h3>Tracing</h3>
         <ul>
             <li><strong>Jaeger:</strong> Distributed tracing system</li>
             <li><strong>Zipkin:</strong> Distributed tracing platform</li>
@@ -148,8 +148,8 @@
         </ul>
     </section>
 
-    <!-- Summary -->
-    <div class="info-box">
+<!-- Summary -->
+<div class="info-box">
         <strong>Note:</strong> This catalog represents the primary tools and frameworks used across research and infrastructure projects. For specific use cases or version requirements, consult individual project documentation and requirements files.
     </div>
 </div>
