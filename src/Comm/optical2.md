@@ -5,10 +5,6 @@ order: 1
 layout: "md.jlmd"
 ---
 
-[DX NetOps](#comm) | [QCon](#comm-index1) | [IBM](#comm-index2) | [Homodyne](#comm-index3)
-
----
-
 # Homodyne Detection — Practical Overview
 
 ## What it is

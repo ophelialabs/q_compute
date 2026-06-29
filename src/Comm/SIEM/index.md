@@ -20,7 +20,7 @@ Broadcom DX NetOps can be strategically applied to the global quantum network (7
 **Application**: Track entanglement distribution across polyline links in real-time
 
 - **Qubit Fidelity Metrics**: Monitor quantum state preservation at each hop
-  - Target: >95% fidelity
+  - Target: &gt;95% fidelity
   - Warning threshold: 85-95%
   - Critical: &lt;85%
   - Display: Color-coded polylines (green → yellow → red)
@@ -93,7 +93,7 @@ const channelMetrics = {
 
 **Enhancement**: Color markers by HEALTH instead of type
 
-- **Green #10b981**: Fidelity >93%, availability >99.8%
+- **Green #10b981**: Fidelity &gt;93%, availability &gt;99.8%
 - **Blue #3b82f6**: Fidelity 88-93%, availability 99.0-99.8%
 - **Yellow #f59e0b**: Fidelity 85-88%, availability 98.0-99.0%
 - **Orange #f97316**: Fidelity 80-85%, availability 95.0-98.0%
@@ -106,7 +106,7 @@ const channelMetrics = {
 - **Thin (1px)**: &lt;25% utilization (underused)
 - **Medium (2px)**: 25-75% utilization (optimal)
 - **Thick (4px)**: 75-95% utilization (heavily loaded)
-- **Extra thick (6px)**: >95% utilization (congested)
+- **Extra thick (6px)**: &gt;95% utilization (congested)
 
 ### 2.3 Latency Heat Map Visualization
 
@@ -116,7 +116,7 @@ const channelMetrics = {
 - **Blue**: 30-50ms latency (good)
 - **Yellow**: 50-100ms latency (acceptable)
 - **Orange**: 100-200ms latency (degraded)
-- **Red**: >200ms latency (poor)
+- **Red**: &gt;200ms latency (poor)
 
 ---
 
@@ -125,7 +125,7 @@ const channelMetrics = {
 ### 3.1 Threshold-Based Alerts
 
 **Cairo Hub Critical Alerts**:
-- Capacity alert: >80% usage
+- Capacity alert: &gt;80% usage
 - Fidelity alert: &lt;90% fidelity
 - Redundancy alert: Only 1 alternate route
 - Availability alert: 99.87% (below 99.99% SLA)
@@ -134,7 +134,7 @@ const channelMetrics = {
 
 **1. Statistical Baseline Detection**:
 - Track 30-day fidelity history
-- Alert if >2 standard deviations below mean
+- Alert if &gt;2 standard deviations below mean
 
 **2. Pattern Recognition**:
 - Detect degradation trends
@@ -199,7 +199,7 @@ When user shows dependencies:
 
 1. **Geographic**: Cairo Hub (Africa gateway)
 2. **Capacity**: Delft (98.7% utilization)
-3. **Latency**: Links >100ms
+3. **Latency**: Links &gt;100ms
 
 ### 5.3 Deployment Recommendations
 
@@ -349,7 +349,7 @@ net.html Visualization (markers, polylines, alerts)
 | KPI | Target | Current | Status |
 |-----|--------|---------|--------|
 | Network Availability | 99.95% | 99.87% | ⚠️ Below |
-| Avg Fidelity | >93% | 91.2% | ⚠️ Below |
+| Avg Fidelity | &gt;93% | 91.2% | ⚠️ Below |
 | Cairo SLA | 99.99% | 99.87% | ⚠️ Below |
 | Critical Alerts | 0 | 2 | 🔴 Critical |
 | Eavesdropping | 0 | 0 | ✓ Good |

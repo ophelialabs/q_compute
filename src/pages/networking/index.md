@@ -1,17 +1,3 @@
----
-title: "Comm-notes"
-tags: ["comm"]
-order: 1
-layout: "md.jlmd"
----
-
-- [Power Pages](https://www.microsoft.com/en-us/power-platform/products/power-pages): functions as a secure portal for structured data exchange, often used when an organization needs to bridge the gap between internal teams and external stakeholders like vendors or partners.
-- [Power Automate](https://learn.microsoft.com/en-us/power-automate/): More than 400 pre-built connectors allow the platform to talk to services like Microsoft 365, Dynamics 365, Salesforce, and Google Drive.
-- [Azure AI Foundry](#): This is your "Command Center." Use Prompt Flow to visualize the handoff between your Master Agent and specialized workers.
-- [CopilotKit & ADK](#): Use the ADK (Agent Development Kit) to bridge your backend logic with your frontend.
-- [AWS Strands](#): If you are working in the AWS ecosystem, Strands provides an "Agentic Loop" pattern (ReAct) that allows agents to reason and act autonomously within your VPC.
-
----
 # North Atlantic
 The location [10°42'34.78"N 25°46'23.83"W](https://earth.google.com/earth/d/1pROrJ7uQRrZNf3tVzgPYyIzxXnVX6zex?usp=sharing) is situated in the North Atlantic Ocean, approximately 350km southwest of the Cape Verde islands. Within a 1,500km perimeter of these coordinates, the "subterranean" (undersea) global network—consisting of fiber-optic submarine cables—provides several critical benefits: 
 - Primary African Connectivity Backbone: 

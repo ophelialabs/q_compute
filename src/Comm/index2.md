@@ -5,10 +5,6 @@ order: 1
 layout: "md.jlmd"
 ---
 
-[DX NetOps](#comm) | [QCon](#comm-index1) | [IBM](#comm-index2) | [Homodyne](#comm-index3)
-
----
-
 ## Data Acquisition
 IBM>Solaris(legacy)-Enterprise Linux>
 
@@ -38,7 +34,7 @@ The transition to quantum compliance is achieved through Crypto-Agility:
 
 ### Operational Readiness & Compliance:
 - IN APL (Phased out) Alignment: Solaris has a long history of certification for the IN [Approved Products List (APL)]((aplits.disa.mil)). It offers built-in Compliance Assessment tools that map system controls directly to security benchmarks.
-- DevSecOps & Zero Trust: Alpine is a primary choice for [Enterprise DevSecOps](DoDcio.defense.gov) becuae its lightweight nature allows for rapid scaling and faster vulnerability scanning in "software factory" environments like [Platform One](https://p1.dso.mil).
+- DevSecOps & Zero Trust: Alpine is a primary choice for [Enterprise DevSecOps](DoDcio.defense.gov) becuase its lightweight nature allows for rapid scaling and faster vulnerability scanning in "software factory" environments like [Platform One](https://p1.dso.mil).
 
 ### Reliability and Resilience
 - Enterprise Reliability: Solaris features like ZFS for data integrity and Predictive Self-Healing ensure the stability required for mission-critical command and control systems. [Q]()
