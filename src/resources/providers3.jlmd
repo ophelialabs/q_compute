@@ -15,8 +15,8 @@ layout: "layout.jlhtml"
 <main style="padding: 40px 20px; max-width: 1400px; margin: 0 auto;">
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin: 30px 0;">
         
-        <!-- Provider Card 1: Azure Quantum -->
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+<!-- Provider Card 1: Azure Quantum -->
+<div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
              onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" 
              onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -40,8 +40,8 @@ layout: "layout.jlhtml"
             </div>
         </div>
 
-        <!-- Provider Card 2: IBM Quantum -->
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+<!-- Provider Card 2: IBM Quantum -->
+<div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
              onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" 
              onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -65,8 +65,8 @@ layout: "layout.jlhtml"
             </div>
         </div>
 
-        <!-- Provider Card 3: Google Quantum AI -->
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+<!-- Provider Card 3: Google Quantum AI -->
+<div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
              onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" 
              onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -89,8 +89,8 @@ layout: "layout.jlhtml"
             </div>
         </div>
 
-        <!-- Provider Card 4: AWS Braket -->
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+<!-- Provider Card 4: AWS Braket -->
+<div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
              onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" 
              onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -113,8 +113,8 @@ layout: "layout.jlhtml"
             </div>
         </div>
 
-        <!-- Provider Card 5: Quantinuum -->
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+<!-- Provider Card 5: Quantinuum -->
+<div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
              onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" 
              onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -137,8 +137,8 @@ layout: "layout.jlhtml"
             </div>
         </div>
 
-        <!-- Provider Card 6: IonQ -->
-        <div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
+<!-- Provider Card 6: IonQ -->
+<div style="background: white; border: 1px solid #e0e6ed; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.3s ease;" 
              onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)'; this.style.transform='translateY(-4px)'" 
              onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'; this.style.transform='translateY(0)'">
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -161,5 +161,5 @@ layout: "layout.jlhtml"
             </div>
         </div>
 
-    </div>
+</div>
 </main>

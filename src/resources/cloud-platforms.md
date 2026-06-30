@@ -1,9 +1,9 @@
 <div class="content-section">
-    <h1>☁️ Cloud Platforms</h1>
-    <p class="lead">Multi-cloud architecture and deployment guidance for AWS, Azure, GCP, and Oracle Cloud with quantum computing integration.</p>
+<h1>☁️ Cloud Platforms</h1>
+<p class="lead">Multi-cloud architecture and deployment guidance for AWS, Azure, GCP, and Oracle Cloud with quantum computing integration.</p>
 
-    <!-- Navigation -->
-    <nav>
+<!-- Navigation -->
+<nav>
         <ul>
             <li><a href="#aws">Amazon Web Services</a></li>
             <li><a href="#azure">Microsoft Azure</a></li>
@@ -13,11 +13,11 @@
         </ul>
     </nav>
 
-    <!-- AWS Section -->
-    <section id="aws" class="section">
+<!-- AWS Section -->
+<section id="aws" class="section">
         <h2>Amazon Web Services (AWS)</h2>
         
-        <h3>Compute Services</h3>
+<h3>Compute Services</h3>
         <ul>
             <li><strong>EC2:</strong> Elastic Compute Cloud for virtual machines</li>
             <li><strong>Lambda:</strong> Serverless compute for event-driven workloads</li>
@@ -33,7 +33,7 @@
             <li><strong>AWS Wavelength:</strong> Edge computing</li>
         </ul>
 
-        <h3>Storage Services</h3>
+<h3>Storage Services</h3>
         <ul>
             <li><strong>S3:</strong> Object storage for data lakes and backups</li>
             <li><strong>EBS:</strong> Elastic Block Store for persistent volumes</li>
@@ -47,7 +47,7 @@
             <li><strong>AWS Snow Family:</strong> Physical data transfer</li>
         </ul>
 
-        <h3>Database Services</h3>
+<h3>Database Services</h3>
         <ul>
             <li><strong>RDS:</strong> Managed relational databases (PostgreSQL, MySQL, MariaDB, Oracle)</li>
             <li><strong>DynamoDB:</strong> NoSQL database for high-performance applications</li>
@@ -61,7 +61,7 @@
             <li><strong>DMS:</strong> Database Migration Service</li>
         </ul>
 
-        <h3>Analytics Services</h3>
+<h3>Analytics Services</h3>
         <ul>
             <li><strong>Redshift:</strong> Data warehouse analytics</li>
             <li><strong>Athena:</strong> SQL queries on S3 data</li>
@@ -77,7 +77,7 @@
             <li><strong>SageMaker Data Wrangler:</strong> Data preparation for ML</li>
         </ul>
 
-        <h3>AI/ML Services</h3>
+<h3>AI/ML Services</h3>
         <ul>
             <li><strong>SageMaker:</strong> Managed machine learning platform</li>
             <li><strong>SageMaker Studio:</strong> Integrated ML development environment</li>
@@ -99,7 +99,7 @@
             <li><strong>Contact Lens for Amazon Connect:</strong> Call analytics</li>
         </ul>
 
-        <h3>Networking Services</h3>
+<h3>Networking Services</h3>
         <ul>
             <li><strong>VPC:</strong> Virtual Private Cloud</li>
             <li><strong>CloudFront:</strong> Content delivery network</li>
@@ -120,7 +120,7 @@
             <li><strong>App Mesh:</strong> Service mesh</li>
         </ul>
 
-        <h3>Data Integration Services</h3>
+<h3>Data Integration Services</h3>
         <ul>
             <li><strong>AWS DMS:</strong> Database migration service</li>
             <li><strong>AWS Glue:</strong> ETL and data catalog</li>
@@ -133,7 +133,7 @@
             <li><strong>AWS Ground Station:</strong> Satellite communication</li>
         </ul>
 
-        <h3>Setup & Access</h3>
+<h3>Setup & Access</h3>
         <ul>
             <li>Free tier: 12 months of select services at no cost</li>
             <li>EC2: 750 hours of t2.micro instance per month (free tier)</li>
@@ -142,11 +142,11 @@
         </ul>
     </section>
 
-    <!-- Azure Section -->
-    <section id="azure" class="section">
+<!-- Azure Section -->
+<section id="azure" class="section">
         <h2>Microsoft Azure</h2>
         
-        <h3>Compute Services</h3>
+<h3>Compute Services</h3>
         <ul>
             <li><strong>Virtual Machines:</strong> Scalable computing with Windows/Linux</li>
             <li><strong>App Service:</strong> Managed platform for web and API applications</li>
@@ -162,7 +162,7 @@
             <li><strong>Azure Spot Virtual Machines:</strong> Discounted compute</li>
         </ul>
 
-        <h3>Storage Services</h3>
+<h3>Storage Services</h3>
         <ul>
             <li><strong>Blob Storage:</strong> Unstructured data storage</li>
             <li><strong>Disk Storage:</strong> Persistent block storage</li>
@@ -175,7 +175,7 @@
             <li><strong>NetApp Files:</strong> Enterprise file sharing</li>
         </ul>
 
-        <h3>Database Services</h3>
+<h3>Database Services</h3>
         <ul>
             <li><strong>SQL Database:</strong> Managed SQL Server implementation</li>
             <li><strong>Cosmos DB:</strong> Globally distributed NoSQL database</li>
@@ -189,7 +189,7 @@
             <li><strong>Azure Database Migration Service:</strong> Database migration</li>
         </ul>
 
-        <h3>Analytics Services</h3>
+<h3>Analytics Services</h3>
         <ul>
             <li><strong>Synapse Analytics:</strong> Data warehouse and analytics</li>
             <li><strong>Data Factory:</strong> ETL and data integration</li>
@@ -203,7 +203,7 @@
             <li><strong>Purview:</strong> Data governance and discovery</li>
         </ul>
 
-        <h3>AI/ML Services</h3>
+<h3>AI/ML Services</h3>
         <ul>
             <li><strong>Azure Machine Learning:</strong> Integrated ML platform</li>
             <li><strong>Azure AI Services:</strong> Cognitive AI services suite</li>
@@ -221,7 +221,7 @@
             <li><strong>Personalizer:</strong> Personalization service</li>
         </ul>
 
-        <h3>Networking Services</h3>
+<h3>Networking Services</h3>
         <ul>
             <li><strong>Virtual Network:</strong> Private network infrastructure</li>
             <li><strong>Load Balancer:</strong> Layer 4 load balancing</li>
@@ -239,7 +239,7 @@
             <li><strong>Virtual WAN:</strong> Global network connectivity</li>
         </ul>
 
-        <h3>Data Integration Services</h3>
+<h3>Data Integration Services</h3>
         <ul>
             <li><strong>Data Factory:</strong> Cloud data integration</li>
             <li><strong>Synapse Link:</strong> Real-time analytics</li>
@@ -251,14 +251,14 @@
             <li><strong>Planetary Computer:</strong> Geospatial data</li>
         </ul>
 
-        <h3>Quantum Computing</h3>
+<h3>Quantum Computing</h3>
         <ul>
             <li><strong>Azure Quantum:</strong> Cloud quantum computing with multiple backends</li>
             <li><strong>Q# Integration:</strong> Native Q# programming language support</li>
             <li><strong>Provider Ecosystem:</strong> IonQ, Rigetti, Quantinuum access</li>
         </ul>
 
-        <h3>Setup & Credits</h3>
+<h3>Setup & Credits</h3>
         <ul>
             <li>Free trial: $200 USD credit for 30 days</li>
             <li>Always-free services: 12+ months of select services</li>
@@ -266,11 +266,11 @@
         </ul>
     </section>
 
-    <!-- GCP Section -->
-    <section id="gcp" class="section">
+<!-- GCP Section -->
+<section id="gcp" class="section">
         <h2>Google Cloud Platform (GCP)</h2>
         
-        <h3>Compute Services</h3>
+<h3>Compute Services</h3>
         <ul>
             <li><strong>Cloud Functions:</strong> Serverless functions</li>
             <li><strong>App Engine:</strong> Platform as a Service</li>
@@ -284,7 +284,7 @@
             <li><strong>VMware Engine:</strong> VMware workloads on GCP</li>
         </ul>
 
-        <h3>Storage Services</h3>
+<h3>Storage Services</h3>
         <ul>
             <li><strong>Cloud Filestore:</strong> Managed NFS file storage</li>
             <li><strong>Cloud Storage:</strong> Object storage</li>
@@ -292,7 +292,7 @@
             <li><strong>Local SSD:</strong> High-performance local storage</li>
         </ul>
 
-        <h3>Database Services</h3>
+<h3>Database Services</h3>
         <ul>
             <li><strong>Cloud Bigtable:</strong> NoSQL wide-column database</li>
             <li><strong>Cloud Firestore:</strong> NoSQL document database</li>
@@ -303,7 +303,7 @@
             <li><strong>Cloud SQL Insights:</strong> Database performance insights</li>
         </ul>
 
-        <h3>Analytics Services</h3>
+<h3>Analytics Services</h3>
         <ul>
             <li><strong>BigQuery:</strong> Data warehouse for analytics</li>
             <li><strong>BigQuery BI Engine:</strong> In-memory analysis</li>
@@ -324,7 +324,7 @@
             <li><strong>Google Earth Engine:</strong> Geospatial analysis platform</li>
         </ul>
 
-        <h3>AI/ML Services</h3>
+<h3>AI/ML Services</h3>
         <ul>
             <li><strong>Vertex AI:</strong> Unified machine learning platform</li>
             <li><strong>AutoML:</strong> Automated machine learning</li>
@@ -357,7 +357,7 @@
             <li><strong>Vision Product Search:</strong> Visual search</li>
         </ul>
 
-        <h3>Networking Services</h3>
+<h3>Networking Services</h3>
         <ul>
             <li><strong>Carrier Peering:</strong> Direct carrier connection</li>
             <li><strong>Direct Peering:</strong> Direct peering connection</li>
@@ -385,7 +385,7 @@
             <li><strong>Cloud IDS:</strong> Intrusion detection</li>
         </ul>
 
-        <h3>Data Integration Services</h3>
+<h3>Data Integration Services</h3>
         <ul>
             <li><strong>Dataflow:</strong> Stream and batch processing</li>
             <li><strong>Cloud Data Transfer:</strong> Data transfer service</li>
@@ -396,7 +396,7 @@
             <li><strong>Cloud Data Fusion:</strong> Data integration</li>
         </ul>
 
-        <h3>Setup & Credits</h3>
+<h3>Setup & Credits</h3>
         <ul>
             <li>Free trial: $300 USD credit for 3 months</li>
             <li>Always-free tier: Many services have perpetual free limits</li>
@@ -404,11 +404,11 @@
         </ul>
     </section>
 
-    <!-- Oracle Cloud Section -->
-    <section id="oracle" class="section">
+<!-- Oracle Cloud Section -->
+<section id="oracle" class="section">
         <h2>Oracle Cloud Infrastructure (OCI)</h2>
         
-        <h3>Compute Services</h3>
+<h3>Compute Services</h3>
         <ul>
             <li><strong>Compute Instances:</strong> Virtual machines</li>
             <li><strong>Container Engine (OKE):</strong> Managed Kubernetes</li>
@@ -420,7 +420,7 @@
             <li><strong>Exadata Cloud Service:</strong> High-performance database service</li>
         </ul>
 
-        <h3>Storage Services</h3>
+<h3>Storage Services</h3>
         <ul>
             <li><strong>Object Storage:</strong> Scalable object storage</li>
             <li><strong>Block Storage:</strong> High-performance block volumes</li>
@@ -430,7 +430,7 @@
             <li><strong>Storage Gateway:</strong> Hybrid storage</li>
         </ul>
 
-        <h3>Database Services</h3>
+<h3>Database Services</h3>
         <ul>
             <li><strong>Autonomous Database:</strong> Fully managed database</li>
             <li><strong>Autonomous Transaction Processing:</strong> OLTP database</li>
@@ -442,7 +442,7 @@
             <li><strong>Database Migration:</strong> Database migration service</li>
         </ul>
 
-        <h3>Analytics Services</h3>
+<h3>Analytics Services</h3>
         <ul>
             <li><strong>Big Data Service:</strong> Managed Hadoop and Spark</li>
             <li><strong>Data Integration:</strong> ETL and data integration</li>
@@ -453,7 +453,7 @@
             <li><strong>Spark Cluster:</strong> Spark clusters</li>
         </ul>
 
-        <h3>AI/ML Services</h3>
+<h3>AI/ML Services</h3>
         <ul>
             <li><strong>Generative AI Service:</strong> Generative AI models</li>
             <li><strong>Data Science:</strong> Data science platform</li>
@@ -464,7 +464,7 @@
             <li><strong>Anomaly Detection:</strong> Anomaly detection</li>
         </ul>
 
-        <h3>Data Integration Services</h3>
+<h3>Data Integration Services</h3>
         <ul>
             <li><strong>GoldenGate:</strong> Real-time data replication</li>
             <li><strong>GoldenGate for Big Data:</strong> Streaming to big data</li>
@@ -475,7 +475,7 @@
             <li><strong>Service Connector Hub:</strong> Streaming to services</li>
         </ul>
 
-        <h3>Networking Services</h3>
+<h3>Networking Services</h3>
         <ul>
             <li><strong>Virtual Cloud Network:</strong> VPC networking</li>
             <li><strong>Internet Gateway:</strong> Internet connectivity</li>
@@ -489,7 +489,7 @@
             <li><strong>Service Gateway:</strong> Private service access</li>
         </ul>
 
-        <h3>Setup & Credits</h3>
+<h3>Setup & Credits</h3>
         <ul>
             <li>Free trial: $300 USD credit for 30 days</li>
             <li>Always-free resources: Limited but useful for development</li>
@@ -497,11 +497,11 @@
         </ul>
     </section>
 
-    <!-- IBM Cloud Section -->
-    <section id="ibm" class="section">
+<!-- IBM Cloud Section -->
+<section id="ibm" class="section">
         <h2>IBM Cloud</h2>
         
-        <h3>Compute Services</h3>
+<h3>Compute Services</h3>
         <ul>
             <li><strong>Virtual Servers:</strong> On-demand virtual machines</li>
             <li><strong>Kubernetes Service (IKS):</strong> Managed Kubernetes clusters</li>
@@ -512,7 +512,7 @@
             <li><strong>GPU Services:</strong> GPU acceleration</li>
         </ul>
 
-        <h3>Storage Services</h3>
+<h3>Storage Services</h3>
         <ul>
             <li><strong>Cloud Object Storage:</strong> Highly available object storage</li>
             <li><strong>Block Storage:</strong> Persistent block volumes</li>
@@ -522,7 +522,7 @@
             <li><strong>Tencent COS Integration:</strong> Multi-cloud storage</li>
         </ul>
 
-        <h3>Database Services</h3>
+<h3>Database Services</h3>
         <ul>
             <li><strong>Db2 on Cloud:</strong> Managed Db2 relational database</li>
             <li><strong>PostgreSQL:</strong> Managed PostgreSQL</li>
@@ -534,7 +534,7 @@
             <li><strong>Databases for Enterprise:</strong> Enterprise database platform</li>
         </ul>
 
-        <h3>Analytics Services</h3>
+<h3>Analytics Services</h3>
         <ul>
             <li><strong>Analytics Engine:</strong> Managed Apache Spark</li>
             <li><strong>Data Engine:</strong> Data processing</li>
@@ -544,7 +544,7 @@
             <li><strong>Streaming Analytics:</strong> Real-time event streaming</li>
         </ul>
 
-        <h3>AI/ML Services</h3>
+<h3>AI/ML Services</h3>
         <ul>
             <li><strong>Watson Machine Learning:</strong> ML service</li>
             <li><strong>Watson Natural Language Understanding:</strong> NLP service</li>
@@ -555,7 +555,7 @@
             <li><strong>Quantum Computing Services:</strong> Quantum computing access</li>
         </ul>
 
-        <h3>Data Integration Services</h3>
+<h3>Data Integration Services</h3>
         <ul>
             <li><strong>Data Integration Tool:</strong> ETL and integration</li>
             <li><strong>Event Streams:</strong> Apache Kafka managed service</li>
@@ -564,7 +564,7 @@
             <li><strong>Integration Cloud:</strong> iPaaS integration platform</li>
         </ul>
 
-        <h3>Networking Services</h3>
+<h3>Networking Services</h3>
         <ul>
             <li><strong>Virtual Private Cloud:</strong> VPC networking</li>
             <li><strong>Content Delivery Network:</strong> CDN service</li>
@@ -575,14 +575,14 @@
             <li><strong>DNS Services:</strong> Domain name services</li>
         </ul>
 
-        <h3>Quantum & Emerging Tech</h3>
+<h3>Quantum & Emerging Tech</h3>
         <ul>
             <li><strong>IBM Quantum:</strong> Quantum computing platform</li>
             <li><strong>Quantum Composer:</strong> Quantum circuit design</li>
             <li><strong>Quantum Qiskit Runtime:</strong> Quantum execution engine</li>
         </ul>
 
-        <h3>Setup & Credits</h3>
+<h3>Setup & Credits</h3>
         <ul>
             <li>Free tier: Limited free resources for development</li>
             <li>Pay-as-you-go: Flexible pricing model</li>
@@ -590,14 +590,14 @@
         </ul>
     </section>
 
-    <!-- Hybrid Classical-Quantum Computing Section -->
-    <section class="section">
+<!-- Hybrid Classical-Quantum Computing Section -->
+<section class="section">
         <h2>Hybrid Classical-Quantum Computing: Integration Path Forward</h2>
         
-        <h3>Architectural Foundation: Why Hybrid Matters</h3>
+<h3>Architectural Foundation: Why Hybrid Matters</h3>
         <p>The most practical and powerful approach combines classical and quantum computing in a complementary hybrid architecture. Quantum computers excel at specific problem classes (optimization, simulation, factoring), while classical computers handle control, orchestration, data processing, and general-purpose computation.</p>
 
-        <h3>Classical Computing: The Foundation</h3>
+<h3>Classical Computing: The Foundation</h3>
         <ul>
             <li><strong>Network Monitoring (Ping/ICMP):</strong> Measures latency, packet loss, and connectivity using classical protocols
                 <ul>
@@ -614,7 +614,7 @@
             <li><strong>Integration Layer:</strong> APIs, message queues, service mesh for component coordination</li>
         </ul>
 
-        <h3>Quantum Computing: Specialized Advantage</h3>
+<h3>Quantum Computing: Specialized Advantage</h3>
         <ul>
             <li><strong>Quantum Network Diagnostics (Qping):</strong> Measures quantum channel quality and entanglement metrics
                 <ul>
@@ -631,7 +631,7 @@
             <li><strong>Machine Learning:</strong> Quantum feature mapping, quantum kernel methods, quantum neural networks</li>
         </ul>
 
-        <h3>Integration Pattern: Classical-Quantum Workflow</h3>
+<h3>Integration Pattern: Classical-Quantum Workflow</h3>
         <div class="workflow">
             <ol>
                 <li><strong>Classical Pre-Processing (Classical Stack):</strong>
@@ -669,7 +669,7 @@
             </ol>
         </div>
 
-        <h3>Practical Example: Quantum Network Path Selection</h3>
+<h3>Practical Example: Quantum Network Path Selection</h3>
         <p><strong>Scenario:</strong> Distributed quantum network with 74 facilities needs to route a quantum operation from Facility A to Facility B through intermediate hops.</p>
         <div class="example">
             <p><strong>Classical Phase:</strong></p>
@@ -693,7 +693,7 @@
             </ul>
         </div>
 
-        <h3>Integration Points Across Cloud Platforms</h3>
+<h3>Integration Points Across Cloud Platforms</h3>
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
             <tr style="background-color: #f5f5f5; border: 1px solid #ddd;">
                 <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Component</th>
@@ -739,7 +739,7 @@
             </tr>
         </table>
 
-        <h3>Implementation Roadmap: Classical-Quantum Integration</h3>
+<h3>Implementation Roadmap: Classical-Quantum Integration</h3>
         <ol>
             <li><strong>Phase 1: Foundation (Months 1-3)</strong>
                 <ul>
@@ -775,7 +775,7 @@
             </li>
         </ol>
 
-        <h3>Best Practices for Hybrid Integration</h3>
+<h3>Best Practices for Hybrid Integration</h3>
         <ul>
             <li><strong>Always Start Classical:</strong> Pre-process data classically before quantum execution</li>
             <li><strong>Network Quality First:</strong> Run both ping (classical) and qping (quantum) before committing to quantum operations</li>
@@ -787,7 +787,7 @@
             <li><strong>Cloud-Agnostic Design:</strong> Use abstractions (Kubernetes for compute, common APIs) to avoid vendor lock-in</li>
         </ul>
 
-        <h3>Key Metrics: Tracking Classical-Quantum Integration Health</h3>
+<h3>Key Metrics: Tracking Classical-Quantum Integration Health</h3>
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
             <tr style="background-color: #f5f5f5; border: 1px solid #ddd;">
                 <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Metric</th>
@@ -828,7 +828,7 @@
         </table>
     </section>
 
-        <h2>Multi-Cloud Strategy</h2>
+<h2>Multi-Cloud Strategy</h2>
         <div class="subsection">
             <p><strong>Recommended Approach:</strong></p>
             <ul>
@@ -844,7 +844,7 @@
             </ul>
         </div>
         
-        <div class="subsection">
+<div class="subsection">
             <p><strong>Service Selection Guide:</strong></p>
             <ul>
                 <li><strong>Compute Workloads:</strong> All 5 providers offer strong compute options; choose based on existing infrastructure</li>
