@@ -2,7 +2,7 @@ Dict(
     "course_name" => "The Living TPOT",
     "course_subtitle" => "From Foundations to Research Frontiers",
     "code" => "QUANTCOMP-101",
-    "semester" => "Self-paced, 2024-2025",
+    "semester" => "Self-paced, 2026-2033",
     "authors" => [
         "Quantum Learning Team" => "https://github.com/jlabclouds",
         "Contributors" => "https://github.com/jlabclouds/q_compute"
