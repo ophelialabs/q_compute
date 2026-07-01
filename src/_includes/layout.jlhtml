@@ -88,6 +88,33 @@ $(pluto_head)
 
 </head>
 <body>
+    <script>
+        (() => {
+            const liveReloadUrl = "$(root_url)/__livereload_state.json";
+            let lastVersion = null;
+
+            const checkForUpdate = () => {
+                fetch(liveReloadUrl + "?t=" + Date.now(), { cache: "no-store" })
+                    .then((response) => response.ok ? response.text() : "")
+                    .then((text) => {
+                        try {
+                            const data = text ? JSON.parse(text) : null;
+                            const version = data?.version;
+                            if (lastVersion !== null && version !== null && version !== lastVersion) {
+                                window.location.reload();
+                            }
+                            lastVersion = version ?? lastVersion;
+                        } catch (error) {
+                            // Ignore malformed state files.
+                        }
+                    })
+                    .catch(() => {});
+            };
+
+            checkForUpdate();
+            window.setInterval(checkForUpdate, 2000);
+        })();
+    </script>
     <!-- TOP NAVBAR -->
     $(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "navbar.jl")))
 

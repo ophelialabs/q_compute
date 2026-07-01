@@ -43,6 +43,54 @@ Pkg.instantiate()
 import Pluto
 import Deno_jll
 
+output_dir = joinpath(@__DIR__, "_site")
+mkpath(output_dir)
+
+livereload_state_file = joinpath(output_dir, "__livereload_state.json")
+
+function write_livereload_state()
+    mkpath(output_dir)
+    version = Base.floor(Int, time())
+    write(livereload_state_file, "{\"version\":" * string(version) * "}\n")
+end
+
+function source_snapshot(dir::AbstractString)
+    snapshot = Dict{String, Float64}()
+    for (root, dirs, files) in walkdir(dir)
+        filter!(d -> d != ".git" && d != "_site", dirs)
+        for file in files
+            path = joinpath(root, file)
+            if !occursin("/.git", path) && !occursin("/_site", path)
+                snapshot[path] = stat(path).mtime
+            end
+        end
+    end
+    return snapshot
+end
+
+src_watch_dir = joinpath(@__DIR__, "src")
+last_source_snapshot = Dict{String, Float64}()
+
+function maybe_write_livereload_state()
+    global last_source_snapshot
+    snapshot = source_snapshot(src_watch_dir)
+    changed = isempty(last_source_snapshot) ||
+        length(snapshot) != length(last_source_snapshot) ||
+        any(get(last_source_snapshot, path, -Inf) != mtime for (path, mtime) in snapshot)
+    last_source_snapshot = snapshot
+    if changed
+        write_livereload_state()
+    end
+end
+
+maybe_write_livereload_state()
+
+@async begin
+    while true
+        sleep(2)
+        maybe_write_livereload_state()
+    end
+end
 
 pluto_port_channel = Channel{UInt16}(1)
 function on_event(e::Pluto.ServerStartEvent)
@@ -76,7 +124,7 @@ pluto_port = take!(pluto_port_channel) # This waits for the server to get ready
 @info "Pluto app: waiting for notebook to launch..."
 notebook = fetch(notebook_launch_task) # This waits for the notebook to finish
 
-output_dir = joinpath(@__DIR__, "_site")
+mkpath(output_dir)
 
 dev_server_port = rand(40507:40999)
 

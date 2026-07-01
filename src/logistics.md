@@ -18,7 +18,7 @@ A live online Julia/Pluto textbook, adapted for quantum computing education. The
 
 ## Sites
 ---
-- [JB](https://ophelialabs.github.io/jb./)
+- [Programiz](https://www.programiz.com/) | [JB](https://ophelialabs.github.io/jb./)
 | [Computational Thinking](https://computationalthinking.mit.edu)
 | [MatSCI](https://matsci.org/)
 ---

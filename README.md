@@ -37,7 +37,9 @@ Pluto.run()
    ```bash
    julia develop.jl
    ```
-   The site will be available at `http://localhost:1234` (or specified port)
+   - The site will be available at `http://localhost:1234` (or specified port). 
+   - The first build may take 10 mins
+   - Hot Reload: save current edits and wait for file to stabilize
 
 4. **View course**: Open your browser and navigate to the local URL
 
