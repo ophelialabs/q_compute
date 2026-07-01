@@ -1,4 +1,4 @@
-- Update programming landscape Quantum Section. Revisit Landscapes
+- Update programming landscape Quantum Section. Revisit Landscapes (add builders (templates), deployments etc)
 - [Programiz](https://www.programiz.com/) (Does not include julia, qsharp, use in conjunction)
 
 **Julia**
