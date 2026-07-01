@@ -1,0 +1,38 @@
+<!DOCTYPE html><h1 id="qcontrol--optical-quantum-ground-station-oqgs-overview"><a href="#qcontrol--optical-quantum-ground-station-oqgs-overview" class="anchor"></a>Q_Control — Optical Quantum Ground Station (OQGS) Overview</h1>
+<h2 id="purpose"><a href="#purpose" class="anchor"></a>Purpose</h2>
+<p>Brief overview of the Optical Quantum Ground Station used for ground‑to‑space QKD (e.g., QEYSSat uplink): hardware, operations, and integration.</p>
+<h2 id="highlevel-functions"><a href="#highlevel-functions" class="anchor"></a>High‑Level Functions</h2>
+<ul>
+<li>Transmit weak coherent pulses or entangled photons to LEO satellites.</li>
+<li>Maintain polarization, timing, and pointing fidelity.</li>
+<li>Post‑process time‑tags to build secure keys (SOC).</li>
+</ul>
+<h2 id="core-hardware"><a href="#core-hardware" class="anchor"></a>Core Hardware</h2>
+<ul>
+<li>Telescope &amp; mount (precision tracking)</li>
+<li>Quantum sources (WCP / entangled photon sources)</li>
+<li>Polarization compensation (LCVRs) and fast steering mirrors</li>
+<li>Timing hardware (Rubidium/GPS disciplined clocks) and DAQ (FPGA time‑taggers)</li>
+</ul>
+<h2 id="operations--soc-role"><a href="#operations--soc-role" class="anchor"></a>Operations &amp; SOC Role</h2>
+<ul>
+<li>Pre‑pass modeling (atmosphere, link feasibility).</li>
+<li>Real‑time tracking and polarization compensation during passes.</li>
+<li>Cross‑correlation of time‑tags, error correction, privacy amplification, and key management.</li>
+</ul>
+<h2 id="standards--integration"><a href="#standards--integration" class="anchor"></a>Standards &amp; Integration</h2>
+<ul>
+<li>ETSI GS QKD 014 (REST API) for key delivery.</li>
+<li>Use mTLS and HSMs for secure key storage and transfer.</li>
+<li>Typical use: AES key rotation or OTP demos for high‑security tests.</li>
+</ul>
+<h2 id="quick-start"><a href="#quick-start" class="anchor"></a>Quick Start</h2>
+<ul>
+<li>Validate tracking and beacon handshake first.</li>
+<li>Calibrate polarization compensation (LCVRs) with beacon feedback.</li>
+<li>Run SOC pipeline on a test pass: time‑tag sync → sifting → error correction → privacy amplification.</li>
+</ul>
+<h2 id="references"><a href="#references" class="anchor"></a>References</h2>
+<ul>
+<li>ETSI QKD ISG, PVLAS experiment literature, and QEYSSat public docs for implementation details.</li>
+</ul>

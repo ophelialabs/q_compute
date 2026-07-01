@@ -1,0 +1,883 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>Module 2: Placeholder — The Living TPOT </title>
+<meta name="description" content='Placeholder for future content' />
+
+<link rel="root" href="../../.." />
+
+<link rel="icon" href="../../../assets/favicon.ico" />
+<link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml" />
+
+<link rel="stylesheet" href="../../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../../assets/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../../assets/styles/navbar.css" type="text/css" />
+<link rel="stylesheet" href="../../../assets/styles/cheatsheets.css" type="text/css" />
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mermaid Charts -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                fontSize: '14px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
+
+<script src="../../../assets/scripts/theme.js" defer></script>
+<script src="../../../assets/scripts/navbar.js" defer></script>
+<script src="../../../assets/scripts/sidebar.js" type="module"></script>
+<script src="../../../assets/scripts/carousel.js" defer></script>
+<script src="../../../assets/scripts/cheatsheets.js" defer></script>
+
+<link rel="pp-search-data" href="../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js" integrity="sha256-sDRYYtDc+jNi2rrJPUS5kGxXXMlmnOSCq5ek5tYAk/M=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.css" integrity="sha256-lv6SEl7Dhri7d86yiHCTuSWFb9CYROQFewxZ7Je0n5k=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<script type="importmap">{"imports":{"aVc6E":"./firebase-firestore.7f842f36.js","bEDS4":"./firebase-app.b603aaa4.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.6d99411f.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.1a8c75c9.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.72627891.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje), Παναγιώτης (Panagiotis) Γεωργακόπουλος (https://github.com/pankgeorg), Paul Berg (https://github.com/Pangoraw) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.2f9fc277.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.7a04a462.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.34f4e0d4.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v1.0.0";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.c026cb75.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/tex-svg-full.b78c0ac1.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+</head>
+<body>
+    <!-- TOP NAVBAR -->
+    <!-- TOP NAVBAR -->
+<header id="pages-navbar">
+    <div class="navbar-container">
+        <!-- Navbar Left: Logo/Title -->
+        <div class="navbar-left">
+            <a href="../../.." class="navbar-logo" title="Home">
+                <span class="logo-text">Q</span>
+            </a>
+        </div>
+        
+        <!-- Navbar Center: Search -->
+        <div class="navbar-center">
+            <form action="../../../search" method="GET" class="navbar-search">
+                <input type="search" name="q" placeholder="Search lessons..." aria-label="Search">
+                <button type="submit" aria-label="Search" title="Search">
+                    <span>🔎</span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Navbar Right: Theme + Menu -->
+        <div class="navbar-right">
+            <button id="theme-toggle" title="Switch theme" aria-label="Switch theme" class="navbar-icon"></button>
+            <button id="toggle-nav" class="navbar-menu-toggle" title="Open navigation" aria-label="Open navigation"></button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div id="pages-layout">
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="../../.."><span>The Living TPOT</span></a></h1>
+                    <h2><span>From Foundations to Research Frontiers</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://github.com/jlabclouds">Quantum Learning Team</a>, <a href="https://github.com/jlabclouds/q_compute">Contributors</a>
+                </div>
+            </li>
+            <li>
+                <div class="track-chooser">
+                    <label>
+                    <h2>Choose your track:</h2>
+                    <select>
+                        <option value="">Choose...</option>
+                        <option value="julia">🤖 Robotics</option> <option value="material">🏥 Medical</option> <option value="setup">⚙️ Networking</option> 
+                    </select>
+                    </label>
+                </div>
+            </li>
+        <li>
+<h3>Welcome</h3>
+<ul>
+<li class=' lecture tag_welcome'><a href='../../../logistics/'><span class="entry-number"></span> Class logistics</a></li><li class=' lecture tag_welcome'><a href='../../../installation/'><span class="entry-number"></span> Software installation</a></li>
+</ul>
+</li>
+<li>
+<h3>Resources</h3>
+<ul>
+<li class=' lecture tag_resources'><a href='../../../resources/cheatsheets/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../../resources/cheatsheets/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent1</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Adding course material</h4>
+<ul>
+<li class=' lecture tag_parent1_mod1 tag_track_material tag_markdown tag_frontmatter'><a href='../../../pages/parent1/mod1/mod1_add_material/add_markdown/'><span class="entry-number">1.1</span> Add markdown files</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../../pages/parent1/mod1/mod1_add_material/add_pluto/'><span class="entry-number">1.2</span> Add Pluto notebooks</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../../pages/parent1/mod1/mod1_add_material/plutoui_showcase/'><span class="entry-number">1.3</span> PlutoUI showcase</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Quantum Gates</h4>
+<ul>
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../../pages/parent1/mod1/mod1_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent2</h3>
+<ul class="dropdown-content">
+<li class="dropdown-group">
+<h4>Module 1: Placeholder</h4>
+<ul>
+<li class='active lecture tag_parent2_mod1 tag_placeholder tag_coming_soon'><a href='../../../pages/parent2/mod1_placeholder/' title='Placeholder for future content'><span class="entry-number">1.0</span> Module 2: Placeholder</a></li>
+</ul>
+</li>
+<li class="dropdown-group">
+<h4>Module 2: Coming Soon</h4>
+<ul>
+<li class=' lecture tag_parent2_mod2 tag_placeholder tag_coming_soon'><a href='../../../pages/parent2/mod2_coming_soon/' title='Placeholder for future content'><span class="entry-number">2.0</span> Module 2: Coming Soon</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="../../../semesters/">Self-paced, 2026-2033</a>
+                    <div class="course-numbers"><span>QUANTCOMP-101</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Quantum Learning Initiative">
+                        <img src="../../../assets/quantum_logo.svg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="../../../assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="../../../assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           <div class="lecture-header" >
+    <p class="number">Section 1.0</p>
+    <h1>Module 2: Placeholder</h1>
+    
+    
+</div>
+        <div class="pages-markdown">
+<main>
+<li><a href="https://docs.quantuinuum.com/nexus/index.html" target="_blank" rel="noopener noreferrer">Quantinuum Nexus</a></li>
+<li><a href="https://qbraid.com" target="_blank" rel="noopener noreferrer">qBraid</a></li>
+<h1 id="references-section-"><a href="#references-section-" class="anchor"></a>References section</h1>
+<pre><code>&quot;references&quot; =&gt; [
+    Dict(&quot;name&quot; =&gt; 
+<pre><code>),
+</code></pre>
+<p>],
+</code></pre></p>
+<!-- Project Overview -->
+<section id="overview" class="section">
+    <h2>Project Overview</h2>
+    <p>This Quantum IoT platform provides a comprehensive suite of tools for:</p>
+        <ul>
+            <li><strong>Quantum Algorithm Implementation:</strong> Grover's search, Shor's factorization, Quantum Fourier Transform</li>
+            <li><strong>Hybrid Machine Learning:</strong> Quantum neural networks, quantum kernels, variational algorithms</li>
+            <li><strong>Optimization:</strong> QAOA and VQE implementations</li>
+            <li><strong>Specialized Applications:</strong> Medical diagnostics/imaging and robotics control</li>
+            <li><strong>Inference & Language Models:</strong> Quantum transformers with attention mechanisms</li>
+            <li><strong>Generative Models:</strong> QGAN and quantum autoencoders</li>
+        </ul>
+</section>
+<!-- Key Capabilities -->
+<section id="capabilities" class="section">
+    <h2>Key Capabilities</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Purpose</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Core Algorithms</td>
+                    <td>Foundational quantum computing</td>
+                    <td><span class="badge success">Production-ready</span></td>
+                </tr>
+                <tr>
+                    <td>ML Integration</td>
+                    <td>Quantum-classical hybrid learning</td>
+                    <td><span class="badge warning">Beta</span></td>
+                </tr>
+                <tr>
+                    <td>Optimization</td>
+                    <td>QAOA/VQE implementations</td>
+                    <td><span class="badge warning">Beta</span></td>
+                </tr>
+                <tr>
+                    <td>Specialized Domains</td>
+                    <td>Medical & Robotics applications</td>
+                    <td><span class="badge info">Development</span></td>
+                </tr>
+                <tr>
+                    <td>LLM Integration</td>
+                    <td>Quantum inference pipelines</td>
+                    <td><span class="badge secondary">Experimental</span></td>
+                </tr>
+            </tbody>
+    </table>
+</section>
+<!-- Architecture -->
+<section id="architecture" class="section">
+<h2>Architecture & System Design</h2>
+<h3>System Data Flow</h3>
+<pre class="mermaid">
+graph LR
+    A["📥 Input Layer<br/>Data Sources<br/>Configuration"] 
+    B["⚛️ Quantum Core<br/>Algorithms & Optimization"]
+    C["🤖 ML Integration<br/>QNN, Kernels, Training"]
+    D["🎯 Applications<br/>Medical, Robotics, Opt"]
+    E["📤 Output Layer<br/>Results & Inference"]
+<pre><code>A --&gt; B
+A --&gt; C
+B --&gt; C
+C --&gt; D
+D --&gt; E
+<p>style A fill:#0d4d7a,stroke:#00bfff,color:#fff
+style B fill:#0d7a0d,stroke:#00ff00,color:#fff
+style C fill:#4d0d7a,stroke:#ff00ff,color:#fff
+style D fill:#7a4d0d,stroke:#ffaa00,color:#fff
+style E fill:#0d7a4d,stroke:#00ffaa,color:#fff
+</code></pre>
+</pre></p>
+<h3>Modular Approach: Targeted, Lightweight & Focused</h3>
+<div class="mermaid">
+    graph TD
+    subgraph MODULAR["MODULAR APPROACH"]
+    direction TB
+<pre><code>M_Start[&quot;User needs: Healthcare Imaging Solution&quot;] --&gt; M_Run[&quot;Run: generate_medical()&quot;]
+M_Run --&gt; M_Box[&quot;Medical Specialization Module&quot;]
+<p>subgraph M_Box [&quot;Specialization: Medical&quot;]
+M_Dirs[&quot;src/Specializations/Medical/&lt;br/&gt;├── Imaging/&lt;br/&gt;└── Diagnostics/&quot;]
+M_Benefit[&quot;BENEFIT: Domain Isolation&lt;br/&gt;Only contains files relevant to healthcare.&lt;br/&gt;Zero distraction from ML or Robotics code.&quot;]
+end</p>
+<p>R_Start[&quot;User needs: Robot Arm Controller&quot;] –&gt; R_Run[&quot;Run: generate_robotics()&quot;]
+R_Run –&gt; R_Box[&quot;Robotics Specialization Module&quot;]</p>
+<p>subgraph R_Box [&quot;Specialization: Robotics&quot;]
+R_Dirs[&quot;src/Specializations/Robotics/&lt;br/&gt;├── Control/&lt;br/&gt;└── Sensing/&quot;]
+R_Benefit[&quot;BENEFIT: Hardware-Specific Focus&lt;br/&gt;Structure tailored for real-time loops.&lt;br/&gt;Lightweight footprint for embedded systems.&quot;]
+end</p>
+<p>S_Start[&quot;User needs: Run Shor’s Algorithm&quot;] –&gt; S_Run[&quot;Run: generate_scientific()&quot;]
+S_Run –&gt; S_Box[&quot;Scientific Core Module&quot;]</p>
+<p>subgraph S_Box [&quot;Core Scientific Algorithms&quot;]
+S_Dirs[&quot;src/Quantum/Algorithms/&lt;br/&gt;├── QFT/&lt;br/&gt;├── Grover/&lt;br/&gt;└── Shor/&quot;]
+S_Benefit[&quot;BENEFIT: Foundational Research&lt;br/&gt;Pure algorithmic focus.&lt;br/&gt;Clear structure for benchmarking.&quot;]
+end
+end</p>
+<p>Global_B[&quot;OVERALL ADVANTAGES:&lt;br/&gt;1. Reduced Cognitive Load&lt;br/&gt;2. Faster Setup Time&lt;br/&gt;3. Clear Ownership boundaries&quot;]</p>
+<p>M_Box -.-&gt; Global_B
+R_Box -.-&gt; Global_B
+S_Box -.-&gt; Global_B
+</code></pre></p>
+</div>
+<h3>Integrated Ecosystem: Comprehensive & Synergistic</h3>
+<div class="mermaid">
+graph TD
+    subgraph INTEGRATED["INTEGRATED ECOSYSTEM"]
+    direction TB
+<pre><code>User[&quot;Enterprise Quantum Platform&quot;] --&gt; RunFull[&quot;Project Setup&quot;]
+RunFull --&gt; BigBox[&quot;QuantumProject.csproj&quot;]
+<p>subgraph BigBox [&quot;PROJECT ROOT&quot;]
+subgraph Layer1 [&quot;Layer 1: Infrastructure &amp; SDLC&quot;]
+L1_Config[&quot;Config/ - qubit setup&quot;]
+L1_Tests[&quot;Tests/ - Unit &amp; Integration&quot;]
+L1_Docs[&quot;Docs/ - API &amp; Tutorials&quot;]
+L1_Lib[&quot;Lib/ - Shared Code&quot;]
+end</p>
+<pre><code>subgraph Layer2 [&amp;quot;Layer 2: Quantum Foundations&amp;quot;]
+    L2_Circuits[&amp;quot;src/Circuits/&amp;quot;]
+    L2_Utils[&amp;quot;src/Quantum/Utils/&amp;quot;]
+    L2_Opt[&amp;quot;src/Quantum/Optimization/&amp;quot;]
+end
+
+subgraph Layer3 [&amp;quot;Layer 3: Advanced Applications&amp;quot;]
+    L3_ML[&amp;quot;src/ML/ - QNN, Kernels&amp;quot;]
+    L3_LLM[&amp;quot;src/LLM/ - Transformers&amp;quot;]
+    L3_AI[&amp;quot;src/AI/ - RL, Generative&amp;quot;]
+end
+
+L1_Tests --&amp;gt;|Validates| Layer2
+L1_Tests --&amp;gt;|Validates| Layer3
+L1_Lib --&amp;gt;|Used by| Layer2
+L1_Lib --&amp;gt;|Used by| Layer3
+L2_Circuits --&amp;gt;|Building Blocks| L3_ML
+L2_Opt --&amp;gt;|Training Engines| L3_AI
+L2_Utils --&amp;gt;|Required by| L3_LLM
+</code></pre>
+<p>end</p>
+<p>Global_Full_B[&quot;ADVANTAGES:&lt;br/&gt;Standardization | Scalability | Complex Workflows&quot;]
+BigBox –&gt; Global_Full_B
+end
+</code></pre></p>
+</div>
+<h3>Project Component Dependencies</h3>
+<div class="mermaid">
+graph LR
+    Config["Config"]
+    Core["Core Quantum"]
+    ML["ML"]
+    Apps["Applications"]
+    Tests["Tests"]
+    Lib["Libraries"]
+    Opt["Optimization"]
+<pre><code>Config --&gt; Core
+Core --&gt; ML
+ML --&gt; Apps
+Tests --&gt; Core
+Tests --&gt; ML
+Tests --&gt; Apps
+Lib --&gt; ML
+Lib --&gt; Apps
+Core --&gt; Opt
+Opt --&gt; ML
+</code></pre>
+</div>
+<h3>Project Structure</h3>
+<div class="code-block">
+    <pre><code>qsharpIoT/
+├── src/
+│   ├── Quantum/              # Core quantum algorithms
+│   │   ├── Algorithms/       # Grover, QFT, Shor
+│   │   ├── Optimization/     # QAOA, VQE
+│   │   └── Utils/            # Custom gates & measurements
+│   ├── ML/                   # Machine learning modules
+│   │   ├── QuantumNeuralNetworks/  # QNN architectures
+│   │   ├── QuantumKernels/   # Quantum kernel methods
+│   │   ├── Classifiers/      # QKNeighbors, QuantumPerceptron
+│   │   └── Training/         # Optimization algorithms
+│   ├── LLM/                  # Language model quantum integration
+│   │   ├── QuantumTransformers/    # QAttention, QEmbeddings
+│   │   └── Inference/        # Quantum inference engines
+│   ├── AI/                   # Advanced AI applications
+│   │   ├── Generative/       # QGAN, autoencoders
+│   │   └── QuantumRL/        # Quantum reinforcement learning
+│   ├── Circuits/             # Quantum circuit templates
+│   │   ├── Custom/           # Entanglement, teleportation
+│   │   └── Templates/        # Basic gates, standard operations
+│   ├── Specializations/      # Domain-specific implementations
+│   │   ├── Medical/          # Diagnostics, imaging
+│   │   └── Robotics/         # Control, sensing
+│   └── Classical/            # Classical preprocessing/postprocessing
+├── Tests/
+│   ├── Unit/                 # Algorithm tests
+│   └── Integration/          # System-wide tests
+├── Config/
+│   ├── qubitConfig.json      # Qubit configuration
+│   └── quantum-db.json       # Quantum database configuration
+├── Lib/
+│   ├── QuantumLibrary.qs     # Custom library functions
+│   ├── StandardLib.qs        # Standard library wrappers
+│   └── QuantumDatabase.qs    # Quantum database interface
+├── Examples/
+│   └── *Demo.qs              # Demonstration implementations
+└── Docs/
+    ├── API.md                # API documentation
+    └── Tutorials/            # Learning materials</code></pre>
+</div>
+<h3>Component Interactions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Purpose</th>
+                    <th>Key Components</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Quantum Core</strong></td>
+                    <td>Fundamental quantum operations</td>
+                    <td>Algorithms, Optimization, Utils</td>
+                </tr>
+                <tr>
+                    <td><strong>ML Pipeline</strong></td>
+                    <td>Hybrid quantum-classical ML</td>
+                    <td>QNN, Kernels, Classifiers, Training</td>
+                </tr>
+                <tr>
+                    <td><strong>LLM Integration</strong></td>
+                    <td>Language model quantum ops</td>
+                    <td>Quantum Transformers, Inference</td>
+                </tr>
+                <tr>
+                    <td><strong>Specializations</strong></td>
+                    <td>Domain-specific applications</td>
+                    <td>Medical Imaging, Robotics Control</td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+<!-- Building on the Project -->
+<section id="building-on-project" class="section">
+<h2>Building on the Project</h2>
+<h3>1. Development Environment Setup</h3>
+    <div class="subsection">
+        <h4>Initial Configuration</h4>
+        <div class="code-block">
+        <pre><code class="bash"># Initialize development environment
+dotnet new console -n CustomQuantumModule
+cd CustomQuantumModule
+<h1 id="add-project-references"><a href="#add-project-references" class="anchor"></a>Add project references</h1>
+<p>dotnet add reference ../QuantumProject.csproj</p>
+<h1 id="restore-dependencies"><a href="#restore-dependencies" class="anchor"></a>Restore dependencies</h1>
+<p>dotnet restore</code></pre>
+</div></p>
+</div>
+<h3>2. Adding New Quantum Algorithms</h3>
+    <div class="subsection">
+        <h4>Step-by-Step Guide</h4>
+<h5>Step 1: Create Algorithm File</h5>
+<div class="code-block">
+                <pre><code class="bash">mkdir -p src/Quantum/Algorithms/YourAlgorithm
+touch src/Quantum/Algorithms/YourAlgorithm/YourAlgorithm.qs</code></pre>
+</div>
+<h5>Step 2: Implement Core Logic</h5>
+    <div class="code-block">
+                <pre><code class="qsharp">// src/Quantum/Algorithms/YourAlgorithm/YourAlgorithm.qs
+namespace Quantum.Algorithms.YourAlgorithm {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Canon;
+<pre><code>operation MainAlgorithm(input : Int) : Result[] {
+    use qubits = Qubit[input];
+    // Implementation here
+    return [];
+}
+</code></pre>
+<p>}</code></pre></p>
+</div>
+<h5>Step 3: Write Comprehensive Tests</h5>
+            <p>Create test files in Tests/Unit/ and Tests/Integration/ directories to validate your implementation.</p>
+<h5>Step 4: Documentation</h5>
+            <p>Add documentation to Docs/API.md with algorithm description, complexity analysis, and usage examples.</p>
+</div>
+<h3>3. Quantum Database Integration</h3>
+        <div class="subsection">
+            <h4>Setup and Connection</h4>
+<h5>Step 1: Install Quantum Database Driver</h5>
+            <div class="code-block">
+                <pre><code class="bash">dotnet add package QuantumDB.Client</code></pre>
+            </div>
+<h5>Current Limitations</h5>
+            <ul>
+                <li><strong>Maximum state size:</strong> ~1GB (depends on available memory)</li>
+                <li><strong>Practical limit:</strong> ~30-32 qubits for full state vectors</li>
+                <li><strong>State retrieval latency:</strong> 10-100ms depending on state complexity</li>
+                <li><strong>Concurrent query limit:</strong> 100 simultaneous connections</li>
+            </ul>
+        </div>
+    </section>
+<!-- Deployment Scenarios -->
+<section id="deployment-scenarios" class="section">
+        <h2>Project Deployment Scenarios</h2>
+<h3>Scenario 1: Local Development & Testing</h3>
+        <div class="subsection">
+            <h4>Target Environment</h4>
+            <ul>
+                <li>Single developer machine or local cluster</li>
+                <li>Q# Simulator for algorithm development</li>
+                <li>No cloud dependencies</li>
+            </ul>
+<h4>Deployment Steps</h4>
+            <div class="code-block">
+                <pre><code class="bash"># Build Configuration
+dotnet build QuantumProject.csproj -c Debug
+<h1 id="run-with-simulator"><a href="#run-with-simulator" class="anchor"></a>Run with Simulator</h1>
+<p>dotnet run – –target QuantumSimulator –operation YourOperation</p>
+<h1 id="enable-debug-logging"><a href="#enable-debug-logging" class="anchor"></a>Enable Debug Logging</h1>
+<p>export QDK_DEBUG=1
+dotnet run</code></pre>
+</div>
+</div></p>
+<h3>Scenario 2: Azure Quantum Cloud Deployment</h3>
+        <div class="subsection">
+            <h4>Prerequisites</h4>
+            <ul>
+                <li>Azure subscription with Quantum workspace</li>
+                <li>Azure CLI installed and configured</li>
+                <li>Authentication tokens provisioned</li>
+            </ul>
+<h4>Deployment Process</h4>
+            <div class="code-block">
+                <pre><code class="bash"># Setup Azure Resources
+az group create --name QuantumIoT --location eastus
+<h1 id="create-quantum-workspace"><a href="#create-quantum-workspace" class="anchor"></a>Create Quantum workspace</h1>
+<p>az quantum workspace create –resource-group QuantumIoT –name QuantumIoTWorkspace –location eastus</code></pre>
+</div>
+</div></p>
+<h3>Scenario 3: IoT Edge Integration</h3>
+        <div class="subsection">
+            <h4>Target Architecture</h4>
+            <p>IoT Devices → Edge Server (Quantum Computation) → Classical Processing → Cloud Storage/Analytics</p>
+<h4>Deployment Configuration</h4>
+            <div class="code-block">
+                <pre><code class="dockerfile"># Dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+WORKDIR /app
+COPY . .
+RUN dotnet build QuantumProject.csproj
+ENTRYPOINT ["dotnet", "run"]</code></pre>
+            </div>
+        </div>
+    </section>
+<div class="content-section">
+    <h1>📦 Deployment Pipeline</h1>
+    <p class="lead">Standardized development, build, containerization, and deployment pipeline for quantum computing applications and enterprise infrastructure.</p>
+<!-- Navigation -->
+<nav>
+        <ul>
+            <li><a href="#pipeline-overview">Overview</a></li>
+            <li><a href="#stages">Pipeline Stages</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+        </ul>
+    </nav>
+<!-- Pipeline Overview -->
+<section id="pipeline-overview" class="section">
+        <h2>Pipeline Overview</h2>
+        <p>Each application follows a standardized linear development path from initial development through enterprise integration:</p>
+<h3>Pipeline Flow Diagram</h3>
+<pre class="mermaid">
+graph LR
+    A["📝 App Development"] -->|Code| B["🔨 Build Phase"]
+    B -->|Artifacts| C["🐳 Containerization"]
+    C -->|Image| D["📦 Registry Push"]
+    D -->|Tagged Image| E["☸️ K8s Deployment"]
+    E -->|Running Service| F["🏢 Enterprise Integration"]
+<pre><code>style A fill:#0d4d7a
+style B fill:#0d7a0d
+style C fill:#7a7a0d
+style D fill:#7a4d0d
+style E fill:#4d0d7a
+style F fill:#0d7a4d
+</code></pre>
+</pre>
+    </section>
+<!-- Detailed Stages -->
+<section id="stages" class="section">
+        <h2>Pipeline Stages</h2>
+<h3>1. Application Development</h3>
+        <div class="subsection">
+            <ul>
+                <li>Choose Language/Framework</li>
+                <li>Develop Features</li>
+                <li>Write Tests</li>
+                <li>Code Review</li>
+            </ul>
+        </div>
+<h3>2. Build Phase</h3>
+        <div class="subsection">
+            <ul>
+                <li>Compile/Transpile source code</li>
+                <li>Run automated tests</li>
+                <li>Code quality checks (linting, static analysis)</li>
+                <li>Generate artifacts (JAR, DLL, binary)</li>
+                <li>Create documentation</li>
+            </ul>
+        </div>
+<h3>3. Containerization</h3>
+        <div class="subsection">
+            <ul>
+                <li>Create Dockerfile with dependencies</li>
+                <li>Build Docker image with proper versioning</li>
+                <li>Run container tests and validation</li>
+                <li>Optimize image size and layers</li>
+                <li>Security scanning and compliance checks</li>
+            </ul>
+        </div>
+<h3>4. Registry Push</h3>
+        <div class="subsection">
+            <ul>
+                <li>Tag image with version information</li>
+                <li>Authenticate with container registry</li>
+                <li>Push to registry (Docker Hub, JFrog, OCR)</li>
+                <li>Manage multiple versions and tags</li>
+                <li>Document registry location and access</li>
+            </ul>
+        </div>
+<h3>5. Kubernetes Deployment</h3>
+        <div class="subsection">
+            <ul>
+                <li>Create and validate deployment manifests</li>
+                <li>Deploy to target Kubernetes cluster</li>
+                <li>Configure services and load balancing</li>
+                <li>Setup ingress rules and routing</li>
+                <li>Configure persistent storage if needed</li>
+                <li>Health checks and readiness probes</li>
+            </ul>
+        </div>
+<h3>6. Enterprise Integration</h3>
+        <div class="subsection">
+            <ul>
+                <li>Connect to microservices and APIs</li>
+                <li>Configure centralized logging</li>
+                <li>Setup monitoring and alerting</li>
+                <li>Configure auto-scaling policies</li>
+                <li>Document API endpoints and dependencies</li>
+                <li>Establish SLA and performance baselines</li>
+            </ul>
+        </div>
+    </section>
+<!-- Technologies Section -->
+<section id="technologies" class="section">
+        <h2>Technologies Used</h2>
+<div class="grid-container">
+            <div class="card">
+                <h3>Languages</h3>
+                <p>Java, Python, C#, Rust, C++, Q#</p>
+            </div>
+            <div class="card">
+                <h3>Frameworks & Tools</h3>
+                <p>Spring Boot, Flask, .NET Aspire, Cargo, ROS 2, Docker, Kubernetes</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Platforms</h3>
+                <p>AWS, Azure, GCP, Oracle Cloud</p>
+            </div>
+            <div class="card">
+                <h3>Container Technologies</h3>
+                <p>Docker, Kubernetes, Container Registries (Docker Hub, JFrog, OCR)</p>
+            </div>
+        </div>
+    </section>
+<div class="info-box">
+        <strong>Next Step:</strong> See "Cloud Platforms" section for platform-specific deployment guides and "Architecture" for system design patterns.
+    </div>
+</div>
+<!-- Future Directions -->
+<section id="future-directions" class="section">
+        <h2>Future Directions and Integration</h2>
+<h3>1. Enhanced Quantum Algorithms</h3>
+        <div class="subsection">
+            <h4>Research Roadmap</h4>
+<h5>Near Term (3-6 months)</h5>
+            <ul>
+                <li>Quantum Principal Component Analysis (qPCA)</li>
+                <li>Quantum Support Vector Machines (qSVM) optimization</li>
+                <li>Error mitigation techniques implementation</li>
+            </ul>
+<h5>Medium Term (6-12 months)</h5>
+            <ul>
+                <li>Quantum Hidden Markov Models</li>
+                <li>Quantum Boltzmann Machines</li>
+                <li>Hybrid classical-quantum optimization frameworks</li>
+                <li>Noise-resilient algorithms</li>
+            </ul>
+<h5>Long Term (12+ months)</h5>
+            <ul>
+                <li>Fault-tolerant quantum error correction integration</li>
+                <li>Topological quantum computing support</li>
+                <li>Scalable quantum machine learning</li>
+                <li>Distributed quantum computing</li>
+            </ul>
+        </div>
+<h3>2. Hardware Provider Integration</h3>
+        <div class="subsection">
+            <h4>Multi-Provider Support</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Timeline</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IonQ</td>
+                        <td>Q1 2025</td>
+                        <td><span class="badge warning">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Rigetti</td>
+                        <td>Q2 2025</td>
+                        <td><span class="badge info">Planned</span></td>
+                    </tr>
+                    <tr>
+                        <td>IBM Quantum</td>
+                        <td>Q3 2025</td>
+                        <td><span class="badge info">Planned</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+<h3>3. Advanced ML Capabilities</h3>
+        <div class="subsection">
+            <ul>
+                <li><strong>Quantum Transfer Learning:</strong> Pre-trained models and domain adaptation</li>
+                <li><strong>Federated Quantum Learning:</strong> Distributed training across quantum processors</li>
+                <li><strong>Quantum Continual Learning:</strong> Online learning and catastrophic forgetting mitigation</li>
+            </ul>
+        </div>
+<h3>4. Enterprise Integration</h3>
+        <div class="subsection">
+            <h4>API Development</h4>
+            <div class="code-block">
+                <pre><code>REST API Endpoints:
+<p>POST   /api/quantum/execute         # Submit quantum job
+GET    /api/quantum/jobs/       # Get job status
+GET    /api/quantum/results/    # Retrieve results
+POST   /api/ml/predict              # ML inference
+GET    /api/diagnostics/status      # System health</code></pre>
+</div>
+</div>
+</section></p>
+<!-- Documentation -->
+<section id="documentation" class="section">
+        <h2>Documentation</h2>
+        <div class="subsection">
+            <h3>Available Resources</h3>
+            <ul>
+                <li><strong>API.md</strong> - Complete API reference</li>
+                <li><strong>Tutorials/</strong> - Learning materials and examples</li>
+                <li><strong>Examples/</strong> - Working demonstrations of key capabilities</li>
+            </ul>
+        </div>
+    </section>
+<!-- Contributing -->
+<section id="contributing" class="section">
+        <h2>Contributing</h2>
+        <div class="subsection">
+            <h3>Code Contribution Process</h3>
+            <ol>
+                <li>Create feature branch: <code>git checkout -b feature/your-feature</code></li>
+                <li>Follow naming conventions and documentation standards</li>
+                <li>Add comprehensive tests</li>
+                <li>Submit pull request with detailed description</li>
+            </ol>
+<h3>Development Guidelines</h3>
+            <ul>
+                <li>Use semantic commit messages</li>
+                <li>Keep functions focused and well-documented</li>
+                <li>Achieve >80% test coverage</li>
+                <li>Follow Q# style guidelines</li>
+            </ul>
+        </div>
+    </section>
+<!-- Applications -->
+<section id="applications" class="section">
+        <h2>Applications</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Medical Imaging</h3>
+                <p>Advanced quantum algorithms for enhanced diagnostic imaging, pattern recognition in medical data, and predictive health analytics using quantum-classical hybrid approaches.</p>
+            </div>
+            <div class="card">
+                <h3>Robotics Control</h3>
+                <p>Quantum-optimized control systems for complex robotic tasks, trajectory optimization, and real-time decision making using quantum advantage.</p>
+            </div>
+            <div class="card">
+                <h3>Optimization Problems</h3>
+                <p>Solving complex optimization challenges in logistics, finance, and resource allocation using QAOA and other quantum optimization algorithms.</p>
+            </div>
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>Accelerated machine learning pipelines leveraging quantum machine learning techniques for classification, clustering, and pattern recognition.</p>
+            </div>
+        </div>
+</section>
+<hr />
+<ul>
+<li>The red end of the spectrum and a flashing light has seemed to work best</li>
+<li>IR is a beacon that gives away location, use it to draw attention while implementing other detection methonds</li>
+<li>Look for the edge which will most likely be a rectangular shape, and for the small details that give away the edge</li>
+<li>Pay attention to details such as footprints, and disturbed foliage</li>
+<li>Variations in lighting can help reveal hidden objects as well</li>
+<li>Slowing down the video when editing can help you see details (even faces) you (or AI) might miss at full speed</li>
+</ul>
+</main>
+</div>
+
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="https://github.com/jlabclouds/q_compute"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

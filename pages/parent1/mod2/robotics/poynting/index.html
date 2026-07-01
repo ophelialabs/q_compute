@@ -1,0 +1,32 @@
+<!DOCTYPE html><p>In a solenoid, the Poynting vector <code>\(\mathbf{S}=\frac{1}{\mu _{0}}(\mathbf{E}\times \mathbf{B})\)</code> describes the flow of electromagnetic energy into or out of the device when the current changes over time.</p>
+<p>[<img src="https://www.youtube.com/watch?v=01Nzat_2-Xc" alt="Example" />]</p>
+<h2 id="key-characteristics-"><a href="#key-characteristics-" class="anchor"></a>Key Characteristics</h2>
+<ul>
+<li><strong>Energy Flow Direction</strong>: For an increasing current, the Poynting vector points radially inward toward the center of the solenoid, indicating energy is being stored in the magnetic field. For a decreasing current, it points radially outward, showing energy is being released.</li>
+<li><strong>Induced Electric Field</strong>: Since the current is changing, a circumferential (azimuthal) electric field (\mathbf) is induced according to Faraday’s Law.</li>
+<li><strong>Magnetic Field</strong>: Inside an ideal long solenoid, the magnetic field (\mathbf) is uniform and directed along the axis ((z)-direction), calculated as (B=\mu _{0}nI).</li>
+<li><strong>Mathematical Expression</strong>: The Poynting vector at the inner surface (radius (R)) of the solenoid is typically expressed as:(\mathbf=-\frac{1}{2}\mu _{0}n^{2}RI\frac^{\mathbf})
+This vector represents the power per unit area entering the solenoid volume.</li>
+</ul>
+<h2 id="physical-significance-"><a href="#physical-significance-" class="anchor"></a>Physical Significance</h2>
+<p>The Poynting Theorem confirms that the total flux of the Poynting vector through the surface of the solenoid equals the rate of change of the energy stored in the magnetic field ((\frac(\frac{1}{2}LI^{2}))). This demonstrates that electrical energy is not carried “inside” the wires but is transferred through the surrounding electromagnetic fields.</p>
+<p>The Poynting vector for an infinite solenoid with radius (R), turns per unit length (n), and time-varying current (I(t)) is (\mathbf=-\frac{1}{2}\mu _{0}n^{2}rI\frac^{\mathbf}) for any internal radius (r\le R). 
+\</p>
+<h3 id="step-1-"><a href="#step-1-" class="anchor"></a>➡️ <strong>Step 1</strong>:</h3>
+<p>Determine the Magnetic Field Using Ampère’s Law for an ideal infinite solenoid, the magnetic field (\mathbf) is uniform inside and zero outside. For a current (I(t)) flowing in the azimuthal direction ((^{\phi })), the field is:(\mathbf=\mu _{0}nI^{\mathbf})</p>
+<h3 id="step-2-"><a href="#step-2-" class="anchor"></a>➡️ <strong>Step 2</strong>:</h3>
+<p>Determine the Induced Electric Field A changing magnetic field induces an electric field (\mathbf) according to Faraday’s Law in integral form: (\oint \mathbf\cdot d\mathbf=-\frac{d\Phi _}). Taking a circular path of radius (r) ((r&lt;R)) coaxial with the solenoid:(E(2\pi r)=-\frac(B\cdot \pi r^{2})=-\pi r^{2}\mu _{0}n\frac)Solving for (\mathbf) in the azimuthal direction:(\mathbf=-\frac{2}\mu _{0}n\frac^{\mathbf})where the field is directed along (-^{\phi }) if the current is increasing.</p>
+<h3 id="step-3-"><a href="#step-3-" class="anchor"></a>➡️ <strong>Step 3</strong>:</h3>
+<p>Compute the Poynting Vector The Poynting vector represents the directional energy flux (power per unit area) and is defined as (\mathbf=\frac{1}{\mu _{0}}(\mathbf\times \mathbf)). Substituting our results:(\mathbf=\frac{1}{\mu _{0}}[-\frac{2}\mu _{0}n\frac^{\phi }]\times [\mu _{0}nI^{\mathbf}])Since (^{\phi }\times ^{\mathbf}=^{\mathbf}), the cross product yields:(\mathbf=-\frac{1}{2}\mu _{0}n^{2}rI\frac^{\mathbf})</p>
+<h3 id="answer-"><a href="#answer-" class="anchor"></a>✅ <strong>Answer</strong>:</h3>
+<p>The Poynting vector inside the solenoid is (\mathbf=-\frac{1}{2}\mu _{0}n^{2}rI\frac^{\mathbf}). The negative sign indicates that when the current is increasing ((\frac&gt;0)), the energy flows radially inward to build the magnetic field.</p>
+<hr />
+<p>The total power entering a length (l) of the solenoid is (P=\mu _{0}n^{2}\pi R^{2}lI\frac), which corresponds to the rate of change of the stored magnetic energy.</p>
+<h3 id="step-1--1"><a href="#step-1--1" class="anchor"></a>➡️ Step 1:</h3>
+<p>Set up the Surface Integral The total power (P) entering the solenoid through its curved surface is found by integrating the Poynting vector (\mathbf) over the surface area at (r=R). Since we want the power entering the volume, we use:(P=-\oint \mathbf\cdot d\mathbf)For a cylinder of length (l) and radius (R), the differential area vector (d\mathbf) points radially outward:(d\mathbf=R,d\phi ,dz^{\mathbf})</p>
+<h3 id="step-2--1"><a href="#step-2--1" class="anchor"></a>➡️ Step 2:</h3>
+<p>Evaluate the Integral Substitute the expression for (\mathbf) at the boundary (r=R) into the integral:(P=-\int _{0}^\int _{0}^{2\pi }(-\frac{1}{2}\mu _{0}n^{2}RI\frac^{\mathbf})\cdot (R,d\phi ,dz^{\mathbf}))The dot product (^{\mathbf}\cdot ^{\mathbf}=1). The constants move outside the integral:(P=\frac{1}{2}\mu _{0}n^{2}R^{2}I\frac\int _{0}^dz\int _{0}^{2\pi }d\phi )Evaluating the integrals over (z) and (\phi ) gives (l) and (2\pi ) respectively:(P=\frac{1}{2}\mu _{0}n^{2}R^{2}I\frac(2\pi l)=\mu _{0}n^{2}\pi R^{2}lI\frac)</p>
+<h3 id="step-3--1"><a href="#step-3--1" class="anchor"></a>➡️ Step 3:</h3>
+<p>Relate to Self-Inductance The self-inductance (L) of a solenoid of length (l) is (L=\mu _{0}n^{2}\pi R^{2}l). Substituting this into the power equation:(P=LI\frac=\frac(\frac{1}{2}LI^{2}))This confirms that the electromagnetic energy flowing into the solenoid via the Poynting flux is exactly the energy required to build the magnetic field.</p>
+<h3 id="answer--1"><a href="#answer--1" class="anchor"></a>✅ Answer:</h3>
+<p>The total power entering the length (l) is (P=\mu _{0}n^{2}\pi R^{2}lI\frac).</p>

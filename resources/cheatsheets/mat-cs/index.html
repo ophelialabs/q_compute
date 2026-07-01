@@ -1,0 +1,1048 @@
+<!DOCTYPE html><pre class="language-julia"><code># ============================================================================
+# COMPREHENSIVE MATHEMATICS CHEATSHEET
+# Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics
+# ============================================================================
+
+# ============================================================================
+# SECTION 1: TRIGONOMETRIC FUNCTIONS &amp; IDENTITIES
+# ============================================================================
+
+# --- CORE DEFINITIONS (SOHCAHTOA) ---
+# sin(θ) = Opposite / Hypotenuse
+# cos(θ) = Adjacent / Hypotenuse
+# tan(θ) = Opposite / Adjacent
+# Relationship: tan(θ) = sin(θ) / cos(θ)
+
+# --- SPECIAL ANGLE VALUES ---
+const SPECIAL_ANGLES = Dict(
+    0 => (sin=0, cos=1, tan=0),
+    π/6 => (sin=0.5, cos=√3/2, tan=1/√3),
+    π/4 => (sin=1/√2, cos=1/√2, tan=1),
+    π/3 => (sin=√3/2, cos=0.5, tan=√3),
+    π/2 => (sin=1, cos=0, tan=Inf)
+)
+
+function sin_deg(degrees)
+    &quot;&quot;&quot;Convert degrees to radians and compute sine&quot;&quot;&quot;
+    return sin(deg2rad(degrees))
+end
+
+function cos_deg(degrees)
+    &quot;&quot;&quot;Convert degrees to radians and compute cosine&quot;&quot;&quot;
+    return cos(deg2rad(degrees))
+end
+
+function tan_deg(degrees)
+    &quot;&quot;&quot;Convert degrees to radians and compute tangent&quot;&quot;&quot;
+    return tan(deg2rad(degrees))
+end
+
+function cot(θ)
+    &quot;&quot;&quot;Cotangent: cot(θ) = cos(θ) / sin(θ) = 1 / tan(θ)&quot;&quot;&quot;
+    return cos(θ) / sin(θ)
+end
+
+function sec(θ)
+    &quot;&quot;&quot;Secant: sec(θ) = 1 / cos(θ)&quot;&quot;&quot;
+    return 1 / cos(θ)
+end
+
+function csc(θ)
+    &quot;&quot;&quot;Cosecant: csc(θ) = 1 / sin(θ)&quot;&quot;&quot;
+    return 1 / sin(θ)
+end
+
+# --- PYTHAGOREAN IDENTITIES ---
+# sin²(θ) + cos²(θ) = 1
+# 1 + tan²(θ) = sec²(θ)
+# 1 + cot²(θ) = csc²(θ)
+
+function verify_pythagorean(θ)
+    &quot;&quot;&quot;Verify: sin²(θ) + cos²(θ) = 1&quot;&quot;&quot;
+    return sin(θ)^2 + cos(θ)^2
+end
+
+# --- COMPOUND ANGLE FORMULAS ---
+
+function sin_sum(A, B)
+    &quot;&quot;&quot;sin(A+B) = sin(A)cos(B) + cos(A)sin(B)&quot;&quot;&quot;
+    return sin(A)*cos(B) + cos(A)*sin(B)
+end
+
+function sin_diff(A, B)
+    &quot;&quot;&quot;sin(A-B) = sin(A)cos(B) - cos(A)sin(B)&quot;&quot;&quot;
+    return sin(A)*cos(B) - cos(A)*sin(B)
+end
+
+function cos_sum(A, B)
+    &quot;&quot;&quot;cos(A+B) = cos(A)cos(B) - sin(A)sin(B)&quot;&quot;&quot;
+    return cos(A)*cos(B) - sin(A)*sin(B)
+end
+
+function cos_diff(A, B)
+    &quot;&quot;&quot;cos(A-B) = cos(A)cos(B) + sin(A)sin(B)&quot;&quot;&quot;
+    return cos(A)*cos(B) + sin(A)*sin(B)
+end
+
+function tan_sum(A, B)
+    &quot;&quot;&quot;tan(A+B) = (tan(A) + tan(B)) / (1 - tan(A)tan(B))&quot;&quot;&quot;
+    return (tan(A) + tan(B)) / (1 - tan(A)*tan(B))
+end
+
+function tan_diff(A, B)
+    &quot;&quot;&quot;tan(A-B) = (tan(A) - tan(B)) / (1 + tan(A)tan(B))&quot;&quot;&quot;
+    return (tan(A) - tan(B)) / (1 + tan(A)*tan(B))
+end
+
+# --- DOUBLE ANGLE FORMULAS ---
+
+function sin_double(θ)
+    &quot;&quot;&quot;sin(2θ) = 2sin(θ)cos(θ)&quot;&quot;&quot;
+    return 2*sin(θ)*cos(θ)
+end
+
+function cos_double_v1(θ)
+    &quot;&quot;&quot;cos(2θ) = cos²(θ) - sin²(θ)&quot;&quot;&quot;
+    return cos(θ)^2 - sin(θ)^2
+end
+
+function cos_double_v2(θ)
+    &quot;&quot;&quot;cos(2θ) = 2cos²(θ) - 1&quot;&quot;&quot;
+    return 2*cos(θ)^2 - 1
+end
+
+function cos_double_v3(θ)
+    &quot;&quot;&quot;cos(2θ) = 1 - 2sin²(θ)&quot;&quot;&quot;
+    return 1 - 2*sin(θ)^2
+end
+
+function tan_double(θ)
+    &quot;&quot;&quot;tan(2θ) = 2tan(θ) / (1 - tan²(θ))&quot;&quot;&quot;
+    return 2*tan(θ) / (1 - tan(θ)^2)
+end
+
+# --- HALF ANGLE FORMULAS (Power Reduction) ---
+
+function sin_squared(θ)
+    &quot;&quot;&quot;sin²(θ) = (1 - cos(2θ)) / 2&quot;&quot;&quot;
+    return (1 - cos(2*θ)) / 2
+end
+
+function cos_squared(θ)
+    &quot;&quot;&quot;cos²(θ) = (1 + cos(2θ)) / 2&quot;&quot;&quot;
+    return (1 + cos(2*θ)) / 2
+end
+
+# --- GENERAL TRIANGLE FORMULAS ---
+
+function law_of_sines(a, A, b)
+    &quot;&quot;&quot;Given a, angle A, and b, find angle B using: a/sin(A) = b/sin(B)&quot;&quot;&quot;
+    return asin(b * sin(A) / a)
+end
+
+function law_of_cosines(a, b, C)
+    &quot;&quot;&quot;Find side c: c² = a² + b² - 2ab·cos(C)&quot;&quot;&quot;
+    return √(a^2 + b^2 - 2*a*b*cos(C))
+end
+
+function triangle_area(a, b, C)
+    &quot;&quot;&quot;Area = (1/2)ab·sin(C)&quot;&quot;&quot;
+    return 0.5 * a * b * sin(C)
+end
+
+# --- ASTC RULE (Quadrant Signs) ---
+# Q1 (All): All functions are positive
+# Q2 (Silver): Sine and Cosecant positive
+# Q3 (Tea): Tangent and Cotangent positive
+# Q4 (Cups): Cosine and Secant positive
+
+# ============================================================================
+# SECTION 2: LINEAR FUNCTIONS AND EQUATIONS
+# ============================================================================
+
+# --- STANDARD FORMS ---
+
+function slope_intercept(m, b, x)
+    &quot;&quot;&quot;
+    y = mx + b
+    m: slope, b: y-intercept
+    &quot;&quot;&quot;
+    return m * x + b
+end
+
+function point_slope(m, x₁, y₁, x)
+    &quot;&quot;&quot;
+    y - y₁ = m(x - x₁)
+    &quot;&quot;&quot;
+    return m * (x - x₁) + y₁
+end
+
+function standard_form(A, B, C, x)
+    &quot;&quot;&quot;
+    Ax + By = C
+    Solve for y: y = (C - Ax) / B
+    &quot;&quot;&quot;
+    return (C - A*x) / B
+end
+
+# --- SLOPE ANALYSIS ---
+
+function calculate_slope(x₁, y₁, x₂, y₂)
+    &quot;&quot;&quot;
+    m = (y₂ - y₁) / (x₂ - x₁)
+    &quot;&quot;&quot;
+    if x₂ == x₁
+        return Inf  # Undefined slope (vertical line)
+    end
+    return (y₂ - y₁) / (x₂ - x₁)
+end
+
+function slope_classification(m)
+    &quot;&quot;&quot;
+    Classify slope:
+    m > 0: Increasing (↗)
+    m &lt; 0: Decreasing (↘)
+    m = 0: Horizontal (→)
+    m = Inf: Vertical (↑)
+    &quot;&quot;&quot;
+    if m == Inf
+        return &quot;Vertical (undefined)&quot;
+    elseif m == 0
+        return &quot;Horizontal&quot;
+    elseif m > 0
+        return &quot;Increasing&quot;
+    else
+        return &quot;Decreasing&quot;
+    end
+end
+
+# --- LINE RELATIONSHIPS ---
+
+function parallel_lines(m₁, m₂)
+    &quot;&quot;&quot;
+    Lines are parallel if m₁ = m₂
+    &quot;&quot;&quot;
+    return m₁ ≈ m₂
+end
+
+function perpendicular_lines(m₁, m₂)
+    &quot;&quot;&quot;
+    Lines are perpendicular if m₁ × m₂ = -1
+    &quot;&quot;&quot;
+    return abs(m₁ * m₂ + 1) &lt; 1e-10
+end
+
+# --- DISTANCE &amp; MIDPOINT ---
+
+function distance_formula(x₁, y₁, x₂, y₂)
+    &quot;&quot;&quot;
+    d = √[(x₂ - x₁)² + (y₂ - y₁)²]
+    &quot;&quot;&quot;
+    return √((x₂ - x₁)^2 + (y₂ - y₁)^2)
+end
+
+function midpoint_formula(x₁, y₁, x₂, y₂)
+    &quot;&quot;&quot;
+    M = ((x₁ + x₂)/2, (y₁ + y₂)/2)
+    &quot;&quot;&quot;
+    return ((x₁ + x₂) / 2, (y₁ + y₂) / 2)
+end
+
+# --- MATRICES AND MATRIX OPERATIONS ---
+
+function matrix_add(A::Matrix, B::Matrix)
+    &quot;&quot;&quot;
+    Matrix addition: (A + B)ᵢⱼ = aᵢⱼ + bᵢⱼ
+    &quot;&quot;&quot;
+    return A .+ B
+end
+
+function matrix_multiply(A::Matrix, B::Matrix)
+    &quot;&quot;&quot;
+    Matrix multiplication: (AB)ᵢⱼ = Σₖ aᵢₖbₖⱼ
+    &quot;&quot;&quot;
+    return A * B
+end
+
+function matrix_transpose(A::Matrix)
+    &quot;&quot;&quot;
+    Transpose: (Aᵀ)ᵢⱼ = aⱼᵢ
+    &quot;&quot;&quot;
+    return transpose(A)
+end
+
+function matrix_determinant(A::Matrix)
+    &quot;&quot;&quot;
+    Determinant of square matrix
+    &quot;&quot;&quot;
+    return det(A)
+end
+
+function matrix_inverse(A::Matrix)
+    &quot;&quot;&quot;
+    Inverse: A⁻¹ such that AA⁻¹ = I
+    &quot;&quot;&quot;
+    return inv(A)
+end
+
+# --- EIGENVALUES &amp; EIGENVECTORS ---
+
+function eigenvalues(A::Matrix)
+    &quot;&quot;&quot;
+    Find eigenvalues: det(A - λI) = 0
+    &quot;&quot;&quot;
+    return eigvals(A)
+end
+
+function eigenvectors(A::Matrix)
+    &quot;&quot;&quot;
+    Find eigenvectors and eigenvalues
+    Returns: (eigenvalues, eigenvectors)
+    &quot;&quot;&quot;
+    F = eigen(A)
+    return (F.values, F.vectors)
+end
+
+function characteristic_polynomial(A::Matrix)
+    &quot;&quot;&quot;
+    Compute characteristic polynomial det(A - λI)
+    &quot;&quot;&quot;
+    n = size(A, 1)
+    # Placeholder: actual implementation would use symbolic math
+    return &quot;det(A - λI)&quot;
+end
+
+# ============================================================================
+# SECTION 3: QUADRATIC FUNCTIONS AND EQUATIONS
+# ============================================================================
+
+# --- STANDARD FORM ---
+# ax² + bx + c = 0
+# a ≠ 0
+
+function quadratic_formula(a, b, c)
+    &quot;&quot;&quot;
+    Solve ax² + bx + c = 0
+    Returns tuple of two solutions (real or complex)
+    &quot;&quot;&quot;
+    discriminant = b^2 - 4*a*c
+    sqrt_discriminant = √(Complex(discriminant))
+    x1 = (-b + sqrt_discriminant) / (2*a)
+    x2 = (-b - sqrt_discriminant) / (2*a)
+    return (x1, x2)
+end
+
+function discriminant(a, b, c)
+    &quot;&quot;&quot;
+    Calculate D = b² - 4ac
+    D > 0: Two distinct real solutions
+    D = 0: One real solution (repeated root)
+    D &lt; 0: Two complex/imaginary solutions
+    &quot;&quot;&quot;
+    return b^2 - 4*a*c
+end
+
+function solve_by_factoring(factors::Tuple)
+    &quot;&quot;&quot;
+    Given factors (p, q), solve (x - p)(x - q) = 0
+    Returns x = p or x = q
+    &quot;&quot;&quot;
+    return factors
+end
+
+function complete_the_square(a, b, c)
+    &quot;&quot;&quot;
+    Convert ax² + bx + c to vertex form: a(x - h)² + k
+    Returns (h, k) - the vertex coordinates
+    &quot;&quot;&quot;
+    h = -b / (2*a)
+    k = c - (b^2 / (4*a))
+    return (h, k)
+end
+
+function vertex_form(a, h, k, x)
+    &quot;&quot;&quot;Evaluate f(x) = a(x - h)² + k&quot;&quot;&quot;
+    return a * (x - h)^2 + k
+end
+
+function roots_from_discriminant(a, b, c)
+    &quot;&quot;&quot;
+    Analyze nature of roots based on discriminant
+    Returns: :two_real, :one_real, or :two_complex
+    &quot;&quot;&quot;
+    D = discriminant(a, b, c)
+    if D > 0
+        return :two_real
+    elseif D == 0
+        return :one_real
+    else
+        return :two_complex
+    end
+end
+
+# --- CONIC SECTIONS ---
+
+function conic_classification(A, B, C)
+    &quot;&quot;&quot;
+    Classify conic using discriminant Δ = B² - 4AC
+    Δ &lt; 0: Ellipse/Circle
+    Δ = 0: Parabola
+    Δ > 0: Hyperbola
+    &quot;&quot;&quot;
+    discriminant = B^2 - 4*A*C
+    if discriminant &lt; 0
+        if A ≈ C &amp;&amp; B ≈ 0
+            return &quot;Circle&quot;
+        else
+            return &quot;Ellipse&quot;
+        end
+    elseif discriminant ≈ 0
+        return &quot;Parabola&quot;
+    else
+        return &quot;Hyperbola&quot;
+    end
+end
+
+function ellipse_equation(a, b, h, k, x, y)
+    &quot;&quot;&quot;
+    Standard form: (x-h)²/a² + (y-k)²/b² = 1
+    Center: (h, k), semi-major: a, semi-minor: b
+    &quot;&quot;&quot;
+    return ((x - h)^2 / a^2) + ((y - k)^2 / b^2)
+end
+
+function hyperbola_equation(a, b, h, k, x, y)
+    &quot;&quot;&quot;
+    Standard form: (x-h)²/a² - (y-k)²/b² = 1
+    Asymptotes: y = ±(b/a)(x - h) + k
+    &quot;&quot;&quot;
+    return ((x - h)^2 / a^2) - ((y - k)^2 / b^2)
+end
+
+function parabola_vertex_form(a, h, k, x)
+    &quot;&quot;&quot;
+    Vertex form: y = a(x - h)² + k or x = a(y - k)² + h
+    Vertex: (h, k)
+    &quot;&quot;&quot;
+    return a * (x - h)^2 + k
+end
+
+# ============================================================================
+# SECTION 4: ALGEBRAIC FUNCTIONS AND EQUATIONS
+# ============================================================================
+
+# --- POLYNOMIAL OPERATIONS ---
+
+function poly_add(p1::Vector, p2::Vector)
+    &quot;&quot;&quot;
+    Add two polynomials represented as coefficient vectors
+    &quot;&quot;&quot;
+    n = max(length(p1), length(p2))
+    p1_padded = [p1; zeros(n - length(p1))]
+    p2_padded = [p2; zeros(n - length(p2))]
+    return p1_padded .+ p2_padded
+end
+
+function poly_multiply(p1::Vector, p2::Vector)
+    &quot;&quot;&quot;
+    Multiply two polynomials
+    &quot;&quot;&quot;
+    result = zeros(length(p1) + length(p2) - 1)
+    for i in 1:length(p1)
+        for j in 1:length(p2)
+            result[i + j - 1] += p1[i] * p2[j]
+        end
+    end
+    return result
+end
+
+# --- FACTORING POLYNOMIALS ---
+
+function factor_by_grouping(coeffs::Vector)
+    &quot;&quot;&quot;
+    Factor polynomial by grouping
+    Example: x³ - x² + 4x - 4 → (x² + 4)(x - 1)
+    &quot;&quot;&quot;
+    n = length(coeffs)
+    for i in 1:(n-1)
+        for j in (i+1):n
+            if coeffs[i] == coeffs[j]
+                # Found common factor
+                return [coeffs[1:i]; coeffs[i+1:end] - coeffs[i]]
+            end
+        end
+    end
+    return coeffs  # No factoring found
+end
+
+function synthetic_division(dividend::Vector, divisor_coeff::Vector)
+    &quot;&quot;&quot;
+    Synthetic division for polynomials
+    Dividend: highest degree first
+    Divisor: only coefficients, highest degree last
+    &quot;&quot;&quot;
+    result = copy(dividend)
+    n = length(divisor_coeff)
+    
+    for i in 1:(length(dividend) - n + 1)
+        if result[i] != 0
+            for j in 1:n
+                result[i + j - 1] -= result[i] * divisor_coeff[j]
+            end
+        end
+    end
+    
+    return result[1:(end-n+1)]  # Quotient
+end
+
+# --- EXPONENTS AND RADICALS ---
+
+function power(base, exp)
+    &quot;&quot;&quot;
+    Compute base^exp for integer exponents
+    &quot;&quot;&quot;
+    result = 1
+    for _ in 1:abs(exp)
+        result *= base
+    end
+    
+    if exp &lt; 0
+        return 1 / result
+    end
+    return result
+end
+
+function radical(expr, index=2)
+    &quot;&quot;&quot;
+    Compute n-th root: index = 2 for square root, 3 for cube root, etc.
+    &quot;&quot;&quot;
+    return expr^(1/index)
+end
+
+# --- GROUPS (Abstract Algebra) ---
+
+struct Group
+    elements::Vector
+    operation::Function
+    identity::Any
+    
+    function Group(elements, operation, identity)
+        new(elements, operation, identity)
+    end
+end
+
+function verify_group(G::Group)
+    &quot;&quot;&quot;
+    Verify group axioms:
+    1. Closure: a ∘ b ∈ G for all a, b ∈ G
+    2. Associativity (assumed for standard operations)
+    3. Identity: e ∘ a = a ∘ e = a
+    4. Inverse: a ∘ a⁻¹ = e
+    &quot;&quot;&quot;
+    # Check identity
+    for a in G.elements
+        if !(G.operation(G.identity, a) == a)
+            return false
+        end
+    end
+    return true
+end
+
+function cyclic_group(n)
+    &quot;&quot;&quot;
+    Generate cyclic group of order n: {0, 1, 2, ..., n-1} under addition mod n
+    &quot;&quot;&quot;
+    return Group(
+        collect(0:(n-1)),
+        (a, b) -> mod(a + b, n),
+        0
+    )
+end
+
+# --- VECTOR SPACES ---
+
+struct VectorSpace
+    dimension::Int
+    field::String  # &quot;ℝ&quot; or &quot;ℂ&quot;
+    
+    function VectorSpace(dim, field=&quot;ℝ&quot;)
+        new(dim, field)
+    end
+end
+
+function span(vectors::Vector{Vector})
+    &quot;&quot;&quot;
+    Find span of vectors: all linear combinations c₁v₁ + ... + cₙvₙ
+    Returns: dimension of span (rank)
+    &quot;&quot;&quot;
+    # Placeholder: would use rank computation
+    return &quot;Span dimension&quot;
+end
+
+function linear_independence(vectors::Vector{Vector})
+    &quot;&quot;&quot;
+    Check if vectors are linearly independent
+    Independent if: c₁v₁ + ... + cₙvₙ = 0 only when all cᵢ = 0
+    &quot;&quot;&quot;
+    # Placeholder: would check rank vs number of vectors
+    return true
+end
+
+function basis_dimension(V::VectorSpace)
+    &quot;&quot;&quot;
+    Dimension of vector space = number of basis vectors
+    &quot;&quot;&quot;
+    return V.dimension
+end
+
+# --- LINEAR TRANSFORMATIONS ---
+
+struct LinearTransformation
+    matrix::Matrix
+    domain_dim::Int
+    codomain_dim::Int
+end
+
+function apply_transformation(T::LinearTransformation, v::Vector)
+    &quot;&quot;&quot;
+    Apply linear transformation: T(v) = Av
+    &quot;&quot;&quot;
+    return T.matrix * v
+end
+
+function kernel(T::LinearTransformation)
+    &quot;&quot;&quot;
+    Kernel: ker(T) = {v : T(v) = 0}
+    &quot;&quot;&quot;
+    # Placeholder: would compute null space
+    return &quot;Null space&quot;
+end
+
+function image(T::LinearTransformation)
+    &quot;&quot;&quot;
+    Image: Im(T) = {T(v) : v in domain}
+    &quot;&quot;&quot;
+    # Placeholder: would compute column space
+    return &quot;Column space&quot;
+end
+
+function rank_nullity(T::LinearTransformation)
+    &quot;&quot;&quot;
+    Rank-Nullity Theorem: rank(T) + nullity(T) = dim(domain)
+    &quot;&quot;&quot;
+    rank_val = rank(T.matrix)
+    nullity_val = T.domain_dim - rank_val
+    return (rank_val, nullity_val)
+end
+
+# --- SYMMETRY GROUPS ---
+
+struct SymmetryGroup
+    name::String
+    order::Int
+    elements::Vector{String}
+end
+
+function dihedral_group(n)
+    &quot;&quot;&quot;
+    Dihedral group Dₙ: symmetries of regular n-gon
+    Order: |Dₙ| = 2n (n rotations + n reflections)
+    &quot;&quot;&quot;
+    rotations = [&quot;r^$i&quot; for i in 0:(n-1)]
+    reflections = [&quot;s*r^$i&quot; for i in 0:(n-1)]
+    elements = vcat(rotations, reflections)
+    return SymmetryGroup(&quot;D_$n&quot;, 2*n, elements)
+end
+
+function symmetric_group(n)
+    &quot;&quot;&quot;
+    Symmetric group Sₙ: all permutations of n elements
+    Order: |Sₙ| = n!
+    &quot;&quot;&quot;
+    return SymmetryGroup(&quot;S_$n&quot;, factorial(n), [&quot;permutations of $n elements&quot;])
+end
+
+function cycle_notation(permutation::Vector)
+    &quot;&quot;&quot;
+    Convert permutation to cycle notation
+    Example: [2, 3, 1] represents cycle (1 2 3)
+    &quot;&quot;&quot;
+    # Placeholder: cycle decomposition
+    return &quot;Cycle notation&quot;
+end
+
+# --- BILINEAR FORMS ---
+
+struct BilinearForm
+    matrix::Matrix
+end
+
+function inner_product(u::Vector, v::Vector)
+    &quot;&quot;&quot;
+    Standard inner product: ⟨u, v⟩ = u₁v₁ + u₂v₂ + ... + uₙvₙ
+    &quot;&quot;&quot;
+    return dot(u, v)
+end
+
+function bilinear_form_apply(B::BilinearForm, u::Vector, v::Vector)
+    &quot;&quot;&quot;
+    Apply bilinear form: B(u, v) = uᵀBv
+    &quot;&quot;&quot;
+    return transpose(u) * B.matrix * v
+end
+
+function norm_from_inner_product(v::Vector)
+    &quot;&quot;&quot;
+    Norm: ‖v‖ = √⟨v, v⟩
+    &quot;&quot;&quot;
+    return √(dot(v, v))
+end
+
+function orthogonal_vectors(u::Vector, v::Vector)
+    &quot;&quot;&quot;
+    Vectors are orthogonal if ⟨u, v⟩ = 0
+    &quot;&quot;&quot;
+    return abs(dot(u, v)) &lt; 1e-10
+end
+
+function gram_schmidt(vectors::Vector{Vector})
+    &quot;&quot;&quot;
+    Gram-Schmidt orthogonalization process
+    Convert linearly independent vectors to orthonormal basis
+    &quot;&quot;&quot;
+    n = length(vectors)
+    orthogonal = Vector{Vector}(undef, n)
+    
+    for i in 1:n
+        orthogonal[i] = vectors[i]
+        for j in 1:(i-1)
+            proj = (dot(vectors[i], orthogonal[j]) / dot(orthogonal[j], orthogonal[j])) .* orthogonal[j]
+            orthogonal[i] = orthogonal[i] - proj
+        end
+    end
+    
+    return [v / norm(v) for v in orthogonal]
+end
+
+# --- LINEAR GROUPS ---
+
+function general_linear_group(n, p=nothing)
+    &quot;&quot;&quot;
+    GLₙ(𝔽): invertible n×n matrices over field 𝔽
+    If p is prime: |GLₙ(Fₚ)| = (qⁿ - 1)(qⁿ - q)...(qⁿ - qⁿ⁻¹) where q = p
+    &quot;&quot;&quot;
+    return &quot;GL_$n&quot;
+end
+
+function special_linear_group(n, p=nothing)
+    &quot;&quot;&quot;
+    SLₙ(𝔽): matrices in GLₙ with determinant 1
+    Order: |SLₙ(Fₚ)| = |GLₙ(Fₚ)| / (p - 1)
+    &quot;&quot;&quot;
+    return &quot;SL_$n&quot;
+end
+
+function orthogonal_group(n)
+    &quot;&quot;&quot;
+    O(n): matrices A where AAᵀ = I
+    Preserves inner product: ⟨Au, Av⟩ = ⟨u, v⟩
+    &quot;&quot;&quot;
+    return &quot;O($n)&quot;
+end
+
+function special_orthogonal_group(n)
+    &quot;&quot;&quot;
+    SO(n): orthogonal matrices with det(A) = 1 (rotations)
+    &quot;&quot;&quot;
+    return &quot;SO($n)&quot;
+end
+
+function unitary_group(n)
+    &quot;&quot;&quot;
+    U(n): complex matrices A where A†A = I
+    Complex generalization of orthogonal group
+    &quot;&quot;&quot;
+    return &quot;U($n)&quot;
+end
+
+# ============================================================================
+# SECTION 5: DISCRETE MATHEMATICS
+# ============================================================================
+
+# --- LOGIC &amp; SET THEORY ---
+
+# De Morgan&apos;s Laws
+# ¬(p ∧ q) ≡ ¬p ∨ ¬q
+# ¬(p ∨ q) ≡ ¬p ∧ ¬q
+# Conditional: p → q ≡ ¬p ∨ q
+# Biconditional: p ↔ q ≡ (p → q) ∧ (q → p)
+
+function inclusion_exclusion(A_size, B_size, intersection_size)
+    &quot;&quot;&quot;
+    |A ∪ B| = |A| + |B| - |A ∩ B|
+    &quot;&quot;&quot;
+    return A_size + B_size - intersection_size
+end
+
+function power_set_count(n)
+    &quot;&quot;&quot;
+    Number of subsets of a set with n elements = 2ⁿ
+    &quot;&quot;&quot;
+    return 2^n
+end
+
+# --- COMBINATORICS (Counting) ---
+
+function factorial(n)
+    &quot;&quot;&quot;n! = n × (n-1) × ... × 1&quot;&quot;&quot;
+    return factorial(BigInt(n))
+end
+
+function permutations(n, r)
+    &quot;&quot;&quot;
+    P(n,r) = n! / (n-r)!
+    Number of ways to arrange r items from n (order matters)
+    &quot;&quot;&quot;
+    return factorial(n) ÷ factorial(n - r)
+end
+
+function combinations(n, r)
+    &quot;&quot;&quot;
+    C(n,r) = n! / (r!(n-r)!)
+    Number of ways to choose r items from n (order doesn&apos;t matter)
+    &quot;&quot;&quot;
+    return factorial(n) ÷ (factorial(r) * factorial(n - r))
+end
+
+function permutations_with_repetition(n, repetitions::Vector)
+    &quot;&quot;&quot;
+    n! / (n₁! × n₂! × ... × nₖ!)
+    Arranging objects where some are identical
+    Example: letters in &quot;MISSISSIPPI&quot;
+    &quot;&quot;&quot;
+    return factorial(sum(repetitions)) ÷ prod(factorial.(repetitions))
+end
+
+# --- NUMBER THEORY &amp; SEQUENCES ---
+
+function arithmetic_sum(a₁, aₙ, n)
+    &quot;&quot;&quot;
+    Sum of arithmetic sequence: Sₙ = n/2 × (a₁ + aₙ)
+    &quot;&quot;&quot;
+    return n * (a₁ + aₙ) / 2
+end
+
+function arithmetic_term(a₁, d, n)
+    &quot;&quot;&quot;
+    nth term of arithmetic sequence: aₙ = a₁ + (n-1)d
+    &quot;&quot;&quot;
+    return a₁ + (n - 1) * d
+end
+
+function geometric_sum(a₁, r, n)
+    &quot;&quot;&quot;
+    Sum of geometric sequence: Sₙ = a₁ × (1 - rⁿ) / (1 - r)
+    Valid for r ≠ 1
+    &quot;&quot;&quot;
+    if r == 1
+        return a₁ * n
+    end
+    return a₁ * (1 - r^n) / (1 - r)
+end
+
+function geometric_term(a₁, r, n)
+    &quot;&quot;&quot;
+    nth term of geometric sequence: aₙ = a₁ × r^(n-1)
+    &quot;&quot;&quot;
+    return a₁ * r^(n - 1)
+end
+
+function modular_congruence(a, b, m)
+    &quot;&quot;&quot;
+    a ≡ b (mod m) means m divides (a - b)
+    Returns true if congruent
+    &quot;&quot;&quot;
+    return mod(a - b, m) == 0
+end
+
+function division_algorithm(a, b)
+    &quot;&quot;&quot;
+    a = bq + r, where 0 ≤ r &lt; |b|
+    Returns quotient q and remainder r
+    &quot;&quot;&quot;
+    q = div(a, b)
+    r = mod(a, b)
+    return (q, r)
+end
+
+# --- GRAPH THEORY ---
+
+function handshaking_lemma(degrees::Vector)
+    &quot;&quot;&quot;
+    Sum of degrees = 2 × |E|
+    Verify: sum of all vertex degrees equals twice the number of edges
+    &quot;&quot;&quot;
+    return sum(degrees) ÷ 2
+end
+
+function euler_formula_planar(V, E, F)
+    &quot;&quot;&quot;
+    Euler&apos;s formula for planar graphs: V - E + F = 2
+    Returns true if graph satisfies the formula
+    &quot;&quot;&quot;
+    return V - E + F == 2
+end
+
+# --- PROBABILITY ---
+
+function probability_event(favorable_outcomes, total_outcomes)
+    &quot;&quot;&quot;
+    P(E) = |E| / |S|
+    &quot;&quot;&quot;
+    return favorable_outcomes / total_outcomes
+end
+
+function complement_rule(P_E)
+    &quot;&quot;&quot;
+    P(Ē) = 1 - P(E)
+    Probability of complement event
+    &quot;&quot;&quot;
+    return 1 - P_E
+end
+
+function expected_value(outcomes::Vector, probabilities::Vector)
+    &quot;&quot;&quot;
+    E(X) = Σ xᵢ × P(xᵢ)
+    &quot;&quot;&quot;
+    return sum(outcomes .* probabilities)
+end
+
+# --- BOOLEAN ALGEBRA ---
+
+function boolean_and(p::Bool, q::Bool)
+    &quot;&quot;&quot;
+    Boolean AND: p ∧ q
+    &quot;&quot;&quot;
+    return p &amp;&amp; q
+end
+
+function boolean_or(p::Bool, q::Bool)
+    &quot;&quot;&quot;
+    Boolean OR: p ∨ q
+    &quot;&quot;&quot;
+    return p || q
+end
+
+function boolean_not(p::Bool)
+    &quot;&quot;&quot;
+    Boolean NOT: ¬p
+    &quot;&quot;&quot;
+    return !p
+end
+
+function de_morgan_and(p::Bool, q::Bool)
+    &quot;&quot;&quot;
+    ¬(p ∧ q) ≡ ¬p ∨ ¬q
+    &quot;&quot;&quot;
+    return !p || !q
+end
+
+function de_morgan_or(p::Bool, q::Bool)
+    &quot;&quot;&quot;
+    ¬(p ∨ q) ≡ ¬p ∧ ¬q
+    &quot;&quot;&quot;
+    return !p &amp;&amp; !q
+end
+
+function truth_table_size(num_variables)
+    &quot;&quot;&quot;
+    Number of rows in truth table = 2ⁿ for n variables
+    &quot;&quot;&quot;
+    return 2^num_variables
+end
+
+# --- RECURRENCE RELATIONS ---
+
+function fibonacci(n)
+    &quot;&quot;&quot;
+    Fibonacci: Fₙ = Fₙ₋₁ + Fₙ₋₂
+    F₀ = 0, F₁ = 1
+    &quot;&quot;&quot;
+    if n &lt;= 1
+        return n
+    end
+    
+    a, b = 0, 1
+    for _ in 2:n
+        a, b = b, a + b
+    end
+    return b
+end
+
+function solve_linear_homogeneous(c1, c2, r1, r2, n)
+    &quot;&quot;&quot;
+    Solve aₙ = c₁·aₙ₋₁ + c₂·aₙ₋₂
+    Characteristic roots: r₁, r₂
+    General solution: aₙ = A·r₁ⁿ + B·r₂ⁿ
+    &quot;&quot;&quot;
+    # Placeholder: would solve for A, B using initial conditions
+    return &quot;aₙ = A*r₁ⁿ + B*r₂ⁿ&quot;
+end
+
+function solve_recurrence_with_initial(recurrence_func, a0, a1, n)
+    &quot;&quot;&quot;
+    Solve recurrence relation with initial conditions
+    recurrence_func: function defining aₙ in terms of previous terms
+    &quot;&quot;&quot;
+    sequence = [a0, a1]
+    for i in 3:n
+        next_term = recurrence_func(sequence[end], sequence[end-1], i)
+        push!(sequence, next_term)
+    end
+    return sequence
+end
+
+function characteristic_polynomial_recurrence(coeffs::Vector)
+    &quot;&quot;&quot;
+    For recurrence aₙ = c₁·aₙ₋₁ + ... + cₖ·aₙ₋ₖ
+    Characteristic polynomial: rⁿ - c₁·rⁿ⁻¹ - ... - cₖ = 0
+    &quot;&quot;&quot;
+    # Placeholder: would construct polynomial
+    return &quot;rⁿ - c₁·rⁿ⁻¹ - ... - cₖ&quot;
+end
+
+# ============================================================================
+# QUICK REFERENCE GUIDE
+# ============================================================================
+# 
+# TRIGONOMETRY TIPS:
+# - Use ASTC rule to determine sign of trig functions in each quadrant
+# - Compound angle formulas useful for angles like 75° (45° + 30°)
+# - Double/half angle formulas simplify calculus and higher-degree equations
+# - Inverse functions: arcsin, arccos, arctan have restricted domains/ranges
+#
+# LINEAR ALGEBRA TIPS:
+# - Slope determines line direction: m > 0 increasing, m &lt; 0 decreasing
+# - Parallel lines: same slope; Perpendicular: slopes are negative reciprocals
+# - Matrices: order matters! AB ≠ BA in general
+# - Eigenvalues/eigenvectors: found from det(A - λI) = 0
+#
+# QUADRATIC TIPS:
+# - Factoring is fastest when equation factors nicely
+# - Use square root property when b = 0 (no linear term)
+# - Completing the square converts to vertex form for graphing
+# - Conic sections: classify using discriminant Δ = B² - 4AC
+#
+# ALGEBRA (ABSTRACT) TIPS:
+# - Groups: verify closure, associativity, identity, inverse
+# - Vector spaces: check subspace closure properties
+# - Linear transformations: represented by matrices
+# - Gram-Schmidt: creates orthonormal basis from any basis
+#
+# DISCRETE MATH TIPS:
+# - Identify problem type: order matters? (Permutation vs Combination)
+# - Recurrence relations: find characteristic roots for general solution
+# - Boolean algebra: De Morgan&apos;s Laws crucial for logic simplification
+# - Most problems solved by breaking into sub-problems (Recursion)
+#
+# ============================================================================</code></pre>
