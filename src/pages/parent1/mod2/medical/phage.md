@@ -105,7 +105,7 @@ Sequence the Strain: Use PacBio or Oxford Nanopore sequencing to determine the g
 ### Phase 2: Eliminating Recognition Sites 
 3. Synonymous Mutation Strategy: For sites located within essential plasmid components (like the antibiotic resistance gene or the rep gene), perform synonymous codon swapping. Change the DNA sequence to remove the RM site while maintaining the exact same amino acid sequence.
 4. Target Deletion/Replacement: For sites in non-coding "backbone" regions (linkers or promoters), use Site-Directed Mutagenesis (SDM) or order a custom synthetic gene fragment that replaces the entire region with a sequence lacking those motifs.
-5. Remove Type IV "Bait": If your host has a Type IV system (which targets modified DNA), ensure your plasmid is grown in an \(McmrA^{-}B^{-}\) E. coli strain (like DH10B or INV110) to prevent unwanted cytosine methylation that would trigger host suicide. 
+5. Remove Type IV "Bait": If your host has a Type IV system (which targets modified DNA), ensure your plasmid is grown in an \\(McmrA^{-}B^{-}\\) E. coli strain (like DH10B or INV110) to prevent unwanted cytosine methylation that would trigger host suicide. 
 
 ### Phase 3: "Passing the Guard" (The Mimicry Step) 
 6. In Vivo Methylation (The "Shadow" Strain): 

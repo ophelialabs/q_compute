@@ -11,14 +11,14 @@ tags: ["parent1_mod1", "track_material", "markdown", "frontmatter"]
 <wiki:Qt_Creator>
 If your lecture does not need to run code or use interactivity. You can write it as a markdown file.
 
-As an extra twist, you can evaluate julia code inside a `\$` symbol. For example,
+As an extra twist, you can evaluate Julia code inside a dollar-sign expression. For example,
 
 ```julia
 \$(1 + 1)
 ```
 will become
 
-$(1 + 1)
+\$(1 + 1)
 
 ## Add Front-matter
 

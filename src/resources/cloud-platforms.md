@@ -260,7 +260,7 @@
 
 <h3>Setup & Credits</h3>
         <ul>
-            <li>Free trial: $200 USD credit for 30 days</li>
+            <li>Free trial: 200 USD credit for 30 days</li>
             <li>Always-free services: 12+ months of select services</li>
             <li>M365 Business Standard: 30-day trial available</li>
         </ul>
@@ -398,7 +398,7 @@
 
 <h3>Setup & Credits</h3>
         <ul>
-            <li>Free trial: $300 USD credit for 3 months</li>
+            <li>Free trial: 300 USD credit for 3 months</li>
             <li>Always-free tier: Many services have perpetual free limits</li>
             <li>Google Cloud Storage: Free egress within Google Cloud</li>
         </ul>
@@ -491,7 +491,7 @@
 
 <h3>Setup & Credits</h3>
         <ul>
-            <li>Free trial: $300 USD credit for 30 days</li>
+            <li>Free trial: 300 USD credit for 30 days</li>
             <li>Always-free resources: Limited but useful for development</li>
             <li>Sustained use discounts: Available for committed resources</li>
         </ul>
