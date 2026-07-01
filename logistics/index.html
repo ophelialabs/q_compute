@@ -108,6 +108,33 @@ window.pluto_recording_audio_url = undefined;
 
 </head>
 <body>
+    <script>
+        (() => {
+            const liveReloadUrl = "".."/__livereload_state.json";
+            let lastVersion = null;
+
+            const checkForUpdate = () => {
+                fetch(liveReloadUrl + "?t=" + Date.now(), { cache: "no-store" })
+                    .then((response) => response.ok ? response.text() : "")
+                    .then((text) => {
+                        try {
+                            const data = text ? JSON.parse(text) : null;
+                            const version = data?.version;
+                            if (lastVersion !== null && version !== null && version !== lastVersion) {
+                                window.location.reload();
+                            }
+                            lastVersion = version ?? lastVersion;
+                        } catch (error) {
+                            // Ignore malformed state files.
+                        }
+                    })
+                    .catch(() => {});
+            };
+
+            checkForUpdate();
+            window.setInterval(checkForUpdate, 2000);
+        })();
+    </script>
     <!-- TOP NAVBAR -->
     <!-- TOP NAVBAR -->
 <header id="pages-navbar">
@@ -251,7 +278,7 @@ main a img {
 <h2 id="sites"><a href="#sites" class="anchor"></a>Sites</h2>
 <hr />
 <ul>
-<li><a href="https://ophelialabs.github.io/jb./">JB</a>
+<li><a href="https://www.programiz.com/">Programiz</a> | <a href="https://ophelialabs.github.io/jb./">JB</a>
 | <a href="https://computationalthinking.mit.edu">Computational Thinking</a>
 | <a href="https://matsci.org/">MatSCI</a></li>
 </ul>
