@@ -23,22 +23,11 @@ function initializeDropdowns() {
         const section = toggle.closest("li.dropdown-section")
         const sectionId = toggle.textContent.trim()
 
-        // Default to collapsed (add class)
-        section.classList.add("collapsed")
-
-        // Override with localStorage if a saved state exists
-        if (dropdownStates.hasOwnProperty(sectionId) && !dropdownStates[sectionId]) {
-            // If localStorage says it should be open (false = not collapsed), remove the class
+        const savedState = dropdownStates[sectionId]
+        if (savedState === false) {
             section.classList.remove("collapsed")
-        }
-
-        // Also expand if current page is in this section
-        const hasActivePage = section.querySelector("li.active")
-        if (hasActivePage) {
-            section.classList.remove("collapsed")
-            // Update localStorage to remember this state
-            dropdownStates[sectionId] = false
-            localStorage.setItem("dropdown_states", JSON.stringify(dropdownStates))
+        } else {
+            section.classList.add("collapsed")
         }
     })
 }

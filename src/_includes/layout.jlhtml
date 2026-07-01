@@ -191,7 +191,7 @@ $(pluto_head)
             
             [
                 if isa(section_name, AbstractDict) || isa(section_name, AbstractVector)
-                    # This is a dropdown section
+                    # This is a dropdown section with nested module groups
                     subsections = section_name
                     @htl("""
                     <li class="dropdown-section">
@@ -199,15 +199,25 @@ $(pluto_head)
                     <ul class="dropdown-content">
                     $([
                         @htl("""
-                        <li class="dropdown-group">
-                        <h4>$(subsection_name)</h4>
-                        <ul>
+                        <li class="dropdown-section nested-dropdown">
+                        <h3 class="dropdown-toggle">$(subsection_name)</h3>
+                        <ul class="dropdown-content">
                         $(render_page_items(subsection_id))
                         </ul>
                         </li>
                         """)
                         for (subsection_id, subsection_name) in subsections
                     ])
+                    </ul>
+                    </li>
+                    """)
+                elseif section_id in ("welcome", "resources")
+                    # These top-level sections should also behave like collapsible dropdowns
+                    @htl("""
+                    <li class="dropdown-section">
+                    <h3 class="dropdown-toggle">$(section_name)</h3>
+                    <ul class="dropdown-content">
+                    $(render_page_items(section_id))
                     </ul>
                     </li>
                     """)

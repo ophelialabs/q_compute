@@ -1,4 +1,13 @@
 ---
+title: "Dashboard"
+order: 1
+chapter: 1
+section: 1
+layout: "md.jlmd"
+tags: ["parent1_mod1", "track_material", "markdown", "frontmatter"]
+---
+
+---
 title: "Dashboard-index"
 tags: ["dashboard"]
 order: 1
