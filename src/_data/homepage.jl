@@ -71,7 +71,7 @@ Dict(
                      ]
                 ),
                 Dict("key" => "Programming", "name" => "Programming Languages",
-                     "url" => "https://jlabclouds.github.io/framework-landscape",
+                     "url" => "https://jlabclouds.github.io/framework-landscape/?group=modern-specialized#q--language-development",
                      "description" => "Overview programming languages. Learn about the syntax, features, and use cases of each language for quantum algorithm development.",
                      "img" => "https://user-images.githubusercontent.com/6933510/168320384-9c8b1e5c-7a3d-4f2e-9b1c-8a0e5a7c6b9c.png",
                      "category" => "Core Quantum Platforms", 
