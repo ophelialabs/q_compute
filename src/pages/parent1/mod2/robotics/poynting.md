@@ -18,6 +18,7 @@ The Poynting Theorem confirms that the total flux of the Poynting vector through
 
 The Poynting vector for an infinite solenoid with radius \(R\), turns per unit length \(n\), and time-varying current \(I(t)\) is \(\mathbf{S}=-\frac{1}{2}\mu _{0}n^{2}rI\frac{dI}{dt}\^{\mathbf{r}}\) for any internal radius \(r\le R\). 
 \
+
 ### ➡️ **Step 1**: 
 Determine the Magnetic Field Using Ampère's Law for an ideal infinite solenoid, the magnetic field \(\mathbf{B}\) is uniform inside and zero outside. For a current \(I(t)\) flowing in the azimuthal direction (\(\^{\phi }\)), the field is:\(\mathbf{B}=\mu _{0}nI\^{\mathbf{z}}\)
 
@@ -33,6 +34,7 @@ The Poynting vector inside the solenoid is \(\mathbf{S}=-\frac{1}{2}\mu _{0}n^{2
 ---
 
 The total power entering a length \(l\) of the solenoid is \(P=\mu _{0}n^{2}\pi R^{2}lI\frac{dI}{dt}\), which corresponds to the rate of change of the stored magnetic energy. 
+
 ### ➡️ Step 1: 
 Set up the Surface Integral The total power \(P\) entering the solenoid through its curved surface is found by integrating the Poynting vector \(\mathbf{S}\) over the surface area at \(r=R\). Since we want the power entering the volume, we use:\(P=-\oint \mathbf{S}\cdot d\mathbf{a}\)For a cylinder of length \(l\) and radius \(R\), the differential area vector \(d\mathbf{a}\) points radially outward:\(d\mathbf{a}=R\,d\phi \,dz\^{\mathbf{r}}\)
 
