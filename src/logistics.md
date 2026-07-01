@@ -18,16 +18,11 @@ A live online Julia/Pluto textbook, adapted for quantum computing education. The
 
 ## Sites
 ---
-- [Programiz](https://www.programiz.com/) | [JB](https://ophelialabs.github.io/jb./)
+-  
+| [JB](https://ophelialabs.github.io/jb./)
 | [Computational Thinking](https://computationalthinking.mit.edu)
 | [MatSCI](https://matsci.org/)
----
-- [CNCF](https://landscape.cncf.io/) 
-| [Programming](https://jlabclouds.github.io/framework-landscape) 
-| [Tools](https://jlabclouds.github.io/tools-landscape) 
-| [Clouds](https://ophelialabs.github.io/landscape) 
-| [Adopters](https://github.com/cncf/landscape2/blob/main/ADOPTERS.md) 
----
+
 1. [MLJ: Machine Learning Framework for Julia](https://juliaai.github.io/MLJ.jl/stable/) Add to [framework-landscape](https://jlabclouds.github.io/framework-landscape/?group=modern-specialized)
 
 ## 📚 References & Resources
