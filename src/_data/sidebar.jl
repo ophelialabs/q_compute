@@ -2,7 +2,6 @@
     "welcome" => "Welcome",
     "resources" => "Resources",
     "dashboard" => [
-        "dashboard" => "Dashboard",
         "qnet" => "Qnet Dash"
     ],
     "parent1" => [

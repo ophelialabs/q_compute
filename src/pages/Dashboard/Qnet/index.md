@@ -1,10 +1,10 @@
 ---
-title: "Dashboard"
+title: "Dashboard Overview"
 order: 1
 chapter: 2
 section: 2
 layout: "md.jlmd"
-tags: ["dashboard"]
+tags: ["qnet"]
 ---
 
 # Broadcom DX NetOps: 
