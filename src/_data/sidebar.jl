@@ -13,4 +13,3 @@
         "parent2_mod1" => "Module 1: Placeholder",
         "parent2_mod2" => "Module 2: Coming Soon"
     ]
-]
