@@ -1,45 +1,36 @@
+---
+title: "Top 100 Universities Worldwide"
+order: 1
+layout: "layout.jlhtml"
+tags: ["resources", "universities", "education", "research", "academia"]
+description: "Explore the top 100 universities and research facilities worldwide, ranked by academic excellence and global impact. Discover leading institutions in various fields of study, from aerospace engineering to biomedical research."
+image: "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the top 100 global universities and research facilities ranked by R&D excellence. Filter by departments: Aerospace Engineering, BioMedical Engineering, BioTechnology, Chemistry, Engineering, Geospatial Analytics, Mathematics, Nanolithography, Nuclear Engineering, Physics, and Textiles.">
-    <meta name="keywords" content="top 100 universities, research facilities, CERN, aerospace engineering, biomedical engineering, biotechnology, chemistry, engineering, physics, nanolithography, nuclear engineering, mathematics, geospatial analytics, textiles, R&D departments, research institutions"">
-    <meta name="author" content="Top 100 Universities Guide">
-    <meta property="og:title" content="Top 100 Universities Worldwide - Ranked by Academic Excellence">
-    <meta property="og:description" content="Comprehensive ranking of the top 100 universities globally with direct links to official websites. Explore research, teaching, and innovation leaders.">
-    <meta property="og:type" content="website">
-    <meta name="robots" content="index, follow">
-    <title>Top 100 Universities Worldwide - Ranked by Academic Excellence & Global Impact</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 40px 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         .container-main {
             max-width: 1400px;
             margin: 0 auto;
         }
-
         .header {
             text-align: center;
             color: white;
             margin-bottom: 50px;
             animation: slideDown 0.6s ease-out;
         }
-
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -50,7 +41,6 @@
                 transform: translateY(0);
             }
         }
-
         .header h1 {
             font-weight: 700;
             font-size: 3rem;
@@ -61,19 +51,16 @@
             justify-content: center;
             gap: 15px;
         }
-
         .header p {
             font-size: 1.2rem;
             opacity: 0.95;
             font-style: italic;
         }
-
         .filter-section {
             margin-bottom: 40px;
             text-align: center;
             animation: fadeIn 0.8s ease-out 0.2s both;
         }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -82,7 +69,6 @@
                 opacity: 1;
             }
         }
-
         .filter-section input {
             max-width: 600px;
             padding: 15px 25px;
@@ -92,22 +78,18 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
-
         .filter-section input:focus {
             outline: none;
             box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
             transform: scale(1.02);
         }
-
         .filter-section input::placeholder {
             color: #aaa;
         }
-
         .ranking-group {
             margin-bottom: 50px;
             animation: fadeIn 0.8s ease-out 0.4s both;
         }
-
         .ranking-group-title {
             background: white;
             color: #667eea;
@@ -122,17 +104,14 @@
             align-items: center;
             gap: 12px;
         }
-
         .ranking-group-title i {
             font-size: 2rem;
         }
-
         .universities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
-
         .university-card {
             background: white;
             border-radius: 12px;
@@ -148,13 +127,11 @@
             text-decoration: none;
             color: inherit;
         }
-
         .university-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
             border-left-color: #764ba2;
         }
-
         a.university-card {
             text-decoration: none;
             color: inherit;
@@ -162,7 +139,6 @@
             flex-direction: column;
             height: 100%;
         }
-
         .university-card::before {
             content: '';
             position: absolute;
@@ -172,7 +148,6 @@
             height: 4px;
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         }
-
         .rank-badge {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -186,17 +161,14 @@
             text-align: center;
             box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
         }
-
         .rank-badge.top-10 {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
         }
-
         .rank-badge.top-25 {
             background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%);
             box-shadow: 0 2px 8px rgba(192, 192, 192, 0.4);
         }
-
         .university-name {
             font-size: 1.25rem;
             font-weight: 700;
@@ -204,7 +176,6 @@
             margin-bottom: 8px;
             line-height: 1.3;
         }
-
         .country {
             color: #667eea;
             font-weight: 600;
@@ -214,14 +185,12 @@
             align-items: center;
             gap: 6px;
         }
-
         .excellence-metrics {
             display: flex;
             gap: 10px;
             margin-top: 10px;
             flex-wrap: wrap;
         }
-
         .metric-tag {
             background: #f0f0f0;
             color: #555;
@@ -230,21 +199,18 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-
         .card-body {
             padding: 25px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-
         .no-results {
             text-align: center;
             color: white;
             padding: 60px 20px;
             font-size: 1.2rem;
         }
-
         .stats-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -252,7 +218,6 @@
             margin-bottom: 50px;
             animation: fadeIn 0.8s ease-out 0.1s both;
         }
-
         .stat-card {
             background: rgba(255, 255, 255, 0.95);
             padding: 25px 30px;
@@ -261,30 +226,25 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: #667eea;
             margin-bottom: 8px;
         }
-
         .stat-label {
             color: #666;
             font-size: 1rem;
             font-weight: 500;
         }
-
         .sort-section {
             text-align: center;
             margin-bottom: 30px;
         }
-
         .sort-section button {
             background: white;
             color: #667eea;
@@ -296,13 +256,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .sort-section button:hover,
         .sort-section button.active {
             background: #667eea;
             color: white;
         }
-
         .department-filter-section {
             margin-bottom: 40px;
             padding: 30px;
@@ -310,20 +268,17 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-
         .department-filter-title {
             color: #667eea;
             font-weight: 700;
             margin-bottom: 20px;
             font-size: 1.1rem;
         }
-
         .department-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-
         .dept-btn {
             background: #f0f0f0;
             color: #333;
@@ -335,19 +290,16 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .dept-btn:hover {
             background: #667eea;
             color: white;
             border-color: #667eea;
         }
-
         .dept-btn.active {
             background: #667eea;
             color: white;
             border-color: #764ba2;
         }
-
         .dept-badge {
             display: inline-block;
             background: #667eea;
@@ -360,10 +312,6 @@
             margin-right: 4px;
         }
     </style>
-</head>
-
-<body>
-
     <div class="container-main">
         <!-- Header -->
         <div class="header">
@@ -371,7 +319,6 @@
             <p>Ranked by Academic Excellence & Global Impact</p>
             <p><a href="https://www.trekonward.com/filter/?roi-source=vantagecorpsite" target="_blank" rel="noopener noreferrer">Trek Onward (Native)</a></p>
         </div>
-
         <!-- Statistics -->
         <div class="stats-section">
             <div class="stat-card">
@@ -387,19 +334,16 @@
                 <div class="stat-label">Years Combined Excellence</div>
             </div>
         </div>
-
         <!-- Filter Section -->
         <div class="filter-section">
             <input type="text" id="searchInput" class="form-control" placeholder="Search by university name or country...">
         </div>
-
         <!-- Sort Section -->
         <div class="sort-section">
             <button class="sort-btn active" data-sort="rank">By Rank</button>
             <button class="sort-btn" data-sort="name">By Name</button>
             <button class="sort-btn" data-sort="country">By Country</button>
         </div>
-
         <!-- Department Filter Section -->
         <div class="department-filter-section">
             <div class="department-filter-title">Filter by R&D Department:</div>
@@ -418,13 +362,11 @@
                 <button class="dept-btn" data-department="textiles">Textiles</button>
             </div>
         </div>
-
         <!-- Universities List -->
         <div id="universitiesList">
             <!-- Universities will be populated here by JavaScript -->
         </div>
     </div>
-
     <script>
         // Complete list of top 100 universities and research facilities ranked by R&D excellence
         const universities = [
@@ -529,12 +471,11 @@
             { rank: 99, name: 'National Center for Isotope and Environmental Research', country: 'France', flag: '🇫🇷', type: 'Research Facility', website: 'https://www.insu.cnrs.fr', keywords: 'isotope environmental research', departments: ['chemistry', 'geospatial', 'physics'] },
             { rank: 100, name: 'University of Illinois Chemistry Department', country: 'United States', flag: '🇺🇸', type: 'University', website: 'https://chemistry.illinois.edu', keywords: 'chemistry research', departments: ['chemistry', 'mathematics', 'nanolith'] },
         ];
-
         let currentSort = 'rank';
         let searchTerm = '';
         let selectedDepartment = 'all';
-
-        function renderUniversities() {
+            // Render Universities
+            function renderUniversities() {
             const container = document.getElementById('universitiesList');
             let filteredUniversities = universities.filter(uni => {
                 const searchLower = searchTerm.toLowerCase();
@@ -542,7 +483,6 @@
                 const matchesDept = selectedDepartment === 'all' || (uni.departments && uni.departments.includes(selectedDepartment));
                 return matchesSearch && matchesDept;
             });
-
             // Sort universities
             if (currentSort === 'name') {
                 filteredUniversities.sort((a, b) => a.name.localeCompare(b.name));
@@ -550,12 +490,10 @@
                 filteredUniversities.sort((a, b) => a.country.localeCompare(b.country));
             }
             // 'rank' is default and already sorted
-
             if (filteredUniversities.length === 0) {
                 container.innerHTML = '<div class="no-results">No institutions found matching your filters. Try a different search or department.</div>';
                 return;
             }
-
             // Group by ranking sections
             const sections = {
                 'top10': { title: '🏆 Top 10 Research Institutions', unis: [] },
@@ -564,7 +502,6 @@
                 'top75': { title: '📚 Ranks 51-75', unis: [] },
                 'top100': { title: '🌟 Ranks 76-100', unis: [] }
             };
-
             filteredUniversities.forEach(uni => {
                 if (uni.rank <= 10) sections.top10.unis.push(uni);
                 else if (uni.rank <= 25) sections.top25.unis.push(uni);
@@ -572,14 +509,12 @@
                 else if (uni.rank <= 75) sections.top75.unis.push(uni);
                 else sections.top100.unis.push(uni);
             });
-
             let html = '';
             Object.values(sections).forEach(section => {
                 if (section.unis.length > 0) {
                     html += `<div class="ranking-group">
-                        <div class="ranking-group-title">${section.title}</div>
-                        <div class="universities-grid">`;
-                    
+                        <div class="ranking-group-title">&#36;{section.title}</div>
+                        <div class="universities-grid">`;                   
                     section.unis.forEach(uni => {
                         const badgeClass = uni.rank <= 10 ? 'top-10' : uni.rank <= 25 ? 'top-25' : '';
                         const deptLabels = uni.departments ? uni.departments.map(d => {
@@ -597,17 +532,16 @@
                                 'textiles': 'Textiles'
                             };
                             return deptMap[d] || d;
-                        }).join(', ') : '';
-                        
+                        }).join(', ') : '';                        
                         html += `
-                            <a href="${uni.website}" class="university-card" target="_blank" rel="noopener noreferrer" title="${uni.keywords}">
+                            <a href="&#36;{uni.website}" class="university-card" target="_blank" rel="noopener noreferrer" title="&#36;{uni.keywords}">
                                 <div class="card-body">
-                                    <span class="rank-badge ${badgeClass}">#${uni.rank}</span>
-                                    <h5 class="university-name">${uni.name}</h5>
-                                    <p class="country">${uni.flag} ${uni.country}</p>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 8px;"><strong>Type:</strong> ${uni.type}</p>
+                                    <span class="rank-badge &#36;{badgeClass}">#&#36;{uni.rank}</span>
+                                    <h5 class="university-name">&#36;{uni.name}</h5>
+                                    <p class="country">&#36;{uni.flag} &#36;{uni.country}</p>
+                                    <p style="font-size: 0.85rem; color: #666; margin-top: 8px;"><strong>Type:</strong> &#36;{uni.type}</p>
                                     <div style="margin-top: 10px;">
-                                        ${uni.departments ? uni.departments.map(d => {
+                                        &#36;{uni.departments ? uni.departments.map(d => {
                                             const deptMap = {
                                                 'aerospace': 'Aerospace Eng',
                                                 'biomedical': 'BioMedical',
@@ -621,26 +555,22 @@
                                                 'physics': 'Physics',
                                                 'textiles': 'Textiles'
                                             };
-                                            return `<span class="dept-badge">${deptMap[d] || d}</span>`;
+                                            return `<span class="dept-badge">&#36;{deptMap[d] || d}</span>`;
                                         }).join('') : ''}
                                     </div>
                                 </div>
                             </a>`;
-                    });
-                    
+                    });                    
                     html += `</div></div>`;
                 }
             });
-
             container.innerHTML = html;
         }
-
         // Event listeners
         document.getElementById('searchInput').addEventListener('keyup', (e) => {
             searchTerm = e.target.value;
             renderUniversities();
         });
-
         document.querySelectorAll('.sort-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
@@ -649,7 +579,6 @@
                 renderUniversities();
             });
         });
-
         document.querySelectorAll('.dept-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
@@ -658,12 +587,7 @@
                 renderUniversities();
             });
         });
-
         // Initial render
         renderUniversities();
-    </script>
-
-</body>
-
-</html>
+</script>
 
