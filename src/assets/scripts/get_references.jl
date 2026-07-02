@@ -4,11 +4,10 @@ else
     references = [
       let
           image = get(x, "img", nothing)
-          class = "reference-card" * (if !(image === nothing || isempty(image)) " has-image" else "" end)
+          class = "no-decoration"
           desc = get(x, "description", get(x, "text", ""))
           title = desc |> string
-          dropdown_options = get(resource, "options", [])
-
+          
           @htl("""<a title=$(title) class=$(class) href=$(x["url"]) target="_blank">
               <h3>$(x["name"])</h3>
               <p>$(desc)</p>
