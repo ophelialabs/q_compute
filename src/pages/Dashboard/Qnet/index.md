@@ -4,14 +4,7 @@ order: 1
 chapter: 1
 section: 1
 layout: "md.jlmd"
-tags: ["parent1_mod1", "track_material", "markdown", "frontmatter"]
----
-
----
-title: "Dashboard-index"
-tags: ["dashboard"]
-order: 1
-layout: "md.jlmd"
+tags: ["Dashboard"]
 ---
 
 # Broadcom DX NetOps: 
@@ -21,8 +14,6 @@ Quantum Network Monitoring & Intelligence
 Broadcom DX NetOps is strategically applied to the quantum network to add enterprise-grade monitoring, predictive analytics, and intelligent service management. This document outlines comprehensive implementation strategies for quantum network operations.
 
 ---
-
-[Dashboard](https://ophelialabs.github.io/Dashboard/index.html) | [Net](https://ophelialabs.github.io/Dashboard/net.html) | [Net1](https://ophelialabs.github.io/Dashboard/net2.html)
 
 ## 1. Real-Time Network Monitoring & Observability
 
