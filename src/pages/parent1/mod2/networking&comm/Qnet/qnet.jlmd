@@ -1,10 +1,11 @@
 ---
-title: "Quantum Network Visualization"
+title: "🌍 Quantum Network Visualization"
 order: 1
 chapter: 1
 section: 1
 layout: "layout.jlhtml"
 tags: ["qnet"]
+description: "Interactive network visualization with switchable views"
 image: "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
 ---
 
@@ -316,7 +317,6 @@ image: "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa
     </style>
 <div class="container">
         <div class="header">
-            <h1>🌍 Quantum Networks</h1>
             <p>Interactive network visualization with switchable views</p>
             <div style="margin-top: 12px; display: flex; gap: 8px;">
                 <button id="view2dBtn" style="padding: 8px 16px; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.2s;" onclick="switchTo2DMap()">📋 2D Map View</button>

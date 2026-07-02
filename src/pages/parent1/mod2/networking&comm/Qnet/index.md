@@ -1,7 +1,7 @@
 ---
 title: "Dashboard Overview"
-order: 1
-chapter: 2
+order: 2
+chapter: 1
 section: 2
 layout: "md.jlmd"
 tags: ["qnet"]
