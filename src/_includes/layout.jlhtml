@@ -193,9 +193,10 @@ $(pluto_head)
                 if isa(section_name, AbstractDict) || isa(section_name, AbstractVector)
                     # This is a dropdown section with nested module groups
                     subsections = section_name
+                    section_title = section_id == "dashboard" ? "Dashboard" : section_id
                     @htl("""
                     <li class="dropdown-section">
-                    <h3 class="dropdown-toggle">$(section_id)</h3>
+                    <h3 class="dropdown-toggle">$(section_title)</h3>
                     <ul class="dropdown-content">
                     $([
                         @htl("""
