@@ -1,45 +1,316 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the top 100 global universities and research facilities ranked by R&D excellence. Filter by departments: Aerospace Engineering, BioMedical Engineering, BioTechnology, Chemistry, Engineering, Geospatial Analytics, Mathematics, Nanolithography, Nuclear Engineering, Physics, and Textiles.">
-    <meta name="keywords" content="top 100 universities, research facilities, CERN, aerospace engineering, biomedical engineering, biotechnology, chemistry, engineering, physics, nanolithography, nuclear engineering, mathematics, geospatial analytics, textiles, R&D departments, research institutions"">
-    <meta name="author" content="Top 100 Universities Guide">
-    <meta property="og:title" content="Top 100 Universities Worldwide - Ranked by Academic Excellence">
-    <meta property="og:description" content="Comprehensive ranking of the top 100 universities globally with direct links to official websites. Explore research, teaching, and innovation leaders.">
-    <meta property="og:type" content="website">
-    <meta name="robots" content="index, follow">
-    <title>Top 100 Universities Worldwide - Ranked by Academic Excellence & Global Impact</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<title>Top 100 Universities Worldwide — The Living TPOT </title>
+<meta name="description" content='Explore the top 100 universities and research facilities worldwide, ranked by academic excellence and global impact. Discover leading institutions in various fields of study, from aerospace engineering to biomedical research.' />
+
+<link rel="root" href="../.." />
+
+<link rel="icon" href="../../assets/favicon.ico" />
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+
+<link rel="stylesheet" href="../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/navbar.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/cheatsheets.css" type="text/css" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG" ></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P8S1FQ4XSG');
+</script>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mermaid Charts -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                fontSize: '14px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
+
+<script src="../../assets/scripts/theme.js" defer></script>
+<script src="../../assets/scripts/navbar.js" defer></script>
+<script src="../../assets/scripts/sidebar.js" type="module"></script>
+<script src="../../assets/scripts/carousel.js" defer></script>
+<script src="../../assets/scripts/cheatsheets.js" defer></script>
+
+<link rel="pp-search-data" href="../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js" integrity="sha256-sDRYYtDc+jNi2rrJPUS5kGxXXMlmnOSCq5ek5tYAk/M=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.css" integrity="sha256-lv6SEl7Dhri7d86yiHCTuSWFb9CYROQFewxZ7Je0n5k=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<script type="importmap">{"imports":{"aVc6E":"./firebase-firestore.7f842f36.js","bEDS4":"./firebase-app.b603aaa4.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.6d99411f.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.1a8c75c9.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.72627891.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje), Παναγιώτης (Panagiotis) Γεωργακόπουλος (https://github.com/pankgeorg), Paul Berg (https://github.com/Pangoraw) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.2f9fc277.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.7a04a462.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.34f4e0d4.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v1.0.0";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.c026cb75.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/tex-svg-full.b78c0ac1.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+</head>
+<body>
+    <script>
+        (() => {
+            const liveReloadUrl = ""../.."/__livereload_state.json";
+            let lastVersion = null;
+
+            const checkForUpdate = () => {
+                fetch(liveReloadUrl + "?t=" + Date.now(), { cache: "no-store" })
+                    .then((response) => response.ok ? response.text() : "")
+                    .then((text) => {
+                        try {
+                            const data = text ? JSON.parse(text) : null;
+                            const version = data?.version;
+                            if (lastVersion !== null && version !== null && version !== lastVersion) {
+                                window.location.reload();
+                            }
+                            lastVersion = version ?? lastVersion;
+                        } catch (error) {
+                            // Ignore malformed state files.
+                        }
+                    })
+                    .catch(() => {});
+            };
+
+            checkForUpdate();
+            window.setInterval(checkForUpdate, 2000);
+        })();
+    </script>
+    <!-- TOP NAVBAR -->
+    <!-- TOP NAVBAR -->
+<header id="pages-navbar">
+    <div class="navbar-container">
+        <!-- Navbar Left: Logo/Title -->
+        <div class="navbar-left">
+            <a href="../.." class="navbar-logo" title="Home">
+                <span class="logo-text">Q</span>
+            </a>
+        </div>
+        
+        <!-- Navbar Center: Search -->
+        <div class="navbar-center">
+            <form action="../../search" method="GET" class="navbar-search">
+                <input type="search" name="q" placeholder="Search lessons..." aria-label="Search">
+                <button type="submit" aria-label="Search" title="Search">
+                    <span>🔎</span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Navbar Right: Theme + Menu -->
+        <div class="navbar-right">
+            <button id="theme-toggle" title="Switch theme" aria-label="Switch theme" class="navbar-icon"></button>
+            <button id="toggle-nav" class="navbar-menu-toggle" title="Open navigation" aria-label="Open navigation"></button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div id="pages-layout">
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="../.."><span>The Living TPOT</span></a></h1>
+                    <h2><span>From Foundations to Research Frontiers</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://github.com/jlabclouds">Quantum Learning Team</a>, <a href="https://github.com/jlabclouds/q_compute">Contributors</a>
+                </div>
+            </li>
+            <li>
+                <div class="track-chooser">
+                    <label>
+                    <h2>Choose your track:</h2>
+                    <select>
+                        <option value="">Choose...</option>
+                        <option value="julia">🤖 Robotics</option> <option value="material">🏥 Medical</option> <option value="setup">⚙️ Networking</option> 
+                    </select>
+                    </label>
+                </div>
+            </li>
+        <li class="dropdown-section">
+<h3 class="dropdown-toggle">Welcome</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_welcome'><a href='../../logistics/'><span class="entry-number"></span> Class logistics</a></li><li class=' lecture tag_welcome'><a href='../../installation/'><span class="entry-number"></span> Software installation</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">Resources</h3>
+<ul class="dropdown-content">
+<li class='active lecture tag_resources tag_universities tag_education tag_research tag_academia'><a href='../../resources/universities/' title='Explore the top 100 universities and research facilities worldwide, ranked by academic excellence and global impact. Discover leading institutions in various fields of study, from aerospace engineering to biomedical research.'><span class="entry-number"></span> Top 100 Universities Worldwide</a></li><li class=' lecture tag_resources'><a href='../../resources/cheatsheets/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/cheatsheets/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number"></span> Math Cheatsheet</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../resources/cheatsheets/mat-cs/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number"></span> Math Cheatsheet</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">dashboard</h3>
+<ul class="dropdown-content">
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Qnet Dash</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_qnet'><a href='../../pages/parent1/mod2/networking&amp;comm/Qnet/qnet/' title='Interactive network visualization with switchable views'><span class="entry-number">1.1</span> 🌍 Quantum Network Visualization</a></li><li class=' lecture tag_qnet'><a href='../../pages/parent1/mod2/networking&amp;comm/Qnet/'><span class="entry-number">1.2</span> Dashboard Overview</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent1</h3>
+<ul class="dropdown-content">
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 1: Adding course material</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent1_mod1 tag_track_material tag_markdown tag_frontmatter'><a href='../../pages/parent1/mod1/mod1_add_material/add_markdown/'><span class="entry-number">1.1</span> Add markdown files</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../pages/parent1/mod1/mod1_add_material/add_pluto/'><span class="entry-number">1.2</span> Add Pluto notebooks</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../pages/parent1/mod1/mod1_add_material/plutoui_showcase/'><span class="entry-number">1.3</span> PlutoUI showcase</a></li>
+</ul>
+</li>
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 2: Quantum Gates</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../pages/parent1/mod1/mod1_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent2</h3>
+<ul class="dropdown-content">
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 1: Placeholder</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent2_mod1 tag_placeholder tag_coming_soon'><a href='../../pages/parent2/mod1_placeholder/' title='Placeholder for future content'><span class="entry-number">1.0</span> Module 2: Placeholder</a></li>
+</ul>
+</li>
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 2: Coming Soon</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent2_mod2 tag_placeholder tag_coming_soon'><a href='../../pages/parent2/mod2_coming_soon/' title='Placeholder for future content'><span class="entry-number">2.0</span> Module 2: Coming Soon</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="../../semesters/">Self-paced, 2026-2033</a>
+                    <div class="course-numbers"><span>QUANTCOMP-101</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Quantum Learning Initiative">
+                        <img src="../../assets/quantum_logo.svg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="../../assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="../../assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           <div class="lecture-header" >
+    
+    <h1>Top 100 Universities Worldwide</h1>
+    
+    
+</div>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 40px 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         .container-main {
             max-width: 1400px;
             margin: 0 auto;
         }
-
         .header {
             text-align: center;
             color: white;
             margin-bottom: 50px;
             animation: slideDown 0.6s ease-out;
         }
-
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -50,7 +321,6 @@
                 transform: translateY(0);
             }
         }
-
         .header h1 {
             font-weight: 700;
             font-size: 3rem;
@@ -61,19 +331,16 @@
             justify-content: center;
             gap: 15px;
         }
-
         .header p {
             font-size: 1.2rem;
             opacity: 0.95;
             font-style: italic;
         }
-
         .filter-section {
             margin-bottom: 40px;
             text-align: center;
             animation: fadeIn 0.8s ease-out 0.2s both;
         }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -82,7 +349,6 @@
                 opacity: 1;
             }
         }
-
         .filter-section input {
             max-width: 600px;
             padding: 15px 25px;
@@ -92,22 +358,18 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
-
         .filter-section input:focus {
             outline: none;
             box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
             transform: scale(1.02);
         }
-
         .filter-section input::placeholder {
             color: #aaa;
         }
-
         .ranking-group {
             margin-bottom: 50px;
             animation: fadeIn 0.8s ease-out 0.4s both;
         }
-
         .ranking-group-title {
             background: white;
             color: #667eea;
@@ -122,17 +384,14 @@
             align-items: center;
             gap: 12px;
         }
-
         .ranking-group-title i {
             font-size: 2rem;
         }
-
         .universities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
-
         .university-card {
             background: white;
             border-radius: 12px;
@@ -148,13 +407,11 @@
             text-decoration: none;
             color: inherit;
         }
-
         .university-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
             border-left-color: #764ba2;
         }
-
         a.university-card {
             text-decoration: none;
             color: inherit;
@@ -162,7 +419,6 @@
             flex-direction: column;
             height: 100%;
         }
-
         .university-card::before {
             content: '';
             position: absolute;
@@ -172,7 +428,6 @@
             height: 4px;
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         }
-
         .rank-badge {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -186,17 +441,14 @@
             text-align: center;
             box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
         }
-
         .rank-badge.top-10 {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
         }
-
         .rank-badge.top-25 {
             background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%);
             box-shadow: 0 2px 8px rgba(192, 192, 192, 0.4);
         }
-
         .university-name {
             font-size: 1.25rem;
             font-weight: 700;
@@ -204,7 +456,6 @@
             margin-bottom: 8px;
             line-height: 1.3;
         }
-
         .country {
             color: #667eea;
             font-weight: 600;
@@ -214,14 +465,12 @@
             align-items: center;
             gap: 6px;
         }
-
         .excellence-metrics {
             display: flex;
             gap: 10px;
             margin-top: 10px;
             flex-wrap: wrap;
         }
-
         .metric-tag {
             background: #f0f0f0;
             color: #555;
@@ -230,21 +479,18 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-
         .card-body {
             padding: 25px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-
         .no-results {
             text-align: center;
             color: white;
             padding: 60px 20px;
             font-size: 1.2rem;
         }
-
         .stats-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -252,7 +498,6 @@
             margin-bottom: 50px;
             animation: fadeIn 0.8s ease-out 0.1s both;
         }
-
         .stat-card {
             background: rgba(255, 255, 255, 0.95);
             padding: 25px 30px;
@@ -261,30 +506,25 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
             color: #667eea;
             margin-bottom: 8px;
         }
-
         .stat-label {
             color: #666;
             font-size: 1rem;
             font-weight: 500;
         }
-
         .sort-section {
             text-align: center;
             margin-bottom: 30px;
         }
-
         .sort-section button {
             background: white;
             color: #667eea;
@@ -296,13 +536,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .sort-section button:hover,
         .sort-section button.active {
             background: #667eea;
             color: white;
         }
-
         .department-filter-section {
             margin-bottom: 40px;
             padding: 30px;
@@ -310,20 +548,17 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-
         .department-filter-title {
             color: #667eea;
             font-weight: 700;
             margin-bottom: 20px;
             font-size: 1.1rem;
         }
-
         .department-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-
         .dept-btn {
             background: #f0f0f0;
             color: #333;
@@ -335,19 +570,16 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .dept-btn:hover {
             background: #667eea;
             color: white;
             border-color: #667eea;
         }
-
         .dept-btn.active {
             background: #667eea;
             color: white;
             border-color: #764ba2;
         }
-
         .dept-badge {
             display: inline-block;
             background: #667eea;
@@ -360,10 +592,6 @@
             margin-right: 4px;
         }
     </style>
-</head>
-
-<body>
-
     <div class="container-main">
         <!-- Header -->
         <div class="header">
@@ -371,7 +599,6 @@
             <p>Ranked by Academic Excellence & Global Impact</p>
             <p><a href="https://www.trekonward.com/filter/?roi-source=vantagecorpsite" target="_blank" rel="noopener noreferrer">Trek Onward (Native)</a></p>
         </div>
-
         <!-- Statistics -->
         <div class="stats-section">
             <div class="stat-card">
@@ -387,19 +614,16 @@
                 <div class="stat-label">Years Combined Excellence</div>
             </div>
         </div>
-
         <!-- Filter Section -->
         <div class="filter-section">
             <input type="text" id="searchInput" class="form-control" placeholder="Search by university name or country...">
         </div>
-
         <!-- Sort Section -->
         <div class="sort-section">
             <button class="sort-btn active" data-sort="rank">By Rank</button>
             <button class="sort-btn" data-sort="name">By Name</button>
             <button class="sort-btn" data-sort="country">By Country</button>
         </div>
-
         <!-- Department Filter Section -->
         <div class="department-filter-section">
             <div class="department-filter-title">Filter by R&D Department:</div>
@@ -418,13 +642,11 @@
                 <button class="dept-btn" data-department="textiles">Textiles</button>
             </div>
         </div>
-
         <!-- Universities List -->
         <div id="universitiesList">
             <!-- Universities will be populated here by JavaScript -->
         </div>
     </div>
-
     <script>
         // Complete list of top 100 universities and research facilities ranked by R&D excellence
         const universities = [
@@ -529,12 +751,11 @@
             { rank: 99, name: 'National Center for Isotope and Environmental Research', country: 'France', flag: '🇫🇷', type: 'Research Facility', website: 'https://www.insu.cnrs.fr', keywords: 'isotope environmental research', departments: ['chemistry', 'geospatial', 'physics'] },
             { rank: 100, name: 'University of Illinois Chemistry Department', country: 'United States', flag: '🇺🇸', type: 'University', website: 'https://chemistry.illinois.edu', keywords: 'chemistry research', departments: ['chemistry', 'mathematics', 'nanolith'] },
         ];
-
         let currentSort = 'rank';
         let searchTerm = '';
         let selectedDepartment = 'all';
-
-        function renderUniversities() {
+            // Render Universities
+            function renderUniversities() {
             const container = document.getElementById('universitiesList');
             let filteredUniversities = universities.filter(uni => {
                 const searchLower = searchTerm.toLowerCase();
@@ -542,7 +763,6 @@
                 const matchesDept = selectedDepartment === 'all' || (uni.departments && uni.departments.includes(selectedDepartment));
                 return matchesSearch && matchesDept;
             });
-
             // Sort universities
             if (currentSort === 'name') {
                 filteredUniversities.sort((a, b) => a.name.localeCompare(b.name));
@@ -550,12 +770,10 @@
                 filteredUniversities.sort((a, b) => a.country.localeCompare(b.country));
             }
             // 'rank' is default and already sorted
-
             if (filteredUniversities.length === 0) {
                 container.innerHTML = '<div class="no-results">No institutions found matching your filters. Try a different search or department.</div>';
                 return;
             }
-
             // Group by ranking sections
             const sections = {
                 'top10': { title: '🏆 Top 10 Research Institutions', unis: [] },
@@ -564,7 +782,6 @@
                 'top75': { title: '📚 Ranks 51-75', unis: [] },
                 'top100': { title: '🌟 Ranks 76-100', unis: [] }
             };
-
             filteredUniversities.forEach(uni => {
                 if (uni.rank <= 10) sections.top10.unis.push(uni);
                 else if (uni.rank <= 25) sections.top25.unis.push(uni);
@@ -572,14 +789,12 @@
                 else if (uni.rank <= 75) sections.top75.unis.push(uni);
                 else sections.top100.unis.push(uni);
             });
-
             let html = '';
             Object.values(sections).forEach(section => {
                 if (section.unis.length > 0) {
                     html += `<div class="ranking-group">
-                        <div class="ranking-group-title">${section.title}</div>
-                        <div class="universities-grid">`;
-                    
+                        <div class="ranking-group-title">&#36;{section.title}</div>
+                        <div class="universities-grid">`;                   
                     section.unis.forEach(uni => {
                         const badgeClass = uni.rank <= 10 ? 'top-10' : uni.rank <= 25 ? 'top-25' : '';
                         const deptLabels = uni.departments ? uni.departments.map(d => {
@@ -597,17 +812,16 @@
                                 'textiles': 'Textiles'
                             };
                             return deptMap[d] || d;
-                        }).join(', ') : '';
-                        
+                        }).join(', ') : '';                        
                         html += `
-                            <a href="${uni.website}" class="university-card" target="_blank" rel="noopener noreferrer" title="${uni.keywords}">
+                            <a href="&#36;{uni.website}" class="university-card" target="_blank" rel="noopener noreferrer" title="&#36;{uni.keywords}">
                                 <div class="card-body">
-                                    <span class="rank-badge ${badgeClass}">#${uni.rank}</span>
-                                    <h5 class="university-name">${uni.name}</h5>
-                                    <p class="country">${uni.flag} ${uni.country}</p>
-                                    <p style="font-size: 0.85rem; color: #666; margin-top: 8px;"><strong>Type:</strong> ${uni.type}</p>
+                                    <span class="rank-badge &#36;{badgeClass}">#&#36;{uni.rank}</span>
+                                    <h5 class="university-name">&#36;{uni.name}</h5>
+                                    <p class="country">&#36;{uni.flag} &#36;{uni.country}</p>
+                                    <p style="font-size: 0.85rem; color: #666; margin-top: 8px;"><strong>Type:</strong> &#36;{uni.type}</p>
                                     <div style="margin-top: 10px;">
-                                        ${uni.departments ? uni.departments.map(d => {
+                                        &#36;{uni.departments ? uni.departments.map(d => {
                                             const deptMap = {
                                                 'aerospace': 'Aerospace Eng',
                                                 'biomedical': 'BioMedical',
@@ -621,26 +835,22 @@
                                                 'physics': 'Physics',
                                                 'textiles': 'Textiles'
                                             };
-                                            return `<span class="dept-badge">${deptMap[d] || d}</span>`;
+                                            return `<span class="dept-badge">&#36;{deptMap[d] || d}</span>`;
                                         }).join('') : ''}
                                     </div>
                                 </div>
                             </a>`;
-                    });
-                    
+                    });                    
                     html += `</div></div>`;
                 }
             });
-
             container.innerHTML = html;
         }
-
         // Event listeners
         document.getElementById('searchInput').addEventListener('keyup', (e) => {
             searchTerm = e.target.value;
             renderUniversities();
         });
-
         document.querySelectorAll('.sort-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
@@ -649,7 +859,6 @@
                 renderUniversities();
             });
         });
-
         document.querySelectorAll('.dept-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
@@ -658,12 +867,17 @@
                 renderUniversities();
             });
         });
-
         // Initial render
         renderUniversities();
-    </script>
+</script>
 
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="https://github.com/jlabclouds/q_compute"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
+        </div>
+    </div>
 </body>
-
 </html>
-
