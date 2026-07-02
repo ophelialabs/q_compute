@@ -1,28 +1,13 @@
 ---
 title: "Dashboard"
 order: 1
-chapter: 2
-section: 2
+chapter: 1
+section: 1
 layout: "md.jlmd"
 tags: ["Dashboard"]
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-P8S1FQ4XSG');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Networks - 3D Google Maps Globe</title>
-    <script>
+<script>
         (g => {
             var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
             b = b[c] || (b[c] = {});
@@ -43,7 +28,7 @@ tags: ["Dashboard"]
             v: "alpha"
         });
     </script>
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -1738,5 +1723,4 @@ tags: ["Dashboard"]
         // Initialize map when page loads
         window.addEventListener('load', initMap);
     </script>
-</body>
-</html>
+

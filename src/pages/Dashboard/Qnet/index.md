@@ -1,8 +1,8 @@
 ---
 title: "Dashboard"
 order: 1
-chapter: 1
-section: 1
+chapter: 2
+section: 2
 layout: "md.jlmd"
 tags: ["Dashboard"]
 ---
