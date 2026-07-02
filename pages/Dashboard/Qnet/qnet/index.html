@@ -1,50 +1,48 @@
-<!DOCTYPE html><pre class="language-julia"><code>#> [frontmatter]
+<!DOCTYPE html>#> [frontmatter]
 #> chapter = 1
 #> section = 1
 #> order = 1
-#> image = &quot;https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif&quot;
-#> title = &quot;Qnet&quot;
-#> tags = [&quot;Qnet&quot;, &quot;Dashboard&quot;]
-#> layout = &quot;layout.jlhtml&quot;
+#> image = "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
+#> title = "Qnet"
+#> tags = ["Qnet", "Dashboard"]
+#> layout = "layout.jlhtml"
 
-html&quot;&quot;&quot;
-&lt;!DOCTYPE html>
-&lt;html lang=&quot;en&quot;>
-&lt;head>
-    &lt;!-- Google tag (gtag.js) -->
-    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG&quot;>&lt;/script>
-    &lt;script>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG"></script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag(&apos;js&apos;, new Date());
+    gtag('js', new Date());
 
-    gtag(&apos;config&apos;, &apos;G-P8S1FQ4XSG&apos;);
-    &lt;/script>
-    &lt;meta charset=&quot;UTF-8&quot;>
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
-    &lt;title>Quantum Networks - 3D Google Maps Globe&lt;/title>
-    &lt;script>
+    gtag('config', 'G-P8S1FQ4XSG');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Networks - 3D Google Maps Globe</title>
+    <script>
         (g => {
-            var h, a, k, p = &quot;The Google Maps JavaScript API&quot;, c = &quot;google&quot;, l = &quot;importLibrary&quot;, q = &quot;__ib__&quot;, m = document, b = window;
+            var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
             b = b[c] || (b[c] = {});
             var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
-                await (a = m.createElement(&quot;script&quot;));
-                e.set(&quot;libraries&quot;, [...r] + &quot;&quot;);
-                for (k in g) e.set(k.replace(/[A-Z]/g, t => &quot;_&quot; + t[0].toLowerCase()), g[k]);
-                e.set(&quot;callback&quot;, c + &quot;.maps.&quot; + q);
-                a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                await (a = m.createElement("script"));
+                e.set("libraries", [...r] + "");
+                for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                e.set("callback", c + ".maps." + q);
+                a.src = "https://maps." + c + "apis.com/maps/api/js?" + e;
                 d[q] = f;
-                a.onerror = () => h = n(Error(p + &quot; could not load.&quot;));
-                a.nonce = m.querySelector(&quot;script[nonce]&quot;)?.nonce || &quot;&quot;;
+                a.onerror = () => h = n(Error(p + " could not load."));
+                a.nonce = m.querySelector("script[nonce]")?.nonce || "";
                 m.head.append(a)
             }));
-            d[l] ? console.warn(p + &quot; only loads once. Ignoring:&quot;, g) : d[l] = (f, ...n) => r.add(f) &amp;&amp; u().then(() => d[l](f, ...n))
+            d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
         })({
-            key: &quot;AIzaSyDK7BXtZz4ypjq0yr-7FrrAcl3oCoPpxK8&quot;,
-            v: &quot;alpha&quot;
+            key: "AIzaSyDK7BXtZz4ypjq0yr-7FrrAcl3oCoPpxK8",
+            v: "alpha"
         });
-    &lt;/script>
-    &lt;style>
+    </script>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -52,7 +50,7 @@ html&quot;&quot;&quot;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #0f172a;
             color: #e2e8f0;
             padding: 20px;
@@ -352,917 +350,917 @@ html&quot;&quot;&quot;
             opacity: 0.8;
             stroke-dasharray: 0;
         }
-    &lt;/style>
-&lt;/head>
-&lt;body>
-    &lt;div class=&quot;container&quot;>
-        &lt;div class=&quot;header&quot;>
-            &lt;h1>🌍 Quantum Networks&lt;/h1>
-            &lt;p>Interactive network visualization with switchable views&lt;/p>
-            &lt;div style=&quot;margin-top: 12px; display: flex; gap: 8px;&quot;>
-                &lt;button id=&quot;view2dBtn&quot; style=&quot;padding: 8px 16px; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.2s;&quot; onclick=&quot;switchTo2DMap()&quot;>📋 2D Map View&lt;/button>
-                &lt;button id=&quot;view3dBtn&quot; style=&quot;padding: 8px 16px; background-color: #64748b; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.2s;&quot; onclick=&quot;switchTo3DGlobe()&quot;>🌐 3D Globe View&lt;/button>
-            &lt;/div>
-        &lt;/div>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Quantum Networks</h1>
+            <p>Interactive network visualization with switchable views</p>
+            <div style="margin-top: 12px; display: flex; gap: 8px;">
+                <button id="view2dBtn" style="padding: 8px 16px; background-color: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.2s;" onclick="switchTo2DMap()">📋 2D Map View</button>
+                <button id="view3dBtn" style="padding: 8px 16px; background-color: #64748b; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.2s;" onclick="switchTo3DGlobe()">🌐 3D Globe View</button>
+            </div>
+        </div>
 
-        &lt;div class=&quot;content-wrapper&quot;>
-            &lt;div id=&quot;map&quot;>&lt;/div>
-            &lt;div class=&quot;sidebar&quot;>
-                &lt;div class=&quot;panel&quot;>
-                    &lt;h3>Network Stats&lt;/h3>
-                    &lt;div class=&quot;stat-item&quot;>
-                        &lt;p class=&quot;stat-label&quot;>Total Nodes&lt;/p>
-                        &lt;p class=&quot;stat-value green&quot; id=&quot;totalNodes&quot;>0&lt;/p>
-                    &lt;/div>
-                    &lt;div class=&quot;stat-item&quot;>
-                        &lt;p class=&quot;stat-label&quot;>Active&lt;/p>
-                        &lt;p class=&quot;stat-value green&quot; id=&quot;activeCount&quot;>0&lt;/p>
-                    &lt;/div>
-                    &lt;div class=&quot;stat-item&quot;>
-                        &lt;p class=&quot;stat-label&quot;>Connecting&lt;/p>
-                        &lt;p class=&quot;stat-value yellow&quot; id=&quot;connectingCount&quot;>0&lt;/p>
-                    &lt;/div>
-                    &lt;div class=&quot;stat-item&quot;>
-                        &lt;p class=&quot;stat-label&quot;>Total Capacity&lt;/p>
-                        &lt;p class=&quot;stat-value blue&quot; id=&quot;totalCapacity&quot;>0 Q&lt;/p>
-                    &lt;/div>
-                &lt;/div>
+        <div class="content-wrapper">
+            <div id="map"></div>
+            <div class="sidebar">
+                <div class="panel">
+                    <h3>Network Stats</h3>
+                    <div class="stat-item">
+                        <p class="stat-label">Total Nodes</p>
+                        <p class="stat-value green" id="totalNodes">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Active</p>
+                        <p class="stat-value green" id="activeCount">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Connecting</p>
+                        <p class="stat-value yellow" id="connectingCount">0</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Total Capacity</p>
+                        <p class="stat-value blue" id="totalCapacity">0 Q</p>
+                    </div>
+                </div>
 
-                &lt;div class=&quot;panel&quot;>
-                    &lt;h3>Marker Legend&lt;/h3>
-                    &lt;div class=&quot;marker-legend&quot;>
-                        &lt;label style=&quot;display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;&quot;>
-                            &lt;input type=&quot;checkbox&quot; id=&quot;toggle-node&quot; class=&quot;marker-toggle&quot; data-type=&quot;node&quot; checked style=&quot;cursor: pointer;&quot;>
-                            &lt;div class=&quot;legend-icon node&quot;>&lt;/div>
-                            &lt;span>Network Node&lt;/span>
-                        &lt;/label>
-                        &lt;label style=&quot;display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;&quot;>
-                            &lt;input type=&quot;checkbox&quot; id=&quot;toggle-ground-station&quot; class=&quot;marker-toggle&quot; data-type=&quot;ground-station&quot; checked style=&quot;cursor: pointer;&quot;>
-                            &lt;div class=&quot;legend-icon ground-station&quot;>GS&lt;/div>
-                            &lt;span>Ground Station&lt;/span>
-                        &lt;/label>
-                        &lt;label style=&quot;display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;&quot;>
-                            &lt;input type=&quot;checkbox&quot; id=&quot;toggle-array&quot; class=&quot;marker-toggle&quot; data-type=&quot;array&quot; checked style=&quot;cursor: pointer;&quot;>
-                            &lt;div class=&quot;legend-icon array&quot;>AR&lt;/div>
-                            &lt;span>Array&lt;/span>
-                        &lt;/label>
-                        &lt;label style=&quot;display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;&quot;>
-                            &lt;input type=&quot;checkbox&quot; id=&quot;toggle-teleport&quot; class=&quot;marker-toggle&quot; data-type=&quot;teleport&quot; checked style=&quot;cursor: pointer;&quot;>
-                            &lt;div class=&quot;legend-icon teleport&quot;>⚡&lt;/div>
-                            &lt;span>Teleport Station&lt;/span>
-                        &lt;/label>
-                        &lt;label style=&quot;display: flex; align-items: center; gap: 8px; cursor: pointer;&quot;>
-                            &lt;input type=&quot;checkbox&quot; id=&quot;toggle-connecting&quot; class=&quot;marker-toggle&quot; data-type=&quot;connecting&quot; checked style=&quot;cursor: pointer;&quot;>
-                            &lt;div class=&quot;legend-icon connecting&quot;>&lt;/div>
-                            &lt;span>Connecting&lt;/span>
-                        &lt;/label>
-                    &lt;/div>
-                    &lt;p style=&quot;font-size: 11px; color: #9ca3af; margin-top: 12px; font-style: italic;&quot;>
+                <div class="panel">
+                    <h3>Marker Legend</h3>
+                    <div class="marker-legend">
+                        <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
+                            <input type="checkbox" id="toggle-node" class="marker-toggle" data-type="node" checked style="cursor: pointer;">
+                            <div class="legend-icon node"></div>
+                            <span>Network Node</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
+                            <input type="checkbox" id="toggle-ground-station" class="marker-toggle" data-type="ground-station" checked style="cursor: pointer;">
+                            <div class="legend-icon ground-station">GS</div>
+                            <span>Ground Station</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
+                            <input type="checkbox" id="toggle-array" class="marker-toggle" data-type="array" checked style="cursor: pointer;">
+                            <div class="legend-icon array">AR</div>
+                            <span>Array</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
+                            <input type="checkbox" id="toggle-teleport" class="marker-toggle" data-type="teleport" checked style="cursor: pointer;">
+                            <div class="legend-icon teleport">⚡</div>
+                            <span>Teleport Station</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" id="toggle-connecting" class="marker-toggle" data-type="connecting" checked style="cursor: pointer;">
+                            <div class="legend-icon connecting"></div>
+                            <span>Connecting</span>
+                        </label>
+                    </div>
+                    <p style="font-size: 11px; color: #9ca3af; margin-top: 12px; font-style: italic;">
                         💡 Click any marker to see communication links
-                    &lt;/p>
-                &lt;/div>
+                    </p>
+                </div>
 
-                &lt;div class=&quot;panel&quot;>
-                    &lt;h3>Network Hop Legend&lt;/h3>
-                    &lt;div class=&quot;marker-legend&quot;>
-                        &lt;div class=&quot;legend-item&quot;>
-                            &lt;div style=&quot;width: 20px; height: 2px; background-color: #10b981; border-radius: 1px;&quot;>&lt;/div>
-                            &lt;span>1-Hop (Direct)&lt;/span>
-                        &lt;/div>
-                        &lt;div class=&quot;legend-item&quot;>
-                            &lt;div style=&quot;width: 20px; height: 2px; background-color: #f59e0b; border-radius: 1px; opacity: 0.7; background-image: repeating-linear-gradient(90deg, #f59e0b 0px, #f59e0b 5px, transparent 5px, transparent 10px);&quot;>&lt;/div>
-                            &lt;span>2-Hop (Dashed)&lt;/span>
-                        &lt;/div>
-                        &lt;div class=&quot;legend-item&quot;>
-                            &lt;div style=&quot;width: 20px; height: 2px; background-color: #ef4444; border-radius: 1px; opacity: 0.5; background-image: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 2px, transparent 2px, transparent 6px);&quot;>&lt;/div>
-                            &lt;span>3-Hop (Dotted)&lt;/span>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>
+                <div class="panel">
+                    <h3>Network Hop Legend</h3>
+                    <div class="marker-legend">
+                        <div class="legend-item">
+                            <div style="width: 20px; height: 2px; background-color: #10b981; border-radius: 1px;"></div>
+                            <span>1-Hop (Direct)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div style="width: 20px; height: 2px; background-color: #f59e0b; border-radius: 1px; opacity: 0.7; background-image: repeating-linear-gradient(90deg, #f59e0b 0px, #f59e0b 5px, transparent 5px, transparent 10px);"></div>
+                            <span>2-Hop (Dashed)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div style="width: 20px; height: 2px; background-color: #ef4444; border-radius: 1px; opacity: 0.5; background-image: repeating-linear-gradient(90deg, #ef4444 0px, #ef4444 2px, transparent 2px, transparent 6px);"></div>
+                            <span>3-Hop (Dotted)</span>
+                        </div>
+                    </div>
+                </div>
 
-                &lt;div class=&quot;panel&quot;>
-                    &lt;h3>Nodes&lt;/h3>
-                    &lt;div class=&quot;node-list&quot; id=&quot;nodesList&quot;>&lt;/div>
-                &lt;/div>
+                <div class="panel">
+                    <h3>Nodes</h3>
+                    <div class="node-list" id="nodesList"></div>
+                </div>
 
-                &lt;div class=&quot;panel&quot; id=&quot;detailsPanel&quot; style=&quot;display: none;&quot;>
-                    &lt;h3>Node Details&lt;/h3>
-                    &lt;div id=&quot;nodeDetails&quot;>&lt;/div>
-                &lt;/div>
-            &lt;/div>
-        &lt;/div>
-    &lt;/div>
+                <div class="panel" id="detailsPanel" style="display: none;">
+                    <h3>Node Details</h3>
+                    <div id="nodeDetails"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    &lt;script>
+    <script>
         const NETWORK_NODES = [
   // North America
   {
     id: 1,
-    name: &apos;Chattanooga Hub&apos;,
+    name: 'Chattanooga Hub',
     latitude: 35.0456,
     longitude: -85.2672,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 250,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;,
-    url: &apos;https://www.ornl.gov/&apos;
+    region: 'North America',
+    type: 'node',
+    url: 'https://www.ornl.gov/'
   },
   {
     id: 2,
-    name: &apos;Oak Ridge Node&apos;,
+    name: 'Oak Ridge Node',
     latitude: 35.9181,
     longitude: -84.2679,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 180,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;,
-    url: &apos;https://www.ornl.gov/&apos;
+    region: 'North America',
+    type: 'node',
+    url: 'https://www.ornl.gov/'
   },
   {
     id: 3,
-    name: &apos;Atlanta Center&apos;,
+    name: 'Atlanta Center',
     latitude: 33.7490,
     longitude: -84.3880,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 300,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;,
-    url: &apos;https://www.gatech.edu/&apos;
+    region: 'North America',
+    type: 'node',
+    url: 'https://www.gatech.edu/'
   },
   {
     id: 4,
-    name: &apos;Washington Node&apos;,
+    name: 'Washington Node',
     latitude: 38.9072,
     longitude: -77.0369,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 120,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;
+    region: 'North America',
+    type: 'node'
   },
   {
     id: 5,
-    name: &apos;Boston Labs&apos;,
+    name: 'Boston Labs',
     latitude: 42.3601,
     longitude: -71.0589,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 220,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;
+    region: 'North America',
+    type: 'node'
   },
   {
     id: 6,
-    name: &apos;Toronto Quantum Center&apos;,
+    name: 'Toronto Quantum Center',
     latitude: 43.6629,
     longitude: -79.3957,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 190,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;
+    region: 'North America',
+    type: 'node'
   },
   {
     id: 7,
-    name: &apos;San Francisco Node&apos;,
+    name: 'San Francisco Node',
     latitude: 37.7749,
     longitude: -122.4194,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 280,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;
+    region: 'North America',
+    type: 'node'
   },
   {
     id: 8,
-    name: &apos;Los Angeles Terminal&apos;,
+    name: 'Los Angeles Terminal',
     latitude: 34.0522,
     longitude: -118.2437,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 260,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;
+    region: 'North America',
+    type: 'node'
   },
   {
     id: 25,
-    name: &apos;White Sands Ground Station&apos;,
+    name: 'White Sands Ground Station',
     latitude: 32.3890,
     longitude: -106.4733,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 350,
-    region: &apos;North America&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Primary satellite ground station facility&apos;,
-    url: &apos;https://www.spaceport.af.mil/&apos;
+    region: 'North America',
+    type: 'ground-station',
+    description: 'Primary satellite ground station facility',
+    url: 'https://www.spaceport.af.mil/'
   },
   {
     id: 26,
-    name: &apos;Arecibo Observatory Array&apos;,
+    name: 'Arecibo Observatory Array',
     latitude: 18.3461,
     longitude: -66.7528,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 400,
-    region: &apos;North America&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Radio telescope array&apos;,
-    url: &apos;https://www.naic.edu/&apos;
+    region: 'North America',
+    type: 'array',
+    description: 'Radio telescope array',
+    url: 'https://www.naic.edu/'
   },
   // Europe
   {
     id: 9,
-    name: &apos;London Hub&apos;,
+    name: 'London Hub',
     latitude: 51.5074,
     longitude: -0.1278,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 310,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 10,
-    name: &apos;Berlin Facility&apos;,
+    name: 'Berlin Facility',
     latitude: 52.5200,
     longitude: 13.4050,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 240,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 11,
-    name: &apos;Paris Research Lab&apos;,
+    name: 'Paris Research Lab',
     latitude: 48.8566,
     longitude: 2.3522,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 270,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 12,
-    name: &apos;Amsterdam Center&apos;,
+    name: 'Amsterdam Center',
     latitude: 52.3676,
     longitude: 4.9041,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 150,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 13,
-    name: &apos;Stockholm Node&apos;,
+    name: 'Stockholm Node',
     latitude: 59.3293,
     longitude: 18.0686,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 200,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 14,
-    name: &apos;Geneva Hub&apos;,
+    name: 'Geneva Hub',
     latitude: 46.2044,
     longitude: 6.1432,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 230,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 27,
-    name: &apos;Westerbork Array&apos;,
+    name: 'Westerbork Array',
     latitude: 52.9159,
     longitude: 6.6030,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 380,
-    region: &apos;Europe&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Radio synthesis telescope array&apos;
+    region: 'Europe',
+    type: 'array',
+    description: 'Radio synthesis telescope array'
   },
   {
     id: 28,
-    name: &apos;Gilleleje Ground Station&apos;,
+    name: 'Gilleleje Ground Station',
     latitude: 55.9375,
     longitude: 12.2800,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 320,
-    region: &apos;Europe&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;European ground station facility&apos;
+    region: 'Europe',
+    type: 'ground-station',
+    description: 'European ground station facility'
   },
   // Asia
   {
     id: 15,
-    name: &apos;Tokyo Quantum Center&apos;,
+    name: 'Tokyo Quantum Center',
     latitude: 35.6762,
     longitude: 139.6503,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 320,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 16,
-    name: &apos;Singapore Node&apos;,
+    name: 'Singapore Node',
     latitude: 1.3521,
     longitude: 103.8198,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 290,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 17,
-    name: &apos;Shanghai Facility&apos;,
+    name: 'Shanghai Facility',
     latitude: 31.2304,
     longitude: 121.4737,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 300,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 18,
-    name: &apos;Hong Kong Hub&apos;,
+    name: 'Hong Kong Hub',
     latitude: 22.3193,
     longitude: 114.1694,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 170,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 19,
-    name: &apos;Mumbai Terminal&apos;,
+    name: 'Mumbai Terminal',
     latitude: 19.0760,
     longitude: 72.8777,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 210,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 20,
-    name: &apos;Seoul Research Institute&apos;,
+    name: 'Seoul Research Institute',
     latitude: 37.5665,
     longitude: 126.9780,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 250,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 29,
-    name: &apos;Chandra X-ray Array&apos;,
+    name: 'Chandra X-ray Array',
     latitude: 28.3949,
     longitude: 83.8231,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 390,
-    region: &apos;Asia&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Space telescope array facility&apos;
+    region: 'Asia',
+    type: 'array',
+    description: 'Space telescope array facility'
   },
   {
     id: 30,
-    name: &apos;Hanoi Ground Station&apos;,
+    name: 'Hanoi Ground Station',
     latitude: 21.0285,
     longitude: 105.8542,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 340,
-    region: &apos;Asia&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Asian-Pacific ground station facility&apos;
+    region: 'Asia',
+    type: 'ground-station',
+    description: 'Asian-Pacific ground station facility'
   },
   // Australia
   {
     id: 21,
-    name: &apos;Sydney Center&apos;,
+    name: 'Sydney Center',
     latitude: -33.8688,
     longitude: 151.2093,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 220,
-    region: &apos;Australia&apos;,
-    type: &apos;node&apos;
+    region: 'Australia',
+    type: 'node'
   },
   {
     id: 22,
-    name: &apos;Melbourne Node&apos;,
+    name: 'Melbourne Node',
     latitude: -37.8136,
     longitude: 144.9631,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 160,
-    region: &apos;Australia&apos;,
-    type: &apos;node&apos;
+    region: 'Australia',
+    type: 'node'
   },
   {
     id: 31,
-    name: &apos;Australian Square Kilometre Array&apos;,
+    name: 'Australian Square Kilometre Array',
     latitude: -26.6369,
     longitude: 116.6363,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 420,
-    region: &apos;Australia&apos;,
-    type: &apos;array&apos;,
-    description: &apos;SKA pathfinder radio telescope array&apos;,
-    url: &apos;https://www.skatelescope.org/&apos;
+    region: 'Australia',
+    type: 'array',
+    description: 'SKA pathfinder radio telescope array',
+    url: 'https://www.skatelescope.org/'
   },
   // South America
   {
     id: 23,
-    name: &apos;São Paulo Hub&apos;,
+    name: 'São Paulo Hub',
     latitude: -23.5505,
     longitude: -46.6333,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 200,
-    region: &apos;South America&apos;,
-    type: &apos;node&apos;
+    region: 'South America',
+    type: 'node'
   },
   {
     id: 24,
-    name: &apos;Buenos Aires Node&apos;,
+    name: 'Buenos Aires Node',
     latitude: -34.6037,
     longitude: -58.3816,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 140,
-    region: &apos;South America&apos;,
-    type: &apos;node&apos;
+    region: 'South America',
+    type: 'node'
   },
   {
     id: 32,
-    name: &apos;Atacama Large Millimeter Array&apos;,
+    name: 'Atacama Large Millimeter Array',
     latitude: -23.0203,
     longitude: -67.4891,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 430,
-    region: &apos;South America&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Millimeter/submillimeter observatory array&apos;,
-    url: &apos;https://www.almaobservatory.org/&apos;
+    region: 'South America',
+    type: 'array',
+    description: 'Millimeter/submillimeter observatory array',
+    url: 'https://www.almaobservatory.org/'
   },
   {
     id: 33,
-    name: &apos;Paranal Ground Station&apos;,
+    name: 'Paranal Ground Station',
     latitude: -24.6273,
     longitude: -70.4045,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 360,
-    region: &apos;South America&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Southern hemisphere ground station facility&apos;
+    region: 'South America',
+    type: 'ground-station',
+    description: 'Southern hemisphere ground station facility'
   },
   // Africa
   {
     id: 34,
-    name: &apos;Cairo Hub&apos;,
+    name: 'Cairo Hub',
     latitude: 30.0444,
     longitude: 31.2357,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 240,
-    region: &apos;Africa&apos;,
-    type: &apos;node&apos;,
-    url: &apos;https://www.aucegypt.edu/&apos;
+    region: 'Africa',
+    type: 'node',
+    url: 'https://www.aucegypt.edu/'
   },
   {
     id: 35,
-    name: &apos;Johannesburg Center&apos;,
+    name: 'Johannesburg Center',
     latitude: -26.2023,
     longitude: 28.0436,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 280,
-    region: &apos;Africa&apos;,
-    type: &apos;node&apos;,
-    url: &apos;https://www.wits.ac.za/&apos;
+    region: 'Africa',
+    type: 'node',
+    url: 'https://www.wits.ac.za/'
   },
   {
     id: 36,
-    name: &apos;Lagos Node&apos;,
+    name: 'Lagos Node',
     latitude: 6.5244,
     longitude: 3.3792,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 160,
-    region: &apos;Africa&apos;,
-    type: &apos;node&apos;
+    region: 'Africa',
+    type: 'node'
   },
   {
     id: 37,
-    name: &apos;Nairobi Terminal&apos;,
+    name: 'Nairobi Terminal',
     latitude: -1.2832,
     longitude: 36.8172,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 210,
-    region: &apos;Africa&apos;,
-    type: &apos;node&apos;
+    region: 'Africa',
+    type: 'node'
   },
   {
     id: 38,
-    name: &apos;KAT-7 Radio Array&apos;,
+    name: 'KAT-7 Radio Array',
     latitude: -30.7215,
     longitude: 21.4283,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 370,
-    region: &apos;Africa&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Karoo Array Telescope - SKA precursor&apos;
+    region: 'Africa',
+    type: 'array',
+    description: 'Karoo Array Telescope - SKA precursor'
   },
   {
     id: 39,
-    name: &apos;South African Ground Station&apos;,
+    name: 'South African Ground Station',
     latitude: -33.9249,
     longitude: 18.6299,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 330,
-    region: &apos;Africa&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;African primary ground station facility&apos;
+    region: 'Africa',
+    type: 'ground-station',
+    description: 'African primary ground station facility'
   },
   {
     id: 40,
-    name: &apos;MeerKAT Array&apos;,
+    name: 'MeerKAT Array',
     latitude: -30.7130,
     longitude: 21.4438,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 410,
-    region: &apos;Africa&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Radio interferometer array&apos;,
-    url: &apos;https://www.sarao.ac.za/&apos;
+    region: 'Africa',
+    type: 'array',
+    description: 'Radio interferometer array',
+    url: 'https://www.sarao.ac.za/'
   },
   {
     id: 41,
-    name: &apos;Mauritius Ground Station&apos;,
+    name: 'Mauritius Ground Station',
     latitude: -20.3484,
     longitude: 57.5522,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 300,
-    region: &apos;Africa&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Indian Ocean ground station facility&apos;
+    region: 'Africa',
+    type: 'ground-station',
+    description: 'Indian Ocean ground station facility'
   },
   // Russia and Central Asia
   {
     id: 42,
-    name: &apos;Moscow Hub&apos;,
+    name: 'Moscow Hub',
     latitude: 55.7558,
     longitude: 37.6173,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 310,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Russia/Central Asia',
+    type: 'node'
   },
   {
     id: 43,
-    name: &apos;Vladivostok Node&apos;,
+    name: 'Vladivostok Node',
     latitude: 43.1056,
     longitude: 131.8735,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 220,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Russia/Central Asia',
+    type: 'node'
   },
   {
     id: 44,
-    name: &apos;Almaty Center&apos;,
+    name: 'Almaty Center',
     latitude: 43.2380,
     longitude: 76.9450,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 180,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Russia/Central Asia',
+    type: 'node'
   },
   {
     id: 45,
-    name: &apos;Siberian Ground Station&apos;,
+    name: 'Siberian Ground Station',
     latitude: 55.0415,
     longitude: 82.9346,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 340,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Eurasian ground station facility&apos;
+    region: 'Russia/Central Asia',
+    type: 'ground-station',
+    description: 'Eurasian ground station facility'
   },
   {
     id: 46,
-    name: &apos;Pulkovo Observatory Array&apos;,
+    name: 'Pulkovo Observatory Array',
     latitude: 59.7641,
     longitude: 30.3369,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 350,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Radio astronomical array&apos;
+    region: 'Russia/Central Asia',
+    type: 'array',
+    description: 'Radio astronomical array'
   },
   {
     id: 47,
-    name: &apos;Baikonur Ground Station&apos;,
+    name: 'Baikonur Ground Station',
     latitude: 45.9650,
     longitude: 63.3050,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 360,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Spaceport ground station facility&apos;
+    region: 'Russia/Central Asia',
+    type: 'ground-station',
+    description: 'Spaceport ground station facility'
   },
   {
     id: 48,
-    name: &apos;Novosibirsk Hub&apos;,
+    name: 'Novosibirsk Hub',
     latitude: 55.0283,
     longitude: 82.9235,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 250,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Russia/Central Asia',
+    type: 'node'
   },
   {
     id: 49,
-    name: &apos;St. Petersburg Node&apos;,
+    name: 'St. Petersburg Node',
     latitude: 59.9311,
     longitude: 30.3609,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 190,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Russia/Central Asia',
+    type: 'node'
   },
   // Extended Asia Coverage
   {
     id: 50,
-    name: &apos;Beijing Quantum Center&apos;,
+    name: 'Beijing Quantum Center',
     latitude: 39.9042,
     longitude: 116.4074,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 330,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 51,
-    name: &apos;Tianjin Node&apos;,
+    name: 'Tianjin Node',
     latitude: 39.0842,
     longitude: 117.2010,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 270,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 52,
-    name: &apos;Urumqi Ground Station&apos;,
+    name: 'Urumqi Ground Station',
     latitude: 43.8171,
     longitude: 87.6278,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 320,
-    region: &apos;Asia&apos;,
-    type: &apos;ground-station&apos;,
-    description: &apos;Central Asian ground station facility&apos;
+    region: 'Asia',
+    type: 'ground-station',
+    description: 'Central Asian ground station facility'
   },
   {
     id: 53,
-    name: &apos;Bangkok Hub&apos;,
+    name: 'Bangkok Hub',
     latitude: 13.7563,
     longitude: 100.5018,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 160,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 54,
-    name: &apos;Karachi Terminal&apos;,
+    name: 'Karachi Terminal',
     latitude: 24.8607,
     longitude: 67.0011,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 200,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 55,
-    name: &apos;Ursa Major Array&apos;,
+    name: 'Ursa Major Array',
     latitude: 55.7964,
     longitude: 37.5663,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 400,
-    region: &apos;Russia/Central Asia&apos;,
-    type: &apos;array&apos;,
-    description: &apos;Russian radio observation array&apos;
+    region: 'Russia/Central Asia',
+    type: 'array',
+    description: 'Russian radio observation array'
   },
-  // Major Quantum Teleportation &amp; Research Stations
+  // Major Quantum Teleportation & Research Stations
   {
     id: 56,
-    name: &apos;Fermilab Quantum Hub&apos;,
+    name: 'Fermilab Quantum Hub',
     latitude: 41.8411,
     longitude: -88.2563,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 380,
-    region: &apos;North America&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum teleportation research facility&apos;,
-    url: &apos;https://www.fnal.gov/&apos;
+    region: 'North America',
+    type: 'teleport',
+    description: 'Quantum teleportation research facility',
+    url: 'https://www.fnal.gov/'
   },
   {
     id: 57,
-    name: &apos;Brookhaven National Lab&apos;,
+    name: 'Brookhaven National Lab',
     latitude: 40.8681,
     longitude: -72.8860,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 370,
-    region: &apos;North America&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum networking research hub&apos;,
-    url: &apos;https://www.bnl.gov/&apos;
+    region: 'North America',
+    type: 'teleport',
+    description: 'Quantum networking research hub',
+    url: 'https://www.bnl.gov/'
   },
   {
     id: 58,
-    name: &apos;Los Alamos Quantum Center&apos;,
+    name: 'Los Alamos Quantum Center',
     latitude: 35.8810,
     longitude: -106.3055,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 390,
-    region: &apos;North America&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum information science facility&apos;,
-    url: &apos;https://www.lanl.gov/&apos;
+    region: 'North America',
+    type: 'teleport',
+    description: 'Quantum information science facility',
+    url: 'https://www.lanl.gov/'
   },
   {
     id: 59,
-    name: &apos;Lawrence Livermore Node&apos;,
+    name: 'Lawrence Livermore Node',
     latitude: 37.6879,
     longitude: -121.7233,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 340,
-    region: &apos;North America&apos;,
-    type: &apos;node&apos;
+    region: 'North America',
+    type: 'node'
   },
   {
     id: 60,
-    name: &apos;MIT Quantum Network&apos;,
+    name: 'MIT Quantum Network',
     latitude: 42.3601,
     longitude: -71.0947,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 350,
-    region: &apos;North America&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum internet research facility&apos;,
-    url: &apos;https://www.mit.edu/&apos;
+    region: 'North America',
+    type: 'teleport',
+    description: 'Quantum internet research facility',
+    url: 'https://www.mit.edu/'
   },
   {
     id: 61,
-    name: &apos;Caltech Quantum Hub&apos;,
+    name: 'Caltech Quantum Hub',
     latitude: 34.1377,
     longitude: -118.1253,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 360,
-    region: &apos;North America&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum teleportation lab&apos;,
-    url: &apos;https://www.caltech.edu/&apos;
+    region: 'North America',
+    type: 'teleport',
+    description: 'Quantum teleportation lab',
+    url: 'https://www.caltech.edu/'
   },
   {
     id: 62,
-    name: &apos;Delft Quantum Internet Alliance&apos;,
+    name: 'Delft Quantum Internet Alliance',
     latitude: 52.0016,
     longitude: 4.3561,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 380,
-    region: &apos;Europe&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;European quantum internet hub&apos;,
-    url: &apos;https://www.tudelft.nl/&apos;
+    region: 'Europe',
+    type: 'teleport',
+    description: 'European quantum internet hub',
+    url: 'https://www.tudelft.nl/'
   },
   {
     id: 63,
-    name: &apos;Vienna Quantum Center&apos;,
+    name: 'Vienna Quantum Center',
     latitude: 48.2082,
     longitude: 16.3738,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 370,
-    region: &apos;Europe&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum research teleportation node&apos;,
-    url: &apos;https://www.univie.ac.at/&apos;
+    region: 'Europe',
+    type: 'teleport',
+    description: 'Quantum research teleportation node',
+    url: 'https://www.univie.ac.at/'
   },
   {
     id: 64,
-    name: &apos;Barcelona Supercomputing Center&apos;,
+    name: 'Barcelona Supercomputing Center',
     latitude: 41.3851,
     longitude: 2.1734,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 320,
-    region: &apos;Europe&apos;,
-    type: &apos;node&apos;
+    region: 'Europe',
+    type: 'node'
   },
   {
     id: 65,
-    name: &apos;CERN Quantum Network&apos;,
+    name: 'CERN Quantum Network',
     latitude: 46.2318,
     longitude: 6.0581,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 400,
-    region: &apos;Europe&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Particle physics quantum facility&apos;,
-    url: &apos;https://home.cern/&apos;
+    region: 'Europe',
+    type: 'teleport',
+    description: 'Particle physics quantum facility',
+    url: 'https://home.cern/'
   },
   {
     id: 66,
-    name: &apos;Max Planck Institute&apos;,
+    name: 'Max Planck Institute',
     latitude: 48.0728,
     longitude: 11.5062,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 375,
-    region: &apos;Europe&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum optics research station&apos;,
-    url: &apos;https://www.mpq.mpg.de/&apos;
+    region: 'Europe',
+    type: 'teleport',
+    description: 'Quantum optics research station',
+    url: 'https://www.mpq.mpg.de/'
   },
   {
     id: 67,
-    name: &apos;Hefei Quantum Lab&apos;,
+    name: 'Hefei Quantum Lab',
     latitude: 31.8206,
     longitude: 117.2272,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 400,
-    region: &apos;Asia&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Chinese quantum teleportation facility&apos;,
-    url: &apos;https://en.ustc.edu.cn/&apos;
+    region: 'Asia',
+    type: 'teleport',
+    description: 'Chinese quantum teleportation facility',
+    url: 'https://en.ustc.edu.cn/'
   },
   {
     id: 68,
-    name: &apos;Tsinghua Quantum Institute&apos;,
+    name: 'Tsinghua Quantum Institute',
     latitude: 40.0034,
     longitude: 116.3186,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 390,
-    region: &apos;Asia&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum network research center&apos;,
-    url: &apos;https://www.tsinghua.edu.cn/&apos;
+    region: 'Asia',
+    type: 'teleport',
+    description: 'Quantum network research center',
+    url: 'https://www.tsinghua.edu.cn/'
   },
   {
     id: 69,
-    name: &apos;University of Tokyo Quantum Hub&apos;,
+    name: 'University of Tokyo Quantum Hub',
     latitude: 35.6758,
     longitude: 139.7671,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 360,
-    region: &apos;Asia&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum teleportation research&apos;,
-    url: &apos;https://www.u-tokyo.ac.jp/&apos;
+    region: 'Asia',
+    type: 'teleport',
+    description: 'Quantum teleportation research',
+    url: 'https://www.u-tokyo.ac.jp/'
   },
   {
     id: 70,
-    name: &apos;University of Hong Kong Node&apos;,
+    name: 'University of Hong Kong Node',
     latitude: 22.3026,
     longitude: 114.1843,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 300,
-    region: &apos;Asia&apos;,
-    type: &apos;node&apos;
+    region: 'Asia',
+    type: 'node'
   },
   {
     id: 71,
-    name: &apos;University of Melbourne Quantum Lab&apos;,
+    name: 'University of Melbourne Quantum Lab',
     latitude: -37.8008,
     longitude: 144.9628,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 350,
-    region: &apos;Australia&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Quantum network testbed facility&apos;,
-    url: &apos;https://www.unimelb.edu.au/&apos;
+    region: 'Australia',
+    type: 'teleport',
+    description: 'Quantum network testbed facility',
+    url: 'https://www.unimelb.edu.au/'
   },
   {
     id: 72,
-    name: &apos;Quantum Communications Infrastructure&apos;,
+    name: 'Quantum Communications Infrastructure',
     latitude: -33.8688,
     longitude: 151.2093,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 370,
-    region: &apos;Australia&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Australia-Asia quantum link&apos;,
-    url: &apos;https://www.sydney.edu.au/&apos;
+    region: 'Australia',
+    type: 'teleport',
+    description: 'Australia-Asia quantum link',
+    url: 'https://www.sydney.edu.au/'
   },
   {
     id: 73,
-    name: &apos;Brazilian Quantum Network&apos;,
+    name: 'Brazilian Quantum Network',
     latitude: -23.5505,
     longitude: -46.6333,
-    status: &apos;🟡 Connecting&apos;,
+    status: '🟡 Connecting',
     capacity: 310,
-    region: &apos;South America&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;South American quantum hub&apos;,
-    url: &apos;https://www5.usp.br/&apos;
+    region: 'South America',
+    type: 'teleport',
+    description: 'South American quantum hub',
+    url: 'https://www5.usp.br/'
   },
   {
     id: 74,
-    name: &apos;Quantum Internet Node Africa&apos;,
+    name: 'Quantum Internet Node Africa',
     latitude: -33.9249,
     longitude: 18.6299,
-    status: &apos;🟢 Active&apos;,
+    status: '🟢 Active',
     capacity: 360,
-    region: &apos;Africa&apos;,
-    type: &apos;teleport&apos;,
-    description: &apos;Africa-Europe quantum gateway&apos;,
-    url: &apos;https://www.sarao.ac.za/&apos;
+    region: 'Africa',
+    type: 'teleport',
+    description: 'Africa-Europe quantum gateway',
+    url: 'https://www.sarao.ac.za/'
   },
 ];
 
@@ -1271,64 +1269,64 @@ html&quot;&quot;&quot;
         let markers = {};
         let infoWindows = {};
         let focusedNode = null;
-        let currentView = &apos;2d&apos;; // &apos;2d&apos; or &apos;3d&apos;
+        let currentView = '2d'; // '2d' or '3d'
         let polylines = []; // Store communication lines
         let visibleMarkerTypes = {
             node: true,
-            &apos;ground-station&apos;: true,
+            'ground-station': true,
             array: true,
             teleport: true,
             connecting: true
         }; // Track which marker types are visible
 
         // DOM Elements
-        const totalNodesEl = document.getElementById(&apos;totalNodes&apos;);
-        const activeCountEl = document.getElementById(&apos;activeCount&apos;);
-        const connectingCountEl = document.getElementById(&apos;connectingCount&apos;);
-        const totalCapacityEl = document.getElementById(&apos;totalCapacity&apos;);
-        const nodesListEl = document.getElementById(&apos;nodesList&apos;);
-        const nodeDetailsEl = document.getElementById(&apos;nodeDetails&apos;);
-        const detailsPanel = document.getElementById(&apos;detailsPanel&apos;);
+        const totalNodesEl = document.getElementById('totalNodes');
+        const activeCountEl = document.getElementById('activeCount');
+        const connectingCountEl = document.getElementById('connectingCount');
+        const totalCapacityEl = document.getElementById('totalCapacity');
+        const nodesListEl = document.getElementById('nodesList');
+        const nodeDetailsEl = document.getElementById('nodeDetails');
+        const detailsPanel = document.getElementById('detailsPanel');
 
         // Get marker icon based on node type
         function getMarkerIcon(node) {
-            const isActive = node.status.includes(&apos;Active&apos;);
+            const isActive = node.status.includes('Active');
             
             switch(node.type) {
-                case &apos;teleport&apos;:
+                case 'teleport':
                     return {
                         path: google.maps.SymbolPath.CIRCLE,
                         scale: 12,
-                        fillColor: &apos;#ec4899&apos;,
+                        fillColor: '#ec4899',
                         fillOpacity: 1,
-                        strokeColor: &apos;#fbbf24&apos;,
+                        strokeColor: '#fbbf24',
                         strokeWeight: 3,
                     };
-                case &apos;ground-station&apos;:
+                case 'ground-station':
                     return {
                         path: google.maps.SymbolPath.CIRCLE,
                         scale: 10,
-                        fillColor: &apos;#f59e0b&apos;,
+                        fillColor: '#f59e0b',
                         fillOpacity: 1,
-                        strokeColor: &apos;#dc2626&apos;,
+                        strokeColor: '#dc2626',
                         strokeWeight: 3,
                     };
-                case &apos;array&apos;:
+                case 'array':
                     return {
                         path: google.maps.SymbolPath.CIRCLE,
                         scale: 11,
-                        fillColor: &apos;#8b5cf6&apos;,
+                        fillColor: '#8b5cf6',
                         fillOpacity: 1,
-                        strokeColor: &apos;#60a5fa&apos;,
+                        strokeColor: '#60a5fa',
                         strokeWeight: 3,
                     };
-                default: // &apos;node&apos;
+                default: // 'node'
                     return {
                         path: google.maps.SymbolPath.CIRCLE,
                         scale: 8,
-                        fillColor: isActive ? &apos;#10b981&apos; : &apos;#f59e0b&apos;,
+                        fillColor: isActive ? '#10b981' : '#f59e0b',
                         fillOpacity: 1,
-                        strokeColor: &apos;#ffffff&apos;,
+                        strokeColor: '#ffffff',
                         strokeWeight: 2,
                     };
             }
@@ -1336,14 +1334,14 @@ html&quot;&quot;&quot;
 
         // Initialize Google Map
         async function initMap() {
-            currentView = &apos;2d&apos;;
+            currentView = '2d';
             updateViewButtons();
-            const { Map } = await google.maps.importLibrary(&apos;maps&apos;);
+            const { Map } = await google.maps.importLibrary('maps');
             
-            map = new Map(document.getElementById(&apos;map&apos;), {
+            map = new Map(document.getElementById('map'), {
                 zoom: 2,
                 center: { lat: 20, lng: 0 },
-                mapTypeId: &apos;satellite&apos;,
+                mapTypeId: 'satellite',
                 fullscreenControl: true,
                 mapTypeControl: true,
                 streetViewControl: false,
@@ -1364,7 +1362,7 @@ html&quot;&quot;&quot;
                     content: createInfoWindowContent(node),
                 });
 
-                marker.addListener(&apos;click&apos;, () => {
+                marker.addListener('click', () => {
                     // Close all info windows
                     Object.values(infoWindows).forEach(iw => iw.close());
                     
@@ -1386,25 +1384,23 @@ html&quot;&quot;&quot;
 
         // Create info window content
         function createInfoWindowContent(node) {
-            const typeLabel = node.type === &apos;teleport&apos; ? &apos;⚡ Teleport Station&apos; :
-                            node.type === &apos;ground-station&apos; ? &apos;🛰️ Ground Station&apos; : 
-                            node.type === &apos;array&apos; ? &apos;📡 Array&apos; : 
-                            &apos;🔵 Network Node&apos;;
-            const description = node.description ? `&lt;p>&lt;span class=&quot;detail-label&quot;>Type:&lt;/span> ${node.description}&lt;/p>` : &apos;&apos;;
-            const link = node.url ? `&lt;p>&lt;a href=&quot;${node.url}&quot; target=&quot;_blank&quot; style=&quot;color: #3b82f6; text-decoration: none; font-weight: 500;&quot;>🔗 Visit Website&lt;/a>&lt;/p>` : &apos;&apos;;
+            const typeLabel = node.type === 'teleport' ? '⚡ Teleport Station' :
+                            node.type === 'ground-station' ? '🛰️ Ground Station' : 
+                            node.type === 'array' ? '📡 Array' : 
+                            '🔵 Network Node';
+            const description = node.description ? '<p><span class="detail-label">Type:</span> ' + node.description + '</p>' : '';
+            const link = node.url ? '<p><a href="' + node.url + '" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 500;">🔗 Visit Website</a></p>' : '';
             
-            return `
-                &lt;div class=&quot;info-window&quot;>
-                    &lt;h4>${node.name}&lt;/h4>
-                    &lt;p>&lt;span class=&quot;detail-label&quot;>Marker:&lt;/span> ${typeLabel}&lt;/p>
-                    ${description}
-                    &lt;p>&lt;span class=&quot;detail-label&quot;>Status:&lt;/span> ${node.status}&lt;/p>
-                    &lt;p>&lt;span class=&quot;detail-label&quot;>Region:&lt;/span> ${node.region}&lt;/p>
-                    &lt;p>&lt;span class=&quot;detail-label&quot;>Capacity:&lt;/span> ${node.capacity} Q&lt;/p>
-                    &lt;p>&lt;span class=&quot;detail-label&quot;>Lat/Lon:&lt;/span> ${node.latitude.toFixed(4)}, ${node.longitude.toFixed(4)}&lt;/p>
-                    ${link}
-                &lt;/div>
-            `;
+            return '<div class="info-window">' +
+                '<h4>' + node.name + '</h4>' +
+                '<p><span class="detail-label">Marker:</span> ' + typeLabel + '</p>' +
+                description +
+                '<p><span class="detail-label">Status:</span> ' + node.status + '</p>' +
+                '<p><span class="detail-label">Region:</span> ' + node.region + '</p>' +
+                '<p><span class="detail-label">Capacity:</span> ' + node.capacity + ' Q</p>' +
+                '<p><span class="detail-label">Lat/Lon:</span> ' + node.latitude.toFixed(4) + ', ' + node.longitude.toFixed(4) + '</p>' +
+                link +
+                '</div>';
         }
 
         // Toggle marker visibility by type
@@ -1424,17 +1420,17 @@ html&quot;&quot;&quot;
 
         // Get marker type based on status (for connecting status)
         function getMarkerType(node) {
-            if (node.type === &apos;connecting&apos; || node.status.includes(&apos;Connecting&apos;)) {
-                return &apos;connecting&apos;;
+            if (node.type === 'connecting' || node.status.includes('Connecting')) {
+                return 'connecting';
             }
             return node.type;
         }
 
         // Initialize marker toggle listeners
         function initializeMarkerToggles() {
-            document.querySelectorAll(&apos;.marker-toggle&apos;).forEach(toggle => {
-                toggle.addEventListener(&apos;change&apos;, (e) => {
-                    const type = e.target.getAttribute(&apos;data-type&apos;);
+            document.querySelectorAll('.marker-toggle').forEach(toggle => {
+                toggle.addEventListener('change', (e) => {
+                    const type = e.target.getAttribute('data-type');
                     const visible = e.target.checked;
                     toggleMarkerType(type, visible);
                 });
@@ -1467,10 +1463,10 @@ html&quot;&quot;&quot;
                             node.latitude, node.longitude,
                             n.latitude, n.longitude
                         ),
-                        priority: n.type === &apos;teleport&apos; ? 3 : 
-                                 (n.type === &apos;ground-station&apos; || n.type === &apos;array&apos;) ? 2 : 1
+                        priority: n.type === 'teleport' ? 3 : 
+                                 (n.type === 'ground-station' || n.type === 'array') ? 2 : 1
                     }))
-                    .filter(c => c.distance &lt;= maxDistanceKm)
+                    .filter(c => c.distance <= maxDistanceKm)
                     .sort((a, b) => {
                         if (b.priority !== a.priority) return b.priority - a.priority;
                         return a.distance - b.distance;
@@ -1498,7 +1494,7 @@ html&quot;&quot;&quot;
             queue.push(startNodeId);
 
             let head = 0;
-            while (head &lt; queue.length) {
+            while (head < queue.length) {
                 const currentId = queue[head];
                 head++;
 
@@ -1527,9 +1523,9 @@ html&quot;&quot;&quot;
 
             // Define styles for each hop
             const hopStyles = {
-                1: { color: &apos;#10b981&apos;, opacity: 1.0, weight: 2.5, dash: null, label: &apos;1-Hop&apos; },
-                2: { color: &apos;#f59e0b&apos;, opacity: 0.7, weight: 2, dash: [5, 5], label: &apos;2-Hop&apos; },
-                3: { color: &apos;#ef4444&apos;, opacity: 0.5, weight: 1.5, dash: [2, 4], label: &apos;3-Hop&apos; }
+                1: { color: '#10b981', opacity: 1.0, weight: 2.5, dash: null, label: '1-Hop' },
+                2: { color: '#f59e0b', opacity: 0.7, weight: 2, dash: [5, 5], label: '2-Hop' },
+                3: { color: '#ef4444', opacity: 0.5, weight: 1.5, dash: [2, 4], label: '3-Hop' }
             };
 
             // Draw polylines for all reachable nodes within 3 hops
@@ -1552,7 +1548,7 @@ html&quot;&quot;&quot;
                     strokeWeight: style.weight,
                     strokeDasharray: style.dash,
                     map: map,
-                    title: `${hop}-hop to ${targetNode.name}`
+                    title: hop + '-hop to ' + targetNode.name
                 });
 
                 polylines.push(polyline);
@@ -1569,27 +1565,22 @@ html&quot;&quot;&quot;
             const hop3 = Object.values(hopDistances).filter(d => d === 3).length;
             const unreachable = Object.values(hopDistances).filter(d => d === Infinity).length;
 
-            const stats = document.createElement(&apos;div&apos;);
-            stats.style.cssText = &apos;font-size: 11px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #334155;&apos;;
-            stats.innerHTML = `
-                &lt;div style=&quot;margin-bottom: 8px;&quot;>&lt;strong>Network Reach:&lt;/strong>&lt;/div>
-                &lt;div style=&quot;display: flex; align-items: center; gap: 6px; margin-bottom: 4px;&quot;>
-                    &lt;div style=&quot;width: 12px; height: 12px; background-color: #10b981; border-radius: 2px;&quot;>&lt;/div>
-                    &lt;span>1-Hop: &lt;strong>${hop1}&lt;/strong>&lt;/span>
-                &lt;/div>
-                &lt;div style=&quot;display: flex; align-items: center; gap: 6px; margin-bottom: 4px;&quot;>
-                    &lt;div style=&quot;width: 12px; height: 12px; background-color: #f59e0b; border-radius: 2px; opacity: 0.7;&quot;>&lt;/div>
-                    &lt;span>2-Hop: &lt;strong>${hop2}&lt;/strong>&lt;/span>
-                &lt;/div>
-                &lt;div style=&quot;display: flex; align-items: center; gap: 6px;&quot;>
-                    &lt;div style=&quot;width: 12px; height: 12px; background-color: #ef4444; border-radius: 2px; opacity: 0.5;&quot;>&lt;/div>
-                    &lt;span>3-Hop: &lt;strong>${hop3}&lt;/strong>&lt;/span>
-                &lt;/div>
-            `;
+            const stats = document.createElement('div');
+            stats.style.cssText = 'font-size: 11px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #334155;';
+            stats.innerHTML = '<div style="margin-bottom: 8px;"><strong>Network Reach:</strong></div>' +
+                '<div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">' +
+                '<div style="width: 12px; height: 12px; background-color: #10b981; border-radius: 2px;"></div>' +
+                '<span>1-Hop: <strong>' + hop1 + '</strong></span></div>' +
+                '<div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">' +
+                '<div style="width: 12px; height: 12px; background-color: #f59e0b; border-radius: 2px; opacity: 0.7;"></div>' +
+                '<span>2-Hop: <strong>' + hop2 + '</strong></span></div>' +
+                '<div style="display: flex; align-items: center; gap: 6px;">' +
+                '<div style="width: 12px; height: 12px; background-color: #ef4444; border-radius: 2px; opacity: 0.5;"></div>' +
+                '<span>3-Hop: <strong>' + hop3 + '</strong></span></div>';
 
             // Add to details panel if it exists
-            const detailsContent = document.querySelector(&apos;.node-details&apos;);
-            const existingStats = detailsContent?.querySelector(&apos;[style*=&quot;Network Reach&quot;]&apos;)?.parentElement;
+            const detailsContent = document.querySelector('.node-details');
+            const existingStats = detailsContent?.querySelector('[style*="Network Reach"]')?.parentElement;
             if (existingStats) {
                 existingStats.remove();
             }
@@ -1600,7 +1591,7 @@ html&quot;&quot;&quot;
 
         // Calculate distance between two coordinates using Haversine formula
         function calculateDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371; // Earth&apos;s radius in km
+            const R = 6371; // Earth's radius in km
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
             const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -1624,8 +1615,8 @@ html&quot;&quot;&quot;
                         node.latitude, node.longitude
                     ),
                     // Priority score: teleport=3, ground-station=2, array=2, node=1
-                    priority: node.type === &apos;teleport&apos; ? 3 : 
-                             (node.type === &apos;ground-station&apos; || node.type === &apos;array&apos;) ? 2 : 1
+                    priority: node.type === 'teleport' ? 3 : 
+                             (node.type === 'ground-station' || node.type === 'array') ? 2 : 1
                 }))
                 .sort((a, b) => {
                     // Sort by priority first (descending), then by distance (ascending)
@@ -1642,9 +1633,9 @@ html&quot;&quot;&quot;
                         { lat: item.node.latitude, lng: item.node.longitude }
                     ],
                     geodesic: true,
-                    strokeColor: item.node.type === &apos;teleport&apos; ? &apos;#ec4899&apos; : 
-                                item.node.type === &apos;ground-station&apos; ? &apos;#f59e0b&apos; :
-                                item.node.type === &apos;array&apos; ? &apos;#8b5cf6&apos; : &apos;#10b981&apos;,
+                    strokeColor: item.node.type === 'teleport' ? '#ec4899' : 
+                                item.node.type === 'ground-station' ? '#f59e0b' :
+                                item.node.type === 'array' ? '#8b5cf6' : '#10b981',
                     strokeOpacity: 0.7,
                     strokeWeight: 2,
                     map: map
@@ -1664,16 +1655,14 @@ html&quot;&quot;&quot;
 
         // Initialize nodes list
         function initializeNodesList() {
-            nodesListEl.innerHTML = NETWORK_NODES.map(node => `
-                &lt;button class=&quot;node-item ${focusedNode?.id === node.id ? &apos;active&apos; : &apos;&apos;}&quot; data-id=&quot;${node.id}&quot;>
-                    &lt;strong>${node.name}&lt;/strong>&lt;br>
-                    &lt;small>${node.region} • ${node.status}&lt;/small>
-                &lt;/button>
-            `).join(&apos;&apos;);
+            nodesListEl.innerHTML = NETWORK_NODES.map(node => '<button class="node-item ' + (focusedNode?.id === node.id ? 'active' : '') + '" data-id="' + node.id + '">' +
+                '<strong>' + node.name + '</strong><br>' +
+                '<small>' + node.region + ' • ' + node.status + '</small>' +
+                '</button>').join('');
 
-            document.querySelectorAll(&apos;.node-item&apos;).forEach(btn => {
-                btn.addEventListener(&apos;click&apos;, () => {
-                    const nodeId = parseInt(btn.getAttribute(&apos;data-id&apos;));
+            document.querySelectorAll('.node-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const nodeId = parseInt(btn.getAttribute('data-id'));
                     const node = NETWORK_NODES.find(n => n.id === nodeId);
                     setFocusedNode(node);
                     
@@ -1698,58 +1687,40 @@ html&quot;&quot;&quot;
         // Update statistics
         function updateStats() {
             totalNodesEl.textContent = NETWORK_NODES.length;
-            activeCountEl.textContent = NETWORK_NODES.filter(n => n.status.includes(&apos;Active&apos;)).length;
-            connectingCountEl.textContent = NETWORK_NODES.filter(n => n.status.includes(&apos;Connecting&apos;)).length;
-            totalCapacityEl.textContent = NETWORK_NODES.reduce((sum, n) => sum + n.capacity, 0) + &apos; Q&apos;;
+            activeCountEl.textContent = NETWORK_NODES.filter(n => n.status.includes('Active')).length;
+            connectingCountEl.textContent = NETWORK_NODES.filter(n => n.status.includes('Connecting')).length;
+            totalCapacityEl.textContent = NETWORK_NODES.reduce((sum, n) => sum + n.capacity, 0) + ' Q';
         }
 
         // Update node details
         function updateNodeDetails() {
             if (focusedNode) {
-                const typeLabel = focusedNode.type === &apos;teleport&apos; ? &apos;⚡ Teleport Station&apos; :
-                                focusedNode.type === &apos;ground-station&apos; ? &apos;🛰️ Ground Station&apos; : 
-                                focusedNode.type === &apos;array&apos; ? &apos;📡 Array&apos; : 
-                                &apos;🔵 Network Node&apos;;
-                const description = focusedNode.description ? `
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Type:&lt;/span> ${focusedNode.description}
-                        &lt;/div>
-                    ` : &apos;&apos;;
+                const typeLabel = focusedNode.type === 'teleport' ? '⚡ Teleport Station' :
+                                focusedNode.type === 'ground-station' ? '🛰️ Ground Station' : 
+                                focusedNode.type === 'array' ? '📡 Array' : 
+                                '🔵 Network Node';
+                const description = focusedNode.description ? '<div class="detail-item"><span class="detail-label">Type:</span> ' + focusedNode.description + '</div>' : '';
                 
-                detailsPanel.style.display = &apos;block&apos;;
-                nodeDetailsEl.innerHTML = `
-                    &lt;div class=&quot;node-details&quot;>
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Name:&lt;/span> ${focusedNode.name}
-                        &lt;/div>
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Marker:&lt;/span> ${typeLabel}
-                        &lt;/div>
-                        ${description}
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Status:&lt;/span> ${focusedNode.status}
-                        &lt;/div>
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Region:&lt;/span> ${focusedNode.region}
-                        &lt;/div>
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Capacity:&lt;/span> ${focusedNode.capacity} Q
-                        &lt;/div>
-                        &lt;div class=&quot;detail-item&quot;>
-                            &lt;span class=&quot;detail-label&quot;>Lat/Lon:&lt;/span> ${focusedNode.latitude.toFixed(4)}, ${focusedNode.longitude.toFixed(4)}
-                        &lt;/div>
-                    &lt;/div>
-                `;
+                detailsPanel.style.display = 'block';
+                nodeDetailsEl.innerHTML = '<div class="node-details">' +
+                    '<div class="detail-item"><span class="detail-label">Name:</span> ' + focusedNode.name + '</div>' +
+                    '<div class="detail-item"><span class="detail-label">Marker:</span> ' + typeLabel + '</div>' +
+                    description +
+                    '<div class="detail-item"><span class="detail-label">Status:</span> ' + focusedNode.status + '</div>' +
+                    '<div class="detail-item"><span class="detail-label">Region:</span> ' + focusedNode.region + '</div>' +
+                    '<div class="detail-item"><span class="detail-label">Capacity:</span> ' + focusedNode.capacity + ' Q</div>' +
+                    '<div class="detail-item"><span class="detail-label">Lat/Lon:</span> ' + focusedNode.latitude.toFixed(4) + ', ' + focusedNode.longitude.toFixed(4) + '</div>' +
+                    '</div>';
             } else {
-                detailsPanel.style.display = &apos;none&apos;;
-                nodeDetailsEl.innerHTML = &apos;&apos;;
+                detailsPanel.style.display = 'none';
+                nodeDetailsEl.innerHTML = '';
             }
         }
 
         // Switch to 2D map view
         function switchTo2DMap() {
-            if (currentView === &apos;2d&apos;) return;
-            currentView = &apos;2d&apos;;
+            if (currentView === '2d') return;
+            currentView = '2d';
             updateViewButtons();
             
             // Reset map tilt and heading to 0 for flat 2D view
@@ -1757,39 +1728,38 @@ html&quot;&quot;&quot;
             if (map.getHeading) map.setHeading(0);
             
             // Change to a standard map type
-            map.setMapTypeId(&apos;satellite&apos;);
+            map.setMapTypeId('satellite');
         }
 
         // Switch to 3D globe view
         function switchTo3DGlobe() {
-            if (currentView === &apos;3d&apos;) return;
-            currentView = &apos;3d&apos;;
+            if (currentView === '3d') return;
+            currentView = '3d';
             updateViewButtons();
             
             // Enable 3D globe view with tilt and heading
-            map.setMapTypeId(&apos;satellite&apos;);
+            map.setMapTypeId('satellite');
             map.setTilt(45);
             if (map.setHeading) map.setHeading(45);
         }
 
         // Update button styles based on current view
         function updateViewButtons() {
-            const btn2d = document.getElementById(&apos;view2dBtn&apos;);
-            const btn3d = document.getElementById(&apos;view3dBtn&apos;);
+            const btn2d = document.getElementById('view2dBtn');
+            const btn3d = document.getElementById('view3dBtn');
             
-            if (currentView === &apos;2d&apos;) {
-                btn2d.style.backgroundColor = &apos;#2563eb&apos;;
-                btn3d.style.backgroundColor = &apos;#64748b&apos;;
+            if (currentView === '2d') {
+                btn2d.style.backgroundColor = '#2563eb';
+                btn3d.style.backgroundColor = '#64748b';
             } else {
-                btn2d.style.backgroundColor = &apos;#64748b&apos;;
-                btn3d.style.backgroundColor = &apos;#2563eb&apos;;
+                btn2d.style.backgroundColor = '#64748b';
+                btn3d.style.backgroundColor = '#2563eb';
             }
         }
 
         // Initialize map when page loads
-        window.addEventListener(&apos;load&apos;, initMap);
-    &lt;/script>
-&lt;/body>
-&lt;/html>
-&quot;&quot;&quot;
-</code></pre>
+        window.addEventListener('load', initMap);
+    </script>
+</body>
+</html>
+
