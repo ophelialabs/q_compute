@@ -7,7 +7,6 @@
 #> tags = ["Qnet", "Dashboard"]
 #> layout = "layout.jlhtml"
 
-html"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1791,4 +1790,4 @@ html"""
     </script>
 </body>
 </html>
-"""
+
