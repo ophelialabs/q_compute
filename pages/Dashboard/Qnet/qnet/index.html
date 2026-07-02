@@ -1,27 +1,293 @@
-<!DOCTYPE html>#> [frontmatter]
-#> chapter = 1
-#> section = 1
-#> order = 2
-#> image = "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
-#> title = "Quantum Network Visualization"
-#> tags = ["qnet"]
-#> layout = "layout.jlhtml"
-
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG"></script>
-    <script>
+
+<title>Quantum Network Visualization — The Living TPOT </title>
+
+
+<link rel="root" href="../../../.." />
+
+<link rel="icon" href="../../../../assets/favicon.ico" />
+<link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml" />
+
+<link rel="stylesheet" href="../../../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../../../assets/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="../../../../assets/styles/navbar.css" type="text/css" />
+<link rel="stylesheet" href="../../../../assets/styles/cheatsheets.css" type="text/css" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG" ></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-P8S1FQ4XSG');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Networks - 3D Google Maps Globe</title>
+</script>
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Mermaid Charts -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                fontSize: '14px',
+                fontFamily: 'Arial, sans-serif'
+            }
+        });
+    </script>
+
+<script src="../../../../assets/scripts/theme.js" defer></script>
+<script src="../../../../assets/scripts/navbar.js" defer></script>
+<script src="../../../../assets/scripts/sidebar.js" type="module"></script>
+<script src="../../../../assets/scripts/carousel.js" defer></script>
+<script src="../../../../assets/scripts/cheatsheets.js" defer></script>
+
+<link rel="pp-search-data" href="../../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../../assets/scripts/search.js" type="module" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.js" integrity="sha256-sDRYYtDc+jNi2rrJPUS5kGxXXMlmnOSCq5ek5tYAk/M=" crossorigin="anonymous" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.0/src/lite-yt-embed.css" integrity="sha256-lv6SEl7Dhri7d86yiHCTuSWFb9CYROQFewxZ7Je0n5k=" crossorigin="anonymous">
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8572a580bead4b729ad55779ba3a1cd6"}'></script>
+
+<script data-goatcounter="https://computationalthinking-stats.plutojl.org/count" async src="//computationalthinking-stats.plutojl.org/count.js"></script>
+
+<script type="importmap">{"imports":{"aVc6E":"./firebase-firestore.7f842f36.js","bEDS4":"./firebase-app.b603aaa4.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.6d99411f.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.1a8c75c9.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.72627891.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje), Παναγιώτης (Panagiotis) Γεωργακόπουλος (https://github.com/pankgeorg), Paul Berg (https://github.com/Pangoraw) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.2f9fc277.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.7a04a462.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.34f4e0d4.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v1.0.0";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/editor.c026cb75.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@1.0.0/frontend-dist/tex-svg-full.b78c0ac1.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+</head>
+<body>
+    <script>
+        (() => {
+            const liveReloadUrl = ""../../../.."/__livereload_state.json";
+            let lastVersion = null;
+
+            const checkForUpdate = () => {
+                fetch(liveReloadUrl + "?t=" + Date.now(), { cache: "no-store" })
+                    .then((response) => response.ok ? response.text() : "")
+                    .then((text) => {
+                        try {
+                            const data = text ? JSON.parse(text) : null;
+                            const version = data?.version;
+                            if (lastVersion !== null && version !== null && version !== lastVersion) {
+                                window.location.reload();
+                            }
+                            lastVersion = version ?? lastVersion;
+                        } catch (error) {
+                            // Ignore malformed state files.
+                        }
+                    })
+                    .catch(() => {});
+            };
+
+            checkForUpdate();
+            window.setInterval(checkForUpdate, 2000);
+        })();
+    </script>
+    <!-- TOP NAVBAR -->
+    <!-- TOP NAVBAR -->
+<header id="pages-navbar">
+    <div class="navbar-container">
+        <!-- Navbar Left: Logo/Title -->
+        <div class="navbar-left">
+            <a href="../../../.." class="navbar-logo" title="Home">
+                <span class="logo-text">Q</span>
+            </a>
+        </div>
+        
+        <!-- Navbar Center: Search -->
+        <div class="navbar-center">
+            <form action="../../../../search" method="GET" class="navbar-search">
+                <input type="search" name="q" placeholder="Search lessons..." aria-label="Search">
+                <button type="submit" aria-label="Search" title="Search">
+                    <span>🔎</span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Navbar Right: Theme + Menu -->
+        <div class="navbar-right">
+            <button id="theme-toggle" title="Switch theme" aria-label="Switch theme" class="navbar-icon"></button>
+            <button id="toggle-nav" class="navbar-menu-toggle" title="Open navigation" aria-label="Open navigation"></button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div id="pages-layout">
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="sidebar-about">
+                <div class="course-title">
+                    <h1><a href="../../../.."><span>The Living TPOT</span></a></h1>
+                    <h2><span>From Foundations to Research Frontiers</span></h2>
+                </div>
+                <div class="authors">
+                    by <a href="https://github.com/jlabclouds">Quantum Learning Team</a>, <a href="https://github.com/jlabclouds/q_compute">Contributors</a>
+                </div>
+            </li>
+            <li>
+                <div class="track-chooser">
+                    <label>
+                    <h2>Choose your track:</h2>
+                    <select>
+                        <option value="">Choose...</option>
+                        <option value="julia">🤖 Robotics</option> <option value="material">🏥 Medical</option> <option value="setup">⚙️ Networking</option> 
+                    </select>
+                    </label>
+                </div>
+            </li>
+        <li class="dropdown-section">
+<h3 class="dropdown-toggle">Welcome</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_welcome'><a href='../../../../logistics/'><span class="entry-number"></span> Class logistics</a></li><li class=' lecture tag_welcome'><a href='../../../../installation/'><span class="entry-number"></span> Software installation</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">Resources</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_resources'><a href='../../../../resources/cheatsheets/cheatsheets/'><span class="entry-number"></span> Cheatsheets</a></li><li class=' lecture tag_resources tag_math_cheatsheet tag_trigonometry tag_linear tag_quadratic tag_algebra tag_discrete_math'><a href='../../../../resources/cheatsheets/mat/' title='Trigonometry, Linear, Quadratic, Algebra, and Discrete Mathematics'><span class="entry-number">1.2</span> Math Cheatsheet</a></li>
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">dashboard</h3>
+<ul class="dropdown-content">
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Qnet Dash</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_qnet'><a href='../../../../pages/Dashboard/Qnet/'><span class="entry-number">2.2</span> Dashboard Overview</a></li><li class='active lecture tag_qnet'><a href='../../../../pages/Dashboard/Qnet/qnet/'><span class="entry-number">1.1</span> Quantum Network Visualization</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent1</h3>
+<ul class="dropdown-content">
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 1: Adding course material</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent1_mod1 tag_track_material tag_markdown tag_frontmatter'><a href='../../../../pages/parent1/mod1/mod1_add_material/add_markdown/'><span class="entry-number">1.1</span> Add markdown files</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../../../pages/parent1/mod1/mod1_add_material/add_pluto/'><span class="entry-number">1.2</span> Add Pluto notebooks</a></li><li class=' lecture tag_parent1_mod1 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../../../pages/parent1/mod1/mod1_add_material/plutoui_showcase/'><span class="entry-number">1.3</span> PlutoUI showcase</a></li>
+</ul>
+</li>
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 2: Quantum Gates</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_pauli'><a href='../../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_1_single_qubit_gates/' title='Learn about Pauli X, Y, Z gates and their properties'><span class="entry-number">2.1</span> Single-Qubit Gates: Pauli Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_single_qubit tag_hadamard tag_phase'><a href='../../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_2_hadamard_phase_gates/' title='Master the Hadamard gate and phase gates'><span class="entry-number">2.2</span> Hadamard and Phase Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_introduction'><a href='../../../../pages/parent1/mod1/mod1_quantum_gates/module_overview/' title='Learn fundamental quantum gates and their properties'><span class="entry-number">2.0</span> Module 2: Quantum Gates</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_multi_qubit tag_entanglement'><a href='../../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_3_multiqubit_gates/' title='Learn about controlled gates and entanglement'><span class="entry-number">2.3</span> Multi-Qubit Gates: CNOT &amp; Toffoli</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_universality tag_completeness'><a href='../../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_4_universal_gate_sets/' title='Understand quantum gate universality and completeness'><span class="entry-number">2.4</span> Universal Gate Sets</a></li><li class=' lecture tag_parent1_mod2 tag_quantum_gates tag_decomposition tag_exercises tag_projects'><a href='../../../../pages/parent1/mod1/mod1_quantum_gates/lesson_2_5_gate_decomposition/' title='Exercises and projects on gate decomposition'><span class="entry-number">2.5</span> Gate Decomposition &amp; Practice</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li class="dropdown-section">
+<h3 class="dropdown-toggle">parent2</h3>
+<ul class="dropdown-content">
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 1: Placeholder</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent2_mod1 tag_placeholder tag_coming_soon'><a href='../../../../pages/parent2/mod1_placeholder/' title='Placeholder for future content'><span class="entry-number">1.0</span> Module 2: Placeholder</a></li>
+</ul>
+</li>
+<li class="dropdown-section nested-dropdown">
+<h3 class="dropdown-toggle">Module 2: Coming Soon</h3>
+<ul class="dropdown-content">
+<li class=' lecture tag_parent2_mod2 tag_placeholder tag_coming_soon'><a href='../../../../pages/parent2/mod2_coming_soon/' title='Placeholder for future content'><span class="entry-number">2.0</span> Module 2: Coming Soon</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+                <li><hr></li>
+            <li class="sidebar-about">
+                <div class="semester-details">
+                    <a href="../../../../semesters/">Self-paced, 2026-2033</a>
+                    <div class="course-numbers"><span>QUANTCOMP-101</span></div>
+                </div>
+                <div class="logos">
+                    <picture title="Quantum Learning Initiative">
+                        <img src="../../../../assets/quantum_logo.svg">
+                    </picture>
+                    <picture title="Julia Programming Language">
+                        <source srcset="../../../../assets/julia-logo-dark.svg" media="(prefers-color-scheme: dark)" />
+                        <img src="../../../../assets/julia-logo-color.svg">
+                    </picture>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+           <div class="lecture-header" >
+    <p class="number">Section 1.1</p>
+    <h1>Quantum Network Visualization</h1>
+    
+    
+</div>
+        <script>
         (g => {
             var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
             b = b[c] || (b[c] = {});
@@ -42,20 +308,18 @@
             v: "alpha"
         });
     </script>
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #0f172a;
             color: #e2e8f0;
             padding: 20px;
         }
-
         .container {
             width: 100%;
             max-width: 1400px;
@@ -64,35 +328,29 @@
             background-color: #0f172a;
             border-radius: 8px;
         }
-
         .header {
             margin-bottom: 24px;
         }
-
         .header h1 {
             font-size: 32px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
         }
-
         .header p {
             color: #9ca3af;
         }
-
         .content-wrapper {
             display: grid;
             grid-template-columns: 1fr 320px;
             gap: 24px;
         }
-
         #map {
             width: 100%;
             height: 600px;
             border-radius: 8px;
             border: 1px solid #334155;
         }
-
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -100,44 +358,36 @@
             max-height: 600px;
             overflow-y: auto;
         }
-
         .panel {
             background-color: #1e293b;
             border-radius: 8px;
             padding: 16px;
             border: 1px solid #334155;
         }
-
         .panel h3 {
             font-size: 16px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
         }
-
         .stat-item {
             margin-bottom: 12px;
         }
-
         .stat-label {
             color: #9ca3af;
             font-size: 12px;
         }
-
         .stat-value {
             font-size: 24px;
             font-weight: 700;
             margin-top: 4px;
         }
-
         .stat-value.green {
             color: #4ade80;
         }
-
         .stat-value.yellow {
             color: #facc15;
         }
-
         .stat-value.blue {
             color: #60a5fa;
         }
@@ -146,7 +396,6 @@
             max-height: 280px;
             overflow-y: auto;
         }
-
         .node-item {
             width: 100%;
             text-align: left;
@@ -160,39 +409,32 @@
             margin-bottom: 4px;
             font-size: 12px;
         }
-
         .node-item:hover {
             background-color: #334155;
         }
-
         .node-item.active {
             background-color: #2563eb;
             color: white;
         }
-
         .node-details {
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid #334155;
         }
-
         .node-details h4 {
             font-weight: 600;
             color: white;
             margin-bottom: 8px;
             font-size: 14px;
         }
-
         .detail-item {
             margin-bottom: 4px;
             font-size: 12px;
             color: #d1d5db;
         }
-
         .detail-label {
             color: #9ca3af;
         }
-
         .info-window {
             background-color: #1e293b;
             color: #e2e8f0;
@@ -351,9 +593,7 @@
             stroke-dasharray: 0;
         }
     </style>
-</head>
-<body>
-    <div class="container">
+<div class="container">
         <div class="header">
             <h1>🌍 Quantum Networks</h1>
             <p>Interactive network visualization with switchable views</p>
@@ -362,8 +602,7 @@
                 <button id="view3dBtn" style="padding: 8px 16px; background-color: #64748b; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.2s;" onclick="switchTo3DGlobe()">🌐 3D Globe View</button>
             </div>
         </div>
-
-        <div class="content-wrapper">
+<div class="content-wrapper">
             <div id="map"></div>
             <div class="sidebar">
                 <div class="panel">
@@ -385,8 +624,7 @@
                         <p class="stat-value blue" id="totalCapacity">0 Q</p>
                     </div>
                 </div>
-
-                <div class="panel">
+<div class="panel">
                     <h3>Marker Legend</h3>
                     <div class="marker-legend">
                         <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
@@ -419,8 +657,7 @@
                         💡 Click any marker to see communication links
                     </p>
                 </div>
-
-                <div class="panel">
+<div class="panel">
                     <h3>Network Hop Legend</h3>
                     <div class="marker-legend">
                         <div class="legend-item">
@@ -437,21 +674,18 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="panel">
+<div class="panel">
                     <h3>Nodes</h3>
                     <div class="node-list" id="nodesList"></div>
                 </div>
-
-                <div class="panel" id="detailsPanel" style="display: none;">
+<div class="panel" id="detailsPanel" style="display: none;">
                     <h3>Node Details</h3>
                     <div id="nodeDetails"></div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
+<script>
         const NETWORK_NODES = [
   // North America
   {
@@ -1760,6 +1994,14 @@
         // Initialize map when page loads
         window.addEventListener('load', initMap);
     </script>
+
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="https://github.com/jlabclouds/q_compute"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
-
