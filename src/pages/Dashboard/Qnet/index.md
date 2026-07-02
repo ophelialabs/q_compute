@@ -4,7 +4,7 @@ order: 1
 chapter: 2
 section: 2
 layout: "md.jlmd"
-tags: ["Dashboard"]
+tags: ["dashboard"]
 ---
 
 # Broadcom DX NetOps: 
