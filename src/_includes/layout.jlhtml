@@ -46,6 +46,16 @@ end)
 <link rel="stylesheet" href="$(root_url)/assets/styles/navbar.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/cheatsheets.css" type="text/css" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P8S1FQ4XSG" ></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P8S1FQ4XSG');
+</script>
+
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 

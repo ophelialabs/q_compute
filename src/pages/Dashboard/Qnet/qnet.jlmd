@@ -1,15 +1,14 @@
-#> [frontmatter]
-#> chapter = 1
-#> section = 1
-#> order = 1
-#> image = "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
-#> title = "Quantum Network Visualization"
-#> tags = ["qnet"]
-#> layout = "layout.jlhtml"
+---
+title: "Quantum Network Visualization"
+order: 1
+chapter: 1
+section: 1
+layout: "layout.jlhtml"
+tags: ["qnet"]
+image: "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
+---
 
-using 
-<head>
-    <script>
+<script>
         (g => {
             var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
             b = b[c] || (b[c] = {});
@@ -30,20 +29,18 @@ using
             v: "alpha"
         });
     </script>
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #0f172a;
             color: #e2e8f0;
             padding: 20px;
         }
-
         .container {
             width: 100%;
             max-width: 1400px;
@@ -52,35 +49,29 @@ using
             background-color: #0f172a;
             border-radius: 8px;
         }
-
         .header {
             margin-bottom: 24px;
         }
-
         .header h1 {
             font-size: 32px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
         }
-
         .header p {
             color: #9ca3af;
         }
-
         .content-wrapper {
             display: grid;
             grid-template-columns: 1fr 320px;
             gap: 24px;
         }
-
         #map {
             width: 100%;
             height: 600px;
             border-radius: 8px;
             border: 1px solid #334155;
         }
-
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -88,44 +79,36 @@ using
             max-height: 600px;
             overflow-y: auto;
         }
-
         .panel {
             background-color: #1e293b;
             border-radius: 8px;
             padding: 16px;
             border: 1px solid #334155;
         }
-
         .panel h3 {
             font-size: 16px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
         }
-
         .stat-item {
             margin-bottom: 12px;
         }
-
         .stat-label {
             color: #9ca3af;
             font-size: 12px;
         }
-
         .stat-value {
             font-size: 24px;
             font-weight: 700;
             margin-top: 4px;
         }
-
         .stat-value.green {
             color: #4ade80;
         }
-
         .stat-value.yellow {
             color: #facc15;
         }
-
         .stat-value.blue {
             color: #60a5fa;
         }
@@ -134,7 +117,6 @@ using
             max-height: 280px;
             overflow-y: auto;
         }
-
         .node-item {
             width: 100%;
             text-align: left;
@@ -148,39 +130,32 @@ using
             margin-bottom: 4px;
             font-size: 12px;
         }
-
         .node-item:hover {
             background-color: #334155;
         }
-
         .node-item.active {
             background-color: #2563eb;
             color: white;
         }
-
         .node-details {
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid #334155;
         }
-
         .node-details h4 {
             font-weight: 600;
             color: white;
             margin-bottom: 8px;
             font-size: 14px;
         }
-
         .detail-item {
             margin-bottom: 4px;
             font-size: 12px;
             color: #d1d5db;
         }
-
         .detail-label {
             color: #9ca3af;
         }
-
         .info-window {
             background-color: #1e293b;
             color: #e2e8f0;
@@ -339,9 +314,7 @@ using
             stroke-dasharray: 0;
         }
     </style>
-</head>
-<body>
-    <div class="container">
+<div class="container">
         <div class="header">
             <h1>🌍 Quantum Networks</h1>
             <p>Interactive network visualization with switchable views</p>
@@ -351,7 +324,7 @@ using
             </div>
         </div>
 
-        <div class="content-wrapper">
+<div class="content-wrapper">
             <div id="map"></div>
             <div class="sidebar">
                 <div class="panel">
@@ -374,7 +347,7 @@ using
                     </div>
                 </div>
 
-                <div class="panel">
+<div class="panel">
                     <h3>Marker Legend</h3>
                     <div class="marker-legend">
                         <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
@@ -408,7 +381,7 @@ using
                     </p>
                 </div>
 
-                <div class="panel">
+<div class="panel">
                     <h3>Network Hop Legend</h3>
                     <div class="marker-legend">
                         <div class="legend-item">
@@ -426,12 +399,12 @@ using
                     </div>
                 </div>
 
-                <div class="panel">
+<div class="panel">
                     <h3>Nodes</h3>
                     <div class="node-list" id="nodesList"></div>
                 </div>
 
-                <div class="panel" id="detailsPanel" style="display: none;">
+<div class="panel" id="detailsPanel" style="display: none;">
                     <h3>Node Details</h3>
                     <div id="nodeDetails"></div>
                 </div>
@@ -439,7 +412,7 @@ using
         </div>
     </div>
 
-    <script>
+<script>
         const NETWORK_NODES = [
   // North America
   {
@@ -1748,6 +1721,4 @@ using
         // Initialize map when page loads
         window.addEventListener('load', initMap);
     </script>
-</body>
-</html>
 
