@@ -31,7 +31,7 @@
                 e.set("libraries", [...r] + "");
                 for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
                 e.set("callback", c + ".maps." + q);
-                a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                a.src = "https://maps." + c + "apis.com/maps/api/js?" + e;
                 d[q] = f;
                 a.onerror = () => h = n(Error(p + " could not load."));
                 a.nonce = m.querySelector("script[nonce]")?.nonce || "";
@@ -1389,21 +1389,19 @@
                             node.type === 'ground-station' ? '🛰️ Ground Station' : 
                             node.type === 'array' ? '📡 Array' : 
                             '🔵 Network Node';
-            const description = node.description ? `<p><span class="detail-label">Type:</span> ${node.description}</p>` : '';
-            const link = node.url ? `<p><a href="${node.url}" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 500;">🔗 Visit Website</a></p>` : '';
+            const description = node.description ? '<p><span class="detail-label">Type:</span> ' + node.description + '</p>' : '';
+            const link = node.url ? '<p><a href="' + node.url + '" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 500;">🔗 Visit Website</a></p>' : '';
             
-            return `
-                <div class="info-window">
-                    <h4>${node.name}</h4>
-                    <p><span class="detail-label">Marker:</span> ${typeLabel}</p>
-                    ${description}
-                    <p><span class="detail-label">Status:</span> ${node.status}</p>
-                    <p><span class="detail-label">Region:</span> ${node.region}</p>
-                    <p><span class="detail-label">Capacity:</span> ${node.capacity} Q</p>
-                    <p><span class="detail-label">Lat/Lon:</span> ${node.latitude.toFixed(4)}, ${node.longitude.toFixed(4)}</p>
-                    ${link}
-                </div>
-            `;
+            return '<div class="info-window">' +
+                '<h4>' + node.name + '</h4>' +
+                '<p><span class="detail-label">Marker:</span> ' + typeLabel + '</p>' +
+                description +
+                '<p><span class="detail-label">Status:</span> ' + node.status + '</p>' +
+                '<p><span class="detail-label">Region:</span> ' + node.region + '</p>' +
+                '<p><span class="detail-label">Capacity:</span> ' + node.capacity + ' Q</p>' +
+                '<p><span class="detail-label">Lat/Lon:</span> ' + node.latitude.toFixed(4) + ', ' + node.longitude.toFixed(4) + '</p>' +
+                link +
+                '</div>';
         }
 
         // Toggle marker visibility by type
@@ -1551,7 +1549,7 @@
                     strokeWeight: style.weight,
                     strokeDasharray: style.dash,
                     map: map,
-                    title: `${hop}-hop to ${targetNode.name}`
+                    title: hop + '-hop to ' + targetNode.name
                 });
 
                 polylines.push(polyline);
@@ -1570,21 +1568,16 @@
 
             const stats = document.createElement('div');
             stats.style.cssText = 'font-size: 11px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #334155;';
-            stats.innerHTML = `
-                <div style="margin-bottom: 8px;"><strong>Network Reach:</strong></div>
-                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
-                    <div style="width: 12px; height: 12px; background-color: #10b981; border-radius: 2px;"></div>
-                    <span>1-Hop: <strong>${hop1}</strong></span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
-                    <div style="width: 12px; height: 12px; background-color: #f59e0b; border-radius: 2px; opacity: 0.7;"></div>
-                    <span>2-Hop: <strong>${hop2}</strong></span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                    <div style="width: 12px; height: 12px; background-color: #ef4444; border-radius: 2px; opacity: 0.5;"></div>
-                    <span>3-Hop: <strong>${hop3}</strong></span>
-                </div>
-            `;
+            stats.innerHTML = '<div style="margin-bottom: 8px;"><strong>Network Reach:</strong></div>' +
+                '<div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">' +
+                '<div style="width: 12px; height: 12px; background-color: #10b981; border-radius: 2px;"></div>' +
+                '<span>1-Hop: <strong>' + hop1 + '</strong></span></div>' +
+                '<div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">' +
+                '<div style="width: 12px; height: 12px; background-color: #f59e0b; border-radius: 2px; opacity: 0.7;"></div>' +
+                '<span>2-Hop: <strong>' + hop2 + '</strong></span></div>' +
+                '<div style="display: flex; align-items: center; gap: 6px;">' +
+                '<div style="width: 12px; height: 12px; background-color: #ef4444; border-radius: 2px; opacity: 0.5;"></div>' +
+                '<span>3-Hop: <strong>' + hop3 + '</strong></span></div>';
 
             // Add to details panel if it exists
             const detailsContent = document.querySelector('.node-details');
@@ -1663,12 +1656,10 @@
 
         // Initialize nodes list
         function initializeNodesList() {
-            nodesListEl.innerHTML = NETWORK_NODES.map(node => `
-                <button class="node-item ${focusedNode?.id === node.id ? 'active' : ''}" data-id="${node.id}">
-                    <strong>${node.name}</strong><br>
-                    <small>${node.region} • ${node.status}</small>
-                </button>
-            `).join('');
+            nodesListEl.innerHTML = NETWORK_NODES.map(node => '<button class="node-item ' + (focusedNode?.id === node.id ? 'active' : '') + '" data-id="' + node.id + '">' +
+                '<strong>' + node.name + '</strong><br>' +
+                '<small>' + node.region + ' • ' + node.status + '</small>' +
+                '</button>').join('');
 
             document.querySelectorAll('.node-item').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -1709,36 +1700,18 @@
                                 focusedNode.type === 'ground-station' ? '🛰️ Ground Station' : 
                                 focusedNode.type === 'array' ? '📡 Array' : 
                                 '🔵 Network Node';
-                const description = focusedNode.description ? `
-                        <div class="detail-item">
-                            <span class="detail-label">Type:</span> ${focusedNode.description}
-                        </div>
-                    ` : '';
+                const description = focusedNode.description ? '<div class="detail-item"><span class="detail-label">Type:</span> ' + focusedNode.description + '</div>' : '';
                 
                 detailsPanel.style.display = 'block';
-                nodeDetailsEl.innerHTML = `
-                    <div class="node-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Name:</span> ${focusedNode.name}
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Marker:</span> ${typeLabel}
-                        </div>
-                        ${description}
-                        <div class="detail-item">
-                            <span class="detail-label">Status:</span> ${focusedNode.status}
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Region:</span> ${focusedNode.region}
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Capacity:</span> ${focusedNode.capacity} Q
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Lat/Lon:</span> ${focusedNode.latitude.toFixed(4)}, ${focusedNode.longitude.toFixed(4)}
-                        </div>
-                    </div>
-                `;
+                nodeDetailsEl.innerHTML = '<div class="node-details">' +
+                    '<div class="detail-item"><span class="detail-label">Name:</span> ' + focusedNode.name + '</div>' +
+                    '<div class="detail-item"><span class="detail-label">Marker:</span> ' + typeLabel + '</div>' +
+                    description +
+                    '<div class="detail-item"><span class="detail-label">Status:</span> ' + focusedNode.status + '</div>' +
+                    '<div class="detail-item"><span class="detail-label">Region:</span> ' + focusedNode.region + '</div>' +
+                    '<div class="detail-item"><span class="detail-label">Capacity:</span> ' + focusedNode.capacity + ' Q</div>' +
+                    '<div class="detail-item"><span class="detail-label">Lat/Lon:</span> ' + focusedNode.latitude.toFixed(4) + ', ' + focusedNode.longitude.toFixed(4) + '</div>' +
+                    '</div>';
             } else {
                 detailsPanel.style.display = 'none';
                 nodeDetailsEl.innerHTML = '';
