@@ -1,3 +1,12 @@
+---
+title: "Dashboard"
+order: 1
+chapter: 2
+section: 2
+layout: "md.jlmd"
+tags: ["Dashboard"]
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +18,7 @@
     gtag('js', new Date());
 
     gtag('config', 'G-P8S1FQ4XSG');
-    </script>
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Networks - 3D Google Maps Globe</title>
@@ -40,14 +49,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #0f172a;
             color: #e2e8f0;
             padding: 20px;
         }
-
         .container {
             width: 100%;
             max-width: 1400px;
@@ -56,35 +63,29 @@
             background-color: #0f172a;
             border-radius: 8px;
         }
-
         .header {
             margin-bottom: 24px;
         }
-
         .header h1 {
             font-size: 32px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
         }
-
         .header p {
             color: #9ca3af;
         }
-
         .content-wrapper {
             display: grid;
             grid-template-columns: 1fr 320px;
             gap: 24px;
         }
-
         #map {
             width: 100%;
             height: 600px;
             border-radius: 8px;
             border: 1px solid #334155;
         }
-
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -92,53 +93,43 @@
             max-height: 600px;
             overflow-y: auto;
         }
-
         .panel {
             background-color: #1e293b;
             border-radius: 8px;
             padding: 16px;
             border: 1px solid #334155;
         }
-
         .panel h3 {
             font-size: 16px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
         }
-
         .stat-item {
             margin-bottom: 12px;
         }
-
         .stat-label {
             color: #9ca3af;
             font-size: 12px;
         }
-
         .stat-value {
             font-size: 24px;
             font-weight: 700;
             margin-top: 4px;
         }
-
         .stat-value.green {
             color: #4ade80;
         }
-
         .stat-value.yellow {
             color: #facc15;
         }
-
         .stat-value.blue {
             color: #60a5fa;
         }
-
         .node-list {
             max-height: 280px;
             overflow-y: auto;
         }
-
         .node-item {
             width: 100%;
             text-align: left;
@@ -152,39 +143,32 @@
             margin-bottom: 4px;
             font-size: 12px;
         }
-
         .node-item:hover {
             background-color: #334155;
         }
-
         .node-item.active {
             background-color: #2563eb;
             color: white;
         }
-
         .node-details {
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid #334155;
         }
-
         .node-details h4 {
             font-weight: 600;
             color: white;
             margin-bottom: 8px;
             font-size: 14px;
         }
-
         .detail-item {
             margin-bottom: 4px;
             font-size: 12px;
             color: #d1d5db;
         }
-
         .detail-label {
             color: #9ca3af;
         }
-
         .info-window {
             background-color: #1e293b;
             color: #e2e8f0;
@@ -192,73 +176,58 @@
             border-radius: 4px;
             border: 1px solid #334155;
         }
-
         .info-window h4 {
             margin: 0 0 8px 0;
             font-size: 14px;
             color: #ffffff;
         }
-
         .info-window p {
             margin: 4px 0;
             font-size: 12px;
         }
-
         @media (max-width: 1024px) {
             .content-wrapper {
                 grid-template-columns: 1fr;
             }
-
             #map {
                 height: 500px;
             }
-
             .sidebar {
                 max-height: auto;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
         }
-
         @media (max-width: 768px) {
             .container {
                 padding: 12px;
             }
-
             #map {
                 height: 400px;
             }
-
             .sidebar {
                 grid-template-columns: 1fr;
             }
         }
-
         ::-webkit-scrollbar {
             width: 6px;
         }
-
         ::-webkit-scrollbar-track {
             background: #0f172a;
         }
-
         ::-webkit-scrollbar-thumb {
             background: #334155;
             border-radius: 3px;
         }
-
         ::-webkit-scrollbar-thumb:hover {
             background: #475569;
         }
-
         button:hover {
             opacity: 0.9;
         }
-
         button:active {
             transform: scale(0.98);
         }
-
         /* Ground Station Marker Styles */
         .marker-legend {
             background-color: #1e293b;
@@ -267,14 +236,12 @@
             padding: 16px;
             margin-bottom: 16px;
         }
-
         .marker-legend h4 {
             font-size: 14px;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 12px;
         }
-
         .legend-item {
             display: flex;
             align-items: center;
@@ -283,7 +250,6 @@
             font-size: 12px;
             color: #d1d5db;
         }
-
         .legend-icon {
             width: 20px;
             height: 20px;
@@ -293,12 +259,10 @@
             justify-content: center;
             flex-shrink: 0;
         }
-
         .legend-icon.node {
             background-color: #10b981;
             border: 2px solid #ffffff;
         }
-
         .legend-icon.ground-station {
             background-color: #f59e0b;
             border: 3px solid #dc2626;
@@ -306,7 +270,6 @@
             color: white;
             font-weight: bold;
         }
-
         .legend-icon.array {
             background-color: #8b5cf6;
             border: 3px solid #60a5fa;
@@ -314,7 +277,6 @@
             color: white;
             font-weight: bold;
         }
-
         .legend-icon.teleport {
             background-color: #ec4899;
             border: 3px solid #fbbf24;
@@ -322,12 +284,10 @@
             color: white;
             font-weight: bold;
         }
-
         .legend-icon.connecting {
             background-color: #f59e0b;
             border: 2px solid #ffffff;
         }
-
         /* Communication line styles */
         .communication-line {
             stroke: #3b82f6;
@@ -336,7 +296,6 @@
             opacity: 0.6;
             fill: none;
         }
-
         .communication-line.active {
             stroke: #10b981;
             opacity: 0.8;
@@ -355,7 +314,7 @@
             </div>
         </div>
 
-        <div class="content-wrapper">
+<div class="content-wrapper">
             <div id="map"></div>
             <div class="sidebar">
                 <div class="panel">
@@ -378,7 +337,7 @@
                     </div>
                 </div>
 
-                <div class="panel">
+<div class="panel">
                     <h3>Marker Legend</h3>
                     <div class="marker-legend">
                         <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer;">
@@ -412,7 +371,7 @@
                     </p>
                 </div>
 
-                <div class="panel">
+<div class="panel">
                     <h3>Network Hop Legend</h3>
                     <div class="marker-legend">
                         <div class="legend-item">
@@ -430,12 +389,12 @@
                     </div>
                 </div>
 
-                <div class="panel">
+<div class="panel">
                     <h3>Nodes</h3>
                     <div class="node-list" id="nodesList"></div>
                 </div>
 
-                <div class="panel" id="detailsPanel" style="display: none;">
+<div class="panel" id="detailsPanel" style="display: none;">
                     <h3>Node Details</h3>
                     <div id="nodeDetails"></div>
                 </div>
@@ -443,7 +402,7 @@
         </div>
     </div>
 
-    <script>
+<script>
         const NETWORK_NODES = [
   // North America
   {
