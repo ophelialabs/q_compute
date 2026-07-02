@@ -1,10 +1,10 @@
 #> [frontmatter]
 #> chapter = 1
-#> section = 2
-#> order = 2
+#> section = 1
+#> order = 1
 #> image = "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
 #> title = "Qnet"
-#> tags = ["Dashboard"]
+#> tags = ["Qnet", "Dashboard"]
 #> layout = "layout.jlhtml"
 
 html"""

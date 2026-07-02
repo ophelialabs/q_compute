@@ -1,7 +1,11 @@
 [
     "welcome" => "Welcome",
     "resources" => "Resources",
-    "dashboard" => "Dashboard",
+    "dashboard" => [
+        "qnet" => [
+            "qnet_dash" => "Qnet Dash"
+        ]
+    ],
     "parent1" => [
         "parent1_mod1" => "Module 1: Adding course material",
         "parent1_mod2" => "Module 2: Quantum Gates"
